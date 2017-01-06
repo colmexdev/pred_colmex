@@ -1,0 +1,4 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Editar', edit_video_path(@video) %> |
+<%= link_to 'Regresar', videos_path %>
