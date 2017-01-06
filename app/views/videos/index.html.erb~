@@ -22,9 +22,9 @@
 				<td><%= v.liga %></td>
 				<td><%= v.tipo %></td>
 				<td><%= v.curso %></td>
-        <td><%= link_to 'Show', video %></td>
-        <td><%= link_to 'Edit', edit_video_path(video) %></td>
-        <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: '¿Desea eliminar este video?' } %></td>
+        <td><%= link_to 'Show', v %></td>
+        <td><%= link_to 'Edit', edit_video_path(v) %></td>
+        <td><%= link_to 'Destroy', v, method: :delete, data: { confirm: '¿Desea eliminar este video?' } %></td>
       </tr>
     <% end %>
   </tbody>
