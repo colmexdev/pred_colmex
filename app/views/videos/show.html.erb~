@@ -1,4 +1,29 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Título:</strong>
+  <%= @video.titulo %>
+</p>
+
+<p>
+  <strong>Fecha de subida:</strong>
+  <%= @video.fecha %>
+</p>
+
+<p>
+  <strong>Liga:</strong>
+  <%= @video.liga %>
+</p>
+
+<p>
+  <strong>Tipo de video:</strong>
+  <%= @video.tipo %>
+</p>
+
+<p>
+  <strong>Curso breve:</strong>
+  <%= @video.curso %>
+</p>
+
 <%= link_to 'Editar', edit_video_path(@video) %> |
 <%= link_to 'Regresar', videos_path %>

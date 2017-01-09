@@ -18,7 +18,7 @@
     <% @videos.each do |v| %>
       <tr>
 				<td><%= v.titulo %></td>
-				<td><%= v.fecha %></td>
+				<td><%= v.fecha.strftime("%d-%m-%Y") %></td>
 				<td><%= v.liga %></td>
 				<td><%= v.tipo %></td>
 				<td><%= v.curso %></td>
