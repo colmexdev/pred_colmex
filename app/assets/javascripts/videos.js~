@@ -20,7 +20,7 @@ function swapTipo(element){
 	}
 }
 
-function registrarEntrada(element){
+function registrarSel(element){
 	if(!element.disabled){
 		document.getElementById("video_tipo").value = element.options[element.selectedIndex].value;
 	}

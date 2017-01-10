@@ -20,13 +20,8 @@ function swapTipo(element){
 	}
 }
 
-function registrarSel(element){
-	if(!element.disabled){
-		document.getElementById("video_tipo").value = element.options[element.selectedIndex].value;
-	}
-}
-
 function registrarEntrada(element){
+	console.log(element.value);
 	if(!element.disabled){
 		document.getElementById("video_tipo").value = element.value;
 	}
