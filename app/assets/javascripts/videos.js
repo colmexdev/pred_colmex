@@ -11,7 +11,7 @@ function swapTipo(element){
 	if(element.value=="fijo"){
 		document.getElementById("text_tipo").disabled = true;
 		document.getElementById("sel_tipo_sel_tipo").disabled = false;
-		document.getElementById("video_tipo").value = document.getElementById("sel_tipo").value;
+		document.getElementById("video_tipo").value = document.getElementById("sel_tipo_sel_tipo").value;
 	}
 	else if(element.value=="otro"){
 		document.getElementById("text_tipo").disabled = false;
