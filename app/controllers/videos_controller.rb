@@ -19,6 +19,11 @@ class VideosController < ApplicationController
   # GET /videos/new
   def new
     @vid = Yt::Video.new id: params[:id_vid]
+    @cats = Video.group(:tipo)
+    @tipos = []
+    @cats.each do |c|
+      @tipos << [c,c]
+    end
     @video = Video.new
   end
 

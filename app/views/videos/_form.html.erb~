@@ -19,7 +19,7 @@
 
   <div class="field">
     <%= f.label :fecha %><br>
-    <%= f.text_field :fecha, :readonly => true, :value => @vid.uploaded_at %>
+    <%= f.text_field :fecha, :readonly => true, :value => @vid.published_at %>
   </div>
 
   <div class="field">
