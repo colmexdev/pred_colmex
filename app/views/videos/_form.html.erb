@@ -1,4 +1,4 @@
-<%= @vid.title %>
+
 <%= form_for(@video) do |f| %>
   <% if @video.errors.any? %>
     <div id="error_explanation">
@@ -14,12 +14,12 @@
 
   <div class="field">
     <%= f.label :titulo %><br>
-    <%= f.text_field :titulo %>
+    <%= f.text_field :titulo, :readonly => true, :value => @vid.title %>
   </div>
 
   <div class="field">
     <%= f.label :fecha %><br>
-    <%= f.text_field :fecha %>
+    <%= f.text_field :fecha, :readonly => true, :value => @vid.uploaded_at %>
   </div>
 
   <div class="field">
