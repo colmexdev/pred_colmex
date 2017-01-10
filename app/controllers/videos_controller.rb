@@ -18,7 +18,7 @@ class VideosController < ApplicationController
 
   # GET /videos/new
   def new
-		
+    @vid = Yt::Video.new id: params[:id_vid]
     @video = Video.new
   end
 
