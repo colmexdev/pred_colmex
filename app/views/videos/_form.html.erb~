@@ -23,8 +23,18 @@
   </div>
 
   <div class="field">
+    <%= f.label :liga %><br>
+    <%= f.text_field :liga, :readonly => true, :value => "https://youtu.be/"+@vid.id %>
+  </div>
+
+  <div class="field">
+		<%= hidden_field_tag(:tipo) %>
     <%= f.label :tipo %><br>
-    <%= f.text_field :tipo %>
+		<input type="radio" name="tipo_tipo" value="fijo" onclick="swapTipo(this)" checked>Fijo<br>
+		<%= f.select(:sel_tipo, @tipos, :selected => (@video.tipo || ""), :include_blank => true) %><br>
+
+		<input type="radio" name="tipo_tipo" value="otro" onclick="swapTipo(this)">Otro<br>
+   	<input type="text" id="text_tipo" disabled>
   </div>
 
   <div class="field">
