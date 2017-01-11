@@ -20,7 +20,7 @@ class VideosController < ApplicationController
   def new
     @vid = Yt::Video.new id: params[:id_vid]
     @cats = Video.pluck(:tipo)
-		@tituos = Video.pluck(:curso)
+		@titulos = Video.pluck(:curso)
     @tipos, @cursos = [].to_set, [].to_set
     @cats.each do |c|
       @tipos << [c,c]
