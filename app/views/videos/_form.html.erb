@@ -31,7 +31,7 @@
 		<%= f.hidden_field(:tipo) %>
     <%= f.label :tipo %><br>
 		<input type="radio" name="tipo_tipo" value="fijo" onclick="swapTipo(this);" checked>Fijo<br>
-		<%= select("sel_tipo","sel_tipo", @tipos, {}, {:selected => (@video.tipo || @tipos[0][0]), :include_blank => true, :onchange => "registrarEntrada(this);"}) %><br>
+		<%= select("sel_tipo","sel_tipo", @tipos, {:selected => (@video.tipo || @tipos[0][0]), :include_blank => true}, {:onchange => "registrarEntrada(this);"}) %><br>
 
 		<input type="radio" name="tipo_tipo" value="otro" onclick="swapTipo(this);">Otro<br>
    	<input type="text" id="text_tipo" disabled oninput="registrarEntrada(this);">
