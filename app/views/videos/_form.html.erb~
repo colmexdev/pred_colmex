@@ -30,16 +30,21 @@
   <div class="field">
 		<%= f.hidden_field(:tipo) %>
     <%= f.label :tipo %><br>
-		<input type="radio" name="tipo_tipo" value="fijo" onclick="swapTipo(this);" checked>Fijo<br>
-		<%= select("sel_tipo","sel_tipo", @tipos, {:selected => (@video.tipo || @tipos[0][0]), :include_blank => true}, {:onchange => "registrarEntrada(this);"}) %><br>
+		<input type="radio" name="tipo_tipo" value="fijo" onclick="swapTipo(this,'video_tipo','text_tipo','sel_tipo_sel_tipo');" checked>Fijo<br>
+		<%= select("sel_tipo","sel_tipo", @tipos, {:selected => (@video.tipo || ""), :include_blank => true}, {:onchange => "registrarEntrada(this,'video_tipo');"}) %><br>
 
-		<input type="radio" name="tipo_tipo" value="otro" onclick="swapTipo(this);">Otro<br>
-   	<input type="text" id="text_tipo" disabled oninput="registrarEntrada(this);">
+		<input type="radio" name="tipo_tipo" value="otro" onclick="swapTipo(this,'video_tipo','text_tipo','sel_tipo_sel_tipo');">Otro<br>
+   	<input type="text" id="text_tipo" disabled oninput="registrarEntrada(this,'video_tipo');">
   </div>
 
   <div class="field">
-    <%= f.label :curso %><br>
-    <%= f.text_field :curso %>
+		<input type="checkbox" name="curso_p" id="curso_p" onchange="toggleCurso(this)">Curso<br>
+    <%= f.hidden_field(:curso) %>
+		<input type="radio" name="tipo_curso" value="fijo" onclick="swapTipo(this,'video_curso','text_curso','sel_curso_sel_curso');" disabled>Existente<br>
+		<%= select("sel_curso","sel_curso", @cursos, {:selected => (@video.curso || ""), :include_blank => true}, {:onchange => "registrarEntrada(this,'video_curso');", :disabled => "disabled"}) %><br>
+
+		<input type="radio" name="tipo_curso" value="otro" onclick="swapTipo(this,'video_curso','text_curso','sel_curso_sel_curso');" disabled>Otro<br>
+   	<input type="text" id="text_curso" disabled oninput="registrarEntrada(this,'video_curso');">
   </div>
 
   <div class="actions">
