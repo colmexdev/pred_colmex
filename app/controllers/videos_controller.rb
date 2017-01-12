@@ -99,7 +99,7 @@ class VideosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def video_params
-      params.fetch(:video, {})
+      params.require(:video).permit(:titulo,:fecha,:liga,:tipo,:curso)
     end
 
     def participante_params(part_params)
