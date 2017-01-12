@@ -46,6 +46,7 @@ class VideosController < ApplicationController
   # POST /videos
   # POST /videos.json
   def create
+		throw "Checkpoint"
     @video = Video.new(video_params)
 
     respond_to do |format|
