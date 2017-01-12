@@ -48,13 +48,14 @@
   </div>
 
 
-	<% @participantes.each do |p| %>
-
-	<div class="field">
-		<%= p.text_field :nombre %>
-		<%= p.select("part_inst","part_inst_1", [["Externo","Externo"],["COLMEX","COLMEX"]], { :include_blank => false}, {:onchange => ""}) %>
-		<%= p.select("part_centro","part_centro1", [["CEAA","CEAA"],["CEDUA","CEDUA"],["CEE","CEE"],["CEH","CEH"],["CEI","CEI"],["CELL","CELL"],["CES","CES"]], {:include_blank => true, :prompt => "Elige centro"}, {:onchange => ""}) %><br>
-	</div>
+	<% @participantes.each do |partic| %>
+		<%= fields_for 'parts[]', partic do |p| %> 
+			<div class="field">
+				<%= p.text_field :nombre %>
+				<%= p.select("part_inst","part_inst_1", [["Externo","Externo"],["COLMEX","COLMEX"]], { :include_blank => false}, {:onchange => ""}) %>
+				<%= p.select("part_centro","part_centro1", [["CEAA","CEAA"],["CEDUA","CEDUA"],["CEE","CEE"],["CEH","CEH"],["CEI","CEI"],["CELL","CELL"],["CES","CES"]], {:include_blank => true, :prompt => "Elige centro"}, {:onchange => ""}) %><br>
+			</div>
+		<% end %>
 
 	<% end %>
 
