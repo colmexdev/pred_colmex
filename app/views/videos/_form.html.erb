@@ -52,7 +52,7 @@
 		<%= fields_for 'parts[]', partic do |p| %> 
 			<div class="field">
 				<%= p.text_field :nombre %>
-				<%= p.select(:inst, [["Externo","Externo"],["COLMEX","COLMEX"]], { :include_blank => false}, {:onchange => ""}) %>
+				<%= p.select(:institucion, [["Externo","Externo"],["COLMEX","COLMEX"]], { :include_blank => false}, {:onchange => ""}) %>
 				<%= p.select(:centro, [["CEAA","CEAA"],["CEDUA","CEDUA"],["CEE","CEE"],["CEH","CEH"],["CEI","CEI"],["CELL","CELL"],["CES","CES"]], {:include_blank => true, :prompt => "Elige centro"}, {:onchange => ""}) %><br>
 			</div>
 		<% end %>
