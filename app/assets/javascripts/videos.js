@@ -4,6 +4,11 @@ function validar(){
 		alert("No se especificó una id de video de YouTube. Intente de nuevo.");
 		return false;
 	}
+	if(/[1-9][0-9]*/.test(document.getElementById("num_part").value)){
+		event.preventDefault();
+		alert("Cantidad de participantes inválida. Intente de nuevo.");
+		return false;
+	}
 }
 
 function swapTipo(element,target,texto,sel){
