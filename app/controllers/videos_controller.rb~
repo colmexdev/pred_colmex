@@ -93,4 +93,8 @@ class VideosController < ApplicationController
     def video_params
       params.fetch(:video, {})
     end
+
+    def participante_params(part_params)
+      part_params.permit(:nombre,:institucion,:centro,:video_id)
+    end
 end

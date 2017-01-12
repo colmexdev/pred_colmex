@@ -46,8 +46,10 @@ class VideosController < ApplicationController
   # POST /videos
   # POST /videos.json
   def create
-		throw "Checkpoint"
     @video = Video.new(video_params)
+    params[:parts].each do |part|
+      Participante.create(participante_params(part))
+    end
 
     respond_to do |format|
       if @video.save
@@ -77,6 +79,10 @@ class VideosController < ApplicationController
   # DELETE /videos/1
   # DELETE /videos/1.json
   def destroy
+		@parts = Participante.where("video_id = ?", @video[:id])
+		@parts.each do |p|
+      p.destroy
+    end
     @video.destroy
     respond_to do |format|
       format.html { redirect_to videos_url, notice: 'El video se ha eliminado exitosamente del catálogo.' }
@@ -93,5 +99,9 @@ class VideosController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def video_params
       params.fetch(:video, {})
+    end
+
+    def participante_params(part_params)
+      part_params.permit(:nombre,:institucion,:centro,:video_id)
     end
 end
