@@ -47,6 +47,15 @@
    	<input type="text" id="text_curso" disabled oninput="registrarEntrada(this,'video_curso');">
   </div>
 
+
+	<div class="field">
+		<input type="text" name="part_nom" id="part_nom1"><br>
+		<%= select("part_inst","part_inst_1", [["Externo","Externo"],["COLMEX","COLMEX"]], { :include_blank => false}, {:onchange => ""}) %><br>
+		<%= select("part_centro","part_centro1", [["CEAA","CEAA"],["CEDUA","CEDUA"],["CEE","CEE"],["CEH","CEH"],["CEI","CEI"],["CELL","CELL"],["CES","CES"]], {:include_blank => true, :prompt => "Elige centro"}, {:onchange => ""}) %><br>
+	</div>
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

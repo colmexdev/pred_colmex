@@ -19,6 +19,7 @@ class VideosController < ApplicationController
   # GET /videos/new
   def new
     @vid = Yt::Video.new id: params[:id_vid]
+		@parts = params[:num_part]
     @cats = Video.pluck(:tipo)
 		@titulos = Video.where("curso IS NOT NULL").pluck(:curso)
     @tipos, @cursos = [].to_set, [].to_set
@@ -31,6 +32,10 @@ class VideosController < ApplicationController
 		@tipos = @tipos.to_a
 		@cursos = @cursos.to_a
     @video = Video.new
+		@participantes = []
+		@parts.times do
+			@participantes << Participante.new
+    end
   end
 
   # GET /videos/1/edit
