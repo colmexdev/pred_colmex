@@ -46,6 +46,7 @@ class VideosController < ApplicationController
   # POST /videos
   # POST /videos.json
   def create
+		params[:video][:fecha] = DateTime.strptime(params[:video][:fecha], "%Y-%m-%d %H:%M:%S UTC")
     @video = Video.new(video_params)
     params[:parts].each do |part|
       Participante.create(participante_params(part))
