@@ -50,7 +50,7 @@
 	<% i = 1 %>
 	<% @participantes.each do |partic| %>
 		<%= fields_for 'parts[]', partic do |p| %> 
-			<div class="field" id=<%= "p_"+i %>>
+			<div class="field" id=<%= "p_"+ i.to_s %>>
 				<%= p.hidden_field(:id_video, :value => (partic.id_video || "")) %>
 				<%= p.text_field :nombre, :value => (partic.nombre || "") %>
 				<%= p.select(:institucion, [["Externo","Externo"],["COLMEX","COLMEX"]], { :include_blank => false, :selected => (partic.institucion || "Externo")}, {:onchange => ""}) %>
