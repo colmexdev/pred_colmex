@@ -103,6 +103,6 @@ class VideosController < ApplicationController
     end
 
     def participante_params(part_params)
-      part_params.permit(:nombre,:institucion,:centro,:video_id)
+      part_params.permit(:nombre,:institucion,:centro,:id_video)
     end
 end
