@@ -22,6 +22,7 @@ class VideosController < ApplicationController
 		@parts = params[:num_part].to_i
     @cats = Video.pluck(:tipo)
 		@vid_act = Video.maximum(:id)
+    @part_act = Participante.maximum(:id)
 		@titulos = Video.where("curso IS NOT NULL").pluck(:curso)
     @tipos, @cursos = [].to_set, [].to_set
     @cats.each do |c|
