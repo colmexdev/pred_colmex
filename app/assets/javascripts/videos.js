@@ -22,9 +22,17 @@ function validarForma(){
 	}
 	var i = 1;
 	while(true){
-		if(document.getElementById("p_"+i) == null)
+		var div_part = document.getElementById("p_"+i);
+		if(div_part == null)
 			break
-		
+		if(div_part.childNodes[3].value == ""){
+			event.preventDefault();
+			alert("Hacen falta nombres de participantes para registrar. Verifique ese dato e intente de nuevo.");
+		}
+		if(div_part.childNodes[5].value == "COLMEX" && div_part.childNodes[7].value == ""){
+			event.preventDefault();
+			alert("Especificó un participante de EL Colegio, pero no especificó el Centro de Estudios al que pertenece. Verifique este dato e intente de nuevo.");
+		}
 	}	
 }
 
@@ -64,5 +72,15 @@ function toggleCurso(element){
 		document.getElementById("otro_c").disabled = true;
 		document.getElementById("sel_curso_sel_curso").disabled = true;
 		document.getElementById("text_curso").disabled = true;
+	}
+}
+
+function toggleCentro(element,target){
+	if(element.value == "Externo"){
+		document.getElementById(target).childNodes[7].value = "";
+		document.getElementById(target).style("visibility","hidden");
+	}
+	else{
+		document.getElementById(target).style("visibility","visible");
 	}
 }
