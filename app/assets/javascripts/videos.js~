@@ -15,23 +15,28 @@ function validarForma(){
 	if(document.getElementById("video_tipo").value == ""){
 		event.preventDefault();
 		alert("No se ha especificado un tipo para este video. Verifique ese dato e intente de nuevo.");
+		return false;
 	}
 	else if(document.getElementById("curso_p").checked && document.getElementById("video_curso").value == ""){
 		event.preventDefault();
 		alert("Se ha indicado un tema asociado a este video, pero no se ha especificado. Verifique este dato e intente de nuevo.");
+		return false;
 	}
-	var i = 1;
+	var i = 0;
 	while(true){
+		i = i + 1;
 		var div_part = document.getElementById("p_"+i);
 		if(div_part == null)
 			break
 		if(div_part.childNodes[3].value == ""){
 			event.preventDefault();
 			alert("Hacen falta nombres de participantes para registrar. Verifique ese dato e intente de nuevo.");
+			return false;
 		}
 		if(div_part.childNodes[5].value == "COLMEX" && div_part.childNodes[7].value == ""){
 			event.preventDefault();
 			alert("Especificó un participante de EL Colegio, pero no especificó el Centro de Estudios al que pertenece. Verifique este dato e intente de nuevo.");
+			return false;
 		}
 	}	
 }

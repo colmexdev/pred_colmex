@@ -22,8 +22,9 @@ function validarForma(){
 		alert("Se ha indicado un tema asociado a este video, pero no se ha especificado. Verifique este dato e intente de nuevo.");
 		return false;
 	}
-	var i = 1;
+	var i = 0;
 	while(true){
+		i = i + 1;
 		var div_part = document.getElementById("p_"+i);
 		if(div_part == null)
 			break
