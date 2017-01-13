@@ -44,7 +44,6 @@ class VideosController < ApplicationController
     @vid = Yt::Video.new id: @video.liga.split('/')[-1]
 
     @cats = Video.pluck(:tipo)
-    @part_act = Participante.maximum(:id)
 		@titulos = Video.where("curso IS NOT NULL").pluck(:curso)
     @tipos, @cursos = [].to_set, [].to_set
     @cats.each do |c|
@@ -56,7 +55,7 @@ class VideosController < ApplicationController
 		@tipos = @tipos.to_a
 		@cursos = @cursos.to_a
 
-		@participantes = Participante.where("id_video = ?",@video.id)
+		@participantes = Participante.where("id_video = ?",@video.id).values
 
   end
 
