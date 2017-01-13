@@ -68,7 +68,7 @@ class VideosController < ApplicationController
 
     respond_to do |format|
       if @video.save
-			@v_id = Video.find(:last).id
+			@v_id = Video.maximum(:id)
       params[:parts].each do |part|
 				part[:id_video] = @v_id
         @p = Participante.new(participante_params(part))

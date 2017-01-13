@@ -71,7 +71,7 @@ class VideosController < ApplicationController
 			@v_id = Video.find(:last).id
       params[:parts].each do |part|
 				part[:id_video] = @v_id
-        @p = Participante.create(participante_params(part))
+        @p = Participante.new(participante_params(part))
         if !@p.save
           format.html { render :new }
           format.json { render json: @video.errors, status: :unprocessable_entity }
@@ -91,6 +91,14 @@ class VideosController < ApplicationController
   def update
     respond_to do |format|
       if @video.update(video_params)
+				params[:parts].each do |part|
+				  part[:id_video] = @video.id
+          if !@p = Participante.update(participante_params(part))
+            format.html { render :new }
+            format.json { render json: @video.errors, status: :unprocessable_entity }
+          end
+        end
+
         format.html { redirect_to @video, notice: 'El video se ha actualizado con éxito.' }
         format.json { render :show, status: :ok, location: @video }
       else
