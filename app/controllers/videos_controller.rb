@@ -59,7 +59,7 @@ class VideosController < ApplicationController
 		@tipos = @tipos.to_a
 		@cursos = @cursos.to_a
 
-		@participantes = Participante.where("video_id = ?",@video.id)
+		@participantes = Participante.where("id_video = ?",@video.id)
 
   end
 
