@@ -104,7 +104,7 @@ class VideosController < ApplicationController
   # DELETE /videos/1
   # DELETE /videos/1.json
   def destroy
-		@parts = Participante.where("video_id = ?", @video[:id])
+		@parts = Participante.where("id_video = ?", @video[:id])
 		@parts.each do |p|
       p.destroy
     end
