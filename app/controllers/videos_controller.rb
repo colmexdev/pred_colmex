@@ -71,6 +71,28 @@ class VideosController < ApplicationController
   # PATCH/PUT /videos/1
   # PATCH/PUT /videos/1.json
   def update
+
+    @vid = Yt::Video.new id: params[:id_vid]
+		@parts = params[:num_part].to_i
+    @cats = Video.pluck(:tipo)
+		@vid_act = Video.maximum(:id)
+    @part_act = Participante.maximum(:id)
+		@titulos = Video.where("curso IS NOT NULL").pluck(:curso)
+    @tipos, @cursos = [].to_set, [].to_set
+    @cats.each do |c|
+      @tipos << [c,c]
+    end
+    @titulos.each do |t|
+      @cursos << [t,t]
+    end
+		@tipos = @tipos.to_a
+		@cursos = @cursos.to_a
+    @video = Video.new
+		@participantes = []
+		@parts.times do
+			@participantes << Participante.new
+    end
+
     respond_to do |format|
       if @video.update(video_params)
         format.html { redirect_to @video, notice: 'El video se ha actualizado con éxito.' }

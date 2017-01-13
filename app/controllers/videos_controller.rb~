@@ -49,12 +49,16 @@ class VideosController < ApplicationController
   def create
     params[:video][:fecha] = DateTime.strptime(params[:video][:fecha], "%Y-%m-%d %H:%M:%S UTC")
     @video = Video.new(video_params)
-    params[:parts].each do |part|
-      Participante.create(participante_params(part))
-    end
 
     respond_to do |format|
       if @video.save
+      params[:parts].each do |part|
+        @p = Participante.create(participante_params(part))
+        if !@p.save
+          format.html { render :new }
+          format.json { render json: @video.errors, status: :unprocessable_entity }
+        end
+      end
         format.html { redirect_to @video, notice: 'El video se ha registrado con éxito en el catálogo.' }
         format.json { render :show, status: :created, location: @video }
       else
