@@ -95,7 +95,7 @@ class VideosController < ApplicationController
         i = 0
 				params[:parts].each do |part|
 					
-          if !Participante.find(@llaves[i]).update(participante_params(@vals[i]))
+          if !Participante.find(@llaves[i].to_i).update(participante_params(@vals[i]))
             format.html { render :new }
             format.json { render json: @video.errors, status: :unprocessable_entity }
           end
