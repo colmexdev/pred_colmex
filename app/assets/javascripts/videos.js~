@@ -74,3 +74,13 @@ function toggleCurso(element){
 		document.getElementById("text_curso").disabled = true;
 	}
 }
+
+function toggleCentro(element,target){
+	if(element.value == "Externo"){
+		document.getElementById(target).childNodes[7].value = "";
+		document.getElementById(target).style("visibility","hidden");
+	}
+	else{
+		document.getElementById(target).style("visibility","visible");
+	}
+}
