@@ -21,8 +21,6 @@ class VideosController < ApplicationController
     @vid = Yt::Video.new id: params[:id_vid]
 		@parts = params[:num_part].to_i
     @cats = Video.pluck(:tipo)
-		@vid_act = Video.maximum(:id)
-    @part_act = Participante.maximum(:id)
 		@titulos = Video.where("curso IS NOT NULL").pluck(:curso)
     @tipos, @cursos = [].to_set, [].to_set
     @cats.each do |c|
@@ -46,7 +44,6 @@ class VideosController < ApplicationController
     @vid = Yt::Video.new id: @video.liga.split('/')[-1]
 
     @cats = Video.pluck(:tipo)
-		@vid_act = Video.maximum(:id)
     @part_act = Participante.maximum(:id)
 		@titulos = Video.where("curso IS NOT NULL").pluck(:curso)
     @tipos, @cursos = [].to_set, [].to_set
@@ -71,7 +68,9 @@ class VideosController < ApplicationController
 
     respond_to do |format|
       if @video.save
+			@v_id = Video.find(:last).id
       params[:parts].each do |part|
+				part[:id_video] = @v_id
         @p = Participante.create(participante_params(part))
         if !@p.save
           format.html { render :new }
