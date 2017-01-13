@@ -91,7 +91,8 @@ class VideosController < ApplicationController
     respond_to do |format|
       if @video.update(video_params)
 				params[:parts].each do |part|
-          if !@p = Participante.update(participante_params(part))
+					
+          if !Participante.update(participante_params(part))
             format.html { render :new }
             format.json { render json: @video.errors, status: :unprocessable_entity }
           end
