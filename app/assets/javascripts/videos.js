@@ -11,6 +11,23 @@ function validar(){
 	}
 }
 
+function validarForma(){
+	if(document.getElementById("video_tipo").value == ""){
+		event.preventDefault();
+		alert("No se ha especificado un tipo para este video. Verifique ese dato e intente de nuevo.");
+	}
+	else if(document.getElementById("curso_p").checked && document.getElementById("video_curso").value == ""){
+		event.preventDefault();
+		alert("Se ha indicado un tema asociado a este video, pero no se ha especificado. Verifique este dato e intente de nuevo.");
+	}
+	var i = 1;
+	while(true){
+		if(document.getElementById("p_"+i) == null)
+			break
+		
+	}	
+}
+
 function swapTipo(element,target,texto,sel){
 	document.getElementById(texto).value = "";
 	if(element.value=="fijo"){

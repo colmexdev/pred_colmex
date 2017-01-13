@@ -4,11 +4,23 @@ function validar(){
 		alert("No se especificó una id de video de YouTube. Intente de nuevo.");
 		return false;
 	}
-	if(/[1-9][0-9]*/.test(document.getElementById("num_part").value)){
+	if(!(/[1-9][0-9]*/.test(document.getElementById("num_part").value))){
 		event.preventDefault();
 		alert("Cantidad de participantes inválida. Intente de nuevo.");
 		return false;
 	}
+}
+
+function validarForma(){
+	if(document.getElementById("video_tipo").value == ""){
+		event.preventDefault();
+		alert("No se ha especificado un tipo para este video. Verifique ese dato e intente de nuevo.");
+	}
+	else if(document.getElementById("curso_p").checked && document.getElementById("video_curso").value == ""){
+		event.preventDefault();
+		alert("Se ha indicado un tema asociado a este video, pero no se ha especificado. Verifique este dato e intente de nuevo.");
+	}
+	
 }
 
 function swapTipo(element,target,texto,sel){

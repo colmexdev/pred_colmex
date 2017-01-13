@@ -1,5 +1,5 @@
 
-<%= form_for(@video) do |f| %>
+<%= form_for(@video, :html => {:onsubmit => "validarForma()"}) do |f| %>
   <% if @video.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@video.errors.count, "error") %> prohibited this video from being saved:</h2>
@@ -51,7 +51,7 @@
 	<% @participantes.each do |partic| %>
 		<%= fields_for 'parts[]', partic do |p| %> 
 			<div class="field">
-				<%= p.hidden_field(:id_video, :value => (partic.id_video || @vid_act + 1)) %>
+				<%= p.hidden_field(:id_video, :value => (partic.id_video || "")) %>
 				<%= p.text_field :nombre, :value => (partic.nombre || "") %>
 				<%= p.select(:institucion, [["Externo","Externo"],["COLMEX","COLMEX"]], { :include_blank => false, :selected => (partic.institucion || "Externo")}, {:onchange => ""}) %>
 				<%= p.select(:centro, [["CEAA","CEAA"],["CEDUA","CEDUA"],["CEE","CEE"],["CEH","CEH"],["CEI","CEI"],["CELL","CELL"],["CES","CES"]], {:include_blank => true, :prompt => "Elige centro", :selected => (partic.centro || "")}, {:onchange => ""}) %><br>
