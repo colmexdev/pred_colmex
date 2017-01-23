@@ -9,7 +9,8 @@
 			<th>Fecha de subida</th>
 			<th>Liga</th>
 			<th>Tipo de video</th>
-			<th>Curso breve</th>
+			<th>Tema referido</th>
+			<th>Thumbnail</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,6 +23,7 @@
 				<td><%= v.liga %></td>
 				<td><%= v.tipo %></td>
 				<td><%= v.curso %></td>
+				<td><img src=<%=v.thumbnail %> height="200" width="200"></td>
         <td><%= link_to 'Mostrar', v %></td>
         <td><%= link_to 'Editar', edit_video_path(v) %></td>
         <td><%= link_to 'Eliminar', v, method: :delete, data: { confirm: '¿Desea eliminar este video?' } %></td>
