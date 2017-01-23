@@ -27,6 +27,12 @@
     <%= f.text_field :liga, :readonly => true, :value => "https://youtu.be/"+@vid.id %>
   </div>
 
+	<div class="field">
+		<%= f.label :thumbnail %>
+		<%= f.hidden_field(:thumbnail, :value => @vid.thumbnail_url(:high)) %>
+		<img src=<%= @vid.thumbnail_url(:high) %>>
+	</div>
+
   <div class="field">
 		<%= f.hidden_field(:tipo) %>
     <%= f.label :tipo %><br>
@@ -53,7 +59,7 @@
 			<div class="field" id=<%= "p_"+ i.to_s %>>
 				<%= p.hidden_field(:id_video, :value => (partic.id_video || "")) %>
 				<%= p.text_field :nombre, :value => (partic.nombre || "") %>
-				<%= p.select(:institucion, [["Externo","Externo"],["COLMEX","COLMEX"]], { :include_blank => false, :selected => (partic.institucion || "Externo")}, {:onchange => "toggleCentro(this," + "p_"+i.to_s+")"}) %>
+				<%= p.select(:institucion, [["Externo","Externo"],["COLMEX","COLMEX"]], { :include_blank => false, :selected => (partic.institucion || "Externo")}, {:onchange => "toggleCentro(this," + "'p_"+i.to_s+"')"}) %>
 				<%= p.select(:centro, [["CEAA","CEAA"],["CEDUA","CEDUA"],["CEE","CEE"],["CEH","CEH"],["CEI","CEI"],["CELL","CELL"],["CES","CES"]], {:include_blank => true, :prompt => "Elige centro", :selected => (partic.centro || "")}, {:onchange => ""}) %><br>
 			</div>
 			<% i = i + 1 %>

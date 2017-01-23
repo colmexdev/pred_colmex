@@ -27,6 +27,12 @@
     <%= f.text_field :liga, :readonly => true, :value => "https://youtu.be/"+@vid.id %>
   </div>
 
+	<div class="field">
+		<%= f.label :thumbnail %>
+		<%= f.hidden_field(:thumbnail, :value => @vid.thumbnail_url(:high)) %>
+		<img src=<%= @vid.thumbnail_url(:high) %>>
+	</div>
+
   <div class="field">
 		<%= f.hidden_field(:tipo) %>
     <%= f.label :tipo %><br>
