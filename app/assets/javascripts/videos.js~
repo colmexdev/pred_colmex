@@ -80,8 +80,9 @@ function toggleCurso(element){
 	}
 }
 
-function toggleCentro(element,target){
+function toggleCentro(element,target,target2){
 	if(element.value == "Externo"){
+		document.getElementById("
 		document.getElementById(target).childNodes[7].value = "";
 		document.getElementById(target).childNodes[7].style.visibility = "hidden";
 	}

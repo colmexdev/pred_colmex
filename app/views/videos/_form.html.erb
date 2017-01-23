@@ -59,8 +59,10 @@
 			<div class="field" id=<%= "p_"+ i.to_s %>>
 				<%= p.hidden_field(:id_video, :value => (partic.id_video || "")) %>
 				<%= p.text_field :nombre, :value => (partic.nombre || "") %>
-				<%= p.select(:institucion, [["Externo","Externo"],["COLMEX","COLMEX"]], { :include_blank => false, :selected => (partic.institucion || "Externo")}, {:onchange => "toggleCentro(this," + "'p_"+i.to_s+"')"}) %>
-				<%= p.select(:centro, [["CEAA","CEAA"],["CEDUA","CEDUA"],["CEE","CEE"],["CEH","CEH"],["CEI","CEI"],["CELL","CELL"],["CES","CES"]], {:include_blank => true, :prompt => "Elige centro", :selected => (partic.centro || "")}, {:onchange => ""}) %><br>
+				<%= p.hidden_field(:centro) %>
+				<%= p.select(:institucion, [["Externo","Externo"],["COLMEX","COLMEX"]], { :include_blank => false, :selected => (partic.institucion || "Externo")}, {:onchange => "toggleCentro(this," + "'p_"+i.to_s+"')", :style => "visibility:hidden;"}) %>
+				<%= select("centro","centro", [["CEAA","CEAA"],["CEDUA","CEDUA"],["CEE","CEE"],["CEH","CEH"],["CEI","CEI"],["CELL","CELL"],["CES","CES"]], {:prompt => "Elige centro", :selected => ""}, {:onchange => "cambiaVal(this.value)"}) %><br>
+				<input type="text" id="text_centro" oninput="cambiaVal(this.value);" style="visibility:visible;">
 			</div>
 			<% i = i + 1 %>
 		<% end %>
