@@ -37,20 +37,20 @@
 		<%= f.hidden_field(:tipo) %>
     <%= f.label :tipo %><br>
 		<input type="radio" name="tipo_tipo" value="fijo" onclick="swapTipo(this,'video_tipo','text_tipo','sel_tipo_sel_tipo');" checked>Fijo<br>
-		<%= select("sel_tipo","sel_tipo", @tipos, {:selected => (@video.tipo || ""), :include_blank => true}, {:onchange => "registrarEntrada(this,'video_tipo');"}) %><br>
+		<%= select("sel_tipo","sel_tipo", @tipos, {:selected => (@video.tipo.present? && @cats.include?(@video.tipo) ? @video.tipo : @cats[0])}, {:disabled => (@video.tipo.present? && @cats.include?(@video.tipo)), :onchange => "registrarEntrada(this,'video_tipo');"}) %><br>
 
 		<input type="radio" name="tipo_tipo" value="otro" onclick="swapTipo(this,'video_tipo','text_tipo','sel_tipo_sel_tipo');">Otro<br>
-   	<input type="text" id="text_tipo" disabled oninput="registrarEntrada(this,'video_tipo');">
+   	<input type="text" id="text_tipo" value=<%= (@video.tipo.present? && !@cats.include?(@video.tipo) ? @video.tipo : "") %> <%= (@video.tipo.present? && !@cats.include?(@video.tipo) ? "" : "disabled") %> oninput="registrarEntrada(this,'video_tipo');">
   </div>
 
   <div class="field">
-		<input type="checkbox" name="curso_p" id="curso_p" onchange="toggleCurso(this)">Curso<br>
+		<input type="checkbox" <%= (@video.curso.present? ? "checked" : "") %> name="curso_p" id="curso_p" onchange="toggleCurso(this)">Curso<br>
     <%= f.hidden_field(:curso) %>
-		<input type="radio" name="tipo_curso" id="fijo_c" value="fijo" onclick="swapTipo(this,'video_curso','text_curso','sel_curso_sel_curso');" disabled>Existente<br>
-		<%= select("sel_curso","sel_curso", @cursos, {:selected => (@video.curso || ""), :include_blank => true}, {:onchange => "registrarEntrada(this,'video_curso');", :disabled => "disabled"}) %><br>
+		<input type="radio" name="tipo_curso" id="fijo_c" value="fijo" onclick="swapTipo(this,'video_curso','text_curso','sel_curso_sel_curso');" <%= (@video.curso.present? && @titulos.include?(@video.curso) ? "checked" : "disabled") %>>Existente<br>
+		<%= select("sel_curso","sel_curso", @cursos, {:selected => (@video.curso.present? && @titulos.include?(@video.curso) ? @video.curso : @titulos[0])}, {:onchange => "registrarEntrada(this,'video_curso');", :disabled => (@video.curso.present? && @titulos.include?(@video.curso) ? "false" : "disabled")}) %><br>
 
-		<input type="radio" name="tipo_curso" id="otro_c" value="otro" onclick="swapTipo(this,'video_curso','text_curso','sel_curso_sel_curso');" disabled>Otro<br>
-   	<input type="text" id="text_curso" disabled oninput="registrarEntrada(this,'video_curso');">
+		<input type="radio" name="tipo_curso" id="otro_c" value="otro" onclick="swapTipo(this,'video_curso','text_curso','sel_curso_sel_curso');" <%= (@video.curso.present? && !@titulos.include?(@video.curso) ? "checked" : "disabled") %> >Otro<br>
+   	<input type="text" id="text_curso" <%= (@video.curso.present? && !@titulos.include?(@video.curso) ? "" : "disabled") %> value=<%= (@video.curso.present? && !@titulos.include?(@video.curso) ? @video.curso : "") %> oninput="registrarEntrada(this,'video_curso');">
   </div>
 
 	<% i = 1 %>
@@ -61,8 +61,8 @@
 				<%= p.text_field :nombre, :value => (partic.nombre || "") %>
 				<%= p.hidden_field(:centro, :value => partic.centro || "") %>
 				<%= p.select(:institucion, [["Externo","Externo"],["COLMEX","COLMEX"]], { :include_blank => false, :selected => (partic.institucion || "Externo")}, {:onchange => "toggleCentro(this," + "'p_"+i.to_s+"')"}) %>
-				<%= select("centro","centro", [["CEAA","CEAA"],["CEDUA","CEDUA"],["CEE","CEE"],["CEH","CEH"],["CEI","CEI"],["CELL","CELL"],["CES","CES"]], {:prompt => "Elige centro", :selected => ""}, {:onchange => "cambiaVal(this.value,'p_"+i.to_s+"')", :style => "visibility:"+ (partic.institucion.nil? ||partic.institucion == "Externo" ? "hidden" : "visible") + ";"}) %>
-				<input type="text" id="text_centro" oninput=<%= "cambiaVal(this.value,'p_"+i.to_s+"');" %> style=<%= "visibility:" + (partic.institucion.nil? ||partic.institucion == "Externo" ? "visible" : "hidden") + ";" %>><br>
+				<%= select("centro","centro", [["CEAA","CEAA"],["CEDUA","CEDUA"],["CEE","CEE"],["CEH","CEH"],["CEI","CEI"],["CELL","CELL"],["CES","CES"]], { :selected => (partic.institucion == "COLMEX" ? partic.centro || "CEAA")}, {:onchange => "cambiaVal(this.value,'p_"+i.to_s+"')", :style => "visibility:"+ (partic.institucion.nil? ||partic.institucion == "Externo" ? "hidden" : "visible") + ";"}) %>
+				<input type="text" id="text_centro" oninput=<%= "cambiaVal(this.value,'p_"+i.to_s+"');" %> style=<%= "visibility:" + (partic.institucion.nil? ||partic.institucion == "Externo" ? "visible" : "hidden") + ";" %> value=<%= (partic.institucion == "Externo" ? partic.centro || "") %>><br>
 			</div>
 			<% i = i + 1 %>
 		<% end %>
