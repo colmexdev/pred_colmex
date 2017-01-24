@@ -94,3 +94,7 @@ function toggleCentro(element,target){
 		document.getElementById(target).childNodes[9].value = "";
 	}
 }
+
+function cambiaVal(val,elemento){
+	document.getElementById(elemento).value = val;
+}

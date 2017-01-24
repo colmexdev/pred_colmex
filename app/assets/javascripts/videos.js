@@ -96,5 +96,5 @@ function toggleCentro(element,target){
 }
 
 function cambiaVal(val,elemento){
-	document.getElementById(elemento).value = val;
+	document.getElementById(elemento).childNodes[5].value = val;
 }
