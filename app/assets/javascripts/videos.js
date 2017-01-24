@@ -82,11 +82,19 @@ function toggleCurso(element){
 
 function toggleCentro(element,target){
 	if(element.value == "Externo"){
-		//document.getElementById(target)
-		document.getElementById(target).childNodes[7].value = "";
-		document.getElementById(target).childNodes[7].style.visibility = "hidden";
+		document.getElementById(target).childNodes[11].value = "";
+		document.getElementById(target).childNodes[11].style.visibility = "visible";		
+		document.getElementById(target).childNodes[9].value = "";
+		document.getElementById(target).childNodes[9].style.visibility = "hidden";
 	}
 	else{
-		document.getElementById(target).childNodes[7].style.visibility ="visible";
+		document.getElementById(target).childNodes[9].style.visibility ="visible";
+		document.getElementById(target).childNodes[11].style.visibility = "hidden";
+		document.getElementById(target).childNodes[11].value = "";
+		document.getElementById(target).childNodes[9].value = "";
 	}
+}
+
+function cambiaVal(val,elemento){
+	document.getElementById(elemento).value = val;
 }
