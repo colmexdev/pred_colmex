@@ -61,7 +61,7 @@
 				<%= p.text_field :nombre, :value => (partic.nombre || "") %>
 				<%= p.hidden_field(:centro, :value => partic.centro || "") %>
 				<%= p.select(:institucion, [["Externo","Externo"],["COLMEX","COLMEX"]], { :include_blank => false, :selected => (partic.institucion || "Externo")}, {:onchange => "toggleCentro(this," + "'p_"+i.to_s+"')"}) %>
-				<%= select("centro","centro", [["CEAA","CEAA"],["CEDUA","CEDUA"],["CEE","CEE"],["CEH","CEH"],["CEI","CEI"],["CELL","CELL"],["CES","CES"]], { :selected => (partic.institucion == "COLMEX" ? partic.centro || "CEAA")}, {:onchange => "cambiaVal(this.value,'p_"+i.to_s+"')", :style => "visibility:"+ (partic.institucion.nil? ||partic.institucion == "Externo" ? "hidden" : "visible") + ";"}) %>
+				<%= select("centro","centro", [["CEAA","CEAA"],["CEDUA","CEDUA"],["CEE","CEE"],["CEH","CEH"],["CEI","CEI"],["CELL","CELL"],["CES","CES"]], { :selected => (partic.institucion == "COLMEX" ? partic.centro : "CEAA")}, {:onchange => "cambiaVal(this.value,'p_"+i.to_s+"')", :style => "visibility:"+ (partic.institucion.nil? ||partic.institucion == "Externo" ? "hidden" : "visible") + ";"}) %>
 				<input type="text" id="text_centro" oninput=<%= "cambiaVal(this.value,'p_"+i.to_s+"');" %> style=<%= "visibility:" + (partic.institucion.nil? ||partic.institucion == "Externo" ? "visible" : "hidden") + ";" %> value=<%= (partic.institucion == "Externo" ? partic.centro || "") %>><br>
 			</div>
 			<% i = i + 1 %>
