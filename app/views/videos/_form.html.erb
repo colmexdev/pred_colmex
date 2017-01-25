@@ -37,7 +37,7 @@
 		<%= f.hidden_field(:tipo) %>
     <%= f.label :tipo %><br>
 		<input type="radio" name="tipo_tipo" value="fijo" onclick="swapTipo(this,'video_tipo','text_tipo','sel_tipo_sel_tipo');" <%= (@video.tipo.present? && @cats.include?(@video.tipo) ? "checked" : "disabled") %> >Fijo<br>
-		<%= select("sel_tipo","sel_tipo", @tipos, {:selected => (@video.tipo.present? && @cats.include?(@video.tipo) ? @video.tipo : @cats[0])}, {:disabled => (@video.tipo.present? && @cats.include?(@video.tipo)), :onchange => "registrarEntrada(this,'video_tipo');"}) %><br>
+		<%= select("sel_tipo","sel_tipo", @tipos, {:selected => (@video.tipo.present? && @cats.include?(@video.tipo) ? @video.tipo : @cats[0])}, {:disabled => (@video.tipo.present? && @cats.include?(@video.tipo) ? "false" : "disabled"), :onchange => "registrarEntrada(this,'video_tipo');"}) %><br>
 
 		<input type="radio" name="tipo_tipo" value="otro" onclick="swapTipo(this,'video_tipo','text_tipo','sel_tipo_sel_tipo');" <%= (@video.tipo.present? && !@cats.include?(@video.tipo) ? "checked" : "disabled") %> >Otro<br>
    	<input type="text" id="text_tipo" value="<%= (@video.tipo.present? && !@cats.include?(@video.tipo) ? @video.tipo : "") %>" <%= (@video.tipo.present? && !@cats.include?(@video.tipo) ? "" : "disabled") %> oninput="registrarEntrada(this,'video_tipo');">
