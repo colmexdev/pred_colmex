@@ -80,6 +80,8 @@ test:
 #
 production:
   <<: *default
-  database: videos_production
-  username: videos
-  password: <%= ENV['VIDEOS_DATABASE_PASSWORD'] %>
+  database: videos_pred
+  username: postgres
+  password: postgres
+  host: 172.16.40.40
+  port: 5432
