@@ -4,8 +4,8 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :usuario %><br />
-    <%= f.text_field :usuario, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.usuario) %>
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
   </div>
 
   <div class="actions">
@@ -13,4 +13,4 @@
   </div>
 <% end %>
 
-<%= render "admins/shared/links" %>
+<%= render "devise/shared/links" %>
