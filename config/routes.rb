@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :admins
   get 'videos/id' => 'videos#id', :as => :video_id
   resources :videos
   # The priority is based upon order of creation: first created -> highest priority.

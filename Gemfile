@@ -45,6 +45,8 @@ gem 'capistrano-rbenv', '~> 2.0'
 #crossfilter para el filtrado de datsets
 gem 'crossfilter-rails'
 
+gem 'devise'
+
 gem 'gon'
 
 gem 'yt', '~> 0.28.0'
