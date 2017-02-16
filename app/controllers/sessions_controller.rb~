@@ -6,7 +6,7 @@ class SessionsController < Devise::SessionsController
 
   # GET /resource/sign_in
   def new
-    logger.debug "Hola"
+    logger.debug sign_in_params
     self.resource = resource_class.new(sign_in_params)
     clean_up_passwords(resource)
     yield resource if block_given?
