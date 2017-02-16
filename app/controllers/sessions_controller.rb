@@ -15,7 +15,7 @@ class SessionsController < Devise::SessionsController
   # POST /resource/sign_in
   def create
     self.resource = warden.authenticate(auth_options)
-		logger.debug self.resource
+		logger.debug auth_options
     set_flash_message!(:notice, :signed_in)
     sign_in(resource)
     yield resource if block_given?
