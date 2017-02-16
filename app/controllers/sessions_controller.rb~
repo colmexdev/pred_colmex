@@ -7,7 +7,6 @@ class SessionsController < Devise::SessionsController
   # GET /resource/sign_in
   def new
     self.resource = resource_class.new(sign_in_params)
-    logger.debug self.resource
     clean_up_passwords(resource)
     yield resource if block_given?
     respond_with(resource, serialize_options(resource))
@@ -15,7 +14,7 @@ class SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
-    self.resource = warden.authenticate!(auth_options)
+    self.resource = warden.authenticate(auth_options)
 		logger.debug self.resource
     set_flash_message!(:notice, :signed_in)
     sign_in(resource_name, resource)
