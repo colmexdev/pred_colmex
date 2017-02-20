@@ -83,5 +83,5 @@ production:
   database: videos_pred
   username: postgres
   password: postgres
-  host: localhost
+  host: 172.16.40.40
   port: 5432
