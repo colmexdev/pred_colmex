@@ -1,6 +1,6 @@
 class Admin < ActiveRecord::Base
-  self.table_name = 'admins'
-  attr_accessor :usuario, :password, :encrypted_password
+  #self.table_name = 'admins'
+  #attr_accessor :usuario, :password, :encrypted_password
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
