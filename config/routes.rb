@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :admins, :controllers => { :registrations => "registrations"}
+  #devise_for :admins, :controllers => { :registrations => "registrations"}
   #devise_for :admins, :controllers => { :registrations => "registrations", :sessions => "sessions"}
   get 'videos/id' => 'videos#id', :as => :video_id
   resources :videos
