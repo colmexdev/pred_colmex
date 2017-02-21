@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :admins, :controllers => { :registrations => "registrations", :sessions => "sessions"}
+  #devise_for :admins, :controllers => { :registrations => "registrations", :sessions => "sessions"}
   get 'videos/id' => 'videos#id', :as => :video_id
   resources :videos
   # The priority is based upon order of creation: first created -> highest priority.
