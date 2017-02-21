@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-  before_action :authenticate_admin!
+  #before_action :authenticate_admin!
   before_action :set_video, only: [:show, :edit, :update, :destroy]
 
   def id
