@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'principal/inicio'
+
   devise_for :admins, :controllers => { :registrations => "registrations"}
   #devise_for :admins, :controllers => { :registrations => "registrations", :sessions => "sessions"}
   get 'videos/id' => 'videos#id', :as => :video_id
@@ -10,7 +12,7 @@ Rails.application.routes.draw do
 
 
   # You can have the root of your site routed with "root"
-  root  to: 'videos#index'
+  root  to: 'principal#inicio'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
