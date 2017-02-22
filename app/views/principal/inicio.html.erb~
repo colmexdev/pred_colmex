@@ -1,2 +1,5 @@
-<h1>Principal#inicio</h1>
-<p>Find me in app/views/principal/inicio.html.erb</p>
+<div id="inicio" style="height:100%;width:100%;position:fixed;top:0;left:0;">
+	<div id="contenedor" style="width:90%; height:85%;margin:auto;">
+		<img src=<% img_path("Paisaje.png") %> style="width:110%;height:110%;" >
+	</div>
+</div>
