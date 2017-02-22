@@ -1,5 +1,16 @@
 <div id="inicio" style="height:100%;width:100%;position:fixed;top:0;left:0;">
-	<div id="contenedor" style="width:90%; height:85%;margin:auto;">
-		<img src="<% asset_path('Paisaje.png') %>" style="width:110%;height:110%;" >
+	<div id="contenedor" style="width:90%; height:85%;margin:auto;overflow:hidden;position:relative;background:url(<%= image_path('Paisaje.png') %>) no-repeat center center" onmousemove="moverFondo(this);">
 	</div>
 </div>
+
+<script type="text/javascript">
+function moverFondo(element){
+	var containerWidth = $(this).innerWidth(),  
+		  containerHeight = $(this).innerHeight(),
+		  mousePositionX = (event.pageX / containerWidth) * 100,
+		  mousePositionY = (event.pageY /containerHeight) * 100;
+
+	$(this).css('background-position', mousePositionX + '%' + ' ' + mousePositionY + '%');
+
+}
+</script>
