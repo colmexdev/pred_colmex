@@ -1,5 +1,5 @@
 <div id="inicio" style="height:100%;width:100%;position:fixed;top:0;left:0;">
-	<div id="contenedor" style="width:90%; height:85%;margin:auto;">
-		<img src="<% asset_path('Paisaje.png') %>" style="width:110%;height:110%;" >
+	<div id="contenedor" style="width:90%; height:85%;margin:auto;overflow:hidden;position:relative;">
+		<img src="<%= image_path('Paisaje.png') %>" style="width:110%;height:110%;position:absolute;top:50%;left:50%;	transform: translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);-ms-transform: translate(-50%,-50%);-moz-transform: translate(-50%,-50%);-o-transform: translate(-50%,-50%);" >
 	</div>
 </div>
