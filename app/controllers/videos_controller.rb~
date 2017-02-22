@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-  #before_action :authenticate_admin!
+  before_action :authenticate_admin!
   before_action :set_video, only: [:show, :edit, :update, :destroy]
 
   def id
@@ -97,7 +97,7 @@ class VideosController < ApplicationController
 				params[:parts].each do |part|
 					
           if !Participante.find(@llaves[i].to_i).update(participante_params(ActionController::Parameters.new(@vals[i])))
-            format.html { render :new }
+            format.html { render :edit }
             format.json { render json: @video.errors, status: :unprocessable_entity }
           end
           i = i + 1

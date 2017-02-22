@@ -97,7 +97,7 @@ class VideosController < ApplicationController
 				params[:parts].each do |part|
 					
           if !Participante.find(@llaves[i].to_i).update(participante_params(ActionController::Parameters.new(@vals[i])))
-            format.html { render :new }
+            format.html { render :edit }
             format.json { render json: @video.errors, status: :unprocessable_entity }
           end
           i = i + 1
@@ -134,7 +134,7 @@ class VideosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def video_params
-      params.require(:video).permit(:titulo,:fecha,:liga,:tipo,:curso)
+      params.require(:video).permit(:titulo,:fecha,:liga,:tipo,:curso,:thumbnail)
     end
 
     def participante_params(part_params)
