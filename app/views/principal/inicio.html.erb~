@@ -13,35 +13,35 @@ function cambiarHamburguesa(toggle){
 }
 </script>
 <style>
-#menu_canvas {	
-				-webkit-animation: converge 1.8s ease-in-out 0.2s 1 forwards;
-				-moz-animation: converge 1.8s ease-in-out 0.2s 1 forwards;
-				animation: converge 1.8s ease-in-out 0.2s 1 forwards; 
+.far {	
+				-webkit-animation: converge 3.8s linear 0s 1 forwards;
+				-moz-animation: converge 3.8s linear 0s 1 forwards;
+				animation: converge 3.8s linear 0s 1 forwards; 
 }
-#menu_canvas:hover {
-				-webkit-animation: converge 1.8s ease-in-out 0.2s 1 reverse;
-				-moz-animation: converge 1.8s ease-in-out 0.2s 1 reverse;
-				animation: converge 1.8s ease-in-out 0.2s 1 reverse; 
+.hov {
+				-webkit-animation: converge 1.8s linear 0s 1 reverse;
+				-moz-animation: converge 1.8s linear 0s 1 reverse;
+				animation: converge 1.8s linear 0s 1 reverse; 
 }
 
 @-webkit-keyframes converge {
-	0% { clip-path: url(#hamburguesa); }
-	100% { clip-path: url(#hamb_hover); }
+	from { clip-path: url(#hamburguesa); }
+	to { clip-path: url(#hamb_hover); }
 }
 
 @-moz-keyframes converge {
-	0% { clip-path: url(#hamburguesa); }
-	100% { clip-path: url(#hamb_hover); }
+	from { clip-path: url(#hamburguesa); }
+	to { clip-path: url(#hamb_hover); }
 }
 
 @-o-keyframes converge {
-	0% { clip-path: url(#hamburguesa); }
-	100% { clip-path: url(#hamb_hover); }
+	from { clip-path: url(#hamburguesa); }
+	to { clip-path: url(#hamb_hover); }
 }
 
 @keyframes converge {
-	0% { clip-path: url(#hamburguesa); }
-	100% { clip-path: url(#hamb_hover); }
+	from { clip-path: url(#hamburguesa); }
+	to { clip-path: url(#hamb_hover); }
 }
 </style>
 
@@ -62,11 +62,11 @@ function cambiarHamburguesa(toggle){
 	</div>
 	<div id="brand" style="height:130px;width:130px;position:absolute;top:17%;left:2.5%;z-index:4;background:url(<%= image_path('pine.jpg') %>) no-repeat center center / 120% 120%">
 	</div>
-	<div id="menu_canvas" class="far" style="background-color:#CCC;height:180px;width:180px;position:absolute;top:17%;right:10%;transition:all ease 0.5s;-webkit-transition:all ease 0.5s;-moz-transition:all ease 0.5s;-o-transition:all ease 0.5s;z-index:4;">
+	<div id="menu_canvas" style="background-color:#CCC;height:180px;width:180px;position:absolute;top:17%;right:10%;transition:all ease 0.5s;-webkit-transition:all ease 0.5s;-moz-transition:all ease 0.5s;-o-transition:all ease 0.5s;z-index:4;">
 	</div>
-	<% if false %>
+
 	<div id="menu_trans" style="background-color:rgba(255,255,255,0.0);height:180px;width:180px;position:absolute;top:17%;right:10%;z-index:5;" onmouseover="cambiarHamburguesa(0);" onmouseout="cambiarHamburguesa(1);">
-	<% end %>
+
 	</div>
 </div>
 
