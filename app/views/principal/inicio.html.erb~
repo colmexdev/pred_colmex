@@ -18,7 +18,8 @@ function cambiarHamburguesa(toggle){
 }
 </script>
 <style>
-.far {	clip-path: url(#hamburguesa);
+#menu_canvas { clip-path: url(#hamburguesa); }
+.far {
 				-webkit-animation: converge 3.8s linear 0s 1 forwards;
 				-moz-animation: converge 3.8s linear 0s 1 forwards;
 				animation: converge 3.8s linear 0s 1 forwards; 

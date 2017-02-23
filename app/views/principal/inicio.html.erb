@@ -13,7 +13,7 @@ function cambiarHamburguesa(toggle){
 	//if((toggle == 0 && clase == "hov") || (toggle == 1 && clase == "far")) return false;
 	if(document.getElementById("menu_canvas").style.webkitAnimationPlayState == "running")
 	document.getElementById("menu_canvas").style.webkitAnimationPlayState = "paused";
-	document.getElementById("menu_canvas").className = (toggle == 0 ? "hov" : "far" );
+	document.getElementById("menu_canvas").className = (toggle == 0 ? "far" : "hov" );
 	document.getElementById("menu_canvas").style.webkitAnimationPlayState = "running";
 }
 </script>
