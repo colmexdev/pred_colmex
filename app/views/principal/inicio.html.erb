@@ -54,9 +54,9 @@ function cambiarHamburguesa(toggle){
 <svg height="0" width="0">
   <defs>
     <clipPath id="hamburguesa">
-      <rect y="35" x="30" width="90" height="5"/>
-      <rect x="45" y="65" width="90" height="5"/>
-      <rect x="45" y="95" width="90" height="5"/>
+      <rect y="30" x="30" width="90" height="5"/>
+      <rect x="30" y="65" width="90" height="5"/>
+      <rect x="30" y="95" width="90" height="5"/>
     </clipPath>
 		<clipPath id="hamb_hover">
 			<rect x="30" y="35" width="90" height="0"/>
@@ -73,7 +73,7 @@ function cambiarHamburguesa(toggle){
 	<div id="menu_canvas" style="background-color:#CCC;height:180px;width:180px;position:absolute;top:17%;right:10%;transition:all ease 0.5s;-webkit-transition:all ease 0.5s;-moz-transition:all ease 0.5s;-o-transition:all ease 0.5s;z-index:4;">
 	</div>
 
-	<div id="menu_trans" style="background-color:rgba(255,255,255,0.0);height:120px;width:120px;position:absolute;top:17%;right:10%;z-index:5;" onmouseenter="cambiarHamburguesa(0);cursor:pointer;" onmouseout="cambiarHamburguesa(1);">
+	<div id="menu_trans" style="background-color:rgba(255,255,255,0.0);height:120px;width:120px;position:absolute;top:17%;right:10%;z-index:5;cursor:pointer;" onmouseenter="cambiarHamburguesa(0);" onmouseout="cambiarHamburguesa(1);">
 
 	</div>
 </div>

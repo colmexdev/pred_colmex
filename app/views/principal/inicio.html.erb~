@@ -73,7 +73,7 @@ function cambiarHamburguesa(toggle){
 	<div id="menu_canvas" style="background-color:#CCC;height:180px;width:180px;position:absolute;top:17%;right:10%;transition:all ease 0.5s;-webkit-transition:all ease 0.5s;-moz-transition:all ease 0.5s;-o-transition:all ease 0.5s;z-index:4;">
 	</div>
 
-	<div id="menu_trans" style="background-color:rgba(255,255,255,0.0);height:120px;width:120px;position:absolute;top:17%;right:10%;z-index:5;" onmouseenter="cambiarHamburguesa(0);" onmouseout="cambiarHamburguesa(1);">
+	<div id="menu_trans" style="background-color:rgba(255,255,255,0.0);height:120px;width:120px;position:absolute;top:17%;right:10%;z-index:5;cursor:pointer;" onmouseenter="cambiarHamburguesa(0);" onmouseout="cambiarHamburguesa(1);">
 
 	</div>
 </div>
