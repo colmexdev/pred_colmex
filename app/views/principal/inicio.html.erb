@@ -9,11 +9,11 @@ function moverFondo(event,element){
 }
 
 function cambiarHamburguesa(toggle){
-	var clase = document.getElementById("menu_canvas").className;
-	if((toggle == 0 && clase == "hov") || (toggle == 1 && clase == "far")) return false;
-	document.getElementById("menu_canvas").style.webkitAnimationPlayState = "paused";
+	//var clase = document.getElementById("menu_canvas").className;
+	//if((toggle == 0 && clase == "hov") || (toggle == 1 && clase == "far")) return false;
+	//document.getElementById("menu_canvas").style.webkitAnimationPlayState = "paused";
 	document.getElementById("menu_canvas").className = (toggle == 0 ? "hov" : "far" );
-	document.getElementById("menu_canvas").style.webkitAnimationPlayState = "running";
+	//document.getElementById("menu_canvas").style.webkitAnimationPlayState = "running";
 }
 </script>
 <style>
@@ -71,7 +71,7 @@ function cambiarHamburguesa(toggle){
 	<div id="menu_canvas" class="far" style="background-color:#CCC;height:180px;width:180px;position:absolute;top:17%;right:10%;transition:all ease 0.5s;-webkit-transition:all ease 0.5s;-moz-transition:all ease 0.5s;-o-transition:all ease 0.5s;z-index:4;">
 	</div>
 
-	<div id="menu_trans" style="background-color:rgba(255,255,255,0.0);height:180px;width:180px;position:absolute;top:17%;right:10%;z-index:5;" onmouseover="cambiarHamburguesa(0);" onmouseout="cambiarHamburguesa(1);">
+	<div id="menu_trans" style="background-color:rgba(255,255,255,0.0);height:180px;width:180px;position:absolute;top:17%;right:10%;z-index:5;" onmouseenter="cambiarHamburguesa(0);" onmouseout="cambiarHamburguesa(1);">
 
 	</div>
 </div>
