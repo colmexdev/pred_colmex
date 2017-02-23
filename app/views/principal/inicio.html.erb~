@@ -54,9 +54,9 @@ function cambiarHamburguesa(toggle){
 <svg height="0" width="0">
   <defs>
     <clipPath id="hamburguesa">
-      <rect y="35" x="30" width="90" height="5"/>
-      <rect x="45" y="65" width="90" height="5"/>
-      <rect x="45" y="95" width="90" height="5"/>
+      <rect y="30" x="30" width="90" height="5"/>
+      <rect x="30" y="65" width="90" height="5"/>
+      <rect x="30" y="95" width="90" height="5"/>
     </clipPath>
 		<clipPath id="hamb_hover">
 			<rect x="30" y="35" width="90" height="0"/>
