@@ -9,68 +9,26 @@ function moverFondo(event,element){
 }
 
 function cambiarHamburguesa(toggle){
-	//var clase = document.getElementById("menu_canvas").className;
-	//if((toggle == 0 && clase == "hov") || (toggle == 1 && clase == "far")) return false;
-	if(document.getElementById("menu_canvas").style.webkitAnimationPlayState == "running")
-	document.getElementById("menu_canvas").style.webkitAnimationPlayState = "paused";
-	document.getElementById("menu_canvas").className = (toggle == 0 ? "far" : "hov" );
-	document.getElementById("menu_canvas").style.webkitAnimationPlayState = "running";
+
+	$("#rect_sup").css({ "margin": (toggle == 0 ? "0 auto" : ""), "height": toggle == 0 ? "2.5px" : "")});
+	$("#rect_mid").css({ "margin": (toggle == 0 ? "0 auto" : ""), "height": toggle == 0 ? "0" : "")});
+	$("#rect_inf").css({ "margin": (toggle == 0 ? "0 auto" : ""), "height": toggle == 0 ? "2.5px" : "")});
 }
 </script>
 <style>
-/*#menu_canvas { clip-path: url(#hamburguesa); }
-.far {
-				-webkit-animation: converge 3.8s linear 0s 1 forwards;
-				-moz-animation: converge 3.8s linear 0s 1 forwards;
-				animation: converge 3.8s linear 0s 1 forwards; 
-}
-.hov {
-				-webkit-animation: converge 1.8s linear 0s 1 reverse;
-				-moz-animation: converge 1.8s linear 0s 1 reverse;
-				animation: converge 1.8s linear 0s 1 reverse; 
-}
 
-@-webkit-keyframes converge {
-	0% { clip-path: url(#hamburguesa); }
-	100% { clip-path: url(#hamb_hover); }
-}
-
-@-moz-keyframes converge {
-	0% { clip-path: url(#hamburguesa); }
-	100% { clip-path: url(#hamb_hover); }
-}
-
-@-o-keyframes converge {
-	0% { clip-path: url(#hamburguesa); }
-	100% { clip-path: url(#hamb_hover); }
-}
-
-@keyframes converge {
-	0% { clip-path: url(#hamburguesa); }
-	100% { clip-path: url(#hamb_hover); }
-}*/
 .rect {
 	background-color: rgba(200,200,200,0.85);
 	width: 60px;
 	height: 5px;
-	margin: 0 auto;
+	margin: 10px auto;
+	transition: all ease 1.5s;
+	-webkit-transition: all ease1.5s;
+	-moz-transition: all ease 1.5s;
+	-o-transition: all ease 1.5s;
 }
 </style>
 
-<svg height="0" width="0">
-  <defs>
-    <clipPath id="hamburguesa">
-      <rect y="35" x="30" width="60" height="5"/>
-      <rect x="30" y="50" width="60" height="5"/>
-      <rect x="30" y="65" width="60" height="5"/>
-    </clipPath>
-		<clipPath id="hamb_hover">
-			<rect x="30" y="35" width="60" height="0"/>
-			<rect x="30" y="50" width="60" height="5"/>
-			<rect x="30" y="65" width="60" height="0"/>
-		</clipPath>
-  </defs>
-</svg>
 <div id="inicio" style="height:100%;width:100%;position:fixed;top:0;left:0;">
 	<div id="contenedor" style="width:90%; height:85%;margin:auto;overflow:hidden;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;background:url(<%= image_path('Paisaje.png') %>) no-repeat center center / 120% 120%" onmousemove="moverFondo(event,$(this));">
 	</div>
