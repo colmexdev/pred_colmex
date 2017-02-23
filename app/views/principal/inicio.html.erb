@@ -11,9 +11,9 @@ function moverFondo(event,element){
 function cambiarHamburguesa(toggle){
 	//var clase = document.getElementById("menu_canvas").className;
 	//if((toggle == 0 && clase == "hov") || (toggle == 1 && clase == "far")) return false;
-	//document.getElementById("menu_canvas").style.webkitAnimationPlayState = "paused";
+	document.getElementById("menu_canvas").style.webkitAnimationPlayState = "paused";
 	document.getElementById("menu_canvas").className = (toggle == 0 ? "hov" : "far" );
-	//document.getElementById("menu_canvas").style.webkitAnimationPlayState = "running";
+	document.getElementById("menu_canvas").style.webkitAnimationPlayState = "running";
 }
 </script>
 <style>
