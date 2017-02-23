@@ -6,12 +6,15 @@ function moverFondo(event,element){
 		  mousePositionY = (event.pageY /containerHeight) * 100;
 
 	element.css('background-position', mousePositionX + '%' + ' ' + mousePositionY + '%');
+}
 
+function cambiarHamburguesa(toggle){
+	document.getElementById("menu_canvas").className = (toggle == 0 ? "hov" : "far" );
 }
 </script>
 <style>
-#menu_canvas { clip-path: url(#hamburguesa); }
-#menu_canvas:hover { clip-path: url(#hamb_hover"); }
+.far { clip-path: url(#hamburguesa); }
+.hov { clip-path: url(#hamb_hover); }
 </style>
 
 <svg height="0" width="0">
@@ -31,7 +34,10 @@ function moverFondo(event,element){
 	</div>
 	<div id="brand" style="height:130px;width:130px;position:absolute;top:17%;left:2.5%;z-index:4;background:url(<%= image_path('pine.jpg') %>) no-repeat center center / 120% 120%">
 	</div>
-	<div id="menu_canvas" style="background-color:#CCC;height:180px;width:180px;position:absolute;top:17%;right:10%;transition:all ease 0.5s;-webkit-transition:all ease 0.5s;-moz-transition:all ease 0.5s;-o-transition:all ease 0.5s;z-index:4;">
+	<div id="menu_canvas" class="far" style="background-color:#CCC;height:180px;width:180px;position:absolute;top:17%;right:10%;transition:all ease 0.5s;-webkit-transition:all ease 0.5s;-moz-transition:all ease 0.5s;-o-transition:all ease 0.5s;z-index:4;">
+	</div>
+	<div id="menu_trans" style="background-color:rgba(255,255,255,0.0);height:180px;width:180px;position:absolute;top:17%;right:10%;transition:all ease 0.5s;-webkit-transition:all ease 0.5s;-moz-transition:all ease 0.5s;-o-transition:all ease 0.5s;z-index:5;" onmouseover="cambiarHamburguesa(0);" onmouseout="cambiarHamburguesa(1);">
+
 	</div>
 </div>
 
