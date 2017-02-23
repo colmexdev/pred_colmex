@@ -27,23 +27,23 @@ function cambiarHamburguesa(toggle){
 }
 
 @-webkit-keyframes converge {
-	from { clip-path: url(#hamburguesa); }
-	to { clip-path: url(#hamb_hover); }
+	0% { clip-path: url(#hamburguesa); }
+	100% { clip-path: url(#hamb_hover); }
 }
 
 @-moz-keyframes converge {
-	from { clip-path: url(#hamburguesa); }
-	to { clip-path: url(#hamb_hover); }
+	0% { clip-path: url(#hamburguesa); }
+	100% { clip-path: url(#hamb_hover); }
 }
 
 @-o-keyframes converge {
-	from { clip-path: url(#hamburguesa); }
-	to { clip-path: url(#hamb_hover); }
+	0% { clip-path: url(#hamburguesa); }
+	100% { clip-path: url(#hamb_hover); }
 }
 
 @keyframes converge {
-	from { clip-path: url(#hamburguesa); }
-	to { clip-path: url(#hamb_hover); }
+	0% { clip-path: url(#hamburguesa); }
+	100% { clip-path: url(#hamb_hover); }
 }
 </style>
 
@@ -55,6 +55,8 @@ function cambiarHamburguesa(toggle){
       <rect x="45" y="105" width="90" height="8"/>
     </clipPath>
 		<clipPath id="hamb_hover">
+			<rect x="45" y="85" width="90" height="8"/>
+			<rect x="45" y="85" width="90" height="8"/>
 			<rect x="45" y="85" width="90" height="8"/>
 		</clipPath>
   </defs>

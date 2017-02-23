@@ -11,7 +11,11 @@ function moverFondo(event,element){
 function cambiarHamburguesa(toggle){
 	var clase = document.getElementById("menu_canvas").className;
 	if((toggle == 0 && clase == "hov") || (toggle == 1 && clase == "far")) return false;
-	document.getElementById("menu_canvas").className = (toggle == 0 ? "hov" : "far" );
+	document.getElementById("menu_canvas").style.webkitAnimationPlayState = "paused";
+	else{
+				document.getElementById("menu_canvas").className = (toggle == 0 ? "hov" : "far" );
+				
+	}
 }
 </script>
 <style>
@@ -27,23 +31,23 @@ function cambiarHamburguesa(toggle){
 }
 
 @-webkit-keyframes converge {
-	from { clip-path: url(#hamburguesa); }
-	to { clip-path: url(#hamb_hover); }
+	0% { clip-path: url(#hamburguesa); }
+	100% { clip-path: url(#hamb_hover); }
 }
 
 @-moz-keyframes converge {
-	from { clip-path: url(#hamburguesa); }
-	to { clip-path: url(#hamb_hover); }
+	0% { clip-path: url(#hamburguesa); }
+	100% { clip-path: url(#hamb_hover); }
 }
 
 @-o-keyframes converge {
-	from { clip-path: url(#hamburguesa); }
-	to { clip-path: url(#hamb_hover); }
+	0% { clip-path: url(#hamburguesa); }
+	100% { clip-path: url(#hamb_hover); }
 }
 
 @keyframes converge {
-	from { clip-path: url(#hamburguesa); }
-	to { clip-path: url(#hamb_hover); }
+	0% { clip-path: url(#hamburguesa); }
+	100% { clip-path: url(#hamb_hover); }
 }
 </style>
 
