@@ -18,7 +18,8 @@ function cambiarHamburguesa(toggle){
 }
 </script>
 <style>
-.far {	clip-path: url(#hamburguesa);
+#menu_canvas { clip-path: url(#hamburguesa); }
+.far {
 				-webkit-animation: converge 3.8s linear 0s 1 forwards;
 				-moz-animation: converge 3.8s linear 0s 1 forwards;
 				animation: converge 3.8s linear 0s 1 forwards; 
@@ -69,7 +70,7 @@ function cambiarHamburguesa(toggle){
 	</div>
 	<div id="brand" style="height:130px;width:130px;position:absolute;top:17%;left:2.5%;z-index:4;background:url(<%= image_path('pine.jpg') %>) no-repeat center center / 120% 120%">
 	</div>
-	<div id="menu_canvas" class="far" style="background-color:#CCC;height:180px;width:180px;position:absolute;top:17%;right:10%;transition:all ease 0.5s;-webkit-transition:all ease 0.5s;-moz-transition:all ease 0.5s;-o-transition:all ease 0.5s;z-index:4;">
+	<div id="menu_canvas" style="background-color:#CCC;height:180px;width:180px;position:absolute;top:17%;right:10%;transition:all ease 0.5s;-webkit-transition:all ease 0.5s;-moz-transition:all ease 0.5s;-o-transition:all ease 0.5s;z-index:4;">
 	</div>
 
 	<div id="menu_trans" style="background-color:rgba(255,255,255,0.0);height:180px;width:180px;position:absolute;top:17%;right:10%;z-index:5;" onmouseenter="cambiarHamburguesa(0);" onmouseout="cambiarHamburguesa(1);">
