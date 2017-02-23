@@ -13,7 +13,7 @@ function cambiarHamburguesa(toggle){
 }
 </script>
 <style>
-.far {	clip-path: url(#hamburguesa);
+.far {	
 				-webkit-animation: converge 1.8s ease-in-out 0.2s 1 forwards;
 				-moz-animation: converge 1.8s ease-in-out 0.2s 1 forwards;
 				animation: converge 1.8s ease-in-out 0.2s 1 forwards; 
@@ -21,7 +21,7 @@ function cambiarHamburguesa(toggle){
 .hov {
 				-webkit-animation: converge 1.8s ease-in-out 0.2s 1 backwards;
 				-moz-animation: converge 1.8s ease-in-out 0.2s 1 backwards;
-				animation: converge 1.8s ease-in-out 0.2s 1 backards; 
+				animation: converge 1.8s ease-in-out 0.2s 1 backwards; 
 }
 
 @-webkit-keyframes converge {
