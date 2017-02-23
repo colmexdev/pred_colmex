@@ -1,7 +1,7 @@
 <script type="text/javascript">
 function moverFondo(element){
-	var containerWidth = element.innerWidth(),  
-		  containerHeight = element.innerHeight(),
+	var containerWidth = element.innerWidth()*0.9,  
+		  containerHeight = element.innerHeight()*0.9,
 		  mousePositionX = (event.pageX / containerWidth) * 100,
 		  mousePositionY = (event.pageY /containerHeight) * 100;
 
