@@ -9,14 +9,20 @@ function moverFondo(event,element){
 
 }
 </script>
+<style>
+#menu_canvas:hover { clip-path: url(#hamb_hover"); }
+</style>
+
 <svg height="0" width="0">
   <defs>
     <clipPath id="hamburguesa">
-      <rect y="65" x="45" width="8" height="90"/>
-      <rect x="45" y="85" width="90" height="90"/>
-      <rect x="45" y="10" width="90" height="90"/>
-     
+      <rect y="65" x="45" width="90" height="8"/>
+      <rect x="45" y="85" width="90" height="8"/>
+      <rect x="45" y="105" width="90" height="8"/>
     </clipPath>
+		<clipPath id="hamb_hover">
+			<rect x="45" y="85" width="90" height="8"/>
+		</clipPath>
   </defs>
 </svg>
 <div id="inicio" style="height:100%;width:100%;position:fixed;top:0;left:0;">
