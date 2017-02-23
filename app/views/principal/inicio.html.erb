@@ -16,7 +16,7 @@ function cambiarHamburguesa(toggle){
 }
 </script>
 <style>
-.far {	
+.far {	clip-path: url(#hamburguesa);
 				-webkit-animation: converge 3.8s linear 0s 1 forwards;
 				-moz-animation: converge 3.8s linear 0s 1 forwards;
 				animation: converge 3.8s linear 0s 1 forwards; 
@@ -56,9 +56,9 @@ function cambiarHamburguesa(toggle){
       <rect x="45" y="105" width="90" height="8"/>
     </clipPath>
 		<clipPath id="hamb_hover">
+			<rect x="45" y="85" width="90" height="0"/>
 			<rect x="45" y="85" width="90" height="8"/>
-			<rect x="45" y="85" width="90" height="8"/>
-			<rect x="45" y="85" width="90" height="8"/>
+			<rect x="45" y="85" width="90" height="0"/>
 		</clipPath>
   </defs>
 </svg>
