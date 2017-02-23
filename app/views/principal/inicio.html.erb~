@@ -40,7 +40,7 @@ function cambiarHamburguesa(toggle){
 }
 
 @keyframes converge {
-	0% { }
+	0% { clip-path: url(#hamburguesa); }
 	100% { clip-path: url(#hamb_hover); }
 }
 </style>
