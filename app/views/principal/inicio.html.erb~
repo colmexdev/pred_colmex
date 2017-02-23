@@ -19,9 +19,9 @@ function cambiarHamburguesa(toggle){
 				animation: converge 1.8s ease-in-out 0.2s 1 forwards; 
 }
 .hov {
-				-webkit-animation: converge 1.8s ease-in-out 0.2s 1 backwards;
-				-moz-animation: converge 1.8s ease-in-out 0.2s 1 backwards;
-				animation: converge 1.8s ease-in-out 0.2s 1 backwards; 
+				-webkit-animation: converge 1.8s ease-in-out 0.2s 1 reverse;
+				-moz-animation: converge 1.8s ease-in-out 0.2s 1 reverse;
+				animation: converge 1.8s ease-in-out 0.2s 1 reverse; 
 }
 
 @-webkit-keyframes converge {

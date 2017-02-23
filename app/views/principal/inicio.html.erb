@@ -13,12 +13,12 @@ function cambiarHamburguesa(toggle){
 }
 </script>
 <style>
-.far {	
+#menu_canvas {	
 				-webkit-animation: converge 1.8s ease-in-out 0.2s 1 forwards;
 				-moz-animation: converge 1.8s ease-in-out 0.2s 1 forwards;
 				animation: converge 1.8s ease-in-out 0.2s 1 forwards; 
 }
-.hov {
+#menu_canvas:hover {
 				-webkit-animation: converge 1.8s ease-in-out 0.2s 1 reverse;
 				-moz-animation: converge 1.8s ease-in-out 0.2s 1 reverse;
 				animation: converge 1.8s ease-in-out 0.2s 1 reverse; 
@@ -64,8 +64,9 @@ function cambiarHamburguesa(toggle){
 	</div>
 	<div id="menu_canvas" class="far" style="background-color:#CCC;height:180px;width:180px;position:absolute;top:17%;right:10%;transition:all ease 0.5s;-webkit-transition:all ease 0.5s;-moz-transition:all ease 0.5s;-o-transition:all ease 0.5s;z-index:4;">
 	</div>
+	<% if false %>
 	<div id="menu_trans" style="background-color:rgba(255,255,255,0.0);height:180px;width:180px;position:absolute;top:17%;right:10%;z-index:5;" onmouseover="cambiarHamburguesa(0);" onmouseout="cambiarHamburguesa(1);">
-
+	<% end %>
 	</div>
 </div>
 
