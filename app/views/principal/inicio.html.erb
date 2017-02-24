@@ -16,11 +16,11 @@ function cambiarHamburguesa(toggle){
 }
 
 function desplegarMenu(){
-	var ind = $("#cont_menu").css('index');
+	var ind = $("#cont_menu").css('z-index');
 	if(ind != 3)
-		$("#cont_menu").css({ "width": "90%", "height": "85%", "top": "50%", "left": "50%", "transform": "translate(-50%,-50%)", "z-index": "3"});
+		$("#cont_menu").css({ "width": "90%", "height": "85%", "top": "50%", "left": "50%", "transform": "translate(-50%,-50%)", "z-index": "3", "background-color": "rgba(220,20,60,0.8);"});
 	else
-		$("#cont_menu").css({ "width": "", "height": "", "top": "", "left": "", "transform": "", "z-index": ""});
+		$("#cont_menu").css({ "width": "", "height": "", "top": "", "left": "", "transform": "", "z-index": "", "background-color": ""});
 }
 </script>
 <style>
@@ -39,9 +39,9 @@ function desplegarMenu(){
 
 <div id="inicio" style="height:100%;width:100%;position:fixed;top:0;left:0;z-index:0;">
 
-	<div id="cont_menu" style="height:100%;width:100%;position:fixed;top:0;left:0;margin:0 auto;background-color:rgba(220,20,60,0.8);z-index:-1;transition:all ease 0.6s;-webkit-transition:all ease 0.6s;-moz-transition:all ease 0.6s;-o-transition:all ease 0.6s;">
-
+	<div id="cont_menu" style="height:100%;width:100%;position:fixed;top:0;left:0;margin:0 auto;background-color:rgba(220,20,60,0);z-index:-1;transition:all ease 0.6s;-webkit-transition:all ease 0.6s;-moz-transition:all ease 0.6s;-o-transition:all ease 0.6s;">
 	</div>
+
 	<div id="contenedor" style="width:90%; height:85%;margin:auto;overflow:hidden;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;background:url(<%= image_path('Paisaje.png') %>) no-repeat center center / 120% 120%" onmousemove="moverFondo(event,$(this));">
 	</div>
 	<div id="brand" style="height:130px;width:130px;position:absolute;top:17%;left:2.5%;z-index:5;background:url(<%= image_path('pine.jpg') %>) no-repeat center center / 120% 120%">

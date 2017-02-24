@@ -20,7 +20,7 @@ function desplegarMenu(){
 	if(ind != 3)
 		$("#cont_menu").css({ "width": "90%", "height": "85%", "top": "50%", "left": "50%", "transform": "translate(-50%,-50%)", "z-index": "3"});
 	else
-		$("#cont_menu").css({ "width": "", "height": "", "top": "", "left": "", "transform": "", "z-index": "-1"});
+		$("#cont_menu").css({ "width": "", "height": "", "top": "", "left": "", "transform": "", "z-index": ""});
 }
 </script>
 <style>
