@@ -49,12 +49,22 @@ function desplegarMenu(){
 }
 
 .opciones{
+	cursor: pointer;
 	position: absolute;
 	right: 0;
 	background-color: rgba(220,20,20,0);
 	color: rgba(255,255,255,0);
 	font-size: 30px;
 	white-space: nowrap;
+border-bottom: none; 
+	transition: border-bottom ease 0.9s;
+	-webkit-transition: border-bottom ease 0.9s;
+	-moz-transition: border-bottom ease 0.9s;
+	-o-transition: border-bottom ease 0.9s;
+}
+
+.opciones:hover{
+	border-bottom: solid 2px #FFF;
 }
 
 #cont_menu{
@@ -70,13 +80,13 @@ function desplegarMenu(){
 
 /* Animación de las opciones principales del menú */
 @-webkit-keyframes opt-ap{
-	0% { z-index: -1; right: 0; color: rgba(255,255,255,0); border-bottom: none; }
-	100%	 { z-index: 4; right: 45%; color: rgba(255,255,255,1); border-bottom: solid 2px #FFF; }
+	0% { z-index: -1; right: 0; color: rgba(255,255,255,0); }
+	100%	 { z-index: 4; right: 45%; color: rgba(255,255,255,1); }
 }
 
 @-webkit-keyframes opt-dis{
-	0%	 { z-index: 4; right: 45%; color: rgba(255,255,255,1); border-bottom: solid 2px #FFF; }
-	100% { z-index: -1; right: 0; color: rgba(255,255,255,0); border-bottom: none; }
+	0%	 { z-index: 4; right: 45%; color: rgba(255,255,255,1); }
+	100% { z-index: -1; right: 0; color: rgba(255,255,255,0); }
 }
 
 /* Animación del contenedor del menú */
