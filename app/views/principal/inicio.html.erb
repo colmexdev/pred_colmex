@@ -18,10 +18,14 @@ function cambiarHamburguesa(toggle){
 function desplegarMenu(){
 	var ind = $("#cont_menu").css('z-index');
 	$("#cont_menu").css("-webkit-animation-play-state", "paused");
-	if(ind != 3) $("#cont_menu").css({"-webkit-animation": "fade-in 1.2s ease 0s 1 normal forwards"}); 
-		//$("#cont_menu").css({ "width": "90%", "height": "85%", "top": "50%", "left": "50%", "transform": "translate(-50%,-50%)", "z-index": "3", "background-color": "rgba(220,20,60,0.8)"});
-	else $("#cont_menu").css({"-webkit-animation": "fade-out 1.2s ease 0s 1 normal forwards"});
-		//$("#cont_menu").css({ "width": "100%", "height": "100%", "top": "0", "left": "0", "transform": "", "z-index": "-1", "background-color": "rgba(220,20,60,0)"});
+	if(ind != 3){ 
+		$("#cont_menu").css({"-webkit-animation": "fade-in 0.8s ease 0s 1 normal forwards"}); 
+		$("#op1").css({"-webkit-animation": "opt-ap 0.4s ease 0.7s 1 normal forwards"});
+	}
+	else{
+		$("#cont_menu").css({"-webkit-animation": "fade-out 0.8s ease 0s 1 normal forwards"});
+		$("#op1").css({"-webkit-animation": "opt-dis 0.4s ease 0.7s 1 normal forwards"});
+	}	
 }
 </script>
 <style>
@@ -38,6 +42,18 @@ function desplegarMenu(){
 	-o-transition: all ease 0.9s;
 }
 
+.opciones{
+	position: absolute;
+	right: 0;
+	background-color: rgba(220,20,20,0);
+	color: rgba(255,255,255,0);
+	font-size: 30px;
+	-webkit-transition: all 0.8s ease 0.8s;
+	-moz-transition: all 0.8s ease 0.8s;
+	-o-transition: all 0.8s ease 0.8s;
+	transition: all 0.8s ease 0.8s;
+}
+
 #cont_menu{
 	height:100%;
 	width:100%;
@@ -49,6 +65,18 @@ function desplegarMenu(){
 	z-index:-1;
 }
 
+/* Animación de las opciones principales del menú */
+@-webkit-keyframes opt-ap{
+	0% { z-index: -1; right: 0; color: rgba(255,255,255,0); border-bottom: none; }
+	100%	 { z-index: 4; right: 20%; color: rgba(255,255,255,1); border-bottom: solid 2px #FFF; }
+}
+
+@-webkit-keyframes opt-dis{
+	0%	 { z-index: 4; right: 20%; color: rgba(255,255,255,1); border-bottom: solid 2px #FFF; }
+	100% { z-index: -1; right: 0; color: rgba(255,255,255,0); border-bottom: none; }
+}
+
+/* Animación del contenedor del menú */
 @-webkit-keyframes fade-in{
 	0% { z-index: -1; width: 100%; height: 100%; top: 0; left: 0; background-color: rgba(220,20,60,0), transform: translate(0,0); }
 	100%	 { z-index: 3; width: 90%; height: 85%; top: 50%; left: 50%; transform: translate(-50%,-50%); background-color: rgba(220,20,60,0.8); }
@@ -79,6 +107,12 @@ function desplegarMenu(){
 	</div>
 
 	<div style="cursor:pointer;background-color:rgba(255,255,255,0);height:60px;width:120px;position:absolute;top:17%;right:10%;z-index:5;" onmouseenter="cambiarHamburguesa(0);" onmouseout="cambiarHamburguesa(1);" onclick="desplegarMenu();">
+
+	<div class="opciones" id="op1" style="top:25%">Opcion 1</div>
+	<div class="opciones" id="op2" style="top:26%">Opcion 2</div>
+	<div class="opciones" id="op3" style="top:27%">Opcion 3</div>
+	<div class="opciones" id="op4" style="top:28%">Opcion 4</div>
+	
 </div>
 
 
