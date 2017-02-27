@@ -33,6 +33,10 @@ function desplegarMenu(){
 		$("#op4").css({"-webkit-animation": "opt-dis 0.6s ease 0.6s 1 normal both"});
 	}	
 }
+
+function toggleBorde(event,borde,toggle){
+	$(borde).css("width", (toggle == 0 ? "100%" : ""));
+}
 </script>
 <style>
 
@@ -56,21 +60,19 @@ function desplegarMenu(){
 	color: rgba(255,255,255,0);
 	font-size: 30px;
 	white-space: nowrap;
-	border-bottom: 5px solid transparent; 
-  -moz-border-image: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 100%);
-  -webkit-border-image: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 100%);
-  border-image: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 100%);
-  border-image-slice: 1;
-	transition: border-image linear 0.3s;
-	-webkit-transition: -webkit-border-image linear 0.3s;
-	-moz-transition: -moz-border-image linear 0.3s;
-	-o-transition: -webkit-border-image linear 0.3s;
 }
 
-.opciones:hover{
-  -moz-border-image: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-  -webkit-border-image: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-  border-image: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+.borde-op{
+	background-color: #FFF;
+	height: 5px;
+	width: 0px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	transition: width linear 0.3s;
+	-webkit-transition: width linear 0.3s;
+	-moz-transition: width linear 0.3s;
+	-o-transition: width linear 0.3s;
 }
 
 #cont_menu{
@@ -112,7 +114,7 @@ function desplegarMenu(){
 	<div id="cont_menu">
 	</div>
 
-	<div id="contenedor" style="width:90%; height:85%;margin:auto;overflow:hidden;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;background:url(<%= image_path('Paisaje.png') %>) no-repeat center center / 120% 120%"onmousemove="moverFondo(event,$(this));">
+	<div id="contenedor" style="width:90%; height:85%;margin:auto;overflow:hidden;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;background:url(<%= image_path('Paisaje.png') %>) no-repeat center center / 120% 120%" onmousemove="moverFondo(event,$(this));">
 	</div>
 	<div id="brand" style="height:130px;width:130px;position:absolute;top:17%;left:2.5%;z-index:4;background:url(<%= image_path('pine.jpg') %>) no-repeat center center / 120% 120%">
 	</div>
@@ -125,13 +127,21 @@ function desplegarMenu(){
 		</div>
 	</div>
 
-	<div style="cursor:pointer;background-color:rgba(255,255,255,0);height:60px;width:120px;position:absolute;top:17%;right:10%;z-index:5;" onmouseenter="cambiarHamburguesa(0);" onmouseout="cambiarHamburguesa(1);" onclick="desplegarMenu();">	
+	<div style="cursor:pointer;background-color:rgba(255,255,255,0);height:60px;width:120px;position:absolute;top:17%;right:10%;z-index:5;" onmouseenter="cambiarHamburguesa(0);" onmouseleave="cambiarHamburguesa(1);" onclick="desplegarMenu();">	
 	</div>
 
-	<div class="opciones" id="op1" style="top:25%">Opcion 1</div>
-	<div class="opciones" id="op2" style="top:30%">Opcion 2</div>
-	<div class="opciones" id="op3" style="top:35%">Opcion 3</div>
-	<div class="opciones" id="op4" style="top:40%">Opcion 4</div>
+	<div class="opciones" id="op1" style="top:25%" onmouseenter="toggleBorde(event,'#borde-1',0)" onmouseleave="toggleBorde(event,'#borde-1',1)">Opcion 1
+		<div class="borde-op"></div>
+	</div>
+	<div class="opciones" id="op2" style="top:30%" nmouseenter="toggleBorde(event,'#borde-2',0)" onmouseleave="toggleBorde(event,'#borde-2',1)">Opcion 2
+		<div id="borde-2" class="borde-op"></div>
+	</div>
+	<div class="opciones" id="op3" style="top:35%" nmouseenter="toggleBorde(event,'#borde-3',0)" onmouseleave="toggleBorde(event,'#borde-3',1)">Opcion 3
+		<div id="borde-3" class="borde-op"></div>
+	</div>
+	<div class="opciones" id="op4" style="top:40%" nmouseenter="toggleBorde(event,'#borde-4',0)" onmouseleave="toggleBorde(event,'borde-4',1)">Opcion 4
+		<div id="borde-4" class="borde-op"></div>
+	</div>
 
 
 

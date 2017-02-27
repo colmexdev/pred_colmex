@@ -56,16 +56,8 @@ function desplegarMenu(){
 	color: rgba(255,255,255,0);
 	font-size: 30px;
 	white-space: nowrap;
-border-bottom: none; 
-	transition: border-bottom ease 0.9s;
-	-webkit-transition: border-bottom ease 0.9s;
-	-moz-transition: border-bottom ease 0.9s;
-	-o-transition: border-bottom ease 0.9s;
 }
 
-.opciones:hover{
-	border-bottom: solid 2px #FFF;
-}
 
 #cont_menu{
 	height:100%;
@@ -106,7 +98,7 @@ border-bottom: none;
 	<div id="cont_menu">
 	</div>
 
-	<div id="contenedor" style="width:90%; height:85%;margin:auto;overflow:hidden;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;background:url(<%= image_path('Paisaje.png') %>) no-repeat center center / 120% 120%"onmousemove="moverFondo(event,$(this));">
+	<div id="contenedor" style="width:90%; height:85%;margin:auto;overflow:hidden;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;background:url(<%= image_path('Paisaje.png') %>) no-repeat center center / 120% 120%" onmousemove="moverFondo(event,$(this));">
 	</div>
 	<div id="brand" style="height:130px;width:130px;position:absolute;top:17%;left:2.5%;z-index:4;background:url(<%= image_path('pine.jpg') %>) no-repeat center center / 120% 120%">
 	</div>
@@ -119,13 +111,21 @@ border-bottom: none;
 		</div>
 	</div>
 
-	<div style="cursor:pointer;background-color:rgba(255,255,255,0);height:60px;width:120px;position:absolute;top:17%;right:10%;z-index:5;" onmouseenter="cambiarHamburguesa(0);" onmouseout="cambiarHamburguesa(1);" onclick="desplegarMenu();">	
+	<div style="cursor:pointer;background-color:rgba(255,255,255,0);height:60px;width:120px;position:absolute;top:17%;right:10%;z-index:5;" onmouseenter="cambiarHamburguesa(0);" onmouseleave="cambiarHamburguesa(1);" onclick="desplegarMenu();">	
 	</div>
 
-	<div class="opciones" id="op1" style="top:25%">Opcion 1</div>
-	<div class="opciones" id="op2" style="top:30%">Opcion 2</div>
-	<div class="opciones" id="op3" style="top:35%">Opcion 3</div>
-	<div class="opciones" id="op4" style="top:40%">Opcion 4</div>
+	<div class="opciones" id="op1" style="top:25%" onmouseenter="toggleBorde(event,'#borde-1',0)" onmouseleave="toggleBorde(event,'#borde-1',1)">Opcion 1
+		<div class="borde-op"></div>
+	</div>
+	<div class="opciones" id="op2" style="top:30%" nmouseenter="toggleBorde(event,'#borde-2',0)" onmouseleave="toggleBorde(event,'#borde-2',1)">Opcion 2
+		<div id="borde-2" class="borde-op"></div>
+	</div>
+	<div class="opciones" id="op3" style="top:35%" nmouseenter="toggleBorde(event,'#borde-3',0)" onmouseleave="toggleBorde(event,'#borde-3',1)">Opcion 3
+		<div id="borde-3" class="borde-op"></div>
+	</div>
+	<div class="opciones" id="op4" style="top:40%" nmouseenter="toggleBorde(event,'#borde-4',0)" onmouseleave="toggleBorde(event,'borde-4',1)">Opcion 4
+		<div id="borde-4" class="borde-op"></div>
+	</div>
 
 
 
