@@ -20,11 +20,11 @@ function desplegarMenu(){
 	$("#cont_menu").css("-webkit-animation-play-state", "paused");
 	if(ind != 3){ 
 		$("#cont_menu").css({"-webkit-animation": "fade-in 0.8s ease 0s 1 normal forwards"}); 
-		$("#op1").css({"right": "20%", "color": "rgba(255,255,255,1)",});
+		$("#op1").css({"-webkit-animation": "opt-ap 0.4s ease 0.7s 1 normal forwards"});
 	}
 	else{
 		$("#cont_menu").css({"-webkit-animation": "fade-out 0.8s ease 0s 1 normal forwards"});
-		
+		$("#op1").css({"-webkit-animation": "opt-dis 0.4s ease 0.7s 1 normal forwards"});
 	}	
 }
 </script>
