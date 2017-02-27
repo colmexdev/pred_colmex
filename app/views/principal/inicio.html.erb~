@@ -133,13 +133,13 @@ function toggleBorde(event,borde,toggle){
 	<div class="opciones" id="op1" style="top:25%" onmouseenter="toggleBorde(event,'#borde-1',0);" onmouseleave="toggleBorde(event,'#borde-1',1);">Opcion 1
 		<div id="borde-1" class="borde-op"></div>
 	</div>
-	<div class="opciones" id="op2" style="top:30%" nmouseenter="toggleBorde(event,'#borde-2',0);" onmouseleave="toggleBorde(event,'#borde-2',1);">Opcion 2
+	<div class="opciones" id="op2" style="top:30%" onmouseenter="toggleBorde(event,'#borde-2',0);" onmouseleave="toggleBorde(event,'#borde-2',1);">Opcion 2
 		<div id="borde-2" class="borde-op"></div>
 	</div>
-	<div class="opciones" id="op3" style="top:35%" nmouseenter="toggleBorde(event,'#borde-3',0);" onmouseleave="toggleBorde(event,'#borde-3',1);">Opcion 3
+	<div class="opciones" id="op3" style="top:35%" onmouseenter="toggleBorde(event,'#borde-3',0);" onmouseleave="toggleBorde(event,'#borde-3',1);">Opcion 3
 		<div id="borde-3" class="borde-op"></div>
 	</div>
-	<div class="opciones" id="op4" style="top:40%" nmouseenter="toggleBorde(event,'#borde-4',0);" onmouseleave="toggleBorde(event,'#borde-4',1);">Opcion 4
+	<div class="opciones" id="op4" style="top:40%" onmouseenter="toggleBorde(event,'#borde-4',0);" onmouseleave="toggleBorde(event,'#borde-4',1);">Opcion 4
 		<div id="borde-4" class="borde-op"></div>
 	</div>
 
