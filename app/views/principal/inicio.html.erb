@@ -112,7 +112,7 @@ function toggleBorde(event,borde,toggle){
 
 <div id="inicio" style="height:100%;width:100%;position:fixed;top:0;left:0;z-index:0;">
 
-	<div id="cont_menu">
+	<div id="cont_menu" onclick="desplegarMenu();">
 	</div>
 
 	<div id="contenedor" style="width:90%; height:85%;margin:auto;overflow:hidden;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;background:url(<%= image_path('Paisaje.png') %>) no-repeat center center / 120% 120%" onmousemove="moverFondo(event,$(this));">
@@ -144,5 +144,9 @@ function toggleBorde(event,borde,toggle){
 		<div id="borde-4" class="borde-op"></div>
 	</div>
 
+</div>
 
+<div id="mosaico" style="height:100%;background-color:rgb(220,20,60);">
+
+</div>
 
