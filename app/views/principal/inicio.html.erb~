@@ -26,7 +26,7 @@ function desplegarMenu(){
 		$("#op4").css({"-webkit-animation": "opt-ap 0.6s ease 1s 1 normal forwards"});
 	}
 	else{
-		$("#cont_menu").css({"-webkit-animation": "fade-out 0.8s ease 0s 1 normal both"});
+		$("#cont_menu").css({"-webkit-animation": "fade-out 0.8s ease 0.5s 1 normal both"});
 		$("#op1").css({"-webkit-animation": "opt-dis 0.6s ease 0.3s 1 normal both"});
 		$("#op2").css({"-webkit-animation": "opt-dis 0.6s ease 0.4s 1 normal both"});
 		$("#op3").css({"-webkit-animation": "opt-dis 0.6s ease 0.5s 1 normal both"});
@@ -71,11 +71,11 @@ function desplegarMenu(){
 /* Animación de las opciones principales del menú */
 @-webkit-keyframes opt-ap{
 	0% { z-index: -1; right: 0; color: rgba(255,255,255,0); border-bottom: none; }
-	100%	 { z-index: 4; right: 75%; color: rgba(255,255,255,1); border-bottom: solid 2px #FFF; }
+	100%	 { z-index: 4; right: 45%; color: rgba(255,255,255,1); border-bottom: solid 2px #FFF; }
 }
 
 @-webkit-keyframes opt-dis{
-	0%	 { z-index: 4; right: 75%; color: rgba(255,255,255,1); border-bottom: solid 2px #FFF; }
+	0%	 { z-index: 4; right: 45%; color: rgba(255,255,255,1); border-bottom: solid 2px #FFF; }
 	100% { z-index: -1; right: 0; color: rgba(255,255,255,0); border-bottom: none; }
 }
 
@@ -109,14 +109,13 @@ function desplegarMenu(){
 		</div>
 	</div>
 
-	<div style="cursor:pointer;background-color:rgba(255,255,255,0);height:60px;width:120px;position:absolute;top:17%;right:10%;z-index:5;" onmouseenter="cambiarHamburguesa(0);" onmouseout="cambiarHamburguesa(1);" onclick="desplegarMenu();">
+	<div style="cursor:pointer;background-color:rgba(255,255,255,0);height:60px;width:120px;position:absolute;top:17%;right:10%;z-index:5;" onmouseenter="cambiarHamburguesa(0);" onmouseout="cambiarHamburguesa(1);" onclick="desplegarMenu();">	
+	</div>
 
 	<div class="opciones" id="op1" style="top:25%">Opcion 1</div>
-	<div class="opciones" id="op2" style="top:45%">Opcion 2</div>
-	<div class="opciones" id="op3" style="top:65%">Opcion 3</div>
-	<div class="opciones" id="op4" style="top:85%">Opcion 4</div>
-	
-</div>
+	<div class="opciones" id="op2" style="top:30%">Opcion 2</div>
+	<div class="opciones" id="op3" style="top:35%">Opcion 3</div>
+	<div class="opciones" id="op4" style="top:40%">Opcion 4</div>
 
 
 
