@@ -17,6 +17,7 @@ function cambiarHamburguesa(toggle){
 
 function desplegarMenu(){
 	var ind = $("#cont_menu").css('z-index');
+	console.log(ind);
 	if(ind != 3) $("#cont_menu").css({"-webkit-animation": "fade 1.2s ease 0s 1 forward"}); 
 		//$("#cont_menu").css({ "width": "90%", "height": "85%", "top": "50%", "left": "50%", "transform": "translate(-50%,-50%)", "z-index": "3", "background-color": "rgba(220,20,60,0.8)"});
 	else $("#cont_menu").css({"-webkit-animation": "fade 1.2s ease 0s 1 reverse"});
