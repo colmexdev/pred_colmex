@@ -1,11 +1,11 @@
 <script type="text/javascript">
 function moverFondo(event,element){
-	var containerWidth = element.innerWidth(),  
-		  containerHeight = element.innerHeight(),
+	var containerWidth = element.innerWidth()*1.2,  
+		  containerHeight = element.innerHeight()*1.2,
 		  mousePositionX = (event.pageX / containerWidth) * 100,
 		  mousePositionY = (event.pageY /containerHeight) * 100;
 
-	element.css('background-position', (mousePositionX + 0.05) + '%' + ' ' + (mousePositionY + 0.15) + '%');
+	element.css('background-position', (mousePositionX > 100 ? 100 : mousePositionX) + '%' + ' ' + (mousePositionY > 100 ? 100 : mousePositionY) + '%');
 }
 
 function cambiarHamburguesa(toggle){
