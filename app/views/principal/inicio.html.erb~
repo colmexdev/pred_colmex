@@ -113,6 +113,7 @@ body,html { min-height: 100%; }
 </style>
 
 <div id="inicio" style="height:100%;width:100%;position:fixed;top:0;left:0;z-index:0;">
+</div>
 
 	<div id="cont_menu" onclick="desplegarMenu();">
 	</div>
@@ -146,7 +147,7 @@ body,html { min-height: 100%; }
 		<div id="borde-4" class="borde-op"></div>
 	</div>
 
-</div>
+
 
 <div id="mosaico" style="height:1000px;width:100%;margin-top:110%;position:absolute;background-color:rgb(220,20,60);z-index:3;">
 
