@@ -43,7 +43,7 @@ function toggleBorde(event,borde,toggle){
 }
 
 function scrollPagina(){
-	$("#mosaico").animate({ top: '0%' }, 1800);
+	$("#mosaico").animate({ top: '0%' }, 800);
   return false;
 }
 </script>
