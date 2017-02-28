@@ -41,6 +41,11 @@ function desplegarMenu(){
 function toggleBorde(event,borde,toggle){
 	$(borde).css("width", (toggle == 0 ? "100%" : ""));
 }
+
+function scrollPagina(){
+	$("html, body").animate({ scrollTop: window.innerHeight }, 1800);
+  return false;
+}
 </script>
 <style>
 
@@ -122,6 +127,16 @@ body,html { min-height: 100%; }
 	-o-transform: rotate(130deg);
 	transform: rotate(130deg);
 	right: 48%;
+}
+
+#mask-flecha{
+	height: 45px;
+	width: 78px;
+	position: fixed;
+	top: 80%;
+	right: 50%;
+	z-index: 3;
+	cursor: pointer;
 }
 
 /* Animación de las opciones principales del menú */
@@ -246,7 +261,7 @@ body,html { min-height: 100%; }
 
 	<div class="flecha-menu" id="flecha-der"></div>
 	<div class="flecha-menu" id="flecha-izq"></div>
-	<div id="
+	<div id="mask-flecha" onclick="scrollPagina();"></div>
 
 
 	<div id="mosaico" style="height:600px;width:100%;margin-top:100%;position:absolute;background-color:rgb(150,150,150);z-index:3;">
