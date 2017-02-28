@@ -1,7 +1,7 @@
 <script type="text/javascript">
 function moverFondo(event,element){
-	var containerWidth = element.innerWidth()*1.15,  
-		  containerHeight = element.innerHeight()*1.15,
+	var containerWidth = element.innerWidth(),  
+		  containerHeight = element.innerHeight(),
 		  mousePositionX = (event.pageX / containerWidth) * 100,
 		  mousePositionY = (event.pageY /containerHeight) * 100;
 
@@ -230,7 +230,7 @@ body,html { min-height: 100%; }
 	<div id="cont_menu" onclick="desplegarMenu();">
 	</div>
 
-	<div id="contenedor" style="width:90%; height:85%;margin:auto;overflow:hidden;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;background:url(<%= image_path('Paisaje.png') %>) no-repeat center center fixed;-webkit-background-size:120% 120%;-moz-background-size:120% 120%;-o-background-size:120% 120%;background-size:120% 120%;" onmousemove="moverFondo(event,$(this));">
+	<div id="contenedor" style="width:90%; height:85%;margin:auto;overflow:hidden;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;background:url(<%= image_path('Paisaje.png') %>) no-repeat center center / 130% 130%;" onmousemove="moverFondo(event,$(this));">
 	</div>
 	<div id="brand" style="height:130px;width:130px;position:fixed;top:17%;left:2.5%;z-index:5;background:url(<%= image_path('pine.jpg') %>) no-repeat center center / 120% 120%">
 	</div>
