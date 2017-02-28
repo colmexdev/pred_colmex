@@ -5,7 +5,7 @@ function moverFondo(event,element){
 		  mousePositionX = (event.pageX / containerWidth) * 100,
 		  mousePositionY = (event.pageY /containerHeight) * 100;
 
-	element.css('background-position', (mousePositionX - 0.15) + '%' + ' ' + (mousePositionY - 0.15) + '%');
+	element.css('background-position', (1 - mousePositionX) + '%' + ' ' + (1 - mousePositionY) + '%');
 }
 
 function cambiarHamburguesa(toggle){
