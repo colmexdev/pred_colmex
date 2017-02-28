@@ -43,7 +43,7 @@ function toggleBorde(event,borde,toggle){
 }
 
 function scrollPagina(){
-	$("html, body").animate({ scrollTop: window.innerHeight }, 1800);
+	$("#mosaico").animate({ top: '0%' }, 800);
   return false;
 }
 </script>
@@ -264,7 +264,7 @@ body,html { min-height: 100%; }
 	<div id="mask-flecha" onclick="scrollPagina();"></div>
 
 
-	<div id="mosaico" style="height:600px;width:100%;margin-top:100%;position:absolute;background-color:rgb(150,150,150);z-index:3;">
+	<div id="mosaico" style="height:600px;width:100%;top:100%;position:absolute;background-color:rgb(150,150,150);z-index:3;">
 
 	</div>
 
