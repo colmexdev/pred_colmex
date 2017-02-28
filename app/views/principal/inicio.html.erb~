@@ -41,6 +41,8 @@ function toggleBorde(event,borde,toggle){
 </script>
 <style>
 
+body,html { min-height: 100%; }
+
 .rect {
 	background-color: rgba(200,200,200,0.85);
 	width: 60px;
