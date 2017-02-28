@@ -57,7 +57,7 @@ body,html { min-height: 100%; }
 
 .opciones{
 	cursor: pointer;
-	position: absolute;
+	position: fixed;
 	right: 0;
 	background-color: rgba(220,20,20,0);
 	color: rgba(255,255,255,0);
@@ -69,7 +69,7 @@ body,html { min-height: 100%; }
 	background-color: #FFF;
 	height: 5px;
 	width: 0%;
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	left: 0;
 	transition: width linear 0.3s;
@@ -118,11 +118,11 @@ body,html { min-height: 100%; }
 	<div id="cont_menu" onclick="desplegarMenu();">
 	</div>
 
-	<div id="contenedor" style="width:90%; height:85%;margin:auto;overflow:hidden;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;background:url(<%= image_path('Paisaje.png') %>) no-repeat center center / 120% 120%" onmousemove="moverFondo(event,$(this));">
+	<div id="contenedor" style="width:90%; height:85%;margin:auto;overflow:hidden;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;background:url(<%= image_path('Paisaje.png') %>) no-repeat center center / 120% 120%" onmousemove="moverFondo(event,$(this));">
 	</div>
-	<div id="brand" style="height:130px;width:130px;position:absolute;top:17%;left:2.5%;z-index:4;background:url(<%= image_path('pine.jpg') %>) no-repeat center center / 120% 120%">
+	<div id="brand" style="height:130px;width:130px;position:fixed;top:17%;left:2.5%;z-index:4;background:url(<%= image_path('pine.jpg') %>) no-repeat center center / 120% 120%">
 	</div>
-	<div id="menu_canvas" style="background-color:rgba(255,255,255,0);height:60px;width:120px;position:absolute;top:17%;right:10%;transition:all ease 0.5s;-webkit-transition:all ease 0.5s;-moz-transition:all ease 0.5s;-o-transition:all ease 0.5s;z-index:4;">
+	<div id="menu_canvas" style="background-color:rgba(255,255,255,0);height:60px;width:120px;position:fixed;top:17%;right:10%;transition:all ease 0.5s;-webkit-transition:all ease 0.5s;-moz-transition:all ease 0.5s;-o-transition:all ease 0.5s;z-index:4;">
 		<div id="rect_sup" class="rect" style="top:18%;right:10%;">
 		</div>
 		<div id="rect_mid" class="rect" style="top:19%;right:10%;">
@@ -131,7 +131,7 @@ body,html { min-height: 100%; }
 		</div>
 	</div>
 
-	<div style="cursor:pointer;background-color:rgba(255,255,255,0);height:60px;width:120px;position:absolute;top:17%;right:10%;z-index:5;" onmouseenter="cambiarHamburguesa(0);" onmouseleave="cambiarHamburguesa(1);" onclick="desplegarMenu();">	
+	<div style="cursor:pointer;background-color:rgba(255,255,255,0);height:60px;width:120px;position:fixed;top:17%;right:10%;z-index:5;" onmouseenter="cambiarHamburguesa(0);" onmouseleave="cambiarHamburguesa(1);" onclick="desplegarMenu();">	
 	</div>
 
 	<div class="opciones" id="op1" style="top:25%" onmouseenter="toggleBorde(event,'#borde-1',0);" onmouseleave="toggleBorde(event,'#borde-1',1);">Opcion 1
