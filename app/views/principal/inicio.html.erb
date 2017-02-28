@@ -18,7 +18,7 @@ function cambiarHamburguesa(toggle){
 function desplegarMenu(){
 	var ind = $("#cont_menu").css('z-index');
 	$("#cont_menu").css("-webkit-animation-play-state", "paused");
-	if(ind != 3){ 
+	if(ind == -1){ 
 		$("#cont_menu").css({"-webkit-animation": "fade-in 0.8s ease 0s 1 normal forwards", "z-index": "4"}); 
 		$("#op1").css({"-webkit-animation": "opt-ap 0.6s ease 0.7s 1 normal forwards"});
 		$("#op2").css({"-webkit-animation": "opt-ap 0.6s ease 0.8s 1 normal forwards"});

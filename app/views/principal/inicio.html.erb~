@@ -19,7 +19,7 @@ function desplegarMenu(){
 	var ind = $("#cont_menu").css('z-index');
 	$("#cont_menu").css("-webkit-animation-play-state", "paused");
 	if(ind != 3){ 
-		$("#cont_menu").css({"-webkit-animation": "fade-in 0.8s ease 0s 1 normal forwards", "z-index": "3"}); 
+		$("#cont_menu").css({"-webkit-animation": "fade-in 0.8s ease 0s 1 normal forwards", "z-index": "4"}); 
 		$("#op1").css({"-webkit-animation": "opt-ap 0.6s ease 0.7s 1 normal forwards"});
 		$("#op2").css({"-webkit-animation": "opt-ap 0.6s ease 0.8s 1 normal forwards"});
 		$("#op3").css({"-webkit-animation": "opt-ap 0.6s ease 0.9s 1 normal forwards"});
@@ -91,11 +91,11 @@ body,html { min-height: 100%; }
 /* Animación de las opciones principales del menú */
 @-webkit-keyframes opt-ap{
 	0% { z-index: -1; right: 0; color: rgba(255,255,255,0); }
-	100%	 { z-index: 4; right: 45%; color: rgba(255,255,255,1); }
+	100%	 { z-index: 5; right: 45%; color: rgba(255,255,255,1); }
 }
 
 @-webkit-keyframes opt-dis{
-	0%	 { z-index: 4; right: 45%; color: rgba(255,255,255,1); }
+	0%	 { z-index: 5; right: 45%; color: rgba(255,255,255,1); }
 	100% { z-index: -1; right: 0; color: rgba(255,255,255,0); }
 }
 
@@ -119,9 +119,9 @@ body,html { min-height: 100%; }
 
 	<div id="contenedor" style="width:90%; height:85%;margin:auto;overflow:hidden;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;background:url(<%= image_path('Paisaje.png') %>) no-repeat center center / 120% 120%" onmousemove="moverFondo(event,$(this));">
 	</div>
-	<div id="brand" style="height:130px;width:130px;position:fixed;top:17%;left:2.5%;z-index:4;background:url(<%= image_path('pine.jpg') %>) no-repeat center center / 120% 120%">
+	<div id="brand" style="height:130px;width:130px;position:fixed;top:17%;left:2.5%;z-index:5;background:url(<%= image_path('pine.jpg') %>) no-repeat center center / 120% 120%">
 	</div>
-	<div id="menu_canvas" style="background-color:rgba(255,255,255,0);height:60px;width:120px;position:fixed;top:17%;right:10%;transition:all ease 0.5s;-webkit-transition:all ease 0.5s;-moz-transition:all ease 0.5s;-o-transition:all ease 0.5s;z-index:4;">
+	<div id="menu_canvas" style="background-color:rgba(255,255,255,0);height:60px;width:120px;position:fixed;top:17%;right:10%;transition:all ease 0.5s;-webkit-transition:all ease 0.5s;-moz-transition:all ease 0.5s;-o-transition:all ease 0.5s;z-index:5;">
 		<div id="rect_sup" class="rect" style="top:18%;right:10%;">
 		</div>
 		<div id="rect_mid" class="rect" style="top:19%;right:10%;">
@@ -130,7 +130,7 @@ body,html { min-height: 100%; }
 		</div>
 	</div>
 
-	<div style="cursor:pointer;background-color:rgba(255,255,255,0);height:60px;width:120px;position:fixed;top:17%;right:10%;z-index:5;" onmouseenter="cambiarHamburguesa(0);" onmouseleave="cambiarHamburguesa(1);" onclick="desplegarMenu();">	
+	<div style="cursor:pointer;background-color:rgba(255,255,255,0);height:60px;width:120px;position:fixed;top:17%;right:10%;z-index:6;" onmouseenter="cambiarHamburguesa(0);" onmouseleave="cambiarHamburguesa(1);" onclick="desplegarMenu();">	
 	</div>
 
 	<div class="opciones" id="op1" style="top:25%" onmouseenter="toggleBorde(event,'#borde-1',0);" onmouseleave="toggleBorde(event,'#borde-1',1);">Opcion 1
