@@ -86,9 +86,9 @@ body,html { min-height: 100%; }
 
 /* Rectángulos de la flechita */
 .flecha-menu{
-	background-color: rgba(130,130,130,0.8);
+	background-color: rgba(130,130,130,0.95);
 	height: 8px;
-	width: 150px;
+	width: 50px;
 	position: fixed;
 	top: 80%;
 	z-index: 3;
@@ -112,7 +112,7 @@ body,html { min-height: 100%; }
 	-ms-transform: rotate(50deg);
 	-o-transform: rotate(50deg);
 	transform: rotate(50deg);
-	left: 45%;
+	left: 48%;
 }
 
 #flecha-izq{
@@ -121,7 +121,7 @@ body,html { min-height: 100%; }
 	-ms-transform: rotate(130deg);
 	-o-transform: rotate(130deg);
 	transform: rotate(130deg);
-	right: 45%;
+	right: 48%;
 }
 
 /* Animación de las opciones principales del menú */
@@ -246,9 +246,10 @@ body,html { min-height: 100%; }
 
 	<div class="flecha-menu" id="flecha-der"></div>
 	<div class="flecha-menu" id="flecha-izq"></div>
+	<div id="
 
 
-	<div id="mosaico" style="height:1000px;width:100%;margin-top:101%;position:absolute;background-color:rgb(150,150,150);z-index:3;">
+	<div id="mosaico" style="height:600px;width:100%;margin-top:100%;position:absolute;background-color:rgb(150,150,150);z-index:3;">
 
 	</div>
 
