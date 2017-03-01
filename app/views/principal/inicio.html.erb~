@@ -1,4 +1,6 @@
 <script type="text/javascript">
+scroll_act = window.pageYOffset || document.documentElement.scrollTop;
+
 function moverFondo(event,element){
 	var containerWidth = element.innerWidth()*1.2,  
 		  containerHeight = element.innerHeight()*1.5,
@@ -46,6 +48,25 @@ function scrollPagina(){
 	$("#mosaico").animate({ top: '0%' }, 800);
   return false;
 }
+
+$(document).on("scroll",function(event){
+	var top_mosaico = $("#mosaico").css("top");
+	var st = window.pageYOffset || document.documentElement.scrollTop;
+	console.log(st);
+	if (st > lastScrollTop){
+    // downscroll code
+		
+	} else {
+      // upscroll code
+		if(top_mosaico < window.innerHeight){
+			$("#mosaico").animate({top: (st >= window.innerHeight ? '100%' : (st/(window.innerHeight)+"%")},300);
+		}
+		else{
+			$("#mosaico").css({'top': '100%'});
+		}
+	}
+	lastScrollTop = st;
+});
 </script>
 <style>
 
