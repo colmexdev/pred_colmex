@@ -45,7 +45,7 @@ function toggleBorde(event,borde,toggle){
 }
 
 function scrollPagina(){
-	$("#mosaico").animate({ top: '0%' }, 800);
+	$("html, body").animate({ scrollTop: window.innerHeight }, 800);
   return false;
 }
 
@@ -58,13 +58,13 @@ function MouseWheelHandler() {
 	  //scrolling down?
 	  if (delta < 0) {
 	  	console.log(delta + " Abajo");
-			$("#mosaico").css({"top": ($("#mosaico").css("top") + $("#mosaico").css("height") >= window.innerHeight ? ($("#mosaico").css("top") + "px")  : (($("#mosaico").css("top") - delta) + "px"))});
+			//$("#mosaico").css({"top": ($("#mosaico").css("top") + $("#mosaico").css("height") >= window.innerHeight ? ($("#mosaico").css("top") + "px")  : (($("#mosaico").css("top") - delta) + "px"))});
 	  }
 
 	  //scrolling up?
 	  else {
 	  	console.log(delta + " Arriba");
-			$("#mosaico").css({"top": ($("#mosaico").css("top") >= window.innerHeight ? (window.innerHeight +"px") : (($("#mosaico").css("top") + delta) + "px"))});
+			//$("#mosaico").css({"top": ($("#mosaico").css("top") >= window.innerHeight ? (window.innerHeight +"px") : (($("#mosaico").css("top") + delta) + "px"))});
 	  }
 	  return false;
 	}
