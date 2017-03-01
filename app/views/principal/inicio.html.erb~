@@ -133,7 +133,12 @@ body,html { min-height: 100%; }
 	width: 78px;
 	position: fixed;
 	top: 78%;
-	right: 48%;
+	left: 50%;
+	-webkit-transform: translate(0,-50%);
+	-moz-transform: translate(0,-50%);
+	-ms-transform: translate(0,-50%);
+	-o-transform: translate(0,-50%);
+	transform: translate(0,-50%);
 	z-index: 3;
 	cursor: pointer;
 }
