@@ -65,7 +65,7 @@ $(document).on("scroll",function(event){
 			$("#mosaico").animate({top: '100%'},300);
 		}
 	}
-	lastScrollTop = st;
+	scroll_act = st;
 });
 </script>
 <style>
