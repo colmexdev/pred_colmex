@@ -62,10 +62,10 @@ $(document).on("scroll",function(event){
 			$("#mosaico").animate({top: (st >= window.innerHeight ? '100%' : ((st/window.innerHeight)+"%"))},300);
 		}
 		else{
-			$("#mosaico").css({'top': '100%'});
+			$("#mosaico").animate({top: '100%'},300);
 		}
 	}
-	lastScrollTop = st;
+	scroll_act = st;
 });
 </script>
 <style>

@@ -53,7 +53,7 @@ $(document).on("scroll",function(event){
 	var top_mosaico = $("#mosaico").css("top");
 	var st = window.pageYOffset || document.documentElement.scrollTop;
 	console.log(st);
-	if (st > lastScrollTop){
+	if (st > scroll_act){
     // downscroll code
 		
 	} else {
@@ -62,7 +62,7 @@ $(document).on("scroll",function(event){
 			$("#mosaico").animate({top: (st >= window.innerHeight ? '100%' : ((st/window.innerHeight)+"%"))},300);
 		}
 		else{
-			$("#mosaico").css({'top': '100%'});
+			$("#mosaico").animate({top: '100%'},300);
 		}
 	}
 	lastScrollTop = st;
