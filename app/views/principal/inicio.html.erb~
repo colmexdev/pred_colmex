@@ -59,7 +59,7 @@ $(document).on("scroll",function(event){
 	} else {
       // upscroll code
 		if(top_mosaico < window.innerHeight){
-			$("#mosaico").animate({top: (st >= window.innerHeight ? '100%' : (st/(window.innerHeight)+"%")},300);
+			$("#mosaico").animate({top: (st >= window.innerHeight ? '100%' : ((st/window.innerHeight)+"%"))},300);
 		}
 		else{
 			$("#mosaico").css({'top': '100%'});
