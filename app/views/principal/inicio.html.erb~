@@ -58,13 +58,13 @@ function MouseWheelHandler() {
 	  //scrolling down?
 	  if (delta < 0) {
 	  	console.log(delta + " Abajo");
-			$("#mosaico").animate({top: ($("#mosaico").css("top") >= window.innerHeight ? (window.innerHeight +"px") : (($("#mosaico").css("top") + delta) + "px")  )},100);
+			$("#mosaico").css({"top": ($("#mosaico").css("top") + $("#mosaico").css("height") >= window.innerHeight ? ($("#mosaico").css("top") + "px")  : (($("#mosaico").css("top") - delta) + "px"))});
 	  }
 
 	  //scrolling up?
 	  else {
 	  	console.log(delta + " Arriba");
-			$("#mosaico").animate({top: ($("#mosaico").css("top") >= window.innerHeight ? (window.innerHeight +"px") : (($("#mosaico").css("top") + delta) + "px")  )},100);
+			$("#mosaico").css("top": ($("#mosaico").css("top") >= window.innerHeight ? (window.innerHeight +"px") : (($("#mosaico").css("top") + delta) + "px"))});
 	  }
 	  return false;
 	}
