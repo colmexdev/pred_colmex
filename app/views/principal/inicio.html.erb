@@ -54,9 +54,9 @@ body,html { min-height: 100%; }
 /* Rectángulos del ícono de menú */
 .rect {
 	background-color: rgba(200,200,200,0.85);
-	width: 60px;
-	height: 5px;
-	margin: 10px auto;
+	width: 40px;
+	height: 3px;
+	margin: 6px auto;
 	cursor: pointer;
 	-webkit-transition: all ease 0.9s;
 	-moz-transition: all ease 0.9s;
@@ -91,10 +91,10 @@ body,html { min-height: 100%; }
 /* Rectángulos de la flechita */
 .flecha-menu{
 	background-color: rgba(130,130,130,0.95);
-	height: 8px;
-	width: 50px;
-	position: fixed;
-	top: 80%;
+	height: 5px;
+	width: 30px;
+	position: absolute;
+	top: 46%;
 	z-index: 3;
 }
 
@@ -116,7 +116,7 @@ body,html { min-height: 100%; }
 	-ms-transform: rotate(50deg);
 	-o-transform: rotate(50deg);
 	transform: rotate(50deg);
-	left: 48%;
+	left: 16px;
 }
 
 #flecha-izq{
@@ -125,7 +125,7 @@ body,html { min-height: 100%; }
 	-ms-transform: rotate(130deg);
 	-o-transform: rotate(130deg);
 	transform: rotate(130deg);
-	right: 48%;
+	right: 16px;
 }
 
 #mask-flecha{
@@ -233,12 +233,12 @@ body,html { min-height: 100%; }
 	</div>
 	<div id="brand" style="height:130px;width:130px;position:fixed;top:17%;left:2.5%;z-index:5;background:url(<%= image_path('pine.jpg') %>) no-repeat center center / 120% 120%">
 	</div>
-	<div id="menu_canvas" style="background-color:rgba(255,255,255,0);height:60px;width:120px;position:fixed;top:17%;right:10%;transition:all ease 0.5s;-webkit-transition:all ease 0.5s;-moz-transition:all ease 0.5s;-o-transition:all ease 0.5s;z-index:5;">
-		<div id="rect_sup" class="rect" style="top:18%;right:10%;">
+	<div id="menu_canvas" style="background-color:rgba(255,255,255,0);height:60px;width:80px;position:fixed;top:17%;right:6%;transition:all ease 0.5s;-webkit-transition:all ease 0.5s;-moz-transition:all ease 0.5s;-o-transition:all ease 0.5s;z-index:5;">
+		<div id="rect_sup" class="rect" style="margin-top:30px">
 		</div>
-		<div id="rect_mid" class="rect" style="top:19%;right:10%;">
+		<div id="rect_mid" class="rect" style="">
 		</div>
-		<div id="rect_inf" class="rect" style="top:20%;right:10%;">
+		<div id="rect_inf" class="rect" style="">
 		</div>
 	</div>
 
