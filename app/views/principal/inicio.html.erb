@@ -1,5 +1,4 @@
 <script type="text/javascript">
-scroll_act = window.pageYOffset || document.documentElement.scrollTop;
 
 function moverFondo(event,element){
 	var containerWidth = element.innerWidth()*1.2,  
@@ -23,20 +22,17 @@ function desplegarMenu(){
 	if(ind == -1){ 
 		$("#cont_menu").css({"-webkit-animation": "fade-in 0.8s ease 0s 1 normal forwards", "-moz-animation": "fade-in 0.8s ease 0s 1 normal forwards", "-o-animation": "fade-in 0.8s ease 0s 1 normal forwards", "animation": "fade-in 0.8s ease 0s 1 normal forwards", "z-index": "4"}); 
 		$("#op1").css({"-webkit-animation": "opt-ap 0.6s ease 0.7s 1 normal forwards", "-moz-animation": "opt-ap 0.6s ease 0.7s 1 normal forwards", "-o-animation": "opt-ap 0.6s ease 0.7s 1 normal forwards", "animation": "opt-ap 0.6s ease 0.7s 1 normal forwards"});
-		$("#op2").css({"-webkit-animation": "opt-ap 0.6s ease 0.7s 1 normal forwards", "-moz-animation": "opt-ap 0.6s ease 0.7s 1 normal forwards", "-o-animation": "opt-ap 0.6s ease 0.7s 1 normal forwards", "animation": "opt-ap 0.6s ease 0.7s 1 normal forwards"});
-		$("#op3").css({"-webkit-animation": "opt-ap 0.6s ease 0.7s 1 normal forwards", "-moz-animation": "opt-ap 0.6s ease 0.7s 1 normal forwards", "-o-animation": "opt-ap 0.6s ease 0.7s 1 normal forwards", "animation": "opt-ap 0.6s ease 0.7s 1 normal forwards"});
-		$("#op4").css({"-webkit-animation": "opt-ap 0.6s ease 0.7s 1 normal forwards", "-moz-animation": "opt-ap 0.6s ease 0.7s 1 normal forwards", "-o-animation": "opt-ap 0.6s ease 0.7s 1 normal forwards", "animation": "opt-ap 0.6s ease 0.7s 1 normal forwards"});
+		$("#op2").css({"-webkit-animation": "opt-ap 0.6s ease 0.8s 1 normal forwards", "-moz-animation": "opt-ap 0.6s ease 0.8s 1 normal forwards", "-o-animation": "opt-ap 0.6s ease 0.8s 1 normal forwards", "animation": "opt-ap 0.6s ease 0.8s 1 normal forwards"});
+		$("#op3").css({"-webkit-animation": "opt-ap 0.6s ease 0.9s 1 normal forwards", "-moz-animation": "opt-ap 0.6s ease 0.9s 1 normal forwards", "-o-animation": "opt-ap 0.6s ease 0.9s 1 normal forwards", "animation": "opt-ap 0.6s ease 0.7s 1 normal forwards"});
+		$("#op4").css({"-webkit-animation": "opt-ap 0.6s ease 1.0s 1 normal forwards", "-moz-animation": "opt-ap 0.6s ease 1.0s 1 normal forwards", "-o-animation": "opt-ap 0.6s ease 1.0s 1 normal forwards", "animation": "opt-ap 0.6s ease 1.0s 1 normal forwards"});
 	}
 	else{
 		setTimeout(function(){ $("#cont_menu").css({"z-index": "-1"}); }, 750);
 		$("#cont_menu").css({"-webkit-animation": "fade-out 0.8s ease 0.5s 1 normal both", "-moz-animation": "fade-out 0.8s ease 0.5s 1 normal both", "-o-animation": "fade-out 0.8s ease 0.5s 1 normal both", "animation": "fade-out 0.8s ease 0.5s 1 normal both"});
-		$("#op1").css({"-webkit-animation": "opt-dis 0.6s ease 0.3s 1 normal both", "-moz-animation": "opt-dis 0.6s ease 0.3s 1 normal both", "-o-animation": "opt-dis 0.6s ease 0.3s 1 normal both", "animation": "opt-dis 0.6s ease 0.3s 1 normal both"});
-		$("#op2").css({"-webkit-animation": "fade-out 0.8s ease 0.5s 1 normal both"});
-		$("#op1").css({"-webkit-animation": "opt-dis 0.6s ease 0.3s 1 normal both", "-moz-animation": "opt-dis 0.6s ease 0.3s 1 normal both", "-o-animation": "opt-dis 0.6s ease 0.3s 1 normal both", "animation": "opt-dis 0.6s ease 0.3s 1 normal both"});
-		$("#op3").css({"-webkit-animation": "fade-out 0.8s ease 0.5s 1 normal both"});
-		$("#op1").css({"-webkit-animation": "opt-dis 0.6s ease 0.3s 1 normal both", "-moz-animation": "opt-dis 0.6s ease 0.3s 1 normal both", "-o-animation": "opt-dis 0.6s ease 0.3s 1 normal both", "animation": "opt-dis 0.6s ease 0.3s 1 normal both"});
-		$("#op4").css({"-webkit-animation": "fade-out 0.8s ease 0.5s 1 normal both"});
-		$("#op1").css({"-webkit-animation": "opt-dis 0.6s ease 0.3s 1 normal both", "-moz-animation": "opt-dis 0.6s ease 0.3s 1 normal both", "-o-animation": "opt-dis 0.6s ease 0.3s 1 normal both", "animation": "opt-dis 0.6s ease 0.3s 1 normal both"});
+		$("#op1").css({"-webkit-animation": "opt-dis 0.6s ease 0.6s 1 normal both", "-moz-animation": "opt-dis 0.6s ease 0.6s 1 normal both", "-o-animation": "opt-dis 0.6s ease 0.6s 1 normal both", "animation": "opt-dis 0.6s ease 0.6s 1 normal both"});
+		$("#op2").css({"-webkit-animation": "opt-dis 0.6s ease 0.5s 1 normal both", "-moz-animation": "opt-dis 0.6s ease 0.5s 1 normal both", "-o-animation": "opt-dis 0.6s ease 0.5s 1 normal both", "animation": "opt-dis 0.6s ease 0.5s 1 normal both"});
+		$("#op3").css({"-webkit-animation": "opt-dis 0.6s ease 0.4s 1 normal both", "-moz-animation": "opt-dis 0.6s ease 0.4s 1 normal both", "-o-animation": "opt-dis 0.6s ease 0.4s 1 normal both", "animation": "opt-dis 0.6s ease 0.4s 1 normal both"});
+		$("#op4").css({"-webkit-animation": "opt-dis 0.6s ease 0.3s 1 normal both", "-moz-animation": "opt-dis 0.6s ease 0.3s 1 normal both", "-o-animation": "opt-dis 0.6s ease 0.3s 1 normal both", "animation": "opt-dis 0.6s ease 0.3s 1 normal both"});
 	}	
 }
 
@@ -49,29 +45,6 @@ function scrollPagina(){
   return false;
 }
 
-function MouseWheelHandler() {
-	return function (e) {
-	  // cross-browser wheel delta
-	  var e = window.event || e;
-	  var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-
-	  //scrolling down?
-	  if (delta < 0) {
-	  	console.log(delta + " Abajo");
-			//$("#mosaico").css({"top": ($("#mosaico").css("top") + $("#mosaico").css("height") >= window.innerHeight ? ($("#mosaico").css("top") + "px")  : (($("#mosaico").css("top") - delta) + "px"))});
-	  }
-
-	  //scrolling up?
-	  else {
-	  	console.log(delta + " Arriba");
-			//$("#mosaico").css({"top": ($("#mosaico").css("top") >= window.innerHeight ? (window.innerHeight +"px") : (($("#mosaico").css("top") + delta) + "px"))});
-	  }
-	  return false;
-	}
-}
-
-document.addEventListener("mousewheel", MouseWheelHandler(), false);
-document.addEventListener("DOMMouseScroll", MouseWheelHandler(), false);
 </script>
 <style>
 
