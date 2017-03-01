@@ -23,7 +23,7 @@ function desplegarMenu(){
 		$("#cont_menu").css({"-webkit-animation": "fade-in 0.8s ease 0s 1 normal forwards", "-moz-animation": "fade-in 0.8s ease 0s 1 normal forwards", "-o-animation": "fade-in 0.8s ease 0s 1 normal forwards", "animation": "fade-in 0.8s ease 0s 1 normal forwards", "z-index": "4"}); 
 		$("#op1").css({"-webkit-animation": "opt-ap 0.6s ease 0.7s 1 normal forwards", "-moz-animation": "opt-ap 0.6s ease 0.7s 1 normal forwards", "-o-animation": "opt-ap 0.6s ease 0.7s 1 normal forwards", "animation": "opt-ap 0.6s ease 0.7s 1 normal forwards"});
 		$("#op2").css({"-webkit-animation": "opt-ap 0.6s ease 0.8s 1 normal forwards", "-moz-animation": "opt-ap 0.6s ease 0.8s 1 normal forwards", "-o-animation": "opt-ap 0.6s ease 0.8s 1 normal forwards", "animation": "opt-ap 0.6s ease 0.8s 1 normal forwards"});
-		$("#op3").css({"-webkit-animation": "opt-ap 0.6s ease 0.9s 1 normal forwards", "-moz-animation": "opt-ap 0.6s ease 0.9s 1 normal forwards", "-o-animation": "opt-ap 0.6s ease 0.9s 1 normal forwards", "animation": "opt-ap 0.6s ease 0.7s 1 normal forwards"});
+		$("#op3").css({"-webkit-animation": "opt-ap 0.6s ease 0.9s 1 normal forwards", "-moz-animation": "opt-ap 0.6s ease 0.9s 1 normal forwards", "-o-animation": "opt-ap 0.6s ease 0.9s 1 normal forwards", "animation": "opt-ap 0.6s ease 0.9s 1 normal forwards"});
 		$("#op4").css({"-webkit-animation": "opt-ap 0.6s ease 1.0s 1 normal forwards", "-moz-animation": "opt-ap 0.6s ease 1.0s 1 normal forwards", "-o-animation": "opt-ap 0.6s ease 1.0s 1 normal forwards", "animation": "opt-ap 0.6s ease 1.0s 1 normal forwards"});
 	}
 	else{
@@ -258,9 +258,11 @@ body,html { min-height: 100%; }
 		<div id="borde-4" class="borde-op"></div>
 	</div>
 
-	<div class="flecha-menu" id="flecha-der"></div>
-	<div class="flecha-menu" id="flecha-izq"></div>
-	<div id="mask-flecha" onclick="scrollPagina();"></div>
+
+	<div id="mask-flecha" onclick="scrollPagina();">
+		<div class="flecha-menu" id="flecha-der"></div>
+		<div class="flecha-menu" id="flecha-izq"></div>
+	</div>
 
 
 	<div id="mosaico" style="height:600px;width:100%;top:100%;position:absolute;background-color:rgb(150,150,150);z-index:3;min-height:100%;">
