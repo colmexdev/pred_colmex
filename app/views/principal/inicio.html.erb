@@ -50,6 +50,11 @@ $(document).on("scroll",function(event){
 	$("#contenedor").css({"width": (y < 1 ? "90%" : ( y >= window.innerHeight ? "75%" : ((75 + (15*(1 - (y/window.innerHeight)))) + "%") )), "height" : (y < 1 ? "85%" : ( y >= window.innerHeight ? "65%" : ((65 + (20*(1 - (y/window.innerHeight)))) + "%") ))});
 });
 
+function encogerCuadro(event,element,shrink){
+	var alto = element.height();
+	var ancho = element.width();
+	console.log(alto + " " + ancho + " " + (shrink == 0 ? "Hover" : "Leave"));
+}
 </script>
 <style>
 
@@ -106,10 +111,15 @@ body,html { min-height: 100%; }
 /* Celdas de la cuadrícula del menú */
 .cuadricula-menu{
 	z-index: 4;
+	display: inline-block;
 	margin: 0 auto;
 	border: 4px solid #DDDDDD;
 	width: 40%;
 	height: 70px;
+	-webkit-transition: width linear 0.3s;
+	-moz-transition: width linear 0.3s;
+	-o-transition: width linear 0.3s;
+	transition: width linear 0.3s;
 }
 
 /* Identificadores */
@@ -284,10 +294,10 @@ body,html { min-height: 100%; }
 	</div>
 
 
-	<div id="mosaico" style="height:600px;width:100%;top:100%;position:absolute;background-color:rgb(150,150,150);z-index:3;min-height:100%;">
-		<div class="cuadricula-menu" style="background-color:#660033;"></div><!--
-		--><div class="cuadricula-menu" style="background-color:#0033CC;"></div><!--
-		--><div class="cuadricula-menu" style="background-color:#336600;"></div><!--
-		--><div class="cuadricula-menu" style="background-color:#CC6600;"></div>
+	<div id="mosaico" style="height:600px;width:100%;top:100%;position:absolute;background-color:rgb(150,150,150);z-index:3;min-height:100%;text-align:center;">
+		<div class="cuadricula-menu" style="background-color:#660033;" onmouseenter="encogerCuadro(event,$(this),0);" onmouseleave="encogerCuadro(event,$(this),1);"></div><!--
+		--><div class="cuadricula-menu" style="background-color:#0033CC;" onmouseenter="encogerCuadro(event,$(this),0);" onmouseleave="encogerCuadro(event,$(this),1);"></div><!--
+		--><div class="cuadricula-menu" style="background-color:#336600;" onmouseenter="encogerCuadro(event,$(this),0);" onmouseleave="encogerCuadro(event,$(this),1);"></div><!--
+		--><div class="cuadricula-menu" style="background-color:#CC6600;" onmouseenter="encogerCuadro(event,$(this),0);" onmouseleave="encogerCuadro(event,$(this),1);"></div>
 	</div>
 
