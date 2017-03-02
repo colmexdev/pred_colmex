@@ -348,7 +348,6 @@ body,html { min-height: 100%; }
 				</div>
 			</div>
 		</div>
-	</div>
 
 
 	<div id="div_footer"> <!-- Fila para footer -->
@@ -400,7 +399,7 @@ body,html { min-height: 100%; }
 		</div> <!-- Cierre de columnas para redes sociales en footer -->
 
 	</div>
-
+	</div>
 
 	</div>
 
