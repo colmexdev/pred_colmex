@@ -50,12 +50,6 @@ $(document).on("scroll",function(event){
 	$("#contenedor").css({"width": (y < 1 ? "90%" : ( y >= window.innerHeight ? "75%" : ((75 + (15*(1 - (y/window.innerHeight)))) + "%") )), "height" : (y < 1 ? "85%" : ( y >= window.innerHeight ? "65%" : ((65 + (20*(1 - (y/window.innerHeight)))) + "%") ))});
 });
 
-function encogerCuadro(event,element,shrink){
-	var alto_borde = element.outerHeight(true) - element.height();
-	var ancho_borde = element.outerWidth(true) - element.width();
-	element.css({"width": (shrink == 0 ? "39%"  : "" ), "height": (shrink == 0 ? "60px" : "" ), "border-top": (shrink == 0 ? "4px solid : "" )});
-	console.log(alto + " " + ancho + " " + (shrink == 0 ? "Hover" : "Leave"));
-}
 </script>
 <style>
 
