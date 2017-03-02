@@ -115,7 +115,6 @@ body,html { min-height: 100%; }
 /* Celdas de la cuadrícula del menú */
 .cuadricula-menu{
 	z-index: 4;
-	cursor: pointer;
 	float: left;
 	margin: 7px 7px;
 	width: -webkit-calc(100% - 14px);
@@ -330,22 +329,22 @@ body,html { min-height: 100%; }
 			<div id="cont-cuadricula">
 				<div class="cuadricula-back">
 					<div class="cuadricula-menu" style="background-color:#660033;">
-						<a href="#"></a>
+						<a href="#" class="liga-cuadricula"></a>
 					</div>
 				</div>
 				<div class="cuadricula-back">
 					<div class="cuadricula-menu" style="background-color:#0033CC;">
-						<a href="#"></a>
+						<a href="#" class="liga-cuadricula"></a>
 					</div>
 				</div>
 				<div class="cuadricula-back">
 					<div class="cuadricula-menu" style="background-color:#336600;">
-						<a href="#"></a>
+						<a href="#" class="liga-cuadricula"></a>
 					</div>
 				</div>
 				<div class="cuadricula-back">
 					<div class="cuadricula-menu" style="background-color:#CC6600;"">
-						<a href="#"></a>
+						<a href="#" class="liga-cuadricula"></a>
 					</div>
 				</div>
 			</div>
