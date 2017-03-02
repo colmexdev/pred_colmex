@@ -103,17 +103,26 @@ body,html { min-height: 100%; }
 	z-index: 3;
 }
 
+/* Fondos de las celdas de la cuadrícula */
+.cuadricula-back{
+	z-index: 4;
+	float: left;
+	width: 50%;
+	height: 50%;
+	background-color: rgba((255,255,255,0.0);
+}
+
 /* Celdas de la cuadrícula del menú */
 .cuadricula-menu{
 	z-index: 4;
 	float: left;
 	margin: 7px 7px;
-	width: -webkit-calc(50% - 18px);
-	width: -moz-calc(50% - 18px);
-	width: calc(50% - 18px);
-	height: -webkit-calc(50% - 18px);
-	height: -moz-calc(50% - 18px);
-	height: calc(50% - 18px);
+	width: -webkit-calc(100% - 14px);
+	width: -moz-calc(100% - 14px);
+	width: calc(100% - 14px);
+	height: -webkit-calc(100% - 14px);
+	height: -moz-calc(100% - 14px);
+	height: calc(100% - 14px);
 	-webkit-transition: all linear 0.3s;
 	-moz-transition: all linear 0.3s;
 	-o-transition: all linear 0.3s;
@@ -122,12 +131,12 @@ body,html { min-height: 100%; }
 
 .cuadricula-menu:hover{
 	margin: 14px 14px;
-	width: -webkit-calc(50% - 32px);
-	width: -moz-calc(50% - 32px);
-	width: calc(50% - 32px);
-	height: -webkit-calc(50% - 32px);
-	height: -moz-calc(50% - 32px);
-	height: calc(50% - 32px);
+	width: -webkit-calc(100% - 28px);
+	width: -moz-calc(100% - 28px);
+	width: calc(100% - 28px);
+	height: -webkit-calc(100% - 28px);
+	height: -moz-calc(100% - 28px);
+	height: calc(100% - 28px);
 }
 
 /* Identificadores */
@@ -311,10 +320,18 @@ body,html { min-height: 100%; }
 
 	<div id="mosaico" style="height:600px;width:100%;top:100%;position:absolute;background-color:rgb(150,150,150);z-index:3;min-height:100%;text-align:center;">
 		<div id="cont-cuadricula">
-			<div class="cuadricula-menu" style="background-color:#660033;"></div>
-			<div class="cuadricula-menu" style="background-color:#0033CC;"></div>
-			<div class="cuadricula-menu" style="background-color:#336600;"></div>
-			<div class="cuadricula-menu" style="background-color:#CC6600;""></div>
+			<div class="cuadricula-back">
+				<div class="cuadricula-menu" style="background-color:#660033;"></div>
+			</div>
+			<div class="cuadricula-back">
+				<div class="cuadricula-menu" style="background-color:#0033CC;"></div>
+			</div>
+			<div class="cuadricula-back">
+				<div class="cuadricula-menu" style="background-color:#336600;"></div>
+			</div>
+			<div class="cuadricula-back">
+				<div class="cuadricula-menu" style="background-color:#CC6600;""></div>
+			</div>
 		</div>
 	</div>
 
