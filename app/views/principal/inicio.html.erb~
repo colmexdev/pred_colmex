@@ -347,7 +347,7 @@ body,html { min-height: 100%; }
 					<div class="cuadricula-menu" style="background-color:#CC6600;""></div>
 				</div>
 			</div>
-		</div>
+
 
 
 	<div id="div_footer"> <!-- Fila para footer -->
@@ -401,5 +401,5 @@ body,html { min-height: 100%; }
 	</div>
 	</div>
 
-
+</div>
 
