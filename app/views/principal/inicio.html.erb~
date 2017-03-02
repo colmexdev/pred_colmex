@@ -184,6 +184,13 @@ body,html { min-height: 100%; }
 	cursor: pointer;
 }
 
+#cuerpo{
+	height: auto;
+	width: 100%;
+	margin-bottom: 300px;
+	overflow: auto;
+}
+
 #cont-cuadricula{
 	width: 70%;
 	min-height: 300px;
@@ -324,22 +331,23 @@ body,html { min-height: 100%; }
 		<div class="flecha-menu" id="flecha-izq"></div>
 	</div>
 
-
-	<div id="mosaico" style="height:600px;width:100%;top:100%;position:absolute;background-color:rgb(150,150,150);z-index:3;min-height:100%;text-align:center;">
-		<div id="cont-cuadricula">
-			<div class="cuadricula-back">
-				<div class="cuadricula-menu" style="background-color:#660033;"></div>
+	<div id="cuerpo">
+		<div id="mosaico" style="height:600px;width:100%;top:100%;position:absolute;background-color:rgb(150,150,150);z-index:3;min-height:100%;text-align:center;">
+			<div id="cont-cuadricula">
+				<div class="cuadricula-back">
+					<div class="cuadricula-menu" style="background-color:#660033;"></div>
+				</div>
+				<div class="cuadricula-back">
+					<div class="cuadricula-menu" style="background-color:#0033CC;"></div>
+				</div>
+				<div class="cuadricula-back">
+					<div class="cuadricula-menu" style="background-color:#336600;"></div>
+				</div>
+				<div class="cuadricula-back">
+					<div class="cuadricula-menu" style="background-color:#CC6600;""></div>
+				</div>
 			</div>
-			<div class="cuadricula-back">
-				<div class="cuadricula-menu" style="background-color:#0033CC;"></div>
-			</div>
-			<div class="cuadricula-back">
-				<div class="cuadricula-menu" style="background-color:#336600;"></div>
-			</div>
-			<div class="cuadricula-back">
-				<div class="cuadricula-menu" style="background-color:#CC6600;""></div>
-			</div>
-		</div>
+	</div>
 
 
 	<div id="div_footer"> <!-- Fila para footer -->
