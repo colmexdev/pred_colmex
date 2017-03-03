@@ -50,10 +50,11 @@ $(document).on("scroll",function(event){
 	$("#contenedor").css({"width": (y < 1 ? "90%" : ( y >= window.innerHeight ? "75%" : ((75 + (15*(1 - (y/window.innerHeight)))) + "%") )), "height" : (y < 1 ? "85%" : ( y >= window.innerHeight ? "65%" : ((65 + (20*(1 - (y/window.innerHeight)))) + "%") ))});
 });
 
-function slide_pagina(event,render){
+function slide_pagina(event,render,liga){
 	event.preventDefault();
 	$("#next-page-izq").animate({left: 0}, 450);
 	$("#next-page-izq").html(render);
+	window.history.pushState({},"Nueva página",liga)
 }
 
 </script>
@@ -349,22 +350,22 @@ body,html { min-height: 100%; overflow-x: hidden; }
 			<div id="cont-cuadricula">
 				<div class="cuadricula-back">
 					<div class="cuadricula-menu" style="background-color:#660033;">
-						<a href="#" id="liga_0" class="liga-cuadricula" onclick="slide_pagina(event,this.id)"></a>
+						<a href="#" id="liga_0" class="liga-cuadricula" onclick="slide_pagina(event,this.id,'google.com')"></a>
 					</div>
 				</div>
 				<div class="cuadricula-back">
 					<div class="cuadricula-menu" style="background-color:#0033CC;">
-						<a href="#" id="liga_1" class="liga-cuadricula" onclick="slide_pagina(event,this.id)"></a>
+						<a href="#" id="liga_1" class="liga-cuadricula" onclick="slide_pagina(event,this.id,'facebook.com')"></a>
 					</div>
 				</div>
 				<div class="cuadricula-back">
 					<div class="cuadricula-menu" style="background-color:#336600;">
-						<a href="#" id="liga_2" class="liga-cuadricula" onclick="slide_pagina(event,this.id)"></a>
+						<a href="#" id="liga_2" class="liga-cuadricula" onclick="slide_pagina(event,this.id,'twitter.com')"></a>
 					</div>
 				</div>
 				<div class="cuadricula-back">
 					<div class="cuadricula-menu" style="background-color:#CC6600;"">
-						<a href="#" id="liga_3" class="liga-cuadricula" onclick="slide_pagina(event,this.id)"></a>
+						<a href="#" id="liga_3" class="liga-cuadricula" onclick="slide_pagina(event,this.id,'youtube.com')"></a>
 					</div>
 				</div>
 			</div>
