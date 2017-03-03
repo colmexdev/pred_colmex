@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'produccion_digital/cursos_breves'
+
   get 'principal/inicio'
 
   devise_for :admins, :controllers => { :registrations => "registrations"}
@@ -12,7 +14,7 @@ Rails.application.routes.draw do
 
 
   # You can have the root of your site routed with "root"
-  root  to: 'videos#index'
+  root  to: 'principal#inicio'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

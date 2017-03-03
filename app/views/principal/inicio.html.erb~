@@ -54,7 +54,10 @@ function slide_pagina(event,render,liga){
 	event.preventDefault();
 	$("#next-page-izq").animate({left: 0}, 450);
 	$("#next-page-izq").html(render);
-	window.history.pushState({},"Nueva página",liga)
+	$("body html").css("height", $("#next-page-izq").height());
+	setTimeout(function(){
+		window.history.pushState({},"Nueva página",liga)
+	}, 450);
 }
 
 </script>
@@ -302,7 +305,9 @@ body,html { min-height: 100%; overflow-x: hidden; }
 }
 </style>
 
-	<div id="next-page-izq" style="position:fixed;top:0;left:100%;width:100%;height:100%;z-index:4;"
+	<div id="next-page-izq" style="position:fixed;top:0;left:100%;width:100%;height:100%;z-index:4;background-color:#AAA;">
+		<iframe src="<%= cursos_breves_url %>"></iframe>
+	</div>
 
 	<div id="inicio" style="height:100%;width:100%;position:fixed;top:0;left:0;z-index:0;">
 	</div>
@@ -350,22 +355,22 @@ body,html { min-height: 100%; overflow-x: hidden; }
 			<div id="cont-cuadricula">
 				<div class="cuadricula-back">
 					<div class="cuadricula-menu" style="background-color:#660033;">
-						<a href="#" id="liga_0" class="liga-cuadricula" onclick="slide_pagina(event,this.id,'google.com')"></a>
+						<a href="#" id="liga_0" class="liga-cuadricula" onclick="slide_pagina(event,this.id,'http://www.google.com')"></a>
 					</div>
 				</div>
 				<div class="cuadricula-back">
 					<div class="cuadricula-menu" style="background-color:#0033CC;">
-						<a href="#" id="liga_1" class="liga-cuadricula" onclick="slide_pagina(event,this.id,'facebook.com')"></a>
+						<a href="#" id="liga_1" class="liga-cuadricula" onclick="slide_pagina(event,this.id,'http://www.facebook.com')"></a>
 					</div>
 				</div>
 				<div class="cuadricula-back">
 					<div class="cuadricula-menu" style="background-color:#336600;">
-						<a href="#" id="liga_2" class="liga-cuadricula" onclick="slide_pagina(event,this.id,'twitter.com')"></a>
+						<a href="#" id="liga_2" class="liga-cuadricula" onclick="slide_pagina(event,this.id,'http://www.twitter.com')"></a>
 					</div>
 				</div>
 				<div class="cuadricula-back">
 					<div class="cuadricula-menu" style="background-color:#CC6600;"">
-						<a href="#" id="liga_3" class="liga-cuadricula" onclick="slide_pagina(event,this.id,'youtube.com')"></a>
+						<a href="#" id="liga_3" class="liga-cuadricula" onclick="slide_pagina(event,this.id,'http://www.youtube.com')"></a>
 					</div>
 				</div>
 			</div>
