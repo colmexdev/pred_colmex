@@ -57,7 +57,8 @@ function slide_pagina(event,render,liga){
       url: 'http://pred1.colmex.mx/produccion_digital/cursos_breves',
       type: 'get',
       dataType: 'JSON',
-      success:function(data,result)
+			data: {algo: "hello"},
+      success:function(result)
       {
           alert(result);
           //document.write(data);
