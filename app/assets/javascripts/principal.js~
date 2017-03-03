@@ -51,7 +51,6 @@ $(document).on("scroll",function(event){
 function slide_pagina(event,render,liga){
 	event.preventDefault();
 	$("#next-page-izq").animate({left: 0}, 450);
-	//$("#next-page-izq").html(render);
 	$("body, html").css("height", $("#next-page-izq").height());
 	setTimeout(function(){
 		window.history.pushState({},"Nueva página",liga)
