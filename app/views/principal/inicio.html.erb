@@ -53,13 +53,13 @@ $(document).on("scroll",function(event){
 function slide_pagina(event,render){
 	event.preventDefault();
 	$("#next-page-izq").animate({left: 0}, 450);
-	$("#next-page-izq").HTML(render);
+	$("#next-page-izq").html(render);
 }
 
 </script>
 <style>
 
-body,html { min-height: 100%; overflow-y: hidden; }
+body,html { min-height: 100%; overflow-x: hidden; }
 
 /* Clases */
 /* Rectángulos del ícono de menú */

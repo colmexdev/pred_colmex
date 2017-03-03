@@ -51,7 +51,9 @@ $(document).on("scroll",function(event){
 });
 
 function slide_pagina(event,render){
-	$("#
+	event.preventDefault();
+	$("#next-page-izq").animate({left: 0}, 450);
+	$("#next-page-izq").HTML(render);
 }
 
 </script>
