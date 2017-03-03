@@ -1,135 +1,240 @@
-// Place all the styles related to the principal controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-#div_footer{
-	position: absolute;
+body,html { min-height: 100%; overflow-x: hidden; }
+
+/* Clases */
+/* Rectángulos del ícono de menú */
+.rect {
+	background-color: rgba(200,200,200,0.85);
+	width: 40px;
+	height: 3px;
+	margin: 6px auto;
+	cursor: pointer;
+	-webkit-transition: all ease 0.9s;
+	-moz-transition: all ease 0.9s;
+	-o-transition: all ease 0.9s;
+	transition: all ease 0.9s;
+}
+
+/* Texto del menú desplegable */
+.opciones{
+	cursor: pointer;
+	position: fixed;
+	right: 0;
+	background-color: rgba(220,20,20,0);
+	color: rgba(255,255,255,0);
+	font-size: 30px;
+	white-space: nowrap;
+}
+
+/* Bordes del texto del menú desplegable */
+.borde-op{
+	background-color: #FFF;
+	height: 5px;
+	width: 0%;
 	bottom: 0;
+	left: 0;
+	-webkit-transition: width linear 0.3s;
+	-moz-transition: width linear 0.3s;
+	-o-transition: width linear 0.3s;
+	transition: width linear 0.3s;
+}
+
+/* Rectángulos de la flechita */
+.flecha-menu{
+	background-color: rgba(130,130,130,0.95);
+	height: 5px;
+	width: 30px;
+	position: absolute;
+	top: 46%;
+	z-index: 3;
+}
+
+/* Fondos de las celdas de la cuadrícula */
+.cuadricula-back{
+	z-index: 4;
+	float: left;
+	width: 50%;
+	height: 50%;
+	background-color: rgba(255,255,255,0.0);
+}
+
+/* Celdas de la cuadrícula del menú */
+.cuadricula-menu{
+	z-index: 4;
+	float: left;
+	margin: 7px 7px;
+	width: -webkit-calc(100% - 14px);
+	width: -moz-calc(100% - 14px);
+	width: calc(100% - 14px);
+	height: -webkit-calc(100% - 14px);
+	height: -moz-calc(100% - 14px);
+	height: calc(100% - 14px);
+	-webkit-transition: all linear 0.3s;
+	-moz-transition: all linear 0.3s;
+	-o-transition: all linear 0.3s;
+	transition: all linear 0.3s;
+}
+
+.cuadricula-menu:hover{
+	margin: 14px 14px;
+	width: -webkit-calc(100% - 28px);
+	width: -moz-calc(100% - 28px);
+	width: calc(100% - 28px);
+	height: -webkit-calc(100% - 28px);
+	height: -moz-calc(100% - 28px);
+	height: calc(100% - 28px);
+}
+
+/* Ligas en el mosaico */
+.liga-cuadricula{
+	display: block;
 	width: 100%;
-	height: auto;
-	background-color: #5E002B;
+	height: 100%;
+}
 
-	#footer_der, #footer_izq, #footer_centro{
-		color: #fff;
-		font-size: 15px;
-		background-color: #5E002B;
-		height: 200px;
+/* Identificadores */
+#cont_menu{
+	height: 0%;
+	width: 0%;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	margin: 0 auto;
+	background-color: rgba(220,20,60,0);
+	z-index: -1;
+}
 
-		.links{
-			display: table;
-			font-size: 15px;
-			width: 100%;
-			height: 100%;
-			padding-left: 0;
-			padding-top: 20px;
-			margin-bottom: 0;
+#flecha-der{
+	-webkit-transform: rotate(50deg);
+	-moz-transform: rotate(50deg);
+	-ms-transform: rotate(50deg);
+	-o-transform: rotate(50deg);
+	transform: rotate(50deg);
+	left: 15px;
+}
 
-			li{
-				display: table-row;
-				list-style-type: none;
+#flecha-izq{
+	-webkit-transform: rotate(130deg);
+	-moz-transform: rotate(130deg);
+	-ms-transform: rotate(130deg);
+	-o-transform: rotate(130deg);
+	transform: rotate(130deg);
+	right: 16px;
+}
 
-				a{
-					color: #fff;
-				}
+#mask-flecha{
+	height: 45px;
+	width: 78px;
+	position: fixed;
+	top: 78%;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+	z-index: 3;
+	cursor: pointer;
+}
 
-			}
-		}
-	}
+#cont-cuadricula{
+	width: 70%;
+	height: 500px;
+	margin: 100px auto 280px;
+	background-color: rgba(255,255,255,0.0);
+	z-index: 4;
+}
 
-	#footer_der{
-		margin-top: 20px;
-		text-align: left;
-		padding-left: 20px;
-	}
+/* Responsivos */
+@media only screen and (max-width: 992px){
+	#cont-cuadricula { height: 800px; }
+	.cuadricula-back { width: 100%; height: 25%; }
+}
 
-	#footer_izq{
-		margin-top: 20px;
-		text-align: right;
-		padding-right: 20px;
-	}
+/* Animación de las opciones principales del menú */
+/* -webkit- vendors (Chrome, Safari, Opera)*/
+@-webkit-keyframes opt-ap{
+	0% { z-index: -1; right: 0; color: rgba(255,255,255,0); }
+	100%	 { z-index: 5; right: 45%; color: rgba(255,255,255,1); }
+}
 
-	#footer_centro{
-		margin-top: 20px;
-		text-align: center;
-    border-right: 1px solid #fff;
-		border-left: 1px solid #fff;
-		color: #fff;
-		font-size: 13px;
+@-webkit-keyframes opt-dis{
+	0%	 { z-index: 5; right: 45%; color: rgba(255,255,255,1); }
+	100% { z-index: -1; right: 0; color: rgba(255,255,255,0); }
+}
+/* -moz- vendors (Mozilla) */
+@-moz-keyframes opt-ap{
+	0% { z-index: -1; right: 0; color: rgba(255,255,255,0); }
+	100%	 { z-index: 5; right: 45%; color: rgba(255,255,255,1); }
+}
 
-		#img_footer{
-			width: 25%;
-			max-width: 300px;
-		}
-		
-		#img_cc{
-			margin-top: 10px;
-			width: 12%;
-			max-width: 200px;
-			margin-bottom: 10px;
-		}
+@-moz-keyframes opt-dis{
+	0%	 { z-index: 5; right: 45%; color: rgba(255,255,255,1); }
+	100% { z-index: -1; right: 0; color: rgba(255,255,255,0); }
+}
+/* -o- vendors (Opera) */
+@-o-keyframes opt-ap{
+	0% { z-index: -1; right: 0; color: rgba(255,255,255,0); }
+	100%	 { z-index: 5; right: 45%; color: rgba(255,255,255,1); }
+}
 
-		@media only screen and (min-width: 992px){
-			#img_footer { width: 250px; }
+@-o-keyframes opt-dis{
+	0%	 { z-index: 5; right: 45%; color: rgba(255,255,255,1); }
+	100% { z-index: -1; right: 0; color: rgba(255,255,255,0); }
+}
+/* genérico (Chrome, Mozilla, Edge/Explorer, Opera, Safari) */
+@keyframes opt-ap{
+	0% { z-index: -1; right: 0; color: rgba(255,255,255,0); }
+	100%	 { z-index: 5; right: 45%; color: rgba(255,255,255,1); }
+}
 
-			#img_cc { width: 120px; }
-		}
+@-webkit-keyframes opt-dis{
+	0%	 { z-index: 5; right: 45%; color: rgba(255,255,255,1); }
+	100% { z-index: -1; right: 0; color: rgba(255,255,255,0); }
+}
 
-		p{ text-align: center; margin: 15px 15px; font-size: 13px; margin-top: 5px; }
-	}
+/* Animación del contenedor del menú */
+/* -webkit- vendors (Chrome, Safari, Opera)*/
+@-webkit-keyframes fade-in{
+	0% { width: 0%; height: 0%; background-color: rgba(220,20,60,0); }
+	100% { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
+}
 
-  @media only screen and (max-width: 1460px){
-		#footer_der, #footer_izq, #footer_centro { height: 200px; }
-		#footer_centro { font-size: 13px;}
-	}
+@-webkit-keyframes fade-out{
+	0%	 { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
+	100% { width: 100%; height: 100%; background-color: rgba(220,20,60,0); }
+}
+/* -moz- vendor (Mozilla)*/
+@-moz-keyframes fade-in{
+	0% { width: 0%; height: 0%; background-color: rgba(220,20,60,0); }
+	100% { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
+}
 
-  @media only screen and (min-width: 682px) and (max-width: 1160px){
-		#footer_der, #footer_izq { 
-			.links { 
-				font-size: 11px; 
-			} 
-		}
-	} 
+@-moz-keyframes fade-out{
+	0%	 { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
+	100% { width: 100%; height: 100%; background-color: rgba(220,20,60,0); }
+}
+/* -o- vendor (Opera)*/
+@-o-keyframes fade-in{
+	0% { width: 0%; height: 0%; background-color: rgba(220,20,60,0); }
+	100% { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
+}
 
-  @media only screen and (max-width: 682px){
-		#footer_der, #footer_izq { 
-			.links { 
-				font-size: 9px; 
-			} 
-		}
-	} 
+@-o-keyframes fade-out{
+	0%	 { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
+	100% { width: 100%; height: 100%; background-color: rgba(220,20,60,0); }
+}
+/* genérico (Chrome, Safari, Opera, Mozilla, Edge/Explorer)*/
+@keyframes fade-in{
+	0% { width: 0%; height: 0%; background-color: rgba(220,20,60,0); }
+	100% { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
+}
 
-	@media only screen and (max-width: 991px){
-		#footer_izq { display: none; }
-		#footer_centro { border: none; height: auto; >p { margin: 0 auto; font-size: 9px;} }
-		#footer_der { 
-			height: auto;
-			padding-left: 0;
-			margin-top: 0;
-			.links { 
-				margin: 0 auto;
-				width: auto;
-				padding-top: 10px;
-				li { float: left; padding: 0 5px; border-right: solid 1px #fff; }
-				.no-border { border-right: none; } 
-			}
-		}
-	}
-
-	#redes_footer{
-		height: auto;
-		background-color: #5E002B;
-		text-align: center;
-
-		.botones_footer{
-			float: left;
-			list-style-type: none;
-			width: 100%;
-			margin: 10px auto;
-			display: block;
-
-			img{
-				margin: 0 4px;
-				height: 20px;
-			}
-		}	
-	}
+@keyframes fade-out{
+	0%	 { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
+	100% { width: 100%; height: 100%; background-color: rgba(220,20,60,0); }
 }

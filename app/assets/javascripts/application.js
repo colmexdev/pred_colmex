@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require videos
+//= require principal
