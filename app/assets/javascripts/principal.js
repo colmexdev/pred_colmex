@@ -60,7 +60,7 @@ function slide_pagina(event,render,liga){
       success:function(data)
       {
           alert(data);
-          document.write(data);
+          //document.write(data);
       } 
      });
 

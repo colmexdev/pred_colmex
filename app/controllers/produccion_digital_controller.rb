@@ -1,5 +1,10 @@
 class ProduccionDigitalController < ApplicationController
   def cursos_breves
-		gon.prueba = "a";
+		@prueba = "a"
+		gon.prueba = "a"
+		respond_to do |format|
+      format.html
+      format.json {render json: @prueba }
+    end
   end
 end
