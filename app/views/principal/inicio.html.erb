@@ -50,10 +50,16 @@ $(document).on("scroll",function(event){
 	$("#contenedor").css({"width": (y < 1 ? "90%" : ( y >= window.innerHeight ? "75%" : ((75 + (15*(1 - (y/window.innerHeight)))) + "%") )), "height" : (y < 1 ? "85%" : ( y >= window.innerHeight ? "65%" : ((65 + (20*(1 - (y/window.innerHeight)))) + "%") ))});
 });
 
+function slide_pagina(event,render){
+	event.preventDefault();
+	$("#next-page-izq").animate({left: 0}, 450);
+	$("#next-page-izq").HTML(render);
+}
+
 </script>
 <style>
 
-body,html { min-height: 100%; }
+body,html { min-height: 100%; overflow-y: hidden; }
 
 /* Clases */
 /* Rectángulos del ícono de menú */
@@ -255,45 +261,47 @@ body,html { min-height: 100%; }
 /* Animación del contenedor del menú */
 /* -webkit- vendors (Chrome, Safari, Opera)*/
 @-webkit-keyframes fade-in{
-	0% { width: 0%; height: 0%; background-color: rgba(220,20,60,0);/* top: 0; left: 0; -webkit-transform: none; -o-transform: none; transform: none; */}
-	100% { width: 90%; height: 85%;/* top: 50%; left: 50%; -webkit-transform: translate3d(-50%,-50%,0); -o-transform: translate3d(-50%,-50%,0); transform: translate3d(-50%,-50%,0);*/ background-color: rgba(220,20,60,0.8); }
+	0% { width: 0%; height: 0%; background-color: rgba(220,20,60,0); }
+	100% { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
 }
 
 @-webkit-keyframes fade-out{
-	0%	 { width: 90%; height: 85%;/* top: 50%; left: 50%; -webkit-transform: translate3d(-50%,-50%,0); -o-transform: translate3d(-50%,-50%,0); transform: translate3d(-50%,-50%,0);*/ background-color: rgba(220,20,60,0.8); }
-	100% { width: 100%; height: 100%; background-color: rgba(220,20,60,0);/* top: 0; left: 0; -webkit-transform: none; -o-transform: none; transform: none; */}
+	0%	 { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
+	100% { width: 100%; height: 100%; background-color: rgba(220,20,60,0); }
 }
 /* -moz- vendor (Mozilla)*/
 @-moz-keyframes fade-in{
-	0% { width: 0%; height: 0%; background-color: rgba(220,20,60,0);/* top: 0; left: 0; -moz-transform: none; transform: none; */}
-	100% { width: 90%; height: 85%;/* top: 50%; left: 50%; -moz-transform: translate3d(-50%,-50%,0); transform: translate3d(-50%,-50%,0); */background-color: rgba(220,20,60,0.8); }
+	0% { width: 0%; height: 0%; background-color: rgba(220,20,60,0); }
+	100% { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
 }
 
 @-moz-keyframes fade-out{
-	0%	 { width: 90%; height: 85%;/* top: 50%; left: 50%; -moz-transform: translate3d(-50%,-50%,0); transform: translate3d(-50%,-50%,0); */background-color: rgba(220,20,60,0.8); }
-	100% { width: 100%; height: 100%; background-color: rgba(220,20,60,0);/* top: 0; left: 0; -moz-transform: none; transform: none; */}
+	0%	 { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
+	100% { width: 100%; height: 100%; background-color: rgba(220,20,60,0); }
 }
 /* -o- vendor (Opera)*/
 @-o-keyframes fade-in{
-	0% { width: 0%; height: 0%; background-color: rgba(220,20,60,0);/* top: 0; left: 0; -o-transform: none; -webkit-transform: none; transform: none; */}
-	100% { width: 90%; height: 85%;/* top: 50%; left: 50%; -o-transform: translate3d(-50%,-50%,0); -webkit-transform: translate3d(-50%,-50%,0); transform: translate3d(-50%,-50%,0); */background-color: rgba(220,20,60,0.8); }
+	0% { width: 0%; height: 0%; background-color: rgba(220,20,60,0); }
+	100% { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
 }
 
 @-o-keyframes fade-out{
-	0%	 { width: 90%; height: 85%;/* top: 50%; left: 50%; -webkit-transform: translate3d(-50%,-50%,0); -o-transform: translate3d(-50%,-50%,0); transform: translate3d(-50%,-50%,0);*/ background-color: rgba(220,20,60,0.8); }
-	100% { width: 100%; height: 100%; background-color: rgba(220,20,60,0);/* top: 0; left: 0; -webkit-transform: none; -o-transform: none; transform: none; */}
+	0%	 { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
+	100% { width: 100%; height: 100%; background-color: rgba(220,20,60,0); }
 }
 /* genérico (Chrome, Safari, Opera, Mozilla, Edge/Explorer)*/
 @keyframes fade-in{
-	0% { width: 0%; height: 0%; background-color: rgba(220,20,60,0);/* top: 0; left: 0; -webkit-transform: none; -moz-transform: none; -ms-transform: none; -o-transform: none; transform: none; */}
-	100% { width: 90%; height: 85%;/* top: 50%; left: 50%; -webkit-transform: translate3d(-50%,-50%,0); -moz-transform: translate3d(-50%,-50%,0); -ms-transform: translate3d(-50%,-50%,0); -o-transform: translate3d(-50%,-50%,0); transform: translate3d(-50%,-50%,0);*/ background-color: rgba(220,20,60,0.8); }
+	0% { width: 0%; height: 0%; background-color: rgba(220,20,60,0); }
+	100% { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
 }
 
 @keyframes fade-out{
-	0%	 { width: 90%; height: 85%;/* top: 50%; left: 50%; -webkit-transform: translate3d(-50%,-50%,0); -moz-transform: translate3d(-50%,-50%,0); -ms-transform: translate3d(-50%,-50%,0); -o-transform: translate3d(-50%,-50%,0); transform: translate3d(-50%,-50%,0);*/ background-color: rgba(220,20,60,0.8); }
-	100% { width: 100%; height: 100%; background-color: rgba(220,20,60,0);/* top: 0; left: 0; -webkit-transform: none; -moz-transform: none; -ms-transform: none; -o-transform: none; transform: none; */}
+	0%	 { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
+	100% { width: 100%; height: 100%; background-color: rgba(220,20,60,0); }
 }
 </style>
+
+	<div id="next-page-izq" style="position:fixed;top:0;left:100%;width:100%;height:100%;"
 
 	<div id="inicio" style="height:100%;width:100%;position:fixed;top:0;left:0;z-index:0;">
 	</div>
@@ -341,22 +349,22 @@ body,html { min-height: 100%; }
 			<div id="cont-cuadricula">
 				<div class="cuadricula-back">
 					<div class="cuadricula-menu" style="background-color:#660033;">
-						<a href="#" class="liga-cuadricula"></a>
+						<a href="#" id="liga_0" class="liga-cuadricula" onclick="slide_pagina(event,this.id)"></a>
 					</div>
 				</div>
 				<div class="cuadricula-back">
 					<div class="cuadricula-menu" style="background-color:#0033CC;">
-						<a href="#" class="liga-cuadricula"></a>
+						<a href="#" id="liga_1" class="liga-cuadricula" onclick="slide_pagina(event,this.id)"></a>
 					</div>
 				</div>
 				<div class="cuadricula-back">
 					<div class="cuadricula-menu" style="background-color:#336600;">
-						<a href="#" class="liga-cuadricula"></a>
+						<a href="#" id="liga_2" class="liga-cuadricula" onclick="slide_pagina(event,this.id)"></a>
 					</div>
 				</div>
 				<div class="cuadricula-back">
 					<div class="cuadricula-menu" style="background-color:#CC6600;"">
-						<a href="#" class="liga-cuadricula"></a>
+						<a href="#" id="liga_3" class="liga-cuadricula" onclick="slide_pagina(event,this.id)"></a>
 					</div>
 				</div>
 			</div>
