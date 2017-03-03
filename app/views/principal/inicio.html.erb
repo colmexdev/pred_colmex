@@ -54,7 +54,7 @@ function slide_pagina(event,render,liga){
 	event.preventDefault();
 	$("#next-page-izq").animate({left: 0}, 450);
 	//$("#next-page-izq").html(render);
-	$("body html").css("height", $("#next-page-izq").height());
+	$("body, html").css("height", $("#next-page-izq").height());
 	setTimeout(function(){
 		window.history.pushState({},"Nueva página",liga)
 	}, 450);
@@ -305,8 +305,8 @@ body,html { min-height: 100%; overflow-x: hidden; }
 }
 </style>
 
-	<div id="next-page-izq" style="position:fixed;top:0;left:100%;width:100%;height:100%;z-index:4;background-color:#AAA;">
-		<iframe src="<%= cursos_breves_url %>"></iframe>
+	<div id="next-page-izq" style="position:fixed;top:0;left:100%;width:100%;height:auto;min-height:100%;z-index:4;background-color:#AAA;">
+		<iframe src="<%= cursos_breves_url %>" style="width:100%;min-height:100%;border:none;"></iframe>
 	</div>
 
 	<div id="inicio" style="height:100%;width:100%;position:fixed;top:0;left:0;z-index:0;">
