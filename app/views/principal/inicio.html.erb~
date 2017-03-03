@@ -355,7 +355,7 @@ body,html { min-height: 100%; overflow-x: hidden; }
 			<div id="cont-cuadricula">
 				<div class="cuadricula-back">
 					<div class="cuadricula-menu" style="background-color:#660033;">
-						<a href="#" id="liga_0" class="liga-cuadricula" onclick="slide_pagina(event,this.id,'http://www.google.com')"></a>
+						<a href="#" id="liga_0" class="liga-cuadricula" onclick="slide_pagina(event,this.id,'produccion_digital/cursos_breves')"></a>
 					</div>
 				</div>
 				<div class="cuadricula-back">
