@@ -61,3 +61,11 @@ function slide_pagina(event,render,liga){
 $(document).on("ready page:change page:load",function(event){
 	$("#brand,#menu_canvas,#menu_mask").animate({top: (/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href) ? "1%" : "17%")}, 200);
 })
+
+window.onpopstate = function(event){
+    if(event.state !== null) {
+        location.reload();
+    } else if(event.state === null){ // no state data available
+
+    }
+};
