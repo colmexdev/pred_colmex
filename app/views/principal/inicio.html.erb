@@ -6,10 +6,7 @@
 	<div id="inicio" style="height:100%;width:100%;position:fixed;top:0;left:0;z-index:0;">
 	</div>
 
-	<div id="cont_menu" onclick="desplegarMenu();">
-	</div>
-
-	<div id="contenedor" style="width:90%; height:85%;margin:auto;overflow:hidden;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;background:url(<%= image_path('Paisaje.png') %>) no-repeat center center / 130% 130%;" onmousemove="moverFondo(event,$(this));">
+	<div id="contenedor" onmousemove="moverFondo(event,$(this));">
 	</div>
 
 
@@ -19,7 +16,7 @@
 	</div>
 
 
-		<div id="mosaico" style="height:auto;width:100%;top:100%;position:absolute;background-color:rgb(150,150,150);z-index:3;min-height:100%;text-align:center;">
+		<div id="mosaico">
 			<div id="cont-cuadricula">
 				<div class="cuadricula-back">
 					<div class="cuadricula-menu" style="background-color:#660033;">

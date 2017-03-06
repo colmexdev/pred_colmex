@@ -1,6 +1,6 @@
 function moverFondo(event,element){
-	var containerWidth = element.innerWidth()*1.8,  
-		  containerHeight = element.innerHeight()*2,
+	var containerWidth = element.innerWidth()*2.5,  
+		  containerHeight = element.innerHeight()*3,
 		  mousePositionX = (event.pageX / containerWidth) * 100,
 		  mousePositionY = (event.pageY /containerHeight) * 100;
 
@@ -51,12 +51,12 @@ $(document).on("scroll",function(event){
 function slide_pagina(event,render,liga){
 	event.preventDefault();
 	$("#next-page-izq").animate({left: 0}, 450);
-	$("#wrapper").css({"overflow": "hidden", "height": (/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href) ? $(window).innerHeight() : "")});
+	//$("#wrapper").css({"overflow": "hidden", "height": (/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href) ? $(window).innerHeight() : "")});
 	  jQuery.ajax({
       url: 'http://pred1.colmex.mx/produccion_digital/cursos_breves',
       type: 'get',
       dataType: 'JSON',
-			//data: {algo: "hello"},
+			data: {algo: "hello"},
       success:function(result)
       {
           console.log(result);

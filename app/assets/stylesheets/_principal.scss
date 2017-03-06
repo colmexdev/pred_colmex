@@ -108,6 +108,19 @@ body,html { min-height: 100%; overflow-x: hidden; }
 	z-index: -1;
 }
 
+#contenedor{
+	width: 90%;
+	height: 85%;
+	margin: auto;
+	overflow: hidden;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 2;
+	background: url(image-path('Paisaje.png')) no-repeat center center / 130% 130%;
+}
+
 #flecha-der{
 	-webkit-transform: rotate(50deg);
 	-moz-transform: rotate(50deg);
@@ -147,6 +160,17 @@ body,html { min-height: 100%; overflow-x: hidden; }
 	margin: 100px auto 280px;
 	background-color: rgba(255,255,255,0.0);
 	z-index: 4;
+}
+
+#mosaico{
+	height: auto;
+	width: 100%;
+	top: 100%;
+	position: absolute;
+	background-color: rgb(150,150,150);
+	z-index: 3;
+	min-height: 100%;
+	text-align: center;	
 }
 
 /* Responsivos */

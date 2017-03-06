@@ -8,6 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
+
+
+
 <!-- Menú y logo -->
 	<div id="brand" style="height:100px;width:130px;position:fixed;top:17%;left:2.5%;z-index:5;background:url(<%= image_path('LOGO_PED.png') %>) no-repeat center center / 100% 100%">
 	</div>
@@ -38,6 +41,7 @@
 
 <!-- /Menú y logo -->
 <%= yield %>
+
 
 </body>
 </html>

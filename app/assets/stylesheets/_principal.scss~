@@ -1,0 +1,264 @@
+body,html { min-height: 100%; overflow-x: hidden; }
+
+/* Clases */
+/* Rectángulos del ícono de menú */
+.rect {
+	background-color: rgba(200,200,200,0.85);
+	width: 40px;
+	height: 3px;
+	margin: 6px auto;
+	cursor: pointer;
+	-webkit-transition: all ease 0.9s;
+	-moz-transition: all ease 0.9s;
+	-o-transition: all ease 0.9s;
+	transition: all ease 0.9s;
+}
+
+/* Texto del menú desplegable */
+.opciones{
+	cursor: pointer;
+	position: fixed;
+	right: 0;
+	background-color: rgba(220,20,20,0);
+	color: rgba(255,255,255,0);
+	font-size: 30px;
+	white-space: nowrap;
+}
+
+/* Bordes del texto del menú desplegable */
+.borde-op{
+	background-color: #FFF;
+	height: 5px;
+	width: 0%;
+	bottom: 0;
+	left: 0;
+	-webkit-transition: width linear 0.3s;
+	-moz-transition: width linear 0.3s;
+	-o-transition: width linear 0.3s;
+	transition: width linear 0.3s;
+}
+
+/* Rectángulos de la flechita */
+.flecha-menu{
+	background-color: rgba(130,130,130,0.95);
+	height: 5px;
+	width: 30px;
+	position: absolute;
+	top: 46%;
+	z-index: 3;
+}
+
+/* Fondos de las celdas de la cuadrícula */
+.cuadricula-back{
+	z-index: 4;
+	float: left;
+	width: 50%;
+	height: 50%;
+	background-color: rgba(255,255,255,0.0);
+}
+
+/* Celdas de la cuadrícula del menú */
+.cuadricula-menu{
+	z-index: 4;
+	float: left;
+	margin: 7px 7px;
+	width: -webkit-calc(100% - 14px);
+	width: -moz-calc(100% - 14px);
+	width: calc(100% - 14px);
+	height: -webkit-calc(100% - 14px);
+	height: -moz-calc(100% - 14px);
+	height: calc(100% - 14px);
+	-webkit-transition: all linear 0.3s;
+	-moz-transition: all linear 0.3s;
+	-o-transition: all linear 0.3s;
+	transition: all linear 0.3s;
+}
+
+.cuadricula-menu:hover{
+	margin: 14px 14px;
+	width: -webkit-calc(100% - 28px);
+	width: -moz-calc(100% - 28px);
+	width: calc(100% - 28px);
+	height: -webkit-calc(100% - 28px);
+	height: -moz-calc(100% - 28px);
+	height: calc(100% - 28px);
+}
+
+/* Ligas en el mosaico */
+.liga-cuadricula{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/* Identificadores */
+#cont_menu{
+	height: 0%;
+	width: 0%;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	margin: 0 auto;
+	background-color: rgba(220,20,60,0);
+	z-index: -1;
+}
+
+#contenedor{
+	width: 90%;
+	height: 85%;
+	margin: auto;
+	overflow: hidden;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 2;
+	background: url(<%= image_path('Paisaje.png') %>) no-repeat center center / 130% 130%;
+}
+
+#flecha-der{
+	-webkit-transform: rotate(50deg);
+	-moz-transform: rotate(50deg);
+	-ms-transform: rotate(50deg);
+	-o-transform: rotate(50deg);
+	transform: rotate(50deg);
+	left: 15px;
+}
+
+#flecha-izq{
+	-webkit-transform: rotate(130deg);
+	-moz-transform: rotate(130deg);
+	-ms-transform: rotate(130deg);
+	-o-transform: rotate(130deg);
+	transform: rotate(130deg);
+	right: 16px;
+}
+
+#mask-flecha{
+	height: 45px;
+	width: 78px;
+	position: fixed;
+	top: 78%;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+	z-index: 3;
+	cursor: pointer;
+}
+
+#cont-cuadricula{
+	width: 70%;
+	height: 500px;
+	margin: 100px auto 280px;
+	background-color: rgba(255,255,255,0.0);
+	z-index: 4;
+}
+
+#mosaico{
+	height: auto;
+	width: 100%;
+	top: 100%;
+	position: absolute;
+	background-color: rgb(150,150,150);
+	z-index: 3;
+	min-height: 100%;
+	text-align: center;	
+}
+
+/* Responsivos */
+@media only screen and (max-width: 992px){
+	#cont-cuadricula { height: 800px; }
+	.cuadricula-back { width: 100%; height: 25%; }
+}
+
+/* Animación de las opciones principales del menú */
+/* -webkit- vendors (Chrome, Safari, Opera)*/
+@-webkit-keyframes opt-ap{
+	0% { z-index: -1; right: 0; color: rgba(255,255,255,0); }
+	100%	 { z-index: 5; right: 45%; color: rgba(255,255,255,1); }
+}
+
+@-webkit-keyframes opt-dis{
+	0%	 { z-index: 5; right: 45%; color: rgba(255,255,255,1); }
+	100% { z-index: -1; right: 0; color: rgba(255,255,255,0); }
+}
+/* -moz- vendors (Mozilla) */
+@-moz-keyframes opt-ap{
+	0% { z-index: -1; right: 0; color: rgba(255,255,255,0); }
+	100%	 { z-index: 5; right: 45%; color: rgba(255,255,255,1); }
+}
+
+@-moz-keyframes opt-dis{
+	0%	 { z-index: 5; right: 45%; color: rgba(255,255,255,1); }
+	100% { z-index: -1; right: 0; color: rgba(255,255,255,0); }
+}
+/* -o- vendors (Opera) */
+@-o-keyframes opt-ap{
+	0% { z-index: -1; right: 0; color: rgba(255,255,255,0); }
+	100%	 { z-index: 5; right: 45%; color: rgba(255,255,255,1); }
+}
+
+@-o-keyframes opt-dis{
+	0%	 { z-index: 5; right: 45%; color: rgba(255,255,255,1); }
+	100% { z-index: -1; right: 0; color: rgba(255,255,255,0); }
+}
+/* genérico (Chrome, Mozilla, Edge/Explorer, Opera, Safari) */
+@keyframes opt-ap{
+	0% { z-index: -1; right: 0; color: rgba(255,255,255,0); }
+	100%	 { z-index: 5; right: 45%; color: rgba(255,255,255,1); }
+}
+
+@-webkit-keyframes opt-dis{
+	0%	 { z-index: 5; right: 45%; color: rgba(255,255,255,1); }
+	100% { z-index: -1; right: 0; color: rgba(255,255,255,0); }
+}
+
+/* Animación del contenedor del menú */
+/* -webkit- vendors (Chrome, Safari, Opera)*/
+@-webkit-keyframes fade-in{
+	0% { width: 0%; height: 0%; background-color: rgba(220,20,60,0); }
+	100% { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
+}
+
+@-webkit-keyframes fade-out{
+	0%	 { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
+	100% { width: 100%; height: 100%; background-color: rgba(220,20,60,0); }
+}
+/* -moz- vendor (Mozilla)*/
+@-moz-keyframes fade-in{
+	0% { width: 0%; height: 0%; background-color: rgba(220,20,60,0); }
+	100% { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
+}
+
+@-moz-keyframes fade-out{
+	0%	 { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
+	100% { width: 100%; height: 100%; background-color: rgba(220,20,60,0); }
+}
+/* -o- vendor (Opera)*/
+@-o-keyframes fade-in{
+	0% { width: 0%; height: 0%; background-color: rgba(220,20,60,0); }
+	100% { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
+}
+
+@-o-keyframes fade-out{
+	0%	 { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
+	100% { width: 100%; height: 100%; background-color: rgba(220,20,60,0); }
+}
+/* genérico (Chrome, Safari, Opera, Mozilla, Edge/Explorer)*/
+@keyframes fade-in{
+	0% { width: 0%; height: 0%; background-color: rgba(220,20,60,0); }
+	100% { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
+}
+
+@keyframes fade-out{
+	0%	 { width: 90%; height: 85%; background-color: rgba(220,20,60,0.8); }
+	100% { width: 100%; height: 100%; background-color: rgba(220,20,60,0); }
+}
