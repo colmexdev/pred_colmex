@@ -50,7 +50,7 @@ $(document).on("scroll",function(event){
 
 function slide_pagina(event,render,liga,home){
 	event.preventDefault();
-	$("#next-page-izq").animate({left: (home ? 0 : "100%")}, 450);
+	$("#next-page-izq").animate({left: (home ? "100%" : 0)}, 450);
 	//$("#wrapper").css({"overflow": "hidden", "height": (/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href) ? $(window).innerHeight() : "")});
 	  jQuery.ajax({
       url: 'http://pred1.colmex.mx/produccion_digital/cursos_breves',
