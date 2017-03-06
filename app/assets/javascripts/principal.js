@@ -59,7 +59,7 @@ function slide_pagina(event,render,liga){
 			data: {algo: "hello"},
       success:function(result)
       {
-          alert(result);
+          console.log(result);
           //document.write(data);
       } 
      });
@@ -82,7 +82,7 @@ $(document).on("ready page:change",function(event){
 			data: {algo: "hello"},
       success:function(result)
       {
-          alert(result);
+          console.log(result);
           //document.write(data);
       } 
      });
