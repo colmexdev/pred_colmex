@@ -42,6 +42,15 @@
 		<div id="borde-4" class="borde-op"></div>
 	</div>
 
+
+	<div id="contenedor" onmousemove="moverFondo(event,$(this));">
+	</div>
+
+	<div id="mask-flecha" onclick="scrollPagina();">
+		<div class="flecha-menu" id="flecha-der"></div>
+		<div class="flecha-menu" id="flecha-izq"></div>
+	</div>
+
 <!-- /Menú y logo -->
 <%= yield %>
 

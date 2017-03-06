@@ -6,19 +6,6 @@
 	<div id="inicio" style="height:100%;width:100%;position:fixed;top:0;left:0;z-index:0;">
 	</div>
 
-	<div id="cont_menu" onclick="desplegarMenu();">
-	</div>
-
-	<div id="contenedor" onmousemove="moverFondo(event,$(this));">
-	</div>
-
-
-	<div id="mask-flecha" onclick="scrollPagina();">
-		<div class="flecha-menu" id="flecha-der"></div>
-		<div class="flecha-menu" id="flecha-izq"></div>
-	</div>
-
-
 		<div id="mosaico">
 			<div id="cont-cuadricula">
 				<div class="cuadricula-back">
