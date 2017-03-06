@@ -3,8 +3,10 @@
 		<%= render 'produccion_digital/cursos_breves_temp' %>
 	</div>
 
+	<% if false %>
 	<div id="inicio" style="height:100%;width:100%;position:fixed;top:0;left:0;z-index:0;">
 	</div>
+	<% end %>
 
 		<div id="mosaico">
 			<div id="cont-cuadricula">

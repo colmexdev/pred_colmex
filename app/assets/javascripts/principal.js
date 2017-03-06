@@ -48,9 +48,9 @@ $(document).on("scroll",function(event){
 	$("#contenedor").css({"width": (y < 1 ? "90%" : ( y >= window.innerHeight ? "75%" : ((75 + (15*(1 - (y/window.innerHeight)))) + "%") )), "height" : (y < 1 ? "85%" : ( y >= window.innerHeight ? "65%" : ((65 + (20*(1 - (y/window.innerHeight)))) + "%") ))});
 });
 
-function slide_pagina(event,render,liga){
+function slide_pagina(event,render,liga,home){
 	event.preventDefault();
-	$("#next-page-izq").animate({left: 0}, 450);
+	$("#next-page-izq").animate({left: (home ? "100%" : 0)}, 450);
 	//$("#wrapper").css({"overflow": "hidden", "height": (/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href) ? $(window).innerHeight() : "")});
 	  jQuery.ajax({
       url: 'http://pred1.colmex.mx/produccion_digital/cursos_breves',
