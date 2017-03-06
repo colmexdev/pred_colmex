@@ -1,7 +1,7 @@
 class ProduccionDigitalController < ApplicationController
   def cursos_breves
 		@videos = Video.where("tipo = ?", "Curso")
-    @cursos = @videos.group(:curso)
+    @cursos = @videos.pluck(:curso)
 		@participantes = []
 		@videos.each do |v|
 		  Participante.where("id_video = ?", v.id) do |p|
