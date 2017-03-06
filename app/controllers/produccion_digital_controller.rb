@@ -1,6 +1,6 @@
 class ProduccionDigitalController < ApplicationController
   def cursos_breves
-		@prueba = {:par1 => "a"}
+		@prueba = "a"
 		gon.prueba = "a"
 		respond_to do |format|
       format.html
