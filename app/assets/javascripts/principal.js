@@ -56,7 +56,6 @@ function slide_pagina(event,render,liga,home){
       url: 'http://pred1.colmex.mx/produccion_digital/cursos_breves',
       type: 'get',
       dataType: 'JSON',
-			//data: {algo: "hello"},
       success:function(result)
       {
           console.log(result);
@@ -74,6 +73,7 @@ function slide_pagina(event,render,liga,home){
 
 $(document).on("ready page:change",function(event){
 	$("#brand,#menu_canvas,#menu_mask").animate({top: (/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href) ? "1%" : "17%")}, 100);
+	$("#mosaico").animate({top: (/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href) ? "0" : "100%"), height: (/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href) ? "0" : "auto")}, 450);
 	console.log(event);
 	jQuery.ajax({
       url: 'http://pred1.colmex.mx/produccion_digital/cursos_breves',

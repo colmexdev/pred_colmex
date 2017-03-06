@@ -1,0 +1,50 @@
+<div id="div_footer"> <!-- Fila para footer -->
+		<!-- <div class="col-md-12" id="div_footer">  <!-- Columnas para footer -->
+			<div class="col-xs-12 col-md-2" id="footer_izq">
+				<ul class="links">
+					<li><a href="https://www.colmex.mx/centros_de_estudio/inicio?locale=sp">Centros de Estudios</a></li>
+					<li><a href="https://www.colmex.mx/programas_academicos/inicio?locale=sp">Programas docentes</a></li>
+					<li><a href="http://biblioteca.colmex.mx/" target="_blank">Biblioteca</a></li>
+					<li><a href=" http://agenda.colmex.mx/Inicio" target="_blank">Agenda</a></li>
+					<li><a href="http://intranet.colmex.mx/directorio/" target="_blank">Directorio Institucional</a></li>
+				</ul>
+			</div>
+			<div class="col-xs-12 col-md-8" id="footer_centro">
+				<img id="img_footer" src="https://www.colmex.mx/assets/colmex-pie-11574ae7eb2daa4f7ed874bf99b3ef3aa5b4f3ee3c82f218355cdb5c6cfe795d.png" alt="Colmex pie"><br>
+				<a target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img id="img_cc" src="https://www.colmex.mx/assets/creative-commons-c376b41beeaa05f745d4a8aaf2dc3f84a033c72ff8f81d5896bc70602ae5d635.png" alt="Creative commons"></a>
+				<p>Derechos reservados, El Colegio de México A.C. © 2017<br>
+	Camino al Ajusco número 20, Colonia Pedregal de Santa Teresa, C.P. 10740 México, Ciudad de México<br>
+	Tel.: +52 55 54493000</p>
+
+			</div>
+			<div class="col-xs-12 col-md-2" id="footer_der">
+				<ul class="links">
+					<li><a href="http://portal.office.com" target="_blank">Correo electrónico</a></li>
+					<li><a href="http://intranet.colmex.mx/" target="_blank">Intranet</a></li>
+					<li><a href="https://www.colmex.mx/principal/sitemap?locale=sp">Mapa de sitio</a></li>
+					<li><a href="https://www.colmex.mx/principal/como_llegar?locale=sp">Cómo llegar</a></li>
+					<li class="no-border"><a href="https://www.colmex.mx/principal/aviso_de_privacidad?locale=sp">Aviso de Privacidad</a></li>
+				</ul>
+			</div>
+		<!-- </div> <!-- Cierre de columnas para footer -->
+
+	<div class="col-xs-12 col-md-12" id="redes_footer"> <!-- Columnas para redes sociales en footer-->
+			<ul class="botones_footer">
+				<a target="_blank" href="&#10;https://www.facebook.com/elcolmex/"><img class="img_net" src="https://www.colmex.mx/assets/fb-bco-852fd3b079e77ecd3aa172ef9bf057c8a9c4f7f6e4c3c04efbd0a6bc06a46b72.png" alt="Fb bco"></a>
+				<a target="_blank" href="&#10;https://twitter.com/ELCOLMEX"><img class="img_net" src="https://www.colmex.mx/assets/twitter-bco-35e2a6550b0b5e739f01b5e12ea2f514dd25619eb587c7e7346f143915fac108.png" alt="Twitter bco"></a>
+				<a target="_blank" href="&#10;https://www.youtube.com/c/elcolegiodemexicociudaddemexico"><img class="img_net" src="https://www.colmex.mx/assets/youtube-bco-39b5f45b75f8d74eed2231c964d0e1c4dc646b87cc82af932911804714b8542d.png" alt="Youtube bco"></a>
+				<a target="_blank" href="https://itunes.apple.com/mx/institution/el-colegio-de-mexico/id443160573"><img class="img_net" src="https://www.colmex.mx/assets/itunes-bco-d47ec1021ad14f7155a893371e9b9ce6282715fbf76f8d61ff13312bc56d2e95.png" alt="Itunes bco"></a>
+				<a target="_blank" href="https://www.linkedin.com/edu/el-colegio-de-m%C3%A9xico-14986"><img class="img_net" src="https://www.colmex.mx/assets/linkedin-bco-306c05cdfc55105e0ba1d65723f5d962ccd8d5ac9ba4ce6494c987bb61e7d1b5.png" alt="Linkedin bco"></a>
+				<a target="_blank" href="https://plus.google.com/+ColmexMx1/posts"><img class="img_net" src="https://www.colmex.mx/assets/google-bco-70140120ae8f6b75d339b36ba12f01fbad718ed34557df4f26394e5fa3e4da08.png" alt="Google bco"></a>
+				<a target="_blank" href="https://www.instagram.com/elcolmex/"><img class="img_net" src="https://www.colmex.mx/assets/instagram-bco-870a880ce6ffa5e563b363277fd784293246c0f24c7b7b635ea6f731b93f292a.png" alt="Instagram bco"></a>
+				
+			</ul>
+			<% if false %>
+			<div id="boton-top" onclick="regresarArriba()" style="display: block;">
+				<a href="#"><img class="leave_img" src="https://www.colmex.mx/assets/top-4069a9ee5cd941f4cf9c16682b4e35b85d9e60bab7aee8b60e85dda219d1b87e.png" alt="Top"><img class="hover_img" src="/assets/top-hover-876af24c7e6440d3be38cd67b51ba50b32e82fbd560406f7632c44497296b02f.png" alt="Top hover"></a>
+			</div>
+			<% end %>
+		</div> <!-- Cierre de columnas para redes sociales en footer -->
+
+	</div>
+
