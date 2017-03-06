@@ -75,6 +75,17 @@ function slide_pagina(event,render,liga){
 $(document).on("ready page:change",function(event){
 	$("#brand,#menu_canvas,#menu_mask").animate({top: (/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href) ? "1%" : "17%")}, 100);
 	console.log(event);
+	jQuery.ajax({
+      url: 'http://pred1.colmex.mx/produccion_digital/cursos_breves',
+      type: 'get',
+      dataType: 'JSON',
+			data: {algo: "hello"},
+      success:function(result)
+      {
+          console.log(result);
+          //document.write(data);
+      } 
+     });
 })
 
 window.onpopstate = function(event){
