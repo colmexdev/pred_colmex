@@ -15,7 +15,7 @@
 	<div id="cont_menu" onclick="desplegarMenu();">
 	</div>
 
-	<div id="brand" style="height:100px;width:130px;position:fixed;top:17%;left:2.5%;z-index:5;background:url(<%= image_path('LOGO_PED.png') %>) no-repeat center center / 100% 100%">
+	<div id="brand">
 	</div>
 	<div id="menu_canvas" style="background-color:rgba(255,255,255,0);height:60px;width:80px;position:fixed;top:17%;right:6%;transition:all ease 0.5s;-webkit-transition:all ease 0.5s;-moz-transition:all ease 0.5s;-o-transition:all ease 0.5s;z-index:5;">
 		<div id="rect_sup" class="rect" style="margin-top:30px">
@@ -40,6 +40,15 @@
 	</div>
 	<div class="opciones" id="op4" style="top:40%" onmouseenter="toggleBorde(event,'#borde-4',0);" onmouseleave="toggleBorde(event,'#borde-4',1);">Opcion 4
 		<div id="borde-4" class="borde-op"></div>
+	</div>
+
+
+	<div id="contenedor" onmousemove="moverFondo(event,$(this));">
+	</div>
+
+	<div id="mask-flecha" onclick="scrollPagina();">
+		<div class="flecha-menu" id="flecha-der"></div>
+		<div class="flecha-menu" id="flecha-izq"></div>
 	</div>
 
 <!-- /Menú y logo -->
