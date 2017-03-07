@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'produccion_digital/cursos_breves' => 'produccion_digital#cursos_breves', :as => :cursos_breves
+  get 'produccion_digital/cursos_breves/principal' => 'produccion_digital#cursos_breves', :as => :cursos_breves
 
   get 'principal/inicio'
 
