@@ -97,14 +97,15 @@ $(document).on("ready page:change",function(event){
 });
 
 function scrollSelectorTouch(event,element){
-	alert(event.changedTouches[0]);
+	console.log(event.changedTouches[0].clientY);
 	scrollSelector(event,element);
 	event.preventDefault();
 }
 
 function scrollSelector(event, element){
-	if(((event.clientY - 110)/element.clientHeight) * element.scrollHeight >= window.innerHeight * 0.4 )
-		element.scrollTop = ((event.clientY - 110)/element.clientHeight) * element.scrollHeight;
+	var y = (typeof event.changedTouches[0] !== 'undefined' ? event.changedTouches[0].clientY : event.clientY)
+	if(((y - 110)/element.clientHeight) * element.scrollHeight >= window.innerHeight * 0.4 )
+		element.scrollTop = ((y - 110)/element.clientHeight) * element.scrollHeight;
 	else
 		element.scrollTop = 0;
 }
