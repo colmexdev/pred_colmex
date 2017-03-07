@@ -12,7 +12,7 @@ class ProduccionDigitalController < ApplicationController
       @curs << v.curso
     end
     @curs.each_with_index do |v,i|
-      @cursos << {curso: v, img: "gif"+i.to_s+".gif"}
+      @cursos << {curso: v, img: image_path("gif"+i.to_s+".gif")}
     end
 		gon.prueba = "a"
 		respond_to do |format|

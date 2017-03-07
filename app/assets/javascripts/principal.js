@@ -84,9 +84,8 @@ $(document).on("ready page:change",function(event){
           console.log(result["cursos"]);
 					try{
 						var html = "";          
-						for(var i = 0; i < result["videos"].length; i++){
-							html = html + "<div style=\"width:100%;height:40px;background-color:#CCC;border:2px solid #000;\"></div>"
-							/*onmouseenter=\"cambiarGif(event," + i + ");\"*/
+						for(var i = 0; i < result["cursos"].length; i++){
+							html = html + "<div style=\"width:100%;height:200px;background-color:#CCC;border:2px solid #000;\" onmouseenter=\"cambiarGif(event," + result["cursos"][i]["img"] + ");\"></div>"
 						}
 						$("#selector-cursos").html(html);
 					}
@@ -98,15 +97,14 @@ $(document).on("ready page:change",function(event){
 })
 
 function scrollSelector(event, element){
-	console.log(event.clientY + " " + element.clientHeight);
 	if(((event.clientY - 110)/element.clientHeight) * element.scrollHeight >= window.innerHeight * 0.4 )
 		element.scrollTop = ((event.clientY - 110)/element.clientHeight) * element.scrollHeight;
 	else
 		element.scrollTop = 0;
 }
 
-function cambiarGif(event,number){
-	
+function cambiarGif(event,gif){
+	$("#player-curso").css("background", "url("+gif+") no-repeat center center/ 100% 100%");
 }
 
 window.onpopstate = function(event){

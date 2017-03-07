@@ -11,7 +11,7 @@ class ProduccionDigitalController < ApplicationController
 			
       @curs << v.curso
     end
-    @cursos.each_with_index do |v,i|
+    @curs.each_with_index do |v,i|
       @cursos << {curso: v, img: "gif"+i.to_s+".gif"}
     end
 		gon.prueba = "a"
