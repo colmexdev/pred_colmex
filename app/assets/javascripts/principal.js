@@ -97,7 +97,7 @@ $(document).on("ready page:change",function(event){
 });
 
 function scrollSelectorTouch(event,element){
-	alert(event.changedTouches[0]);
+	console.log(event.changedTouches[0]);
 	scrollSelector(event,element);
 	event.preventDefault();
 }
