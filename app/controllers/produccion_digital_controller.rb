@@ -16,7 +16,7 @@ class ProduccionDigitalController < ApplicationController
     end
 		gon.prueba = "a"
 		respond_to do |format|
-      format.html
+      format.html {render 'cursos_breves/principal'}
       format.json {render json: {videos: @videos, cursos: @cursos.to_a} }
     end
   end

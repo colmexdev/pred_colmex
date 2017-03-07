@@ -3,11 +3,11 @@ class ProduccionDigitalController < ApplicationController
 		@videos = Video.where("tipo = ?", "Curso")
     @curs = [].to_set
     @cursos = []
-		@participantes = []
+		#@participantes = []
 		@videos.each_with_index do |v,i|
-		  Participante.where("id_video = ?", v.id) do |p|
-        @participantes << p
-      end
+		  #Participante.where("id_video = ?", v.id) do |p|
+      #  @participantes << p
+      #end
 			
       @curs << v.curso
     end
