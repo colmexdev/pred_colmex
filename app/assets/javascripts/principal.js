@@ -99,8 +99,10 @@ $(document).on("ready page:change",function(event){
 
 function scrollSelector(event, element){
 	console.log(event.clientY + " " + element.clientHeight);
-	if(((event.clientY - 110)/element.clientHeight) * element.scrollHeight >= 150 )
+	if(((event.clientY - 110)/element.clientHeight) * element.scrollHeight >= window.innerHeight * 0.4 )
 		element.scrollTop = ((event.clientY - 110)/element.clientHeight) * element.scrollHeight;
+	else
+		element.scrollTop = 0;
 }
 
 function cambiarGif(event,number){
