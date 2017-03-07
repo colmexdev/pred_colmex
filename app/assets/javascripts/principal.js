@@ -51,7 +51,7 @@ $(document).on("scroll",function(event){
 function slide_pagina(event,render,liga,home){
 	event.preventDefault();
 	$("#next-page-izq").animate({left: (home ? "100%" : 0)}, 450);
-	$("#mosaico").animate({top: (home ? "100%" : 0), height: (home ? "auto" : 0)}, 450);
+	$("#mosaico").animate({top: (home ? "100%" : 0), display: (home ? "block" : "none")}, 450);
 	  jQuery.ajax({
       url: 'http://pred1.colmex.mx/produccion_digital/cursos_breves',
       type: 'get',
@@ -73,7 +73,7 @@ function slide_pagina(event,render,liga,home){
 
 $(document).on("ready page:change",function(event){
 	$("#brand,#menu_canvas,#menu_mask").animate({top: (/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href) ? "1%" : "17%")}, 100);
-	$("#mosaico").animate({top: (/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href) ? "0" : "100%"), height: (/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href) ? "0" : "auto")}, 450);
+	$("#mosaico").animate({top: (/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href) ? "0" : "100%"), display: (/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href) ? "none" : "block")}, 450);
 	//console.log(event);
 	jQuery.ajax({
       url: 'http://pred1.colmex.mx/produccion_digital/cursos_breves',
