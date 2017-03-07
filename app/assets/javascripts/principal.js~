@@ -97,8 +97,9 @@ $(document).on("ready page:change",function(event){
      });
 })
 
-function scrollSelector(event){
-	console.log(event.clientX);
+function scrollSelector(event, element){
+	console.log(event.clientY);
+	element.scrollTop = (event.clientY/element.clientHeight) * element.scrollHeight;
 }
 
 function cambiarGif(event,number){
