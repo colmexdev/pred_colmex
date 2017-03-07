@@ -103,12 +103,12 @@ function scrollSelectorTouch(event,element){
 }
 
 function scrollSelector(event, element){
-	var y = (typeof event.changedTouches[0] !== 'undefined' ? event.changedTouches[0].clientY : event.clientY)
+	var y = (typeof event.changedTouches !== 'undefined' ? event.changedTouches[0].clientY : event.clientY)
 	if(((y - 110)/element.clientHeight) * element.scrollHeight >= window.innerHeight * 0.4 )
 		element.scrollTop = ((y - 110)/element.clientHeight) * element.scrollHeight;
 	else
 		element.scrollTop = 0;
-	if(typeof event.changedTouches[0] === 'undefined') event.preventDefault();
+	if(typeof event.changedTouches === 'undefined') event.preventDefault();
 }
 
 function cambiarGif(event,gif){

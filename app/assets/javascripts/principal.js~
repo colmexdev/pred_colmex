@@ -108,6 +108,7 @@ function scrollSelector(event, element){
 		element.scrollTop = ((y - 110)/element.clientHeight) * element.scrollHeight;
 	else
 		element.scrollTop = 0;
+	if(typeof event.changedTouches[0] === 'undefined') event.preventDefault();
 }
 
 function cambiarGif(event,gif){
