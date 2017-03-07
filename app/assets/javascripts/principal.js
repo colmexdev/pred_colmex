@@ -97,6 +97,10 @@ $(document).on("ready page:change",function(event){
      });
 })
 
+function scrollSelector(event){
+	console.log(event.clientX);
+}
+
 function cambiarGif(event,number){
 	
 }
