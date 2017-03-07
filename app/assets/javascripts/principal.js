@@ -84,7 +84,7 @@ $(document).on("ready page:change",function(event){
           console.log(result["cursos"]);
 					try{
 						var html = "";          
-						for(var i = 0; i < result["cursos"].length; i++){
+						for(var i = 0; i < result["videos"].length; i++){
 							html = html + "<div style=\"width:100%;height:40px;background-color:#CCC;border:2px solid #000;\"></div>"
 							/*onmouseenter=\"cambiarGif(event," + i + ");\"*/
 						}
