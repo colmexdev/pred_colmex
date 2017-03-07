@@ -104,7 +104,7 @@ function scrollSelector(event, element){
 }
 
 function cambiarGif(event,gif){
-	$("#player-curso").css("background", "url(
+	$("#player-curso").css("background", "url("+gif+") no-repeat center center/ 100% 100%");
 }
 
 window.onpopstate = function(event){
