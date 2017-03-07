@@ -1,13 +1,18 @@
 class ProduccionDigitalController < ApplicationController
   def cursos_breves
 		@videos = Video.where("tipo = ?", "Curso")
-    @cursos = [].to_set
+    @curs = [].to_set
+    @cursos = []
 		@participantes = []
 		@videos.each_with_index do |v,i|
 		  Participante.where("id_video = ?", v.id) do |p|
         @participantes << p
       end
-      @cursos << {titulo: v.curso,img: "gif"+i.to_s+".gif"}
+			
+      @curs << v.curso
+    end
+    @cursos.each_with_index do |v,i|
+      @cursos << {curso: v, img: "gif"+i.to_s+".gif"}
     end
 		gon.prueba = "a"
 		respond_to do |format|
