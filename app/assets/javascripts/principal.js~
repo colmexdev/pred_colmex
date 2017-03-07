@@ -98,7 +98,7 @@ $(document).on("ready page:change",function(event){
 })
 
 function scrollSelector(event, element){
-	console.log(event.clientY);
+	console.log(event.clientY + " " + element.clientHeight);
 	element.scrollTop = (event.clientY/element.clientHeight) * element.scrollHeight;
 }
 
