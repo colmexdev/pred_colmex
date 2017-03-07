@@ -85,7 +85,7 @@ $(document).on("ready page:change",function(event){
 					try{
 						var html = "";          
 						for(var i = 0; i < result["cursos"].length; i++){
-							html = html + "<div style=\"width:100%;height:200px;background-color:#CCC;border:2px solid #000;\" onmouseenter=\"cambiarGif(event," + result["cursos"][i]["img"] + ");\"></div>"
+							html = html + "<div style=\"width:100%;height:200px;background-color:#CCC;border:2px solid #000;\" onmouseenter=\"cambiarGif(event,\"" + result["cursos"][i]["img"] + "\");\"></div>"
 						}
 						$("#selector-cursos").html(html);
 					}
