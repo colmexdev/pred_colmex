@@ -7,7 +7,7 @@ class ProduccionDigitalController < ApplicationController
 		  Participante.where("id_video = ?", v.id) do |p|
         @participantes << p
       end
-      @cursos << {v.curso, "gif"+i+".gif"}
+      @cursos << {titulo: v.curso,img: "gif"+i+".gif"}
     end
 		gon.prueba = "a"
 		respond_to do |format|
