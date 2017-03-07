@@ -93,8 +93,14 @@ $(document).on("ready page:change",function(event){
 
 					}
       } 
-     });
-})
+	});
+});
+
+function scrollSelectorTouch(event,element){
+	alert(event.changedTouches[0]);
+	scrollSelector(event,element);
+	event.preventDefault();
+}
 
 function scrollSelector(event, element){
 	if(((event.clientY - 110)/element.clientHeight) * element.scrollHeight >= window.innerHeight * 0.4 )
