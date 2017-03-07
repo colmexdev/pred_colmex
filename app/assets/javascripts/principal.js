@@ -98,14 +98,14 @@ $(document).on("ready page:change",function(event){
 
 
 function scrollSelectorTouch(event,element){
-	if(((event.changedTouches[0].clientY - 110)/element.clientHeight) * element.scrollHeight >= window.innerHeight * 0.5 )
+	if(((event.changedTouches[0].clientY - 110)/element.clientHeight) * (element.scrollHeight * 0.5) >= window.innerHeight * 0.5 )
 		element.scrollTop = ((event.changedTouches[0].clientY - 110)/element.clientHeight) * (element.scrollHeight * 0.5);
 	else
 		element.scrollTop = 0;
 }
 
 function scrollSelector(event, element){
-	if(((event.clientY - 110)/element.clientHeight) * element.scrollHeight >= window.innerHeight * 0.5 )
+	if(((event.clientY - 110)/element.clientHeight) * (element.scrollHeight * 0.5) >= window.innerHeight * 0.5 )
 		element.scrollTop = ((event.clientY - 110)/element.clientHeight) * (element.scrollHeight * 0.5);
 	else
 		element.scrollTop = 0;
