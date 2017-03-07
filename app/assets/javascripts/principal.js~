@@ -98,7 +98,7 @@ $(document).on("ready page:change",function(event){
 
 
 function scrollSelectorTouch(event,element){
-	if(event.changedTouches.length <= 1) return true;
+	if(event.changedTouches.length < 1) return true;
 	if(((event.changedTouches[0].clientY - 110)/element.clientHeight) * element.scrollHeight >= window.innerHeight * 0.5 )
 		element.scrollTop = ((event.changedTouches[0].clientY - 110)/element.clientHeight) * (element.scrollHeight * 0.65);
 	else
