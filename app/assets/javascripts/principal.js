@@ -97,18 +97,17 @@ $(document).on("ready page:change",function(event){
 });
 
 function scrollSelectorTouch(event,element){
-	console.log(event.changedTouches[0].clientY);
-	scrollSelector(event,element);
-	event.preventDefault();
+	if(((event.changedTouches[0].clientY - 110)/element.clientHeight) * element.scrollHeight >= window.innerHeight * 0.3 )
+		element.scrollTop = ((event.changedTouches[0].clientY - 110)/element.clientHeight) * element.scrollHeight;
+	else
+		element.scrollTop = 0;
 }
 
 function scrollSelector(event, element){
-	var y = (typeof event.changedTouches !== 'undefined' ? event.changedTouches[0].clientY : event.clientY)
-	if(((y - 110)/element.clientHeight) * element.scrollHeight >= window.innerHeight * 0.4 )
-		element.scrollTop = ((y - 110)/element.clientHeight) * element.scrollHeight;
+	if(((event.clientY - 110)/element.clientHeight) * element.scrollHeight >= window.innerHeight * 0.3 )
+		element.scrollTop = ((event.clientY - 110)/element.clientHeight) * element.scrollHeight;
 	else
 		element.scrollTop = 0;
-	if(typeof event.changedTouches === 'undefined') event.preventDefault();
 }
 
 function cambiarGif(event,gif){
