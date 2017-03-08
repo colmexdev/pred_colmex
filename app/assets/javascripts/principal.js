@@ -62,7 +62,8 @@ function traerPagina(render){
 
 function slide_pagina(event,render,liga,home){
 	event.preventDefault();
-	$(".izq").animate({left: "100%"}, 250, traerPagina(render));
+	setTimeout(traerPagina(render),250);
+	$(".izq").animate({left: "100%"}, 250);
 
 	$("#mosaico").animate({top: (home ? "100%" : 0)}, 250, function(){
 		if(/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href))
