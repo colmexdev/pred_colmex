@@ -2,11 +2,10 @@ Rails.application.routes.draw do
 
   get 'produccion_digital/cursos_breves' => 'produccion_digital#cursos_breves', :as => :cursos_breves
 
+  get '/produccion_digital/curso_breve/curso1' => 'produccion_digital#curso1', :as => :curso1
+
   get 'principal/inicio'
 
-  namespace :curso_breve do
-    get 'curso1' => 'curso_breve#curso1', :as => :curso1
-  end
 
   devise_for :admins, :controllers => { :registrations => "registrations"}
   #devise_for :admins, :controllers => { :registrations => "registrations", :sessions => "sessions"}
