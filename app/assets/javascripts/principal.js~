@@ -87,7 +87,7 @@ function slide_pagina(event,render,liga,home){
 	setTimeout(function(){
 
 		window.history.pushState({},"Nueva página",liga);
-	$("#brand,#menu_canvas,#menu_mask").animate({top: (/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href) ? "1%" : "17%")}, 200);
+	$("#brand,#menu_canvas,#menu_mask").animate({top: (/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href) ? "1%" : "17%")}, 150);
 	}, 450);
 }
 
