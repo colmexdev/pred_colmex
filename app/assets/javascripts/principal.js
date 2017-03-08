@@ -62,14 +62,14 @@ function traerPagina(render){
 
 function slide_pagina(event,render,liga,home){
 	event.preventDefault();
-	$(".izq").animate({left: "100%"}, 250, function(){ if(render != '') traerPagina(render);});
-	console.log("Algo");
 	$("#mosaico").animate({top: (home ? "100%" : 0)}, 250, function(){
 		if(/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href))
 			$("#mosaico").css("display","none");
 		else
 			$("#mosaico").css("display","block");
 	});
+	$(".izq").animate({left: "100%"}, 250, function(){ if(render != '') traerPagina(render);});
+	console.log("Algo");
 	  jQuery.ajax({
       url: 'http://pred1.colmex.mx/produccion_digital/cursos_breves',
       type: 'get',
