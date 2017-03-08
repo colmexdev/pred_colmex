@@ -63,6 +63,7 @@ function traerPagina(render){
 function slide_pagina(event,render,liga,home){
 	event.preventDefault();
 	$(".izq").animate({left: "100%"}, 250, function(){ if(render != '') traerPagina(render);});
+	console.log("Algo");
 	$("#mosaico").animate({top: (home ? "100%" : 0)}, 250, function(){
 		if(/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href))
 			$("#mosaico").css("display","none");
@@ -75,7 +76,7 @@ function slide_pagina(event,render,liga,home){
       dataType: 'JSON',
       success:function(result)
       {
-          console.log(result);
+          //console.log(result);
           //document.write(data);
       } 
      });
@@ -90,7 +91,8 @@ function slide_pagina(event,render,liga,home){
 
 $(document).on("ready page:change",function(event){
 	$("#brand,#menu_canvas,#menu_mask").animate({top: (/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href) ? "1%" : "17%")}, 100);
-	$("#mosaico").animate({top: (/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href) ? "0" : "100%")}, 450, function(){
+	$(".izq").animate({left: "100%"}, 250, function(){ if(render != '') traerPagina(render);});
+	$("#mosaico").animate({top: (/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href) ? "0" : "100%")}, 250, function(){
 	if(/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href))
 		$("#mosaico").css("display","none");
 	else
@@ -102,7 +104,7 @@ $(document).on("ready page:change",function(event){
       dataType: 'JSON',
       success:function(result)
       {
-          console.log(result["cursos"]);
+          //console.log(result["cursos"]);
 					try{
 						var html = "";          
 						for(var i = 0; i < result["cursos"].length; i++){
