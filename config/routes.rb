@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   get 'principal/inicio'
 
+  namespace :curso_breve do
+    get 'curso1' => 'curso_breve#curso1', :as => :curso1
+  end
+
   devise_for :admins, :controllers => { :registrations => "registrations"}
   #devise_for :admins, :controllers => { :registrations => "registrations", :sessions => "sessions"}
   get 'videos/id' => 'videos#id', :as => :video_id
