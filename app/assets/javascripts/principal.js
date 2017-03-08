@@ -67,7 +67,7 @@ function slide_pagina(event,render,liga,home){
 		traerPagina(izqs[i]["id"], render == izqs[i]["id"]);
 	}
 	$("#mosaico").animate({top: (home ? "100%" : "0")}, 250, function(){
-		if("http://pred1.colmex.mx" == window.location.href || "http://pred1.colmex.mx/" == window.location.href)
+		if(!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)))
 			$("#mosaico").css("display","none");
 		else
 			$("#mosaico").css("display","block");
@@ -87,14 +87,14 @@ function slide_pagina(event,render,liga,home){
 	setTimeout(function(){
 
 		window.history.pushState({},"Nueva página",liga);
-	$("#brand,#menu_canvas,#menu_mask").animate({top: (/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href) ? "1%" : "17%")}, 150);
+	$("#brand,#menu_canvas,#menu_mask").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "1%" : "17%")}, 150);
 	}, 450);
 }
 
 $(document).on("ready page:change",function(event){
-	$("#brand,#menu_canvas,#menu_mask").animate({top: (/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href) ? "1%" : "17%")}, 100);
-	$("#mosaico").animate({top: (/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href) ? "0" : "100%")}, 250, function(){
-	if(/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href))
+	$("#brand,#menu_canvas,#menu_mask").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "1%" : "17%")}, 100);
+	$("#mosaico").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "0" : "100%")}, 250, function(){
+	if(!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)))
 		$("#mosaico").css("display","none");
 	else
 		$("#mosaico").css("display","block");
