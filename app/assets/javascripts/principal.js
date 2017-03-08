@@ -50,7 +50,16 @@ $(document).on("scroll",function(event){
 
 function slide_pagina(event,render,liga,home){
 	event.preventDefault();
-	$(".izq").animate({left: (home ? "100%" : 0)}, 450);
+	$(".izq").animate({left: "100%"}, 450);
+	if($("#"+render).attr("class") == "izq"){
+		$("#"+render).animate({left: 0},450);
+	}
+	else if($("#"+render).attr("class") == "der"){
+		$("#"+render).animate({right: 0},450);
+	}
+	else{
+		$("#"+render).animate({top: 0},450);
+	}
 	$("#mosaico").animate({top: (home ? "100%" : 0)}, 450, function(){
 		if(/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href))
 			$("#mosaico").css("display","none");
