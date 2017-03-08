@@ -48,27 +48,30 @@ $(document).on("scroll",function(event){
 	$("#contenedor").css({"width": (y < 1 ? "90%" : ( y >= window.innerHeight ? "75%" : ((75 + (15*(1 - (y/window.innerHeight)))) + "%") )), "height" : (y < 1 ? "85%" : ( y >= window.innerHeight ? "65%" : ((65 + (20*(1 - (y/window.innerHeight)))) + "%") ))});
 });
 
-function traerPagina(render){
+function traerPagina(render, toggle){
 	if($("#"+render).attr("class") == "izq"){
-		$("#"+render).animate({left: 0}, 250);
+		$("#"+render).animate({left: (toggle ? 0 : "100%")}, 250);
 	}
 	else if($("#"+render).attr("class") == "der"){
-		$("#"+render).animate({right: 0}, 250);
+		$("#"+render).animate({right: (toggle ? 0 : "100%")}, 250);
 	}
 	else{
-		$("#"+render).animate({top: 0}, 250);
+		$("#"+render).animate({top: (toggle ? 0 : "100%")}, 250);
 	}
 }
 
 function slide_pagina(event,render,liga,home){
 	event.preventDefault();
-	$("#mosaico").animate({top: (home ? "100%" : 0)}, 250, function(){
+	var izqs = $(".izq");
+	for(var i = 0; i < izqs.length; i++){
+		traerPagina(izqs[i]["id"], render == izqs[i]["id"]);
+	}
+	$("#mosaico").animate({top: (home ? "100%" : 0)}, 450, function(){
 		if(/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href))
 			$("#mosaico").css("display","none");
 		else
 			$("#mosaico").css("display","block");
 	});
-	$(".izq").animate({left: "100%"}, 250, function(){ if(render != '') traerPagina(render);});
 	console.log("Algo");
 	  jQuery.ajax({
       url: 'http://pred1.colmex.mx/produccion_digital/cursos_breves',
