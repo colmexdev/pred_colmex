@@ -48,18 +48,22 @@ $(document).on("scroll",function(event){
 	$("#contenedor").css({"width": (y < 1 ? "90%" : ( y >= window.innerHeight ? "75%" : ((75 + (15*(1 - (y/window.innerHeight)))) + "%") )), "height" : (y < 1 ? "85%" : ( y >= window.innerHeight ? "65%" : ((65 + (20*(1 - (y/window.innerHeight)))) + "%") ))});
 });
 
-function slide_pagina(event,render,liga,home){
-	event.preventDefault();
-	$(".izq").animate({left: "100%"}, 1);
+function traerPagina(render){
 	if($("#"+render).attr("class") == "izq"){
-		$("#"+render).animate({left: 0},450);
+		$("#"+render).animate({left: 0}, 250);
 	}
 	else if($("#"+render).attr("class") == "der"){
-		$("#"+render).animate({right: 0},450);
+		$("#"+render).animate({right: 0}, 250);
 	}
 	else{
-		$("#"+render).animate({top: 0},450);
+		$("#"+render).animate({top: 0}, 250);
 	}
+}
+
+function slide_pagina(event,render,liga,home){
+	event.preventDefault();
+	$(".izq").animate({left: "100%"}, 250, traerPagina(render));
+
 	$("#mosaico").animate({top: (home ? "100%" : 0)}, 450, function(){
 		if(/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href))
 			$("#mosaico").css("display","none");

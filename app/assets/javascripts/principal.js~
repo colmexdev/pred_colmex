@@ -50,7 +50,7 @@ $(document).on("scroll",function(event){
 
 function slide_pagina(event,render,liga,home){
 	event.preventDefault();
-	$(".izq").animate({left: "100%"}, 450);
+	$(".izq").animate({left: "100%"}, 1);
 	if($("#"+render).attr("class") == "izq"){
 		$("#"+render).animate({left: 0},450);
 	}
