@@ -51,11 +51,12 @@ $(document).on("scroll",function(event){
 function slide_pagina(event,render,liga,home){
 	event.preventDefault();
 	$("#next-page-izq").animate({left: (home ? "100%" : 0)}, 450);
-	$("#mosaico").animate({top: (home ? "100%" : 0), height: (home ? "auto" : "0")}, 450);
-	if(!home)
-		setTimeout(function(){ $("#mosaico").css("display","none");}, 450);
+	$("#mosaico").animate({top: (home ? "100%" : 0)/*, height: (home ? "auto" : "0")*/}, 450, function(){
+	if(/http:\/\/pred1\.colmex\.mx\/?[a-zA-Z0-9]+/.test(window.location.href))
+		$("#mosaico").css("display","none");
 	else
-		$("#mosaico").css("display","");
+		$("#mosaico").css("display","block");
+});
 	  jQuery.ajax({
       url: 'http://pred1.colmex.mx/produccion_digital/cursos_breves',
       type: 'get',
