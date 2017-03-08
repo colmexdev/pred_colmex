@@ -1,40 +1,6 @@
 
-	<div id="next-page-izq" style="position:fixed;top:0;left:100%;width:100%;height:auto;min-height:100%;z-index:4;background-color:#AAA;">
+	<div class="izq" id="next-page-izq" style="position:fixed;top:0;left:100%;width:100%;height:auto;min-height:100%;z-index:4;background-color:#AAA;">
 		<%= render 'produccion_digital/cursos_breves_temp' %>
 	</div>
 
-	<% if false %>
-	<div id="inicio" style="height:100%;width:100%;position:fixed;top:0;left:0;z-index:0;">
-	</div>
-	<% end %>
-
-		<div id="mosaico">
-			<div id="cont-cuadricula">
-				<div class="cuadricula-back">
-					<div class="cuadricula-menu" style="background-color:#660033;">
-						<a href="#" id="liga_0" class="liga-cuadricula" onclick="slide_pagina(event,this.id,'produccion_digital/cursos_breves',false)"></a>
-					</div>
-				</div>
-				<div class="cuadricula-back">
-					<div class="cuadricula-menu" style="background-color:#0033CC;">
-						<a href="#" id="liga_1" class="liga-cuadricula" onclick="slide_pagina(event,this.id,'http://www.facebook.com')"></a>
-					</div>
-				</div>
-				<div class="cuadricula-back">
-					<div class="cuadricula-menu" style="background-color:#336600;">
-						<a href="#" id="liga_2" class="liga-cuadricula" onclick="slide_pagina(event,this.id,'http://www.twitter.com')"></a>
-					</div>
-				</div>
-				<div class="cuadricula-back">
-					<div class="cuadricula-menu" style="background-color:#CC6600;"">
-						<a href="#" id="liga_3" class="liga-cuadricula" onclick="slide_pagina(event,this.id,'http://www.youtube.com')"></a>
-					</div>
-				</div>
-			</div>
-
-
-<%= render 'layouts/footer' %>
-	
-
-</div>
 
