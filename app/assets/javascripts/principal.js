@@ -152,6 +152,8 @@ function reproducirVideo(event,video){
 	console.log(video);
 }
 
+/* Funciones que se llaman en sustitución del scroll */
+
 function scrollSelectorTouch(event,element){
 	if(((event.changedTouches[0].clientY - 110)/element.clientHeight) * (element.scrollHeight * 0.5) >= window.innerHeight * 0.15 )
 		element.scrollTop = ((event.changedTouches[0].clientY - 110)/element.clientHeight) * (element.scrollHeight * 0.65);
@@ -164,6 +166,20 @@ function scrollSelector(event, element){
 		element.scrollTop = ((event.clientY - 110)/element.clientHeight) * (element.scrollHeight * 0.65);
 	else
 		element.scrollTop = 0;
+}
+
+function scrollSelectorTouchX(event,element){
+	if(((event.changedTouches[0].clientX)/element.clientWidth) * (element.scrollWidth * 0.5) >= window.innerWidth * 0.15 )
+		element.scrollLeft = ((event.changedTouches[0].clientX )/element.clientWidth) * (element.scrollWidth * 0.65);
+	else
+		element.scrollLeft = 0;
+}
+
+function scrollSelectorX(event, element){
+	if(((event.clientX)/element.clientWidth) * (element.scrollWidth * 0.5) >= window.innerWidth * 0.15 )
+		element.scrollLeft = ((event.clientX)/element.clientWidth) * (element.scrollWidth * 0.65);
+	else
+		element.scrollLeft = 0;
 }
 
 function cambiarGif(event,gif){
