@@ -108,11 +108,10 @@ $(document).on("ready page:change",function(event){
       dataType: 'JSON',
       success:function(result)
       {
-          //console.log(result["cursos"]);
 					try{
 						var html = "";          
 						for(var i = 0; i < result["cursos"].length; i++){
-							html = html + "<div style=\"width:100%;height:200px;background-color:#CCC;border:2px solid #000;\" onmouseenter=\"cambiarGif(event,'" + result["cursos"][i]["img"] + "');\" onclick=\"reproducirCurso(event,'" + result["cursos"][i]["curso"] + "')\"></div>"
+							html = html + "<div style=\"width:100%;height:200px;background-color:#CCC;border:2px solid #000;\" onmouseenter=\"cambiarGif(event,'" + result["cursos"][i]["img"] + "');\" onclick=\"reproducirCurso(event,'" + result["cursos"][i]["curso"] + "')\">" + result["cursos"][i]["curso"] + "</div>"
 						}
 						$("#selector-cursos").html(html);
 					}
@@ -128,14 +127,26 @@ function reproducirCurso(event,titulo){
     url: 'http://pred1.colmex.mx/produccion_digital/curso_breve/reproducir?titulo='+titulo,
     type: 'get',
     dataType: 'JSON',
-    success:function(result)
+    success: function(result)
     {
-        console.log(result);
-        //document.write(data);
+		  console.log(result);
+			$("#curso-breve-1").animate({left: "0"},250);
+			try{
+				var html = "";         
+						for(var i = 0; i < result["cursos"].length; i++){
+							html = html + "<div style=\"width:250px;height:100%;background-color:#CCC;border:2px solid #000;\" onclick=\"reproducirVideo(event,'" + result[i]["liga"] + "')\">" + result[i]["titulo"] + "</div>"
+						}
+						$("#selector-vid-cursos").html(html);
+
+			}
+			catch(err){
+
+			}
+
+			window.history.pushState({},"Nueva página",'http://pred1.colmex.mx/produccion_digital/curso_breve/reproducir?titulo='+titulo);
     } 
    });
-	$("#curso-breve-1").animate({left: "0"},250);
-	window.history.pushState({},"Nueva página",'http://pred1.colmex.mx/produccion_digital/curso_breve/reproducir?titulo='+titulo);
+
 	
 }
 
