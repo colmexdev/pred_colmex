@@ -136,8 +136,8 @@ function reproducirCurso(event,titulo){
 				for(var i = 0; i < result.length; i++){
 					html = html + "<div style=\"width:250px;height:100%;background-color:#CCC;border:2px solid #000;float:left;\" onclick=\"reproducirVideo(event,'" + result[i]["liga"] + "')\">" + result[i]["titulo"] + "</div>"
 				}
-				$("#selector-vid-cursos").css("width", (window.innerWidth > result.length*250 ? window.innerWidth : result.length*250));
-				$("#selector-vid-cursos").html(html);
+				$("#carousel-vids").css("width", (window.innerWidth > result.length*250 ? window.innerWidth : result.length*250));
+				$("#carousel-vids").html(html);
 
 			}
 			catch(err){
