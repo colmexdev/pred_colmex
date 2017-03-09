@@ -134,6 +134,7 @@ function reproducirCurso(event,titulo){
         //document.write(data);
     } 
    });
+	$("#curso-breve-1").animate({left: "0"},250);
 	window.history.pushState({},"Nueva página",'http://pred1.colmex.mx/produccion_digital/curso_breve/reproducir?titulo='+titulo);
 	
 }
