@@ -124,7 +124,8 @@ $(document).on("ready page:change",function(event){
 });
 
 function reproducirCurso(event,titulo){
-	alert(titulo);
+	window.history.pushState({},"Nueva página",'http://pred1.colmex.mx/produccion_digital/cursos_breves?titulo='+liga);
+	
 }
 
 function scrollSelectorTouch(event,element){
