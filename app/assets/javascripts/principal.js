@@ -134,7 +134,7 @@ function reproducirCurso(event,titulo){
 			try{
 				var html = "";         
 				for(var i = 0; i < result.length; i++){
-					html = html + "<div style=\"width:250px;height:100%;background-color:#CCC;border:2px solid #000;\" onclick=\"reproducirVideo(event,'" + result[i]["liga"] + "')\">" + result[i]["titulo"] + "</div>"
+					html = html + "<div style=\"width:250px;height:100%;background-color:#CCC;border:2px solid #000;float:left;\" onclick=\"reproducirVideo(event,'" + result[i]["liga"] + "')\">" + result[i]["titulo"] + "</div>"
 				}
 				$("#selector-vid-cursos").html(html);
 
@@ -146,6 +146,10 @@ function reproducirCurso(event,titulo){
 			window.history.pushState({},"Nueva página",'http://pred1.colmex.mx/produccion_digital/curso_breve/reproducir?titulo='+titulo);
     } 
   });
+}
+
+function reproducirVideo(event,video){
+	console.log(video);
 }
 
 function scrollSelectorTouch(event,element){
