@@ -134,10 +134,11 @@ function reproducirCurso(event,titulo){
 			try{
 				var html = "";       
 				for(var i = 0; i < result.length; i++){
-					html = html + "<div style=\"width:250px;height:100%;background-color:#CCC;border:2px solid #000;float:left;\" onclick=\"reproducirVideo(event,'" + result[i]["liga"] + "')\">" + result[i]["titulo"] + "</div>"
+					html = html + "<div style=\"width:300px;height:100%;background-color:#CCC;border:2px solid #000;float:left;\" onclick=\"reproducirVideo(event,'" + result[i]["liga"] + "')\">" + result[i]["titulo"] + "</div>"
 				}
-				$("#carousel-vids").css("width", (window.innerWidth > result.length*250 ? window.innerWidth : result.length*250));
+				$("#carousel-vids").css("width", (window.innerWidth > result.length*300 ? window.innerWidth : result.length*300));
 				$("#carousel-vids").html(html);
+				$("#player-curso-landscape").html('<iframe width="100%" height="100%" src="' + result[0]["liga"] + '" frameborder="0" allowfullscreen></iframe>');
 
 			}
 			catch(err){
@@ -151,6 +152,7 @@ function reproducirCurso(event,titulo){
 
 function reproducirVideo(event,video){
 	console.log(video);
+	$("#player-curso-landscape").html('<iframe width="100%" height="100%" src="' + video + '" frameborder="0" allowfullscreen></iframe>');
 }
 
 /* Funciones que se llaman en sustitución del scroll */
@@ -170,15 +172,15 @@ function scrollSelector(event, element){
 }
 
 function scrollSelectorTouchX(event,element){
-	if(((event.changedTouches[0].clientX)/element.clientWidth) * (element.scrollWidth * 0.5) >= window.innerWidth * 0.15 )
-		element.scrollLeft = ((event.changedTouches[0].clientX )/element.clientWidth) * (element.scrollWidth * 0.65);
+	if(((event.changedTouches[0].clientX)/element.clientWidth) * (element.scrollWidth * 0.5) >= window.innerWidth * 0.3 )
+		element.scrollLeft = ((event.changedTouches[0].clientX )/element.clientWidth) * (element.scrollWidth * 0.55);
 	else
 		element.scrollLeft = 0;
 }
 
 function scrollSelectorX(event, element){
-	if(((event.clientX)/element.clientWidth) * (element.scrollWidth * 0.5) >= window.innerWidth * 0.15 )
-		element.scrollLeft = ((event.clientX)/element.clientWidth) * (element.scrollWidth * 0.65);
+	if(((event.clientX)/element.clientWidth) * (element.scrollWidth * 0.5) >= window.innerWidth * 0.3 )
+		element.scrollLeft = ((event.clientX)/element.clientWidth) * (element.scrollWidth * 0.55);
 	else
 		element.scrollLeft = 0;
 }
