@@ -100,7 +100,7 @@ $(document).on("ready page:change",function(event){
 		$("#mosaico").css("display","block");
 	});
 
-	$("#next-page-izq").animate({left: (/http:\/\/pred1\.colmex\.mx\/cursos_breves/.test(window.location.href) ? "0" : "100%")},250);
+	$("#next-page-izq").animate({left: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/cursos_breves/.test(window.location.href) ? "0" : "100%")},250);
 
 	jQuery.ajax({
       url: 'http://pred1.colmex.mx/produccion_digital/cursos_breves',
