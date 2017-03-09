@@ -133,7 +133,7 @@ function reproducirCurso(event,titulo){
 			$("#curso-breve-1").animate({left: "0"},250);
 			try{
 				var html = "";         
-				for(var i = 0; i < result["cursos"].length; i++){
+				for(var i = 0; i < result.length; i++){
 					html = html + "<div style=\"width:250px;height:100%;background-color:#CCC;border:2px solid #000;\" onclick=\"reproducirVideo(event,'" + result[i]["liga"] + "')\">" + result[i]["titulo"] + "</div>"
 				}
 				$("#selector-vid-cursos").html(html);
