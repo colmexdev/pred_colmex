@@ -37,7 +37,7 @@ function divPlayerCursosBreves(event,datos){
 	try{
 		var html = "";       
 		for(var i = 0; i < datos.length; i++){
-			html = html + "<div style=\"width:300px;height:100%;background-color:#CCC;border:2px solid #000;float:left;\" onclick=\"reproducirVideo(event,'" + datos[i]["liga"] + "')\">" + result[i]["titulo"] + "</div>"
+			html = html + "<div style=\"width:300px;height:100%;background-color:#CCC;border:2px solid #000;float:left;\" onclick=\"reproducirVideo(event,'" + datos[i]["liga"] + "')\">" + datos[i]["titulo"] + "</div>"
 		}
 		$("#carousel-vids").css("width", (window.innerWidth > datos.length*300 ? window.innerWidth : datos.length*300));
 		$("#carousel-vids").html(html);
