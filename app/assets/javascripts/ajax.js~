@@ -14,6 +14,11 @@ function despacharPeticiones(event,liga){
 			window.history.pushState({},"Nueva página",liga);
 		} 
   });
+	$("#mosaico").animate({top: ((/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "100%" : "0%")}, 250, function(){
+		if(!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)))
+			$("#mosaico").css("display","none");
+		else
+			$("#mosaico").css("display","block");
 }
 
 /* Función callback de AJAX cuando se entra a la sección de cursos breves (selector) */
