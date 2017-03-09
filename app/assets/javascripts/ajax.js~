@@ -19,6 +19,7 @@ function despacharPeticiones(event,liga){
 			$("#mosaico").css("display","none");
 		else
 			$("#mosaico").css("display","block");
+	});
 }
 
 /* Función callback de AJAX cuando se entra a la sección de cursos breves (selector) */
