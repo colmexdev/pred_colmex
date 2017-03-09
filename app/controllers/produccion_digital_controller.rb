@@ -21,11 +21,11 @@ class ProduccionDigitalController < ApplicationController
     end
   end
 
-  def curso1
-    @algo = {algo: "x"}
+  def reproducir
+    @videos = Video.where("tipo = ? AND titulo = ?","Curso",params[:titulo])
     respond_to do |format|
-      format.html { render '/produccion_digital/curso_breve/curso1' }
-      format.json {render json: @algo }
+      format.html { render '/produccion_digital/curso_breve/reproducir' }
+      format.json {render json: @videos }
     end
   end
 end

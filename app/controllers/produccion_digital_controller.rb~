@@ -24,7 +24,7 @@ class ProduccionDigitalController < ApplicationController
   def curso1
     @algo = {algo: "x"}
     respond_to do |format|
-      format.html
+      format.html { render '/produccion_digital/curso_breve/curso1' }
       format.json {render json: @algo }
     end
   end
