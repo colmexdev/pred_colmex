@@ -152,6 +152,7 @@ function reproducirCurso(event,titulo){
 
 function reproducirVideo(event,video){
 	console.log(video);
+	$("#player-curso-landscape").html('<iframe width="100%" height="100%" src="' + video + '" frameborder="0" allowfullscreen></iframe>');
 }
 
 /* Funciones que se llaman en sustitución del scroll */

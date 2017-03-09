@@ -138,7 +138,8 @@ function reproducirCurso(event,titulo){
 				}
 				$("#carousel-vids").css("width", (window.innerWidth > result.length*300 ? window.innerWidth : result.length*300));
 				$("#carousel-vids").html(html);
-				$("#player-curso-landscape").html('<iframe width="100%" height="100%" src="' + result[0]["liga"] + '" frameborder="0" allowfullscreen></iframe>');
+				var video = result[0]["liga"].split("/")[3]
+				$("#player-curso-landscape").html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + video + '" frameborder="0" allowfullscreen></iframe>');
 
 			}
 			catch(err){
@@ -151,8 +152,8 @@ function reproducirCurso(event,titulo){
 }
 
 function reproducirVideo(event,video){
-	console.log(video);
-	$("#player-curso-landscape").html('<iframe width="100%" height="100%" src="' + video + '" frameborder="0" allowfullscreen></iframe>');
+	var id = video.split("/")[3]
+	$("#player-curso-landscape").html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + id + '" frameborder="0" allowfullscreen></iframe>');
 }
 
 /* Funciones que se llaman en sustitución del scroll */
