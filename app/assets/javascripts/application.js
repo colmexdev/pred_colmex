@@ -16,3 +16,4 @@
 //= require bootstrap-sprockets
 //= require videos
 //= require principal
+//= require ajax

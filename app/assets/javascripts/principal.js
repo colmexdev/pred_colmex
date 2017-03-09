@@ -66,7 +66,9 @@ function slide_pagina(event,render,liga,home){
 	for(var i = 0; i < izqs.length; i++){
 		traerPagina(izqs[i]["id"], render == izqs[i]["id"]);
 	}
-	  jQuery.ajax({
+
+	despacharPeticiones(event,liga);
+	/*  jQuery.ajax({
       url: 'http://pred1.colmex.mx/produccion_digital/cursos_breves',
       type: 'get',
       dataType: 'JSON',
@@ -81,9 +83,9 @@ function slide_pagina(event,render,liga,home){
 			$("#mosaico").css("display","none");
 		else
 			$("#mosaico").css("display","block");
-	});
+	});*/
 
-	window.history.pushState({},"Nueva página",liga);
+	//window.history.pushState({},"Nueva página",liga);
 
 	setTimeout(function(){
 
@@ -100,36 +102,37 @@ $(document).on("ready page:change",function(event){
 		$("#mosaico").css("display","block");
 	});
 
-	$("#next-page-izq").animate({left: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/cursos_breves/.test(window.location.href) ? "0" : "100%")},250);
+	$("#cursos-breves").animate({left: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/cursos_breves/.test(window.location.href) ? "0" : "100%")},250);
+	$("#curso-breve-1").animate({left: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproduciendo/.test(window.location.href) ? "0" : "100%")},250);
+	despacharPeticiones(event,window.location.href);
+/*	jQuery.ajax({
+    url: 'http://pred1.colmex.mx/produccion_digital/cursos_breves',
+    type: 'get',
+    dataType: 'JSON',
+    success:function(result)
+    {
+			try{
+				var html = "";          
+				for(var i = 0; i < result["cursos"].length; i++){
+					html = html + "<div style=\"width:100%;height:200px;background-color:#CCC;border:2px solid #000;\" onmouseenter=\"cambiarGif(event,'" + result["cursos"][i]["img"] + "');\" onclick=\"reproducirCurso(event,'" + result["cursos"][i]["curso"] + "')\">" + result["cursos"][i]["curso"] + "</div>"
+				}
+				$("#selector-cursos").html(html);
+			}
+			catch(err){
 
-	jQuery.ajax({
-      url: 'http://pred1.colmex.mx/produccion_digital/cursos_breves',
-      type: 'get',
-      dataType: 'JSON',
-      success:function(result)
-      {
-					try{
-						var html = "";          
-						for(var i = 0; i < result["cursos"].length; i++){
-							html = html + "<div style=\"width:100%;height:200px;background-color:#CCC;border:2px solid #000;\" onmouseenter=\"cambiarGif(event,'" + result["cursos"][i]["img"] + "');\" onclick=\"reproducirCurso(event,'" + result["cursos"][i]["curso"] + "')\">" + result["cursos"][i]["curso"] + "</div>"
-						}
-						$("#selector-cursos").html(html);
-					}
-					catch(err){
-
-					}
-      } 
-	});
+			}
+    } 
+	}); */
 });
 
 function reproducirCurso(event,titulo){
-  jQuery.ajax({
+	despacharPeticiones(event,'http://pred1.colmex.mx/produccion_digital/curso_breve/reproducir?titulo='+titulo);
+/*  jQuery.ajax({
     url: 'http://pred1.colmex.mx/produccion_digital/curso_breve/reproducir?titulo='+titulo,
     type: 'get',
     dataType: 'JSON',
     success: function(result)
     {
-		  console.log(result);
 			$("#curso-breve-1").animate({left: "0"},250);
 			try{
 				var html = "";       
@@ -148,7 +151,7 @@ function reproducirCurso(event,titulo){
 
 			window.history.pushState({},"Nueva página",'http://pred1.colmex.mx/produccion_digital/curso_breve/reproducir?titulo='+titulo);
     } 
-  });
+  });*/
 }
 
 function reproducirVideo(event,video){

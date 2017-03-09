@@ -66,7 +66,9 @@ function slide_pagina(event,render,liga,home){
 	for(var i = 0; i < izqs.length; i++){
 		traerPagina(izqs[i]["id"], render == izqs[i]["id"]);
 	}
-	  jQuery.ajax({
+
+	despacharPeticiones(event,liga);
+	/*  jQuery.ajax({
       url: 'http://pred1.colmex.mx/produccion_digital/cursos_breves',
       type: 'get',
       dataType: 'JSON',
@@ -81,9 +83,9 @@ function slide_pagina(event,render,liga,home){
 			$("#mosaico").css("display","none");
 		else
 			$("#mosaico").css("display","block");
-	});
+	});*/
 
-	window.history.pushState({},"Nueva página",liga);
+	//window.history.pushState({},"Nueva página",liga);
 
 	setTimeout(function(){
 
@@ -100,25 +102,26 @@ $(document).on("ready page:change",function(event){
 		$("#mosaico").css("display","block");
 	});
 
-	$("#next-page-izq").animate({left: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/cursos_breves/.test(window.location.href) ? "0" : "100%")},250);
+	$("#cursos-breves").animate({left: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/cursos_breves/.test(window.location.href) ? "0" : "100%")},250);
+	$("#curso-breve-1").animate({left: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproduciendo/.test(window.location.href) ? "0" : "100%")},250);
 
 	jQuery.ajax({
-      url: 'http://pred1.colmex.mx/produccion_digital/cursos_breves',
-      type: 'get',
-      dataType: 'JSON',
-      success:function(result)
-      {
-					try{
-						var html = "";          
-						for(var i = 0; i < result["cursos"].length; i++){
-							html = html + "<div style=\"width:100%;height:200px;background-color:#CCC;border:2px solid #000;\" onmouseenter=\"cambiarGif(event,'" + result["cursos"][i]["img"] + "');\" onclick=\"reproducirCurso(event,'" + result["cursos"][i]["curso"] + "')\">" + result["cursos"][i]["curso"] + "</div>"
-						}
-						$("#selector-cursos").html(html);
-					}
-					catch(err){
+    url: 'http://pred1.colmex.mx/produccion_digital/cursos_breves',
+    type: 'get',
+    dataType: 'JSON',
+    success:function(result)
+    {
+			try{
+				var html = "";          
+				for(var i = 0; i < result["cursos"].length; i++){
+					html = html + "<div style=\"width:100%;height:200px;background-color:#CCC;border:2px solid #000;\" onmouseenter=\"cambiarGif(event,'" + result["cursos"][i]["img"] + "');\" onclick=\"reproducirCurso(event,'" + result["cursos"][i]["curso"] + "')\">" + result["cursos"][i]["curso"] + "</div>"
+				}
+				$("#selector-cursos").html(html);
+			}
+			catch(err){
 
-					}
-      } 
+			}
+    } 
 	});
 });
 
@@ -129,7 +132,6 @@ function reproducirCurso(event,titulo){
     dataType: 'JSON',
     success: function(result)
     {
-		  console.log(result);
 			$("#curso-breve-1").animate({left: "0"},250);
 			try{
 				var html = "";       
@@ -173,15 +175,15 @@ function scrollSelector(event, element){
 }
 
 function scrollSelectorTouchX(event,element){
-	if(((event.changedTouches[0].clientX)/element.clientWidth) * (element.scrollWidth * 0.5) >= window.innerWidth * 0.3 )
-		element.scrollLeft = ((event.changedTouches[0].clientX )/element.clientWidth) * (element.scrollWidth * 0.55);
+	if(((event.changedTouches[0].clientX)/element.clientWidth) * (element.scrollWidth * 0.5) >= window.innerWidth * 0.4 )
+		element.scrollLeft = ((event.changedTouches[0].clientX )/element.clientWidth) * (element.scrollWidth * 0.25);
 	else
 		element.scrollLeft = 0;
 }
 
 function scrollSelectorX(event, element){
-	if(((event.clientX)/element.clientWidth) * (element.scrollWidth * 0.5) >= window.innerWidth * 0.3 )
-		element.scrollLeft = ((event.clientX)/element.clientWidth) * (element.scrollWidth * 0.55);
+	if(((event.clientX)/element.clientWidth) * (element.scrollWidth * 0.5) >= window.innerWidth * 0.4 )
+		element.scrollLeft = ((event.clientX)/element.clientWidth) * (element.scrollWidth * 0.25);
 	else
 		element.scrollLeft = 0;
 }
