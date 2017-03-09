@@ -99,6 +99,9 @@ $(document).on("ready page:change",function(event){
 	else
 		$("#mosaico").css("display","block");
 	});
+
+	$("#next-page-izq").animate({left: (/http:\/\/pred1\.colmex\.mx\/cursos_breves/.test(window.location.href) ? "0" : "100%")},250);
+
 	jQuery.ajax({
       url: 'http://pred1.colmex.mx/produccion_digital/cursos_breves',
       type: 'get',
@@ -109,7 +112,7 @@ $(document).on("ready page:change",function(event){
 					try{
 						var html = "";          
 						for(var i = 0; i < result["cursos"].length; i++){
-							html = html + "<div style=\"width:100%;height:200px;background-color:#CCC;border:2px solid #000;\" onmouseenter=\"cambiarGif(event,'" + result["cursos"][i]["img"] + "');\" onclick=\"reproducirCurso(event,'" + result["cursos"][i]["titulo"] + "')\"></div>"
+							html = html + "<div style=\"width:100%;height:200px;background-color:#CCC;border:2px solid #000;\" onmouseenter=\"cambiarGif(event,'" + result["cursos"][i]["img"] + "');\" onclick=\"reproducirCurso(event,'" + result["cursos"][i]["curso"] + "')\"></div>"
 						}
 						$("#selector-cursos").html(html);
 					}
