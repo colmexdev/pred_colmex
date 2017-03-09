@@ -86,7 +86,7 @@ function slide_pagina(event,render,liga,home){
 			$("#mosaico").css("display","block");
 	});*/
 
-	//window.history.pushState({},"Nueva página",liga);
+	window.history.pushState({},"Nueva página",liga);
 
 	setTimeout(function(){
 
@@ -132,6 +132,7 @@ $(document).on("ready page:change",function(event){
 
 function reproducirCurso(event,titulo){
 	despacharPeticiones(event,'http://pred1.colmex.mx/produccion_digital/curso_breve/reproducir?titulo='+titulo);
+	window.history.pushState({},"Nueva página",'http://pred1.colmex.mx/produccion_digital/curso_breve/reproducir?titulo='+titulo);
 /*  jQuery.ajax({
     url: 'http://pred1.colmex.mx/produccion_digital/curso_breve/reproducir?titulo='+titulo,
     type: 'get',

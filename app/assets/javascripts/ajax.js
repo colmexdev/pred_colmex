@@ -10,8 +10,6 @@ function despacharPeticiones(event,liga){
 				divCursosBreves(event,result);
 			else if(/http:\/\/pred1.colmex.mx\/produccion_digital\/curso_breve\/reproducir\/?\?titulo=.*/.test(liga))
 				divPlayerCursosBreves(event,result);
-
-			window.history.pushState({},"Nueva página",liga);
 		} 
   });
 }
