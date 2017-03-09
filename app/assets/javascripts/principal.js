@@ -76,7 +76,7 @@ function slide_pagina(event,render,liga,home){
           //document.write(data);
       } 
      });
-	$("#mosaico").animate({top: (home ? "100%" : "0")}, 250, function(){
+	$("#mosaico").animate({top: (home ? "100%" : "0%")}, 250, function(){
 		if(!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)))
 			$("#mosaico").css("display","none");
 		else
@@ -87,7 +87,7 @@ function slide_pagina(event,render,liga,home){
 	setTimeout(function(){
 
 		window.history.pushState({},"Nueva página",liga);
-	$("#brand,#menu_canvas,#menu_mask").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "1%" : "17%")}, 150);
+		$("#brand,#menu_canvas,#menu_mask").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "1%" : "17%")}, 150);
 	}, 230);
 }
 
