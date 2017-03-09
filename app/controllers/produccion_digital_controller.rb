@@ -22,7 +22,7 @@ class ProduccionDigitalController < ApplicationController
   end
 
   def reproducir
-    @videos = Video.where("tipo = ? AND titulo = ?","Curso",params[:titulo])
+    @videos = Video.where("tipo = ? AND curso = ?","Curso",params[:titulo])
     respond_to do |format|
       format.html { render '/produccion_digital/curso_breve/reproducir' }
       format.json {render json: @videos }
