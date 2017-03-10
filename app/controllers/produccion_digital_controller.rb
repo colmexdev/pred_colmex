@@ -5,10 +5,6 @@ class ProduccionDigitalController < ApplicationController
     @cursos = []
 		#@participantes = []
 		@videos.each_with_index do |v,i|
-		  #Participante.where("id_video = ?", v.id) do |p|
-      #  @participantes << p
-      #end
-			
       @curs << v.curso
     end
     @curs.each_with_index do |v,i|
@@ -26,6 +22,14 @@ class ProduccionDigitalController < ApplicationController
     respond_to do |format|
       format.html { render '/produccion_digital/curso_breve/reproducir' }
       format.json {render json: @videos }
+    end
+  end
+
+  def principal
+    @algo = {prueba: "a"}
+    respond_to do |format|
+      format.html
+      format.json {render json: @algo }
     end
   end
 end
