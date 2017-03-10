@@ -1,0 +1,71 @@
+<!-- Menú y logo -->
+	<div id="cont_menu" onclick="desplegarMenu();">
+	</div>
+
+	<div id="brand" onclick="slide_pagina(event,'','http://pred1.colmex.mx',true)">
+	</div>
+	<div id="menu_canvas" style="background-color:rgba(255,255,255,0);height:60px;width:80px;position:fixed;top:17%;right:6%;transition:all ease 0.5s;-webkit-transition:all ease 0.5s;-moz-transition:all ease 0.5s;-o-transition:all ease 0.5s;z-index:5;">
+		<div id="rect_sup" class="rect" style="margin-top:30px">
+		</div>
+		<div id="rect_mid" class="rect" style="">
+		</div>
+		<div id="rect_inf" class="rect" style="">
+		</div>
+	</div>
+
+	<div id="menu_mask" style="cursor:pointer;background-color:rgba(255,255,255,0);height:60px;width:80px;position:fixed;top:17%;right:6%;z-index:6;" onmouseenter="cambiarHamburguesa(0);" onmouseleave="cambiarHamburguesa(1);" onclick="desplegarMenu();">	
+	</div>
+
+	<div class="opciones" id="op1" style="top:25%" onmouseenter="toggleBorde(event,'#borde-1',0);" onmouseleave="toggleBorde(event,'#borde-1',1);">Opcion 1
+		<div id="borde-1" class="borde-op"></div>
+	</div>
+	<div class="opciones" id="op2" style="top:30%" onmouseenter="toggleBorde(event,'#borde-2',0);" onmouseleave="toggleBorde(event,'#borde-2',1);">Opcion 2
+		<div id="borde-2" class="borde-op"></div>
+	</div>
+	<div class="opciones" id="op3" style="top:35%" onmouseenter="toggleBorde(event,'#borde-3',0);" onmouseleave="toggleBorde(event,'#borde-3',1);">Opcion 3
+		<div id="borde-3" class="borde-op"></div>
+	</div>
+	<div class="opciones" id="op4" style="top:40%" onmouseenter="toggleBorde(event,'#borde-4',0);" onmouseleave="toggleBorde(event,'#borde-4',1);">Opcion 4
+		<div id="borde-4" class="borde-op"></div>
+	</div>
+
+
+	<div id="contenedor" onmousemove="moverFondo(event,$(this));">
+	</div>
+
+	<div id="mask-flecha" onclick="scrollPagina();">
+		<div class="flecha-menu" id="flecha-der"></div>
+		<div class="flecha-menu" id="flecha-izq"></div>
+	</div>
+
+<div id="mosaico">
+		<div id="cont-cuadricula">
+			<div class="cuadricula-back">
+				<div class="cuadricula-menu" style="background-color:#660033;">
+					<a href="#" id="liga_0" class="liga-cuadricula" onclick="slide_pagina(event,'cursos-breves','produccion_digital/cursos_breves',false)"></a>
+				</div>
+			</div>
+			<div class="cuadricula-back">
+				<div class="cuadricula-menu" style="background-color:#0033CC;">
+					<a href="#" id="liga_1" class="liga-cuadricula" onclick="slide_pagina(event,'curso-breve-1','produccion_digital/curso_breve/curso1',false)"></a>
+				</div>
+			</div>
+			<div class="cuadricula-back">
+				<div class="cuadricula-menu" style="background-color:#336600;">
+					<a href="#" id="liga_2" class="liga-cuadricula" onclick="slide_pagina(event,this.id,'http://www.twitter.com')"></a>
+				</div>
+			</div>
+			<div class="cuadricula-back">
+				<div class="cuadricula-menu" style="background-color:#CC6600;"">
+					<a href="#" id="liga_3" class="liga-cuadricula" onclick="slide_pagina(event,this.id,'http://www.youtube.com')"></a>
+				</div>
+			</div>
+		</div>
+
+
+	<%= render 'layouts/footer' %>
+
+
+	</div>
+
+<!-- /Menú y logo -->

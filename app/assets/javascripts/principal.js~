@@ -66,7 +66,7 @@ function slide_pagina(event,render,liga,home){
 	for(var i = 0; i < izqs.length; i++){
 		traerPagina(izqs[i]["id"], render == izqs[i]["id"]);
 	}
-
+	console.log("Slide: "+ liga);
 	despacharPeticiones(event,liga);
 
 	/*  jQuery.ajax({
