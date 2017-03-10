@@ -78,13 +78,13 @@ function slide_pagina(event,render,liga,home){
           //console.log(result);
           //document.write(data);
       } 
-     });
+     });*/
 	$("#mosaico").animate({top: (home ? "100%" : "0%")}, 250, function(){
 		if(!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)))
 			$("#mosaico").css("display","none");
 		else
 			$("#mosaico").css("display","block");
-	});*/
+	});
 
 	window.history.pushState({},"Nueva página",liga);
 
