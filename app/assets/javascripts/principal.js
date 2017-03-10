@@ -181,14 +181,14 @@ function scrollSelector(event, element){
 }
 
 function scrollSelectorTouchX(event,element){
-	if(((event.changedTouches[0].clientX)/element.clientWidth) * (element.scrollWidth * 0.5) >= window.innerWidth * 0.4 )
+	if(((event.changedTouches[0].clientX)/element.clientWidth) * (element.scrollWidth * 0.5) >= window.innerWidth * 0.2 )
 		element.scrollLeft = ((event.changedTouches[0].clientX )/element.clientWidth) * (element.scrollWidth * 0.25);
 	else
 		element.scrollLeft = 0;
 }
 
 function scrollSelectorX(event, element){
-	if(((event.clientX)/element.clientWidth) * (element.scrollWidth * 0.5) >= window.innerWidth * 0.4 )
+	if(((event.clientX)/element.clientWidth) * (element.scrollWidth * 0.5) >= window.innerWidth * 0.2 )
 		element.scrollLeft = ((event.clientX)/element.clientWidth) * (element.scrollWidth * 0.25);
 	else
 		element.scrollLeft = 0;

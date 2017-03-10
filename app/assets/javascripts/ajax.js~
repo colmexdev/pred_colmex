@@ -10,8 +10,6 @@ function despacharPeticiones(event,liga){
 				divCursosBreves(event,result);
 			else if(/http:\/\/pred1.colmex.mx\/produccion_digital\/curso_breve\/reproducir\/?\?titulo=.*/.test(liga))
 				divPlayerCursosBreves(event,result);
-
-			window.history.pushState({},"Nueva página",liga);
 		} 
   });
 }
@@ -21,7 +19,7 @@ function divCursosBreves(event,datos){
 	try{
 		var html = "";          
 		for(var i = 0; i < datos["cursos"].length; i++){
-			html = html + "<div style=\"width:100%;height:200px;background-color:#CCC;border:2px solid #000;\" onmouseenter=\"cambiarGif(event,'" + datos["cursos"][i]["img"] + "');\" onclick=\"reproducirCurso(event,'" + datos["cursos"][i]["curso"] + "')\">" + datos["cursos"][i]["curso"] + "</div>"
+			html = html + "<div style=\"cursor:pointer;width:100%;height:200px;background-color:#CCC;border:2px solid #000;\" onmouseenter=\"cambiarGif(event,'" + datos["cursos"][i]["img"] + "');\" onclick=\"reproducirCurso(event,'" + datos["cursos"][i]["curso"] + "')\">" + datos["cursos"][i]["curso"] + "</div>"
 		}
 		$("#selector-cursos").html(html);
 	}
@@ -37,7 +35,7 @@ function divPlayerCursosBreves(event,datos){
 	try{
 		var html = "";       
 		for(var i = 0; i < datos.length; i++){
-			html = html + "<div style=\"width:300px;height:100%;background-color:#CCC;border:2px solid #000;float:left;\" onclick=\"reproducirVideo(event,'" + datos[i]["liga"] + "')\">" + datos[i]["titulo"] + "</div>"
+			html = html + "<div class=\"vid-curso-breve\" onclick=\"reproducirVideo(event,'" + datos[i]["liga"] + "')\">" + datos[i]["titulo"] + "</div>"
 		}
 		$("#carousel-vids").css("width", (window.innerWidth > datos.length*300 ? window.innerWidth : datos.length*300));
 		$("#carousel-vids").html(html);
