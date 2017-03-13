@@ -30,7 +30,7 @@ function desplegarMenu(){
 	}
 	else{
 		setTimeout(function(){ $("#cont_menu").css({"z-index": "-1"}); }, 750);
-		$("#rect_sup").css({"-webkit-transform": "", "-moz-transform": "", "-ms-transform": "", "-o-transform": "", "transform": "", "margin": "6px auto", "margin-top": "35px"});
+		$("#rect_sup").css({"-webkit-transform": "", "-moz-transform": "", "-ms-transform": "", "-o-transform": "", "transform": "", "margin": "6px auto", "margin-top": "25px"});
 		$("#rect_mid").css({"height": "", "margin": "6px auto"});
 		$("#rect_inf").css({"-webkit-transform": "", "-moz-transform": "", "-ms-transform": "", "-o-transform": "", "transform": "", "margin": "6px auto"});
 		$("#cont_menu").css({"-webkit-animation": "fade-out 0.8s ease 0.5s 1 normal both", "-moz-animation": "fade-out 0.8s ease 0.5s 1 normal both", "-o-animation": "fade-out 0.8s ease 0.5s 1 normal both", "animation": "fade-out 0.8s ease 0.5s 1 normal both"});
