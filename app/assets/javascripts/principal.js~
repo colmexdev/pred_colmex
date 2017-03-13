@@ -130,9 +130,9 @@ function reproducirVideo(event,video){
 
 function scrollSelectorY(event,element,offset,touch){
 	if(touch)
-		element.scrollTop = element.scrollTop + (((event.changedTouches[0].clientY - offset) - (element.clientHeight/2)) < (window.innerHeight - offset) * -0.15 ? -20 : (((event.changedTouches[0].clientY - offset) - (element.clientHeight/2)) < (window.innerHeight - offset) * 0.05 ? 0 : 20 ));
+		element.scrollTop = element.scrollTop + (((event.changedTouches[0].clientY - offset) - (element.clientHeight/2)) < (window.innerHeight - offset) * -0.05 ? -20 : (((event.changedTouches[0].clientY - offset) - (element.clientHeight/2)) < (window.innerHeight - offset) * 0.05 ? 0 : 20 ));
 	else
-		element.scrollTop = element.scrollTop + (((event.clientY - offset) - (element.clientHeight/2)) < (window.innerHeight - offset) * -0.35 ? -20 : (((event.clientY - offset) - (element.clientHeight/2)) < (window.innerHeight - offset) * 0.05 ? 0 : 20 ));
+		element.scrollTop = element.scrollTop + (((event.clientY - offset) - (element.clientHeight/2)) < (window.innerHeight - offset) * -0.05 ? -20 : (((event.clientY - offset) - (element.clientHeight/2)) < (window.innerHeight - offset) * 0.05 ? 0 : 20 ));
 }
 
 function scrollSelectorX(event,element,offset,touch){
