@@ -120,31 +120,29 @@ function reproducirVideo(event,video){
 /* Funciones que se llaman en sustitución del scroll */
 
 function scrollSelectorTouch(event,element){
-	if(((event.changedTouches[0].clientY - 110)/element.clientHeight) * (element.scrollHeight * 0.5) >= window.innerHeight * 0.15 )
+	element.scrollTop = element.scrollTop + ((event.changedTouches[0].clientY - 110) - (element.clientWidth / 2)) * 0.4;
+	/*if(((event.changedTouches[0].clientY - 110)/element.clientHeight) * (element.scrollHeight * 0.5) >= window.innerHeight * 0.15 )
 		element.scrollTop = ((event.changedTouches[0].clientY - 110)/element.clientHeight) * (element.scrollHeight * 0.65);
 	else
-		element.scrollTop = 0;
+		element.scrollTop = 0;*/
 }
 
 function scrollSelector(event, element){
-	if(((event.clientY - 110)/element.clientHeight) * (element.scrollHeight * 0.5) >= window.innerHeight * 0.15 )
+	element.scrollTop = element.scrollTop + ((event.clientY - 110) - (element.clientWidth / 2)) * 0.4;
+	/*if(((event.clientY - 110)/element.clientHeight) * (element.scrollHeight * 0.5) >= window.innerHeight * 0.15 )
 		element.scrollTop = ((event.clientY - 110)/element.clientHeight) * (element.scrollHeight * 0.65);
 	else
-		element.scrollTop = 0;
+		element.scrollTop = 0;*/
 }
 
 function scrollSelectorTouchX(event,element){
-	//if(((event.changedTouches[0].clientX)/element.clientWidth) * (element.scrollWidth * 0.5) >= window.innerWidth * 0.1 )
-		element.scrollLeft = element.scrollLeft + (event.changedTouches[0].clientX - (element.clientWidth/2))*0.5;/*((event.changedTouches[0].clientX )/element.clientWidth) * (element.scrollWidth * 0.15);*/
-	//else
-	//	element.scrollLeft = 0;
+
+		element.scrollLeft = element.scrollLeft + (event.changedTouches[0].clientX - (element.clientWidth / 2)) * 0.4;
 }
 
 function scrollSelectorX(event, element){
-	//if(((event.clientX)/element.clientWidth) * (element.scrollWidth * 0.5) >= window.innerWidth * 0.1 )
-		element.scrollLeft = element.scrollLeft + (event.clientX - (element.clientWidth/2))*0.5; /*((event.clientX)/element.clientWidth) * (element.scrollWidth * 0.15);*/
-	//else
-	//	element.scrollLeft = 0;
+
+		element.scrollLeft = element.scrollLeft + (event.clientX - (element.clientWidth / 2)) * 0.4;
 }
 
 function cambiarGif(event,gif){
