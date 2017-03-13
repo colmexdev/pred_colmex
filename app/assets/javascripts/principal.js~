@@ -130,16 +130,16 @@ function reproducirVideo(event,video){
 
 function scrollSelectorY(event,element,offset,touch){
 	if(touch)
-		element.scrollTop = element.scrollTop + (((event.changedTouches[0].clientY - offset) - (element.clientHeight/2)) < window.innerHeight * -0.15 ? -15 : (((event.changedTouches[0].clientY - offset) - (element.clientHeight/2)) < window.innerHeight * 0.15 ? 0 : 15 ));
+		element.scrollTop = element.scrollTop + (((event.changedTouches[0].clientY - offset) - (element.clientHeight/2)) < (window.innerHeight - offset) * -0.15 ? -20 : (((event.changedTouches[0].clientY - offset) - (element.clientHeight/2)) < (window.innerHeight - offset) * 0.05 ? 0 : 20 ));
 	else
-		element.scrollTop = element.scrollTop + (((event.clientY - offset) - (element.clientHeight/2)) < window.innerHeight * -0.35 ? -15 : (((event.clientY - offset) - (element.clientHeight/2)) < window.innerHeight * 0.15 ? 0 : 15 ));
+		element.scrollTop = element.scrollTop + (((event.clientY - offset) - (element.clientHeight/2)) < (window.innerHeight - offset) * -0.35 ? -20 : (((event.clientY - offset) - (element.clientHeight/2)) < (window.innerHeight - offset) * 0.05 ? 0 : 20 ));
 }
 
 function scrollSelectorX(event,element,offset,touch){
 	if(touch)
-		element.scrollLeft = element.scrollLeft + (((event.changedTouches[0].clientX - offset) - (element.clientWidth/2)) < window.innerWidth * -0.35 ? -15 : (((event.changedTouches[0].clientX - offset) - (element.clientWidth/2)) < window.innerWidth * 0.15 ? 0 : 15 ));
+		element.scrollLeft = element.scrollLeft + (((event.changedTouches[0].clientX - offset) - (element.clientWidth/2)) < (window.innerWidth - offset) * -0.35 ? -20 : (((event.changedTouches[0].clientX - offset) - (element.clientWidth/2)) < (window.innerWidth - offset) * 0.05 ? 0 : 20 ));
 	else
-		element.scrollLeft = element.scrollLeft + (((event.clientX - offset) - (element.clientWidth/2)) < window.innerWidth * -0.15 ? -15 : (((event.clientX - offset) - (element.clientWidth/2)) < window.innerWidth * 0.15 ? 0 : 15 ));
+		element.scrollLeft = element.scrollLeft + (((event.clientX - offset) - (element.clientWidth/2)) < (window.innerWidth - offset) * -0.15 ? -20 : (((event.clientX - offset) - (element.clientWidth/2)) < (window.innerWidth - offset) * 0.05 ? 0 : 20 ));
 }
 
 function cambiarGif(event,gif){
