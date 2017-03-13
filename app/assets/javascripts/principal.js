@@ -130,16 +130,16 @@ function reproducirVideo(event,video){
 
 function scrollSelectorY(event,element,offset,touch){
 	if(touch)
-		element.scrollTop = element.scrollTop + (((event.changedTouches[0].clientY - offset) - (element.clientHeight / 2)) < 0 ? -25 : 25 );
+		element.scrollTop = element.scrollTop + (((event.changedTouches[0].clientY - offset) - (element.clientHeight/2)) < window.innerHeight * -0.45 ? -15 : (((event.changedTouches[0].clientY - offset) - (element.clientHeight/2)) < window.innerHeight * 0.45 ? 0 : 15 ));
 	else
-		element.scrollTop = element.scrollTop + (((event.clientY - offset) - (element.clientHeight / 2)) < 0 ? -25 : 25 );
+		element.scrollTop = element.scrollTop + (((event.clientY - offset) - (element.clientHeight/2)) < window.innerHeight * -0.45 ? -15 : (((event.clientY - offset) - (element.clientHeight/2)) < window.innerHeight * 0.45 ? 0 : 15 ));
 }
 
 function scrollSelectorX(event,element,offset,touch){
 	if(touch)
-		element.scrollLeft = element.scrollLeft + (((event.changedTouches[0].clientX - offset) - (element.clientWidth / 2)) < 0 ? -25 : 25 );
+		element.scrollLeft = element.scrollLeft + (((event.changedTouches[0].clientX - offset) - (element.clientWidth/2)) < window.innerWidth * -0.45 ? -15 : (((event.changedTouches[0].clientX - offset) - (element.clientWidth/2)) < window.innerWidth * 0.45 ? 0 : 15 ));
 	else
-		element.scrollLeft = element.scrollLeft + (((event.clientX - offset) - (element.clientWidth / 2)) < 0 ? -25 : 25 );
+		element.scrollLeft = element.scrollLeft + (((event.clientX - offset) - (element.clientWidth/2)) < window.innerWidth * -0.45 ? -15 : (((event.clientX - offset) - (element.clientWidth/2)) < window.innerWidth * 0.45 ? 0 : 15 ));
 }
 
 function cambiarGif(event,gif){
