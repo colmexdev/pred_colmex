@@ -135,7 +135,7 @@ function scrollSelector(event, element){
 
 function scrollSelectorTouchX(event,element){
 	//if(((event.changedTouches[0].clientX)/element.clientWidth) * (element.scrollWidth * 0.5) >= window.innerWidth * 0.1 )
-		element.scrollLeft = element.ScrollLeft + (event.changedTouches[0].clientX - (element.clientWidth/2))*0.5;/*((event.changedTouches[0].clientX )/element.clientWidth) * (element.scrollWidth * 0.15);*/
+		element.scrollLeft = element.scrollLeft + (event.changedTouches[0].clientX - (element.clientWidth/2))*0.5;/*((event.changedTouches[0].clientX )/element.clientWidth) * (element.scrollWidth * 0.15);*/
 	//else
 	//	element.scrollLeft = 0;
 }
