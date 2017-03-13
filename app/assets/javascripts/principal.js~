@@ -128,16 +128,16 @@ function reproducirVideo(event,video){
 
 function scrollSelectorY(event,element,offset,touch){
 	if(touch)
-		element.scrollTop = element.scrollTop + ((event.changedTouches[0].clientY - offset) - (element.clientHeight / 2)) * 0.2;
+		element.scrollTop = element.scrollTop + (((event.changedTouches[0].clientY - offset) - (element.clientHeight / 2)) < 0 ? -10 : 10);
 	else
-		element.scrollTop = element.scrollTop + ((event.clientY - offset) - (element.clientHeight / 2)) * 0.2;
+		element.scrollTop = element.scrollTop + (((event.clientY - offset) - (element.clientHeight / 2)) < 0 ? -10 : 10 );
 }
 
 function scrollSelectorX(event,element,offset,touch){
 	if(touch)
-		element.scrollLeft = element.scrollLeft + ((event.changedTouches[0].clientX - offset) - (element.clientWidth / 2)) * 0.3;
+		element.scrollLeft = element.scrollLeft + (((event.changedTouches[0].clientX - offset) - (element.clientWidth / 2)) < 0 ? -10 : 10 );
 	else
-		element.scrollLeft = element.scrollLeft + ((event.clientX - offset) - (element.clientWidth / 2)) * 0.3;
+		element.scrollLeft = element.scrollLeft + (((event.clientX - offset) - (element.clientWidth / 2)) < 0 ? -10 : 10);
 }
 
 function cambiarGif(event,gif){
