@@ -8,16 +8,16 @@ function moverFondo(event,element){
 }
 
 function cambiarHamburguesa(toggle){
-
-	$("#rect_sup").css({ "margin": (toggle == 0 ? "35px auto 0" : ""), "height": (toggle == 0 ? "2.5px" : ""), "margin-top": (toggle == 0 ? "35px" : "25px")});
+	$("#rect_sup").css({ "margin": (toggle == 0 ? "35px auto 0" : ""), "height": (toggle == 0 ? "3px" : ""), "margin-top": (toggle == 0 ? "35px" : "25px")});
 	$("#rect_mid").css({ "margin": (toggle == 0 ? "0 auto" : ""), "height": (toggle == 0 ? "0" : "")});
-	$("#rect_inf").css({ "margin": (toggle == 0 ? "0 auto" : ""), "height": (toggle == 0 ? "2.5px" : "")});
+	$("#rect_inf").css({ "margin": (toggle == 0 ? "0 auto" : ""), "height": (toggle == 0 ? "3px" : "")});
 }
 
 function desplegarMenu(){
 	var ind = $("#cont_menu").css('z-index');
 	$("#cont_menu").css("-webkit-animation-play-state", "paused");
 	if(ind == -1){ 
+		$("#rect-sup").css({"-webkit-transform": "rotate"})
 		$("#cont_menu").css({"-webkit-animation": "fade-in 0.8s ease 0s 1 normal both", "-moz-animation": "fade-in 0.8s ease 0s 1 normal both", "-o-animation": "fade-in 0.8s ease 0s 1 normal both", "animation": "fade-in 0.8s ease 0s 1 normal both", "z-index": "5"}); 
 		$("#op1").css({"-webkit-animation": "opt-ap 0.6s ease 0.7s 1 normal both", "-moz-animation": "opt-ap 0.6s ease 0.7s 1 normal both", "-o-animation": "opt-ap 0.6s ease 0.7s 1 normal both", "animation": "opt-ap 0.6s ease 0.7s 1 normal both"});
 		$("#op2").css({"-webkit-animation": "opt-ap 0.6s ease 0.8s 1 normal both", "-moz-animation": "opt-ap 0.6s ease 0.8s 1 normal both", "-o-animation": "opt-ap 0.6s ease 0.8s 1 normal both", "animation": "opt-ap 0.6s ease 0.8s 1 normal both"});
@@ -73,7 +73,6 @@ function slide_pagina(event,render,liga,home){
 
 	despacharPeticiones(event,liga);
 
-
 	$("#mosaico").animate({top: (home ? "100%" : "0%")}, 250, function(){
 		if(!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)))
 			$("#mosaico").css("display","none");
@@ -121,16 +120,16 @@ function reproducirVideo(event,video){
 
 function scrollSelectorY(event,element,offset,touch){
 	if(touch)
-		element.scrollTop = element.scrollTop + ((event.changedTouches[0].clientY - offset) - (element.clientHeight / 2)) * 0.4;
+		element.scrollTop = element.scrollTop + ((event.changedTouches[0].clientY - offset) - (element.clientHeight / 2)) * 0.2;
 	else
-		element.scrollTop = element.scrollTop + ((event.clientY - offset) - (element.clientHeight / 2)) * 0.4;
+		element.scrollTop = element.scrollTop + ((event.clientY - offset) - (element.clientHeight / 2)) * 0.2;
 }
 
 function scrollSelectorX(event,element,offset,touch){
 	if(touch)
-		element.scrollLeft = element.scrollLeft + ((event.changedTouches[0].clientX - offset) - (element.clientWidth / 2)) * 0.4;
+		element.scrollLeft = element.scrollLeft + ((event.changedTouches[0].clientX - offset) - (element.clientWidth / 2)) * 0.3;
 	else
-		element.scrollLeft = element.scrollLeft + ((event.clientX - offset) - (element.clientWidth / 2)) * 0.4;
+		element.scrollLeft = element.scrollLeft + ((event.clientX - offset) - (element.clientWidth / 2)) * 0.3;
 }
 
 function cambiarGif(event,gif){
