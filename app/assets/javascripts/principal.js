@@ -8,16 +8,19 @@ function moverFondo(event,element){
 }
 
 function cambiarHamburguesa(toggle){
-	$("#rect_sup").css({ "margin": (toggle == 0 ? "35px auto 0" : ""), "height": (toggle == 0 ? "3px" : ""), "margin-top": (toggle == 0 ? "35px" : "25px")});
-	$("#rect_mid").css({ "margin": (toggle == 0 ? "0 auto" : ""), "height": (toggle == 0 ? "0" : "")});
-	$("#rect_inf").css({ "margin": (toggle == 0 ? "0 auto" : ""), "height": (toggle == 0 ? "3px" : "")});
+	if($("#rect_sup").css("transform") == "none"){
+		$("#rect_sup").css({ "margin": (toggle == 0 ? "35px auto 0" : ""), "height": (toggle == 0 ? "3px" : ""), "margin-top": (toggle == 0 ? "35px" : "25px")});
+		$("#rect_mid").css({ "margin": (toggle == 0 ? "0 auto" : ""), "height": (toggle == 0 ? "0" : "")});
+		$("#rect_inf").css({ "margin": (toggle == 0 ? "0 auto" : ""), "height": (toggle == 0 ? "3px" : "")});
+	}
 }
 
 function desplegarMenu(){
 	var ind = $("#cont_menu").css('z-index');
 	$("#cont_menu").css("-webkit-animation-play-state", "paused");
 	if(ind == -1){ 
-		$("#rect_sup").css({"-webkit-transform": "rotate(50deg)", "-moz-transform": "rotate(50deg)", "-ms-transform": "rotate(50deg)", "-o-transform": "rotate(50deg)", "transform": "rotate(50deg)"});
+		$("#rect_sup").css({"-webkit-transform": "rotate(50deg)", "-moz-transform": "rotate(50deg)", "-ms-transform": "rotate(50deg)", "-o-transform": "rotate(50deg)", "transform": "rotate(50deg)", "margin-top": "35px"});
+		$("#rect_mid").css("height", "0");
 		$("#rect_inf").css({"-webkit-transform": "translate(0,-2px) rotate(130deg)", "-moz-transform": "translate(0,-2px) rotate(130deg)", "-ms-transform": "translate(0,-2px) rotate(130deg)", "-o-transform": "translate(0,-2px) rotate(130deg)", "transform": "translate(0,-2px) rotate(130deg)"});
 		$("#cont_menu").css({"-webkit-animation": "fade-in 0.8s ease 0s 1 normal both", "-moz-animation": "fade-in 0.8s ease 0s 1 normal both", "-o-animation": "fade-in 0.8s ease 0s 1 normal both", "animation": "fade-in 0.8s ease 0s 1 normal both", "z-index": "5"}); 
 		$("#op1").css({"-webkit-animation": "opt-ap 0.6s ease 0.7s 1 normal both", "-moz-animation": "opt-ap 0.6s ease 0.7s 1 normal both", "-o-animation": "opt-ap 0.6s ease 0.7s 1 normal both", "animation": "opt-ap 0.6s ease 0.7s 1 normal both"});
@@ -27,7 +30,8 @@ function desplegarMenu(){
 	}
 	else{
 		setTimeout(function(){ $("#cont_menu").css({"z-index": "-1"}); }, 750);
-		$("#rect_sup").css({"-webkit-transform": "", "-moz-transform": "", "-ms-transform": "", "-o-transform": "", "transform": ""});
+		$("#rect_sup").css({"-webkit-transform": "", "-moz-transform": "", "-ms-transform": "", "-o-transform": "", "transform": "", "margin-top": ""});
+		$("#rect_mid").css("height", "");
 		$("#rect_inf").css({"-webkit-transform": "", "-moz-transform": "", "-ms-transform": "", "-o-transform": "", "transform": ""});
 		$("#cont_menu").css({"-webkit-animation": "fade-out 0.8s ease 0.5s 1 normal both", "-moz-animation": "fade-out 0.8s ease 0.5s 1 normal both", "-o-animation": "fade-out 0.8s ease 0.5s 1 normal both", "animation": "fade-out 0.8s ease 0.5s 1 normal both"});
 		$("#op1").css({"-webkit-animation": "opt-dis 0.6s ease 0.6s 1 normal both", "-moz-animation": "opt-dis 0.6s ease 0.6s 1 normal both", "-o-animation": "opt-dis 0.6s ease 0.6s 1 normal both", "animation": "opt-dis 0.6s ease 0.6s 1 normal both"});
