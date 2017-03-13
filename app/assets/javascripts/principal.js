@@ -130,16 +130,16 @@ function reproducirVideo(event,video){
 
 function scrollSelectorY(event,element,offset,touch){
 	if(touch)
-		element.scrollTop = element.scrollTop + (((event.changedTouches[0].clientY - offset) - (element.clientHeight/2)) < element.clientHeight * -0.45 ? -15 : (((event.changedTouches[0].clientY - offset) - (element.clientHeight/2)) < element.clientHeight * 0.45 ? 0 : 15 ));
+		element.scrollTop = element.scrollTop + (((event.changedTouches[0].clientY - offset) - (element.clientHeight/2)) < element.clientHeight * -0.65 ? -15 : (((event.changedTouches[0].clientY - offset) - (element.clientHeight/2)) < element.clientHeight * 0.65 ? 0 : 15 ));
 	else
-		element.scrollTop = element.scrollTop + (((event.clientY - offset) - (element.clientHeight/2)) < element.clientHeight * -0.45 ? -15 : (((event.clientY - offset) - (element.clientHeight/2)) < element.clientHeight * 0.45 ? 0 : 15 ));
+		element.scrollTop = element.scrollTop + (((event.clientY - offset) - (element.clientHeight/2)) < element.clientHeight * -0.65 ? -15 : (((event.clientY - offset) - (element.clientHeight/2)) < element.clientHeight * 0.65 ? 0 : 15 ));
 }
 
 function scrollSelectorX(event,element,offset,touch){
 	if(touch)
-		element.scrollLeft = element.scrollLeft + (((event.changedTouches[0].clientX - offset) - (element.clientWidth/2)) < element.clientWidth * -0.45 ? -15 : (((event.changedTouches[0].clientX - offset) - (element.clientWidth/2)) < element.clientWidth * 0.45 ? 0 : 15 ));
+		element.scrollLeft = element.scrollLeft + (((event.changedTouches[0].clientX - offset) - (element.clientWidth/2)) < element.clientWidth * -0.65 ? -15 : (((event.changedTouches[0].clientX - offset) - (element.clientWidth/2)) < element.clientWidth * 0.65 ? 0 : 15 ));
 	else
-		element.scrollLeft = element.scrollLeft + (((event.clientX - offset) - (element.clientWidth/2)) < element.clientWidth * -0.45 ? -15 : (((event.clientX - offset) - (element.clientWidth/2)) < element.clientWidth * 0.45 ? 0 : 15 ));
+		element.scrollLeft = element.scrollLeft + (((event.clientX - offset) - (element.clientWidth/2)) < element.clientWidth * -0.65 ? -15 : (((event.clientX - offset) - (element.clientWidth/2)) < element.clientWidth * 0.65 ? 0 : 15 ));
 }
 
 function cambiarGif(event,gif){
