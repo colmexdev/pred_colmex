@@ -121,7 +121,7 @@ $(document).on("ready page:change",function(event){
 
 $(window).on("resize",function(event){
 	$("#wrapper-header-pd").css({"height": window.innerHeight, "width": "100%"});
-	reescalarImagen(event,$("#img-pd"),
+	reescalarImagen(event,$("#img-pd"),17/40);
 });
 
 function reescalarImagen(event,element,ratio){

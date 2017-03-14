@@ -115,13 +115,13 @@ $(document).on("ready page:change",function(event){
 	$("#player-curso-landscape").html('');
 
 	$("#wrapper-header-pd").css({"height": window.innerHeight, "width": "100%"});
-	$("#img-pd").css({"width": (window.innerWidth*0.35) + "px", "height": (window.innerHeight*0.35) + "px"});
+	reescalarImagen(event,$("#img-pd"),25/40);
 
 });
 
 $(window).on("resize",function(event){
 	$("#wrapper-header-pd").css({"height": window.innerHeight, "width": "100%"});
-	reescalarImagen(event,$("#img-pd"),17/40);
+	reescalarImagen(event,$("#img-pd"),25/40);
 });
 
 function reescalarImagen(event,element,ratio){
