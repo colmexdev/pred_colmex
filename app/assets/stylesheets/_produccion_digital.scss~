@@ -11,6 +11,6 @@
 }
 
 .slides-op:hover{
-	font-size: 26px;
+	font-size: 28px;
 	opacity: 1;
 }
