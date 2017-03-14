@@ -114,6 +114,8 @@ $(document).on("ready page:change",function(event){
 	$("#produccion-digital").animate({right: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/principal/.test(window.location.href) ? "0" : "100%")},250);
 	$("#player-curso-landscape").html('');
 
+	$("#wrapper-header-pd").css({"height": window.innerHeight, "width": "100%"});
+
 });
 
 function reproducirCurso(event,titulo){
