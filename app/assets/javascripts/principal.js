@@ -115,6 +115,7 @@ $(document).on("ready page:change",function(event){
 	$("#player-curso-landscape").html('');
 
 	$("#wrapper-header-pd").css({"height": window.innerHeight, "width": "100%"});
+	$("#img-pd").css({"width": (window.innerWidth*0.35) + "px", "height": (window.innerWidth*0.35) + "px"});
 
 });
 
