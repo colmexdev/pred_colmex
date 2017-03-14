@@ -119,6 +119,11 @@ $(document).on("ready page:change",function(event){
 
 });
 
+$(window).on("resize",function(event){
+	$("#wrapper-header-pd").css({"height": window.innerHeight, "width": "100%"});
+	$("#img-pd").css({"width": (window.innerWidth*0.35) + "px", "height": (window.innerHeight*0.35) + "px"});
+});
+
 function reproducirCurso(event,titulo){
 	despacharPeticiones(event,'http://pred1.colmex.mx/produccion_digital/curso_breve/reproducir?titulo='+titulo);
 	window.history.pushState({},"Nueva página",'http://pred1.colmex.mx/produccion_digital/curso_breve/reproducir?titulo='+titulo);
