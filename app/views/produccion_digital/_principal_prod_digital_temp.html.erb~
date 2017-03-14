@@ -1,5 +1,5 @@
 <div id="wrapper" style="position:absolute;top:0;left:0;overflow-x:hidden;height:150%;width:100%;">
-	<div id="wrapper-header-pd">
+	<div id="wrapper-header-pd" style="position:relative;">
 		<div style="transform:rotate(90deg);display:inline-block;font-size:25px;color:#FFF; top:50%;left:0;position:absolute;">Opción 2</div>
 		<div style="transform:rotate(90deg);display:inline-block;font-size:25px;color:#FFF;top:50%;right:0;position:absolute;">Opción 3</div>
 		<div style="font-size:25px;color:#FFF;bottom:0;right:50%;position:absolute;">Opción 4</div>
