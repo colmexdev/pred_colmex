@@ -4,6 +4,6 @@
 		<div style="-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-ms-transform:rotate(90deg);-o-transform:rotate(90deg);transform:rotate(90deg);display:inline-block;font-size:25px;color:#FFF;top:50%;right:0;position:absolute;cursor:pointer;">Opción 3</div>
 		<div style="font-size:25px;color:#FFF;bottom:10px;left:50%;position:absolute;-webkit-transform:translate(-50%,0);-moz-transform:translate(-50%,0);-ms-transform:translate(-50%,0);-o-transform:translate(-50%,0);transform:translate(-50%,0);cursor:pointer;">Opción 4</div>
 		<div id="header-pd" style="font-size:26px;color:#FFF;position:absolute;top:125px;right:10%;">Opción 1</div>
-		<div id="img-pd"> </div>
+		<div id="img-pd" style="background:url(<%= image_path('LOGO_PED.png') %>) no-repeat center center / 100% 100%;-webkit-transform:rotate(-10deg);-moz-transform:rotate(-10deg);-ms-transform:rotate(-10deg);-o-transform:rotate(-10deg);transform:rotate(-10deg);position:absolute;top:25%;left:10%;"> </div>
 	</div>
 </div>

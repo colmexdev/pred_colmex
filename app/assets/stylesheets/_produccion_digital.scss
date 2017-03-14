@@ -1,0 +1,16 @@
+/* Estilos para la sección de Producción Digital */
+
+/* Clases */
+/* Opciones para cambiar de sitio */
+.slides-op{
+	opacity: 0.8;
+	-webkit-transition: all 0.3s linear;
+	-moz-transition: all 0.3s linear;
+	-o-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+}
+
+.slides-op:hover{
+	font-size: 26px;
+	opacity: 1;
+}
