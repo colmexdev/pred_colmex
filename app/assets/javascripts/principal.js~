@@ -121,12 +121,10 @@ $(window).on("resize",function(event){
 
 		$("#wrapper-header-pd").css({"height": window.innerHeight, "width": "100%"});
 		$("#img-desc-pd").css({"height": ($("#wrapper-main-pd").height() - $("#header-pd").height()) + "px"});
-		$("#img-section-pd").css({"height": (window.innerWidth <= 992 ? (($("#img-pd").height() * 1.2) + "px") : "")});
+		$("#img-section-pd").css({"height": (window.innerWidth <= 992 ? /*(($("#img-pd").height() * 1.2)*/ + "px") : "")});
 		$("#text-section-pd").css({"height": (window.innerWidth <= 992 ? (($("#img-desc-pd").height() - $("#img-section-pd").height()) + "px") : "")});
 		$("#header-pd").css({"font-size": (window.innerWidth <= 992 ? ((25 + 10*(window.innerWidth - 300)/692)+"px") : "")});
 		reescalarImagen(event,$("#img-pd"),25/40,$("#img-section-pd").height());
-		$("#img-section-pd").css({"height": (window.innerWidth <= 992 ? (($("#img-pd").height() * 1.2) + "px") : "")});
-		$("#text-section-pd").css({"height": (window.innerWidth <= 992 ? (($("#img-desc-pd").height() - $("#img-section-pd").height()) + "px") : "")});
 });
 
 function reescalarImagen(event,element,ratio,height_limit){
