@@ -119,7 +119,7 @@ $(document).on("ready page:change",function(event){
 
 $(window).on("resize",function(event){
 	$("#wrapper-header-pd").css({"height": window.innerHeight, "width": "100%"});
-	$("#img-desc-pd").css({"height": ($("#wrapper-main-pd").height() - $("#header-pd").height() - (window.innerWidth < 992 ? $("#text-section-pd").height() : 0)) + "px"});
+	$("#img-desc-pd").css({"height": ($("#wrapper-main-pd").height() - $("#header-pd").height()) + "px"});
 	reescalarImagen(event,$("#img-pd"),25/40);
 });
 
