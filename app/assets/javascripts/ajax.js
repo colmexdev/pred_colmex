@@ -8,14 +8,14 @@ function despacharPeticiones(event,liga){
 		{
 			if(/http:\/\/pred1.colmex.mx\/produccion_digital\/cursos_breves\/?/.test(liga)){
 				divCursosBreves(event,result);
-				centrar(event,false);
+				centrarMenu(event,false);
 			}
 			else if(/http:\/\/pred1.colmex.mx\/produccion_digital\/curso_breve\/reproducir\/?\?titulo=.*/.test(liga)){
 				divPlayerCursosBreves(event,result);
-				centrar(event,false);
+				centrarMenu(event,false);
 			}
 			else if(/http:\/\/pred1.colmex.mx\/produccion_digital\/principal\/?/.test(liga)){
-				centrar(event,true);
+				centrarMenu(event,true);
 			}
 		} 
   });
