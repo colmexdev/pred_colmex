@@ -121,6 +121,10 @@ $(window).on("resize",function(event){
 	$("#wrapper-header-pd").css({"height": window.innerHeight, "width": "100%"});
 	$("#img-desc-pd").css({"height": ($("#wrapper-main-pd").height() - $("#header-pd").height()) + "px"});
 	reescalarImagen(event,$("#img-pd"),25/40);
+	if(window.innerWidth < 992){
+		$("#img-section-pd").css({"height": ($("#img-pd").height() * 1.2) + "px"});
+		$("#text-section-pd").css({"height": ($("#img-desc-pd").height() - $("#img-section-pd").height()) + "px"});
+	}
 });
 
 function reescalarImagen(event,element,ratio){
