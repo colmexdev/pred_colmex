@@ -118,13 +118,13 @@ $(document).on("ready page:change",function(event){
 });
 
 $(window).on("resize",function(event){
-
-		$("#wrapper-header-pd").css({"height": window.innerHeight, "width": "100%"});
-		$("#img-desc-pd").css({"height": ($("#wrapper-main-pd").height() - $("#header-pd").height()) + "px"});
-		$("#img-section-pd").css({"height": (window.innerWidth <= 992 ? (($("#wrapper-main-pd").width() * 0.40625) + "px") : "")});
-		$("#text-section-pd").css({"height": (window.innerWidth <= 992 ? (($("#img-desc-pd").height() - $("#img-section-pd").height()) + "px") : "")});
-		$("#header-pd").css({"font-size": (window.innerWidth <= 992 ? ((25 + 10*(window.innerWidth - 300)/692)+"px") : "")});
-		reescalarImagen(event,$("#img-pd"),0.625,$("#img-section-pd").height());
+	centrar(event,$(window),$("#cont_menu"));
+	$("#wrapper-header-pd").css({"height": window.innerHeight, "width": "100%"});
+	$("#img-desc-pd").css({"height": ($("#wrapper-main-pd").height() - $("#header-pd").height()) + "px"});
+	$("#img-section-pd").css({"height": (window.innerWidth <= 992 ? (($("#wrapper-main-pd").width() * 0.40625) + "px") : "")});
+	$("#text-section-pd").css({"height": (window.innerWidth <= 992 ? (($("#img-desc-pd").height() - $("#img-section-pd").height()) + "px") : "")});
+	$("#header-pd").css({"font-size": (window.innerWidth <= 992 ? ((25 + 10*(window.innerWidth - 300)/692)+"px") : "")});
+	reescalarImagen(event,$("#img-pd"),0.625,$("#img-section-pd").height());
 });
 
 function reescalarImagen(event,element,ratio,height_limit){
@@ -160,6 +160,10 @@ function scrollSelectorX(event,element,offset,touch){
 
 function cambiarGif(event,gif){
 	$("#player-curso").css("background", "url("+String(gif)+") no-repeat center center/ 100% 100%");
+}
+
+function centrar(event,wrapper,element){
+    element.css({"top": Math.max(0, ((wrapper.height() - element.outerHeight())/ 2) +  wrapper.scrollTop()) + "px","left": Math.max(0, ((wrapper.width() - element.outerWidth())/ 2) +  wrapper.scrollLeft()) + "px"});
 }
 
 window.onpopstate = function(event){
