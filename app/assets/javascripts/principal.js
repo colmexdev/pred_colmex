@@ -118,14 +118,13 @@ $(document).on("ready page:change",function(event){
 });
 
 $(window).on("resize",function(event){
-	setTimeout(function(){
+
 		$("#wrapper-header-pd").css({"height": window.innerHeight, "width": "100%"});
 		$("#img-desc-pd").css({"height": ($("#wrapper-main-pd").height() - $("#header-pd").height()) + "px"});
-		reescalarImagen(event,$("#img-pd"),25/40,$("#img-section-pd").height());
 		$("#img-section-pd").css({"height": (window.innerWidth <= 992 ? (($("#img-pd").height() * 1.2) + "px") : "")});
 		$("#text-section-pd").css({"height": (window.innerWidth <= 992 ? (($("#img-desc-pd").height() - $("#img-section-pd").height()) + "px") : "")});
 		$("#header-pd").css({"font-size": (window.innerWidth <= 992 ? ((25 + 10*(window.innerWidth - 300)/692)+"px") : "")});
-	},50);
+		reescalarImagen(event,$("#img-pd"),25/40,$("#img-section-pd").height());
 });
 
 function reescalarImagen(event,element,ratio,height_limit){

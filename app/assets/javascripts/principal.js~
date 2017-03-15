@@ -118,7 +118,7 @@ $(document).on("ready page:change",function(event){
 });
 
 $(window).on("resize",function(event){
-	setTimeout(funtcion(){
+	setTimeout(function(){
 		$("#wrapper-header-pd").css({"height": window.innerHeight, "width": "100%"});
 		$("#img-desc-pd").css({"height": ($("#wrapper-main-pd").height() - $("#header-pd").height()) + "px"});
 		reescalarImagen(event,$("#img-pd"),25/40,$("#img-section-pd").height());
