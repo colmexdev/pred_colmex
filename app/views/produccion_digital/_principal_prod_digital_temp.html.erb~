@@ -4,7 +4,7 @@
 		<div class="slides-op" style="-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-ms-transform:rotate(90deg);-o-transform:rotate(90deg);transform:rotate(90deg);top:50%;right:0;">Opción 3</div>
 		<div class="slides-op" style="bottom:10px;left:50%;-webkit-transform:translate(-50%,0);-moz-transform:translate(-50%,0);-ms-transform:translate(-50%,0);-o-transform:translate(-50%,0);transform:translate(-50%,0);">Opción 4</div>
 		<div id="header-pd" style="font-size:35px;color:#FFF;position:absolute;top:125px;right:10%;">Producción digital y Postproducción</div>
-		<div id="img-pd" style="background:url(<%= image_path('Paisaje.png') %>) no-repeat center center / 100% 100%;position:absolute;top:25%;left:10%;width:38%;"> </div>
+		<div id="img-pd" style="background:url(<%= image_path('Paisaje.png') %>) no-repeat center center / 100% 100%;position:absolute;top:190px;left:10%;width:38%;"> </div>
 	</div>
 </div>
 
