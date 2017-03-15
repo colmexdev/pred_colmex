@@ -21,6 +21,21 @@
 }
 
 /* Identificadores */
+/* Envolvente del cuerpo de página */
+#wrapper-pd{
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow-x: hidden;
+	height: 150%;
+	width: 100%;
+}
+
+/* Envolvente de la sección de encabezado */
+#wrapper-header-pd{
+	position: relative;
+}
+
 /* Contenedor de encabezado (título, imagen y descripción) */
 #wrapper-main-pd{
 	width: -webkit-calc(100% - 210px);
@@ -35,4 +50,48 @@
 	-o-transform: translate(0,115px);
 	transform: translate(0,115px);
 	margin: 0 auto;
+	position: relative;
+}
+
+/* Encabezado (Nombre de la sección) */
+#header-pd{
+	font-size: 35px;
+	color: #FFF;
+	text-align: right;
+}
+
+/* Contenedor de imagen y descripcion */
+#img-desc-pd{
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+/* Envolvente de la imagen del encabezado */
+#img-section-pd{
+	float: left;
+	width: 50%;
+	position: relative;
+	height: 100%;
+}
+
+/* Imagen del encabezado */
+#img-pd{
+	background: url(image-path('Paisaje.png')) no-repeat center center / 100% 100%;
+	width: 80%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+
+/* Envolvente del texto descriptor */
+#text-section-pd{
+	float: left;
+	height: 100%;
+	width: 50%;
 }
