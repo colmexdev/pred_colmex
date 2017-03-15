@@ -163,7 +163,7 @@ function cambiarGif(event,gif){
 }
 
 function centrar(event,wrapper,element){
-    element.css({"top": Math.max(0, ((wrapper.height() - element.outerHeight())/ 2)/* +  wrapper.scrollTop()*/) + "px","left": Math.max(0, ((wrapper.width() - element.outerWidth())/ 2)/* +  wrapper.scrollLeft()*/) + "px"});
+    element.css({"position": "absolute", "top": Math.max(0, ((wrapper.height() - element.outerHeight())/ 2) +  wrapper.scrollTop()) + "px","left": Math.max(0, ((wrapper.width() - element.outerWidth())/ 2) +  wrapper.scrollLeft()) + "px"});
 }
 
 window.onpopstate = function(event){
