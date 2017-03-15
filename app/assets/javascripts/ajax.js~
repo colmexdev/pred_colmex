@@ -19,7 +19,7 @@ function divCursosBreves(event,datos){
 	try{
 		var html = "";          
 		for(var i = 0; i < datos["cursos"].length; i++){
-			html = html + "<div style=\"cursor:pointer;width:100%;height:200px;background-color:#CCC;border:2px solid #000;\" onmouseenter=\"cambiarGif(event,'" + datos["cursos"][i]["img"] + "');\" onclick=\"reproducirCurso(event,'" + datos["cursos"][i]["curso"] + "')\">" + datos["cursos"][i]["curso"] + "</div>"
+			html = html + "<div class=\"opcion-curso-breve\" onmouseenter=\"cambiarGif(event,'" + datos["cursos"][i]["img"] + "');\" onclick=\"reproducirCurso(event,'" + datos["cursos"][i]["curso"] + "')\">" + datos["cursos"][i]["curso"] + "</div>"
 		}
 		$("#selector-cursos").html(html);
 	}

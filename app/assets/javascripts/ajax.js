@@ -6,10 +6,17 @@ function despacharPeticiones(event,liga){
 		dataType: 'JSON',
 		success: function(result)
 		{
-			if(/http:\/\/pred1.colmex.mx\/produccion_digital\/cursos_breves\/?/.test(liga))
+			if(/http:\/\/pred1.colmex.mx\/produccion_digital\/cursos_breves\/?/.test(liga)){
 				divCursosBreves(event,result);
-			else if(/http:\/\/pred1.colmex.mx\/produccion_digital\/curso_breve\/reproducir\/?\?titulo=.*/.test(liga))
+				centrar(event,false);
+			}
+			else if(/http:\/\/pred1.colmex.mx\/produccion_digital\/curso_breve\/reproducir\/?\?titulo=.*/.test(liga)){
 				divPlayerCursosBreves(event,result);
+				centrar(event,false);
+			}
+			else if(/http:\/\/pred1.colmex.mx\/produccion_digital\/principal\/?/.test(liga)){
+				centrar(event,true);
+			}
 		} 
   });
 }

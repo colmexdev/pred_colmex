@@ -118,7 +118,6 @@ $(document).on("ready page:change",function(event){
 });
 
 $(window).on("resize",function(event){
-	//centrar(event,$(document),$("#cont_menu"));
 	$("#wrapper-header-pd").css({"height": window.innerHeight, "width": "100%"});
 	$("#img-desc-pd").css({"height": ($("#wrapper-main-pd").height() - $("#header-pd").height()) + "px"});
 	$("#img-section-pd").css({"height": (window.innerWidth <= 992 ? (($("#wrapper-main-pd").width() * 0.40625) + "px") : "")});
@@ -162,8 +161,8 @@ function cambiarGif(event,gif){
 	$("#player-curso").css("background", "url("+String(gif)+") no-repeat center center/ 100% 100%");
 }
 
-function centrar(event,wrapper,element){
-    element.css({"top": Math.max(0, ((/*$(window).height() - */element.outerHeight())/ 2) +  wrapper.scrollTop()) + "px","left": Math.max(0, ((/*$(window).width() - */element.outerWidth())/ 2) +  wrapper.scrollLeft()) + "px"});
+function centrarMenu(event,align){
+    $("#cont-menu").css({"margin-left": (align ? "-8px" : "") });
 }
 
 window.onpopstate = function(event){
