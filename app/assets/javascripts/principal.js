@@ -53,7 +53,7 @@ function scrollPagina(){
 
 $(document).on("scroll",function(event){
   var y = $(this).scrollTop();
-	centrar(event,$(document),$("cont_menu");
+	centrar(event,$(document),$("cont_menu"));
 	$("#contenedor").css({"width": (y < 1 ? "90%" : ( y >= window.innerHeight ? "75%" : ((75 + (15*(1 - (y/window.innerHeight)))) + "%") )), "height" : (y < 1 ? "85%" : ( y >= window.innerHeight ? "65%" : ((65 + (20*(1 - (y/window.innerHeight)))) + "%") ))});
 });
 
