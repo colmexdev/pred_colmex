@@ -19,3 +19,20 @@
 	font-size: 28px;
 	opacity: 1;
 }
+
+/* Identificadores */
+/* Contenedor de encabezado (título, imagen y descripción) */
+#wrapper-main-pd{
+	width: -webkit-calc(100% - 210px);
+	width: -moz-calc(100% - 210px);
+	width: calc(100% - 210px);
+	height: -webkit-calc(100% - 190px);
+	height: -moz-calc(100% - 190px);
+	height: calc(100% - 190px);
+	-webkit-transform: translate(0,115px);
+	-moz-transform: translate(0,115px);
+	-ms-transform: translate(0,115px);
+	-o-transform: translate(0,115px);
+	transform: translate(0,115px);
+	margin: 0 auto;
+}

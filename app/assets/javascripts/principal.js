@@ -114,13 +114,14 @@ $(document).on("ready page:change",function(event){
 	$("#produccion-digital").animate({right: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/principal/.test(window.location.href) ? "0" : "100%")},250);
 	$("#player-curso-landscape").html('');
 
-	$("#wrapper-header-pd").css({"height": window.innerHeight, "width": "100%"});
-	reescalarImagen(event,$("#img-pd"),25/40);
-
+	//$("#wrapper-header-pd").css({"height": window.innerHeight, "width": "100%"});
+	//reescalarImagen(event,$("#img-pd"),25/40);
+	$(window).trigger("resize");
 });
 
 $(window).on("resize",function(event){
 	$("#wrapper-header-pd").css({"height": window.innerHeight, "width": "100%"});
+	$("#img-desc-pd").css({"height": ($("#wrapper-main-pd").height() - $("#header-pd").height()) + "px"});
 	reescalarImagen(event,$("#img-pd"),25/40);
 });
 
