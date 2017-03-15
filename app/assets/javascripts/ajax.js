@@ -1,5 +1,5 @@
 function despacharPeticiones(event,liga){
-
+	centrarMenu(event,false);
 	jQuery.ajax({
 		url: liga,
 		type: 'get',
@@ -8,11 +8,9 @@ function despacharPeticiones(event,liga){
 		{
 			if(/http:\/\/pred1.colmex.mx\/produccion_digital\/cursos_breves\/?/.test(liga)){
 				divCursosBreves(event,result);
-				centrarMenu(event,false);
 			}
 			else if(/http:\/\/pred1.colmex.mx\/produccion_digital\/curso_breve\/reproducir\/?\?titulo=.*/.test(liga)){
 				divPlayerCursosBreves(event,result);
-				centrarMenu(event,false);
 			}
 			else if(/http:\/\/pred1.colmex.mx\/produccion_digital\/principal\/?/.test(liga)){
 				centrarMenu(event,true);
