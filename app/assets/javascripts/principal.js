@@ -53,7 +53,6 @@ function scrollPagina(){
 
 $(document).on("scroll",function(event){
   var y = $(this).scrollTop();
-	centrar(event,$(document),$("cont_menu"));
 	$("#contenedor").css({"width": (y < 1 ? "90%" : ( y >= window.innerHeight ? "75%" : ((75 + (15*(1 - (y/window.innerHeight)))) + "%") )), "height" : (y < 1 ? "85%" : ( y >= window.innerHeight ? "65%" : ((65 + (20*(1 - (y/window.innerHeight)))) + "%") ))});
 });
 
@@ -119,7 +118,7 @@ $(document).on("ready page:change",function(event){
 });
 
 $(window).on("resize",function(event){
-	centrar(event,$(document),$("#cont_menu"));
+	//centrar(event,$(document),$("#cont_menu"));
 	$("#wrapper-header-pd").css({"height": window.innerHeight, "width": "100%"});
 	$("#img-desc-pd").css({"height": ($("#wrapper-main-pd").height() - $("#header-pd").height()) + "px"});
 	$("#img-section-pd").css({"height": (window.innerWidth <= 992 ? (($("#wrapper-main-pd").width() * 0.40625) + "px") : "")});
