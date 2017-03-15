@@ -120,13 +120,14 @@ $(document).on("ready page:change",function(event){
 $(window).on("resize",function(event){
 	$("#wrapper-header-pd").css({"height": window.innerHeight, "width": "100%"});
 	$("#img-desc-pd").css({"height": ($("#wrapper-main-pd").height() - $("#header-pd").height()) + "px"});
-	reescalarImagen(event,$("#img-pd"),25/40);
+	reescalarImagen(event,$("#img-pd"),25/40,$("#img-section-pd").height());
 	$("#img-section-pd").css({"height": (window.innerWidth <= 992 ? (($("#img-pd").height() * 1.2) + "px") : "")});
 	$("#text-section-pd").css({"height": (window.innerWidth <= 992 ? (($("#img-desc-pd").height() - $("#img-section-pd").height()) + "px") : "")});
 });
 
-function reescalarImagen(event,element,ratio){
-	element.css({"height": (ratio*element.width())+"px"});
+function reescalarImagen(event,element,ratio,height_limit){
+	var height = ratio*element.width();
+	element.css({"height": (height > height_limit ? height_limit : height) +"px"});
 }
 
 function reproducirCurso(event,titulo){
