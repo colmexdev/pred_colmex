@@ -3,6 +3,11 @@
 /* Clases */
 /* Opciones para cambiar de sitio */
 .slides-op{
+	position: absolute;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 25px;
+	color: #FFF;
 	opacity: 0.8;
 	-webkit-transition: all 0.3s linear;
 	-moz-transition: all 0.3s linear;
