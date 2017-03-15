@@ -6,8 +6,13 @@
 
 		<div id="wrapper-main-pd">
 			<div id="header-pd" style="font-size:35px;color:#FFF;text-align:right;">Producción digital y Postproducción</div>
-			<div id="img-desc-pd">
-				<div id="img-pd" style="background:url(<%= image_path('Paisaje.png') %>) no-repeat center center / 100% 100%;width:38%;"> </div>
+			<div id="img-desc-pd" style="height:100%;width:100%;">
+				<div id="img-section-pd" style="float:left;width:50%;height:100%;">
+					<div id="img-pd" style="background:url(<%= image_path('Paisaje.png') %>) no-repeat center center / 100% 100%;width:38%;"> </div>
+				</div>
+				<div id="text-section-pd" style="float:left;height:100%;width:50%">
+					Texto de prueba
+				</div>
 			</div>
 		</div>
 	</div>
