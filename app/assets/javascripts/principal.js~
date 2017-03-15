@@ -161,8 +161,8 @@ function cambiarGif(event,gif){
 	$("#player-curso").css("background", "url("+String(gif)+") no-repeat center center/ 100% 100%");
 }
 
-function centrar(event,element,align){
-    element.css({"margin-left": (align ? "-8px" : "") });
+function centrarMenu(event,align){
+    $("#cont-menu").css({"margin-left": (align ? "-8px" : "") });
 }
 
 window.onpopstate = function(event){

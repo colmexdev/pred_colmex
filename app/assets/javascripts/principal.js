@@ -162,7 +162,7 @@ function cambiarGif(event,gif){
 }
 
 function centrarMenu(event,align){
-    $("#cont-menu").css({"margin-left": (align ? "-8px" : "") });
+    $("#cont_menu").css({"margin-left": (align ? "-8px" : "") });
 }
 
 window.onpopstate = function(event){
