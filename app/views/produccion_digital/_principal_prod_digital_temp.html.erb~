@@ -5,12 +5,12 @@
 		<div class="slides-op" style="bottom:10px;left:50%;-webkit-transform:translate(-50%,0);-moz-transform:translate(-50%,0);-ms-transform:translate(-50%,0);-o-transform:translate(-50%,0);transform:translate(-50%,0);">Opción 4</div>
 
 		<div id="wrapper-main-pd">
-			<div id="header-pd" style="font-size:35px;color:#FFF;text-align:right;">Producción digital y Postproducción</div>
-			<div id="img-desc-pd" style="height:100%;width:100%;position:relative;">
-				<div id="img-section-pd" style="float:left;width:50%;position:relative;height:100%;">
-					<div id="img-pd" style="background:url(<%= image_path('Paisaje.png') %>) no-repeat center center / 100% 100%;width:80%;position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);-o-transform:translate(-50%,-50%);transform:translate(-50%,-50%);"> </div>
+			<div id="header-pd">Producción digital y Postproducción</div>
+			<div id="img-desc-pd">
+				<div id="img-section-pd">
+					<div id="img-pd"> </div>
 				</div>
-				<div id="text-section-pd" style="float:left;height:100%;width:50%">
+				<div id="text-section-pd">
 					Texto de prueba
 				</div>
 			</div>

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'tecnologia_educativa/principal' => 'tecnologia_educativa#principal', :as => :tech_ed
+
   get 'produccion_digital/cursos_breves' => 'produccion_digital#cursos_breves', :as => :cursos_breves
 
   get 'produccion_digital/principal' => 'produccion_digital#principal', :as => :principal_pd
