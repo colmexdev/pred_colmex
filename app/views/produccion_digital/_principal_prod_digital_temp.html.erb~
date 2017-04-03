@@ -1,6 +1,6 @@
 <div id="wrapper-pd">
 	<div id="wrapper-header-pd">
-		<div class="slides-op" style="-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-ms-transform:rotate(90deg);-o-transform:rotate(90deg);transform:rotate(90deg); top:50%;left:0;"><%= op %></div>
+		<div class="slides-op" style="-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-ms-transform:rotate(90deg);-o-transform:rotate(90deg);transform:rotate(90deg); top:50%;left:0;"><%= op1 %></div>
 		<div class="slides-op" style="-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-ms-transform:rotate(90deg);-o-transform:rotate(90deg);transform:rotate(90deg);top:50%;right:0;"><%= op2 %></div>
 		<div class="slides-op" style="bottom:10px;left:50%;-webkit-transform:translate(-50%,0);-moz-transform:translate(-50%,0);-ms-transform:translate(-50%,0);-o-transform:translate(-50%,0);transform:translate(-50%,0);"><%= op3 %></div>
 
