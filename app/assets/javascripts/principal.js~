@@ -100,6 +100,7 @@ function slide_pagina(event,render,liga,home){
 $(document).on("ready page:change",function(event){
 	despacharPeticiones(event,window.location.href);
 
+	$("#curso-breve-1").animate({left: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproduciendo/.test(window.location.href) ? "0" : "100%")},5);
 	$("#brand,#menu_canvas,#menu_mask").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "1%" : "17%")}, 100);
 
 	$("#mosaico").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "0" : "100%")}, 250, function(){
@@ -110,7 +111,6 @@ $(document).on("ready page:change",function(event){
 	});
 
 	$("#cursos-breves").animate({left: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/cursos_breves/.test(window.location.href) ? "0" : "100%")},250);
-	$("#curso-breve-1").animate({left: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproduciendo/.test(window.location.href) ? "0" : "100%")},0);
 	$("#produccion-digital").animate({right: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/principal/.test(window.location.href) ? "0" : "100%")},250);
 	$("#player-curso-landscape").html('');
 

@@ -58,13 +58,13 @@ $(document).on("scroll",function(event){
 
 function traerPagina(render, toggle){
 	if($("#"+render).attr("class") == "izq"){
-		$("#"+render).animate({left: (toggle ? "0" : "100%")}, 250);
+		$("#"+render).animate({left: (toggle ? "0" : "100%")}, 50);
 	}
 	else if($("#"+render).attr("class") == "der"){
-		$("#"+render).animate({right: (toggle ? "0" : "100%")}, 250);
+		$("#"+render).animate({right: (toggle ? "0" : "100%")}, 50);
 	}
 	else{
-		$("#"+render).animate({top: (toggle ? "0" : "100%")}, 250);
+		$("#"+render).animate({top: (toggle ? "0" : "100%")}, 50);
 	}
 }
 
@@ -100,7 +100,7 @@ function slide_pagina(event,render,liga,home){
 $(document).on("ready page:change",function(event){
 	despacharPeticiones(event,window.location.href);
 
-	$("#curso-breve-1").animate({left: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproduciendo/.test(window.location.href) ? "0" : "100%")},5);
+	$("#curso-breve-1").animate({left: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproduciendo/.test(window.location.href) ? "0" : "100%")},250);
 	$("#brand,#menu_canvas,#menu_mask").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "1%" : "17%")}, 100);
 
 	$("#mosaico").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "0" : "100%")}, 250, function(){
