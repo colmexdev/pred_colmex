@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :admins, :controllers => { :registrations => "registrations"}
   get 'tecnologia_educativa/principal' => 'tecnologia_educativa#principal', :as => :tech_ed
 
   get 'produccion_digital/cursos_breves' => 'produccion_digital#cursos_breves', :as => :cursos_breves
@@ -11,7 +12,6 @@ Rails.application.routes.draw do
   get 'principal/inicio'
 
 
-  devise_for :admins, :controllers => { :registrations => "registrations"}
   #devise_for :admins, :controllers => { :registrations => "registrations", :sessions => "sessions"}
   get 'videos/id' => 'videos#id', :as => :video_id
   resources :videos
