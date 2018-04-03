@@ -6,7 +6,7 @@
 	</div>
 	<script>
 		$(function(){
-			$("#wrapper-inicio").niceScroll({cursorcolor: "#CCCCCC"});
+			$("html").niceScroll({cursorcolor: "#CCCCCC", cursorwidth: "8px"});
 		});
 	</script>
 
