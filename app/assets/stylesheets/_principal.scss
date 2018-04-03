@@ -18,6 +18,7 @@ body,html { min-height: 100%; overflow-x: hidden; }
 .opciones{
 	cursor: pointer;
 	position: fixed;
+	z-index: -1;
 	right: 0;
 	background-color: rgba(220,20,20,0);
 	color: rgba(255,255,255,0);
