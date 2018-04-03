@@ -58,13 +58,13 @@ $(document).on("scroll",function(event){
 
 function traerPagina(render, toggle){
 	if($("#"+render).attr("class") == "izq"){
-		$("#"+render).animate({left: (toggle ? "0" : "100%")}, 50);
+		$("#"+render).animate({left: (toggle ? "0" : "100%")}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproduciendo/.test(window.location.href) ? 20 : 250));
 	}
 	else if($("#"+render).attr("class") == "der"){
-		$("#"+render).animate({right: (toggle ? "0" : "100%")}, 50);
+		$("#"+render).animate({right: (toggle ? "0" : "100%")}, 250);
 	}
 	else{
-		$("#"+render).animate({top: (toggle ? "0" : "100%")}, 50);
+		$("#"+render).animate({top: (toggle ? "0" : "100%")}, 250);
 	}
 }
 

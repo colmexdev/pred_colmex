@@ -45,7 +45,9 @@ function divPlayerCursosBreves(event,datos){
 		$("#carousel-vids").css("width", (window.innerWidth > datos.length*300 ? window.innerWidth : datos.length*300));
 		$("#carousel-vids").html(html);
 		var video = datos[0]["liga"].split("/")[3]
-		$("#player-curso-landscape").html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + video + '" frameborder="0" allowfullscreen></iframe>');
+		setTimeout(function(){
+			$("#player-curso-landscape").html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + video + '" frameborder="0" allowfullscreen></iframe>');
+		}, 25);
 
 	}
 	catch(err){
