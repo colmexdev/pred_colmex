@@ -58,13 +58,13 @@ $(document).on("scroll",function(event){
 
 function traerPagina(render, toggle){
 	if($("#"+render).attr("class") == "izq"){
-		$("#"+render).animate({left: (toggle ? "0" : "100%")}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproduciendo/.test(window.location.href) ? 20 : 250));
+		$("#"+render).animate({left: (toggle ? "0" : "100%")}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproducir/.test(window.location.href) ? 20 : 250));
 	}
 	else if($("#"+render).attr("class") == "der"){
-		$("#"+render).animate({right: (toggle ? "0" : "100%")}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproduciendo/.test(window.location.href) ? 20 : 250));
+		$("#"+render).animate({right: (toggle ? "0" : "100%")}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproducir/.test(window.location.href) ? 20 : 250));
 	}
 	else{
-		$("#"+render).animate({top: (toggle ? "0" : "100%")}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproduciendo/.test(window.location.href) ? 20 : 250));
+		$("#"+render).animate({top: (toggle ? "0" : "100%")}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproducir/.test(window.location.href) ? 20 : 250));
 	}
 }
 
@@ -82,7 +82,7 @@ function slide_pagina(event,render,liga,home){
 
 	despacharPeticiones(event,liga);
 
-	$("#mosaico").animate({top: (home ? "100%" : "0%")}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproduciendo/.test(window.location.href) ? 20 : 250), function(){
+	$("#mosaico").animate({top: (home ? "100%" : "0%")}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproducir/.test(window.location.href) ? 20 : 250), function(){
 		if(!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)))
 			$("#mosaico").css("display","none");
 		else
@@ -93,25 +93,25 @@ function slide_pagina(event,render,liga,home){
 
 	setTimeout(function(){
 
-		$("#brand,#menu_canvas,#menu_mask").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "1%" : "17%")}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproduciendo/.test(window.location.href) ? 20 : 150));
-	}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproduciendo/.test(window.location.href) ? 20 : 230));
+		$("#brand,#menu_canvas,#menu_mask").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "1%" : "17%")}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproducir/.test(window.location.href) ? 20 : 150));
+	}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproducir/.test(window.location.href) ? 20 : 230));
 }
 
 $(document).on("ready page:change",function(event){
 	despacharPeticiones(event,window.location.href);
 
-	$("#curso-breve-1").animate({left: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproduciendo/.test(window.location.href) ? "0" : "100%")}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproduciendo/.test(window.location.href) ? 20 : 250));
-	$("#brand,#menu_canvas,#menu_mask").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "1%" : "17%")}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproduciendo/.test(window.location.href) ? 20 : 100));
+	$("#curso-breve-1").animate({left: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproducir/.test(window.location.href) ? "0" : "100%")}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproducir/.test(window.location.href) ? 20 : 250));
+	$("#brand,#menu_canvas,#menu_mask").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "1%" : "17%")}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproducir/.test(window.location.href) ? 20 : 100));
 
-	$("#mosaico").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "0" : "100%")}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproduciendo/.test(window.location.href) ? 20 : 250), function(){
+	$("#mosaico").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "0" : "100%")}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproducir/.test(window.location.href) ? 20 : 250), function(){
 	if(!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)))
 		$("#mosaico").css("display","none");
 	else
 		$("#mosaico").css("display","block");
 	});
 
-	$("#cursos-breves").animate({left: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/cursos_breves/.test(window.location.href) ? "0" : "100%")}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproduciendo/.test(window.location.href) ? 20 : 250));
-	$("#produccion-digital").animate({right: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/principal/.test(window.location.href) ? "0" : "100%")}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproduciendo/.test(window.location.href) ? 20 : 250));
+	$("#cursos-breves").animate({left: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/cursos_breves/.test(window.location.href) ? "0" : "100%")}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproducir/.test(window.location.href) ? 20 : 250));
+	$("#produccion-digital").animate({right: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/principal/.test(window.location.href) ? "0" : "100%")}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproducir/.test(window.location.href) ? 20 : 250));
 	$("#player-curso-landscape").html('');
 
 	$(window).trigger("resize");
