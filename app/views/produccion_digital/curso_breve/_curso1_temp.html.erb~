@@ -5,9 +5,6 @@
 <script>
 $(function(){
 	$('#selector-vid-cursos').niceScroll({cursoropacitymax: 0, cursorwidth: "0px"});
-	$('.#selector-vid-cursos').mousewheel(function(e, delta) {
-    this.scrollLeft -= (delta * 40);
-    e.preventDefault();
-	});
+
 });
 </script>
