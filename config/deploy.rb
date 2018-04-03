@@ -2,7 +2,7 @@
 lock '3.4.1'
 
 set :application, 'videos'
-set :repo_url, 'https://github.com/RickS1/videos_cat.git'
+set :repo_url, 'https://github.com/colmexdev/pred_colmex.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
