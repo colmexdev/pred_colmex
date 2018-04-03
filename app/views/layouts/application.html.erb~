@@ -12,6 +12,10 @@
 
 <%= yield %>
 
-
+	<script>
+		$(function(){
+			$("html").niceScroll({cursorcolor: "#CCCCCC", cursorwidth: "8px"});
+		});
+	</script>
 </body>
 </html>
