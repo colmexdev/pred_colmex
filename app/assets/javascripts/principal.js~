@@ -82,7 +82,7 @@ function slide_pagina(event,render,liga,home){
 
 	despacharPeticiones(event,liga);
 
-	$("#mosaico").animate({top: (home ? "100%" : "0%")}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproducir/.test(window.location.href) ? 20 : 250), function(){
+	$("#mosaico").animate({top: (home ? "100%" : "0%")}, 250, function(){
 		if(!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)))
 			$("#mosaico").css("display","none");
 		else
@@ -93,8 +93,8 @@ function slide_pagina(event,render,liga,home){
 
 	setTimeout(function(){
 
-		$("#brand,#menu_canvas,#menu_mask").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "1%" : "17%")}, (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproducir/.test(window.location.href) ? 20 : 150));
-	}, 230);
+		$("#brand,#menu_canvas,#menu_mask").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "1%" : "17%")}, 150);
+	}, 35);
 }
 
 $(document).on("ready page:change",function(event){

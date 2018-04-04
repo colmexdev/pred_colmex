@@ -93,7 +93,7 @@ function slide_pagina(event,render,liga,home){
 
 	setTimeout(function(){
 
-		$("#brand,#menu_canvas,#menu_mask").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "1%" : "17%")}, 150);
+		$("#brand,#menu_canvas,#menu_mask").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "1%" : "17%")}, 90);
 	}, 35);
 }
 
