@@ -89,10 +89,11 @@ function slide_pagina(event,render,liga,home){
 			$("#mosaico").css("display","block");
 	});
 
+	$("#brand").animate({width: (/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href) ? "130px" : "65px"), height: (/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href) ? "100px" : "50px")}, 50);
+
 	window.history.pushState({},"Nueva página",liga);
 
 	setTimeout(function(){
-
 		$("#brand,#menu_canvas,#menu_mask").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "1%" : "17%")}, 90);
 	}, 35);
 }
