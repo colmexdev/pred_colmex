@@ -5,6 +5,5 @@
 <script>
 $(function(){
 	$('#selector-vid-cursos').niceScroll({cursoropacitymax: 0, cursorwidth: "0px"});
-
 });
 </script>
