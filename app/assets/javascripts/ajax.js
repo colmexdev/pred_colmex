@@ -47,7 +47,7 @@ function divPlayerCursosBreves(event,datos){
 		var video = datos[0]["liga"].split("/")[3]
 		setTimeout(function(){
 			$("#player-curso-landscape").html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + video + '" frameborder="0" allowfullscreen></iframe>');
-		}, 200);
+		}, 20);
 
 	}
 	catch(err){
