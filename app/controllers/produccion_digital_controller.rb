@@ -39,13 +39,13 @@ class ProduccionDigitalController < ApplicationController
     if lista.kind_of?(String)
       canal.playlists.find {|pl| pl.title == lista}.playlist_items.each do |v|
         video = Yt::Video.new id: v.video_id
-        v_list << {id: v.video_id, fecha: video.published_at, titulo: v.title, descripcion: v.description, thumbnail: v.thumbnail_url, vistas: video.view_count, likes: video.like_count, dislikes: video.dislike_count favs: video.favorite_count, comentarios: video.comment_count, tags: video.tags}
+        v_list << {id: v.video_id, fecha: video.published_at, titulo: v.title, descripcion: v.description, thumbnail: v.thumbnail_url, vistas: video.view_count, likes: video.like_count, dislikes: video.dislike_count, favs: video.favorite_count, comentarios: video.comment_count, tags: video.tags}
       end
     elsif lista.kind_of?(Array)
       lista.each do |list_titulo|
         canal.playlists.find {|pl| pl.title == list_titulo}.playlist_items.each do |v|
           video = Yt::Video.new id: v.video_id
-          v_list << {id: v.video_id, fecha: video.published_at, titulo: v.title, descripcion: v.description, thumbnail: v.thumbnail_url, vistas: video.view_count, likes: video.like_count, dislikes: video.dislike_count favs: video.favorite_count, comentarios: video.comment_count, tags: video.tags}
+          v_list << {id: v.video_id, fecha: video.published_at, titulo: v.title, descripcion: v.description, thumbnail: v.thumbnail_url, vistas: video.view_count, likes: video.like_count, dislikes: video.dislike_count, favs: video.favorite_count, comentarios: video.comment_count, tags: video.tags}
         end
       end   
     end
