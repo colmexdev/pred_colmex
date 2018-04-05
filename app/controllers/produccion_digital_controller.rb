@@ -1,7 +1,7 @@
 class ProduccionDigitalController < ApplicationController
 
   @cursos = ["El TLCAN, 20 años después", "La crisis ambiental contemporánea", "Albert Camus (1913-1960)", "El corrido mexicano", "Historia del México Colonial a través de la Real Hacienda", "Sudáfrica, breve historia", "George Orwell (1903-1950)", "Vida y cultura medieval"]
-  @listas = ["Temas de interés", "Comentarios al libro", "Videos de promoción", "Tertulias de hostoriadores.", "Historias Mínimas", "Serie documental", "Seminario sobre Desigualdad Socioeconómica y Educativa", "Seminario sobre Trabajo y Desigualdades", "Seminario Migración, Desigualdad y Políticas"]] 
+  @listas = ["Temas de interés", "Comentarios al libro", "Videos de promoción", "Tertulias de hostoriadores.", "Historias Mínimas", "Serie documental", "Seminario sobre Desigualdad Socioeconómica y Educativa", "Seminario sobre Trabajo y Desigualdades", "Seminario Migración, Desigualdad y Políticas"] 
 
   def cursos_breves
     @curs = []
