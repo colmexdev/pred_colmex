@@ -15,7 +15,7 @@ class ProduccionDigitalController < ApplicationController
   end
 
   def reproducir
-    @vids = recuperar_videos(params[:titulo)
+    @vids = recuperar_videos(params[:titulo])
     @videos = Video.where("tipo = ? AND curso = ?","Curso",params[:titulo])
     respond_to do |format|
       format.html { render '/produccion_digital/curso_breve/reproducir' }
