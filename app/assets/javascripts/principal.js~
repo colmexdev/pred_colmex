@@ -107,7 +107,7 @@ $(document).on("ready page:change",function(event){
 		$("#menu_canvas,#menu_mask").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "1px" : "17%")}, 90);
 		$("#brand").animate({width: (/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href) ? "130px" : "65px"), height: (/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href) ? "100px" : "50px")}, 50);
 
-	$("#mosaico").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "0" : "100%")}, 250, function(){
+	$("#mosaico").animate({top: (!(/http:\/\/pred1\.colmex\.mx(\/|((\/)?\?.*))?$/.test(window.location.href)) ? "0" : "100%")}, 250, function(){
 	if(!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)))
 		$("#mosaico").css("display","none");
 	else

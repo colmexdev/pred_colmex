@@ -41,13 +41,12 @@ function divPlayerCursosBreves(event,datos){
 	try{
 		var html = "";       
 		for(var i = 0; i < datos.length; i++){
-			html = html + "<div class=\"vid-curso-breve\" onclick=\"reproducirVideo(event,'" + datos["videos"][i]["liga"] + "')\">" + datos["videos"][i]["titulo"] + "</div>"
+			html = html + "<div class=\"vid-curso-breve\" onclick=\"reproducirVideo(event,'" + datos[i]["id"] + "')\">" + datos[i]["titulo"] + "</div>"
 		}
 		$("#carousel-vids").css("width", (window.innerWidth > datos.length*300 ? window.innerWidth : datos.length*300));
 		$("#carousel-vids").html(html);
-		var video = datos["videos"][0]["liga"].split("/")[3]
 		setTimeout(function(){
-			$("#player-curso-landscape").html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + video + '" frameborder="0" allowfullscreen></iframe>');
+			$("#player-curso-landscape").html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + datos[0]["id"] + '" frameborder="0" allowfullscreen></iframe>');
 		}, 0);
 
 	}

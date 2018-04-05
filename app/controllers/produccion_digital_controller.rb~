@@ -1,5 +1,5 @@
 class ProduccionDigitalController < ApplicationController
-  before_action: :set_listas 
+  before_action :set_listas 
 
   def cursos_breves
     @curs = []

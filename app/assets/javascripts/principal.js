@@ -141,8 +141,7 @@ function reproducirCurso(event,titulo){
 }
 
 function reproducirVideo(event,video){
-	var id = video.split("/")[3]
-	$("#player-curso-landscape").html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + id + '" frameborder="0" allowfullscreen></iframe>');
+	$("#player-curso-landscape").html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + video + '" frameborder="0" allowfullscreen></iframe>');
 }
 
 /* Funciones que se llaman en sustitución del scroll */
