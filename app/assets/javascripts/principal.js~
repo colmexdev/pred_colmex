@@ -91,11 +91,10 @@ function slide_pagina(event,render,liga,home){
 
 	window.history.pushState({},"Nueva página",liga);
 
-	$("#brand").animate({width: (/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href) ? "130px" : "65px"), height: (/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href) ? "100px" : "50px")}, 50);
-
 	setTimeout(function(){
 		$("#brand").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "1%" : "17%")}, 90);
 		$("#menu_canvas,#menu_mask").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "1px" : "17%")}, 90);
+		$("#brand").animate({width: (/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href) ? "130px" : "65px"), height: (/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href) ? "100px" : "50px")}, 50);
 	}, 35);
 }
 
@@ -103,7 +102,10 @@ $(document).on("ready page:change",function(event){
 	despacharPeticiones(event,window.location.href);
 
 	$("#curso-breve-1").animate({left: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproducir/.test(window.location.href) ? "0" : "100%")}, 250);
-	$("#brand,#menu_canvas,#menu_mask").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "1%" : "17%")}, 100);
+
+		$("#brand").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "1%" : "17%")}, 90);
+		$("#menu_canvas,#menu_mask").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "1px" : "17%")}, 90);
+		$("#brand").animate({width: (/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href) ? "130px" : "65px"), height: (/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href) ? "100px" : "50px")}, 50);
 
 	$("#mosaico").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "0" : "100%")}, 250, function(){
 	if(!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)))
