@@ -98,8 +98,7 @@ function slide_pagina(event,render,liga,home){
 	}, 35);
 }
 
-$(document).on("ready page:change page:load",function(event){
-	configTrix();
+$(document).on("ready page:change",function(event){
 	despacharPeticiones(event,window.location.href);
 
 	$("#curso-breve-1").animate({left: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproducir/.test(window.location.href) ? "0" : "100%")}, 250);

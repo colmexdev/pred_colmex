@@ -1,4 +1,6 @@
 <% parts = {"Listas de reproducción": "playlists", "Cursos breves": "cursos"} %>
-
+<script>
+$(document).on("ready",function(){configTrix();});
+</script>
 	<%= render ('panel/form_'+parts[params[:set].to_sym]) %>
 
