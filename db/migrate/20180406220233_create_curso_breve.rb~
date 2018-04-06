@@ -1,7 +1,7 @@
 class CreateCursoBreve < ActiveRecord::Migration
   def change
-    create_table :cursos_breves do |t|
-      t.text :nombre, null: false
+    create_table :curso_breves do |t|
+      t.text :nombre
     end
   end
 end
