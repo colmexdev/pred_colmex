@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   protected
   def after_sign_in_path_for(resource)
-    videos_path
+    panel_path
   end
 
   def after_sign_out_path_for(resource_or_scope)
@@ -19,6 +19,5 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:usuario, :password, :password_confirmation])
-  #  devise_parameter_sanitizer.permit(:sign_in, keys: [:password, :usuario])
   end
 end

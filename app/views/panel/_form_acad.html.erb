@@ -1,0 +1,55 @@
+<%= form_for(@obj, :remote => true, :url => {:controller => "panel", :action => (action_name == "editar" ? "editar" : "crear"), :params => {:set => params[:set], :id => (@obj.id if action_name == "editar")}}, :html => { :multipart => true}) do |f| %>
+  <% if @obj.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@obj.errors.count, "error") %> prohibited this academico from being saved:</h2>
+
+      <ul>
+      <% @obj.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+  <div class="field">
+    <%= f.label :nombre, "Nombre" %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :inicial, "Inicial" %><br>
+    <%= f.text_field :inicial, :maxlength => 1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :adscripcion, "Centro de Estudios" %><br>
+    <%= f.select(:adscripcion, [['Asia y África','Asia y África'],['Demográficos, Urbanos y Ambientales','Demográficos, Urbanos y Ambientales'],['Económicos','Económicos'],['Históricos','Históricos'],['Internacionales','Internacionales'],['Lingüísticos y Literarios','Lingüisticos y Literarios'],['Sociológicos','Sociológicos']], :selected => (@obj.adscripcion || current_admin.admin)) %>
+  </div>
+  <div class="field">
+    <%= f.label :lineas_investigacion, "Líneas de investigación" %><br>
+    <%= f.text_area :lineas_investigacion %>
+  </div>
+  <div class="field">
+    <%= f.label :correo, "Correo electrónico" %><br>
+    <%= f.text_field :correo %>
+  </div>
+  <div class="field">
+    <%= f.label :pagina, "Sitio personal" %><br>
+    <%= f.text_field :pagina %>
+  </div>
+  <div class="field" style="height:250px;">
+		<div class="photo-upload">
+    <%= f.label :foto, raw('<span class="glyphicon glyphicon-upload glyph-padding"></span>Añadir imagen') %><br>
+    <%= f.file_field :foto, :onchange => "readURL(this,'#foto-acad')" %><br>
+		</div>
+		<div class="img-display">
+			<% if !@obj.foto.url.nil? %>
+				<img id="foto-acad" src="<%= @obj.foto.url %>">
+			<% else %>
+				<span>No hay foto para mostrar.</span>
+			<% end %>
+		</div>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

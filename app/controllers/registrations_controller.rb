@@ -10,7 +10,7 @@ class RegistrationsController < Devise::RegistrationsController
 
     respond_to do |format|
       if resource.save
-        format.html { redirect_to root_path, notice: 'Admin was successfully created.' }
+        format.html { redirect_to @admin, notice: 'Admin was successfully created.' }
         format.json { render :show, status: :created, location: @admin }
       else
         format.html { render :new }
@@ -23,4 +23,14 @@ class RegistrationsController < Devise::RegistrationsController
   def update
     super
   end
+
+  #protected
+
+  #def after_sign_up_path_for(resource)
+  #  signed_in_root_path(resource)
+  #end
+
+  #def after_update_path_for(resource)
+  #  signed_in_root_path(resource)
+  #end
 end 

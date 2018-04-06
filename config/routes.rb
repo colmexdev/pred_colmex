@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
-  devise_for :admins, :controllers => { :registrations => "registrations"}
+  devise_for :admins, :controllers => { :registrations => "registrations", :sessions => "sessions"}
+  resources :admins
+
+  devise_scope :admin do
+    get "/acceder" => "devise/sessions#new"
+  end
+
   get 'tecnologia_educativa/principal' => 'tecnologia_educativa#principal', :as => :tech_ed
 
   get 'produccion_digital/cursos_breves' => 'produccion_digital#cursos_breves', :as => :cursos_breves
