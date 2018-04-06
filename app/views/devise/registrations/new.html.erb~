@@ -1,6 +1,6 @@
-<% #if admin_signed_in? %>
+<% if admin_signed_in? %>
 
-<% #if current_admin.admin %>
+<% if current_admin.admin %>
 
 <h2>Registrar</h2>
 
@@ -38,6 +38,6 @@
 <%= render "devise/shared/links" %>
 
 
-<% #end %> 
-<% #end %>
+<% end %> 
+<% end %>
 
