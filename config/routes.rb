@@ -7,6 +7,17 @@ Rails.application.routes.draw do
     get "/acceder" => "devise/sessions#new"
   end
 
+  get 'panel/panel' => 'panel#panel', :as => :panel
+  get 'panel/principal' => 'panel#principal', :as => :panel_princ
+  get 'panel/index' => 'panel#index', :as => :panel_index
+  get 'panel/generar' => 'panel#generar', :as => :panel_nuevo
+  get 'panel/editar' => 'panel#editar', :as => :panel_editar
+  post 'panel' => 'panel#crear'
+  get 'panel/:id' => 'panel#mostrar', :as => :panel_mostrar
+  delete 'panel/:id' => 'panel#eliminar', :as => :panel_eliminar
+  put 'panel/editar' => 'panel#actualizar'
+  patch 'panel/editar' => 'panel#actualizar'
+
   get 'tecnologia_educativa/principal' => 'tecnologia_educativa#principal', :as => :tech_ed
 
   get 'produccion_digital/cursos_breves' => 'produccion_digital#cursos_breves', :as => :cursos_breves
