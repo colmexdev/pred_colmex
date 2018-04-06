@@ -255,6 +255,7 @@
 	-moz-transition: all 0.3s linear;
 	-o-transition: all 0.3s linear;
 	transition: all 0.3s linear;
+	text-decoration: none;
 }
 
 .link-panel:hover, .link-panel:active, .link-panel:focus{
