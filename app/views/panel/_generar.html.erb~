@@ -1,4 +1,4 @@
-<% parts = {"Profesores eméritos": "emerito", "Programas docentes": "progs", "Directorio de Autoridades": "auts", "Categorías de Premios": "cats_p", "Premios y distinciones": "pd", "Documentos varios": "docs", "Descubre": "descs", "Categorías de 'Descubre'": "cats_d", "Imágenes de slider": "slider", "Cátedras y seminarios": "sems", "Frases en página principal": "frases", "Directorio académico": "acad", "Usuarios gestores": "admins", "Catálogo de sitios": "sites"} %>
+<% parts = {"Profesores eméritos": "emerito", "Programas docentes": "progs", "Directorio de Autoridades": "auts", "Categorías de Premios": "cats_p", "Premios y distinciones": "pd", "Documentos varios": "docs", "Descubre": "descs", "Categorías de 'Descubre'": "cats_d", "Imágenes de slider": "slider", "Cátedras y seminarios": "sems", "Frases en página principal": "frases", "Directorio académico": "acad", "Usuarios gestores": "admins", "Catálogo de sitios": "sites", "Contenido de sitios": "contenidos"} %>
 
 	<%= render ('panel/form_'+parts[params[:set].to_sym]) %>
 

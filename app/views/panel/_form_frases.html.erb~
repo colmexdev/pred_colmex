@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :autor, "Autor" %><br>
-    <%= f.text_field :autor %>
+    <%= f.trix_editor :autor %>
   </div>
   <div class="actions">
     <%= f.submit %>

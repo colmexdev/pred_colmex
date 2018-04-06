@@ -12,16 +12,8 @@
   <% end %>
 <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
   <div class="field">
-    <%= f.label :cita, "Cita" %><br>
-    <%= f.trix_editor :cita %>
-  </div>
-  <div class="field">
-    <%= f.label :cita_eng, "Cita (Inglés)" %><br>
-    <%= f.trix_editor :cita_eng %>
-  </div>
-  <div class="field">
-    <%= f.label :autor, "Autor" %><br>
-    <%= f.trix_editor :autor %>
+    <%= f.label :nombre, "Título" %><br>
+    <%= f.trix_editor :nombre %>
   </div>
   <div class="actions">
     <%= f.submit %>
