@@ -14,6 +14,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "principal";
+@import "panel";
 @import "cursos_breves";
 @import "produccion_digital";
 @import "footer";
