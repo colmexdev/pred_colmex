@@ -79,26 +79,26 @@ class PanelController < ApplicationController
     end
     respond_to do |format|
       if @obj.save
-        if @sets[params[:set].to_sym][:model] == Sitio
-          i = 0
-          while i < obj_params[:num_parrafos].to_i
-            @pf = Parrafo.new({sitio_id: @obj.id, p_ind: i})
-            @pf.save
-            i = i + 1
-          end
-          i = 0
-          while i < obj_params[:num_fotos].to_i
-            @pf = Foto.new({sitio_id: @obj.id, f_ind: i})
-            @pf.save
-            i = i + 1
-          end
-          i = 0
-          while i < obj_params[:num_listing].to_i
-            @pf = Listing.new({sitio_id: @obj.id, ord_index: i})
-            @pf.save
-            i = i + 1
-          end
-        end
+#        if @sets[params[:set].to_sym][:model] == Sitio
+#          i = 0
+#          while i < obj_params[:num_parrafos].to_i
+#            @pf = Parrafo.new({sitio_id: @obj.id, p_ind: i})
+#            @pf.save
+#            i = i + 1
+#          end
+#          i = 0
+#          while i < obj_params[:num_fotos].to_i
+#            @pf = Foto.new({sitio_id: @obj.id, f_ind: i})
+#            @pf.save
+#            i = i + 1
+#          end
+#          i = 0
+#          while i < obj_params[:num_listing].to_i
+#            @pf = Listing.new({sitio_id: @obj.id, ord_index: i})
+#            @pf.save
+#            i = i + 1
+#          end
+#        end
         format.js { render :mostrar, params: {set: params[:set], id: @obj.id}, notice: 'Objeto generado exitosamente.' }
       else
         format.js { render :generar }

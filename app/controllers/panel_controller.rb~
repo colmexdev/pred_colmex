@@ -262,14 +262,9 @@ class PanelController < ApplicationController
     @sets = {
       "Listas de reproducción": {
         model: Playlist, 
-        fields: {nombre: "Título"}, 
+        fields: {nombre: "Título", grupo: "Pertenece a"}, 
         imgs: {},
-        trix: [:nombre]
-      }, "Cursos breves": {
-        model: CursoBreve, 
-        fields: {nombre: "Título"}, 
-        imgs: {},
-        trix: [:nombre]
+        trix: []
       }
     }
   end
@@ -293,9 +288,7 @@ class PanelController < ApplicationController
 
   def obj_params
     if params[:set] == "Listas de reproducción"
-      params.require(:playlist).permit(:nombre)
-    elsif params[:set] == "Cursos breves"
-      params.require(:cursos_breve).permit(:nombre)
+      params.require(:playlist).permit(:nombre, :grupo)
     end
   end
 end
