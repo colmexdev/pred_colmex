@@ -247,7 +247,7 @@ class PanelController < ApplicationController
 #            end
 #          end
 #
-        end
+#        end
         format.js { render :mostrar, params: {set: params[:set], id: @obj.id}, notice: 'Objeto generado exitosamente.' }
       else
         format.js { render :editar }
