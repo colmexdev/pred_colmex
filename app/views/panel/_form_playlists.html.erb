@@ -13,9 +13,13 @@
 <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
   <div class="field">
     <%= f.label :nombre, "Título" %><br>
-    <%= f.trix_editor :nombre %>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :grupo, "Pertenece a" %><br>
+    <%= f.select(:nombre, options_for_select([["Cursos breves", "Cursos breves"]]), {include_blank: true}) %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar lista" %>
   </div>
 <% end %>
