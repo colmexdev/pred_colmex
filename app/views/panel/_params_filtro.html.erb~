@@ -1,4 +1,4 @@
-<input type="text" name="keyword" id="keyword" value="<%= params[:keyword].present? ? params[:keyword] : '' %>" placeholder="Palabra clave" onchange="hideLink(event,'#index-panel','<%= panel_index_path(set: params[:set], offset: 0) %>',null,document.querySelector('#keyword').value,buildQuery(filteredParams('<%= params[:set] %>')))"><br>
+<input type="text" name="keyword" id="keyword" value="<%= params[:keyword].present? ? params[:keyword] : '' %>" placeholder="Palabra clave" onchange="hideLink(null,'#index-panel','<%= panel_index_path(set: params[:set], offset: 0) %>',null,document.querySelector('#keyword').value,buildQuery(filteredParams('<%= params[:set] %>')))"><br>
 
 <% if params[:set] == "Descubre" %>
 	<%= select_tag "contenido", options_for_select(Descubre.select(:contenido).distinct.pluck(:contenido).map{|c| [c,c]}, params[:contenido] || ""), include_blank: "Todos" %>
@@ -18,7 +18,7 @@
 	var pars = filteredParams("<%= params[:set] %>");
 	for(var i in pars){
 		$("#"+pars[i][0]).on("change",function(){
-			hideLink(event,'#index-panel','<%= panel_index_path(set: params[:set], offset: 0) %>',null,$("#keyword")[0].value,buildQuery(pars));
+			hideLink(null,'#index-panel','<%= panel_index_path(set: params[:set], offset: 0) %>',null,$("#keyword")[0].value,buildQuery(pars));
 		});
 	}
 </script>

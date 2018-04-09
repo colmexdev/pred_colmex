@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   delete 'panel/:id' => 'panel#eliminar', :as => :panel_eliminar
   put 'panel/editar' => 'panel#actualizar'
   patch 'panel/editar' => 'panel#actualizar'
+  post 'panel/video_manage' => 'panel#actualizar_videos'
+  put 'panel/video_manage' => 'panel#actualizar_videos'
+  patch 'panel/video_manage' => 'panel#actualizar_videos'  
 
   get 'tecnologia_educativa/principal' => 'tecnologia_educativa#principal', :as => :tech_ed
 

@@ -65,6 +65,28 @@ class PanelController < ApplicationController
     end
   end
 
+  def actualizar_videos
+    @playlists = Yt::Channel.new(id: 'UCjCwCfPSnQ7rZB_u5HYd2OA').playlists
+    Playlist.all.pluck(:nombre).each do |lista|
+      @playlists.find {|pl| pl.title == lista}.playlist_items.each do |v|
+        @vid = InfoVideo.find_or_initialize_by(video_id: v.v_id)
+        @vid.fecha = v.published_at
+        @vid.titulo = v.title
+        @vid.descripcion = v.description
+        @vid.thumbnail = v.thumbnail_url
+        @vid.lista = lista
+        vid = Yt::Video.new id: v.v_id
+        @vid.likes = vid.like_count
+        @vid.dislikes = vid.dislike_count
+        @vid.favs = vid.favorite_count
+        @vid.comentarios = vid.comment_count
+        @vid.vistas = vid.view_count
+        @vid.tags = vid.tags
+        @vid.save
+      end
+    end
+  end
+
   def generar
     @obj = @sets[params[:set].to_sym][:model].new
     respond_to do |format|
@@ -79,26 +101,26 @@ class PanelController < ApplicationController
     end
     respond_to do |format|
       if @obj.save
-        if @sets[params[:set].to_sym][:model] == Sitio
-          i = 0
-          while i < obj_params[:num_parrafos].to_i
-            @pf = Parrafo.new({sitio_id: @obj.id, p_ind: i})
-            @pf.save
-            i = i + 1
-          end
-          i = 0
-          while i < obj_params[:num_fotos].to_i
-            @pf = Foto.new({sitio_id: @obj.id, f_ind: i})
-            @pf.save
-            i = i + 1
-          end
-          i = 0
-          while i < obj_params[:num_listing].to_i
-            @pf = Listing.new({sitio_id: @obj.id, ord_index: i})
-            @pf.save
-            i = i + 1
-          end
-        end
+#        if @sets[params[:set].to_sym][:model] == Sitio
+#          i = 0
+#          while i < obj_params[:num_parrafos].to_i
+#            @pf = Parrafo.new({sitio_id: @obj.id, p_ind: i})
+#            @pf.save
+#            i = i + 1
+#          end
+#          i = 0
+#          while i < obj_params[:num_fotos].to_i
+#            @pf = Foto.new({sitio_id: @obj.id, f_ind: i})
+#            @pf.save
+#            i = i + 1
+#          end
+#          i = 0
+#          while i < obj_params[:num_listing].to_i
+#            @pf = Listing.new({sitio_id: @obj.id, ord_index: i})
+#            @pf.save
+#            i = i + 1
+#          end
+#        end
         format.js { render :mostrar, params: {set: params[:set], id: @obj.id}, notice: 'Objeto generado exitosamente.' }
       else
         format.js { render :generar }

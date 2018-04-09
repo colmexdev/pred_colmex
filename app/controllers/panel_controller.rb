@@ -65,6 +65,28 @@ class PanelController < ApplicationController
     end
   end
 
+  def actualizar_videos
+    @playlists = Yt::Channel.new(id: 'UCjCwCfPSnQ7rZB_u5HYd2OA').playlists
+    Playlist.all.pluck(:nombre).each do |lista|
+      @playlists.find {|pl| pl.title == lista}.playlist_items.each do |v|
+        @vid = InfoVideo.find_or_initialize_by(video_id: v.v_id)
+        @vid.fecha = v.published_at
+        @vid.titulo = v.title
+        @vid.descripcion = v.description
+        @vid.thumbnail = v.thumbnail_url
+        @vid.lista = lista
+        vid = Yt::Video.new id: v.v_id
+        @vid.likes = vid.like_count
+        @vid.dislikes = vid.dislike_count
+        @vid.favs = vid.favorite_count
+        @vid.comentarios = vid.comment_count
+        @vid.vistas = vid.view_count
+        @vid.tags = vid.tags
+        @vid.save
+      end
+    end
+  end
+
   def generar
     @obj = @sets[params[:set].to_sym][:model].new
     respond_to do |format|
@@ -265,6 +287,11 @@ class PanelController < ApplicationController
         fields: {nombre: "Título", grupo: "Pertenece a"}, 
         imgs: {},
         trix: []
+      }, "Videos": {
+        model: InfoVideo,
+        fields: {v_id: "Id de video", fecha: "Fecha", titulo: "Título", descripcion: "Descripción", lista: "En lista", likes: "Likes", dislikes: "Dislikes", favs: "Favoritos", comentarios: "Comentarios", vistas: "Vistas", tags: "Etiquetas", thumbnail: "Thumbnail"},
+        imgs: {},
+        trix: []
       }
     }
   end
@@ -289,6 +316,8 @@ class PanelController < ApplicationController
   def obj_params
     if params[:set] == "Listas de reproducción"
       params.require(:playlist).permit(:nombre, :grupo)
+    elsif params[:set] == "Videos"
+      params.require(:info_video).permit(:v_id, :fecha, :titulo, :descripcion, :lista, :likes, :dislikes, :favs, :comentarios, :vistas, :tags, :thumbnail)
     end
   end
 end
