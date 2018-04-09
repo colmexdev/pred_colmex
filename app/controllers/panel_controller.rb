@@ -90,6 +90,7 @@ class PanelController < ApplicationController
     #  end
     #end
     respond_to do |format|
+      format.html {redirect_to(panel_path)}
       format.js {render :index, params: {set: params[:set]}, notice: "Sincronización completada."}
     end
   end
