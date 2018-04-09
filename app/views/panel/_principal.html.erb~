@@ -94,7 +94,6 @@
 
 			var objetosContadosPorFecha = objetosFiltradosPorFecha.group().reduceCount(function(d){ return d}).top(Infinity);
 			var objetosContadosPorTipo = objetosPorTipo.group().reduceCount(function(d){return d}).top(Infinity);
-			console.log(objetosContadosPorTipo);
 
 			var fechas_ac = completaFechas(new Date(result["last_time"]),new Date("<%= Date.today %>"));
 			var total_upds = 0;
