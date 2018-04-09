@@ -4,11 +4,11 @@ class ProduccionDigitalController < ApplicationController
   def cursos_breves
     @curs = []
     @listas.where(grupo: "Cursos breves").each_with_index do |v,i|
-      @curs << {curso: v, img: ActionController::Base.helpers.image_url("gif"+i.to_s+".gif").html_safe}
+      @curs << {curso: v.nombre, img: ActionController::Base.helpers.image_url("gif"+i.to_s+".gif").html_safe}
     end
 		respond_to do |format|
       format.html
-      format.json {render json: {cursos: @curs} }
+      format.json {render json: @curs }
     end
   end
 
