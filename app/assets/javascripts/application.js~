@@ -18,3 +18,4 @@
 //= require principal
 //= require ajax
 //= require backend
+//= require trix
