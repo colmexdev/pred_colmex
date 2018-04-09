@@ -68,7 +68,6 @@ class PanelController < ApplicationController
   def actualizar_videos
     @playlists = Yt::Channel.new(id: 'UCjCwCfPSnQ7rZB_u5HYd2OA').playlists
     Playlist.all.pluck(:nombre).each do |lista|
-      puts lista
       @playlists.find {|pl| pl.title == lista}.playlist_items.each do |v|
         @vid = InfoVideo.find_or_initialize_by(v_id: v.video_id)
         @vid.fecha = v.published_at
@@ -83,7 +82,7 @@ class PanelController < ApplicationController
         @vid.comentarios = vid.comment_count
         @vid.vistas = vid.view_count
         @vid.tags = vid.tags
-        #@vid.save
+        @vid.save
       end
     end
     respond_to do |format|

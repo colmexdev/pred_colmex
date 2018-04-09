@@ -76,7 +76,7 @@ class PanelController < ApplicationController
         @vid.descripcion = v.description
         @vid.thumbnail = v.thumbnail_url
         @vid.lista = lista
-        vid = Yt::Video.new id: v.v_id
+        vid = Yt::Video.new id: v.video_id
         @vid.likes = vid.like_count
         @vid.dislikes = vid.dislike_count
         @vid.favs = vid.favorite_count
