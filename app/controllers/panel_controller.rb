@@ -87,6 +87,7 @@ class PanelController < ApplicationController
     end
     respond_to do |format|
       format.js {render :index}
+      format.json {render notice: "Sincronización completada."}
     end
   end
 

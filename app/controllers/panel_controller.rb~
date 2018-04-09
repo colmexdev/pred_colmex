@@ -85,6 +85,9 @@ class PanelController < ApplicationController
         @vid.save
       end
     end
+    respond_to do |format|
+      format.js {render :index}
+    end
   end
 
   def generar
