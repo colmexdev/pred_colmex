@@ -44,9 +44,7 @@
 					<% end %>
 				<% end %>
 				<td class="ind-cell-img" style="width:130px;">
-					<% if params[:set] != "Contenido de sitios" %>
 					<a class="link-img-panel" onclick="hideLink(event,'#index-panel','<%= panel_mostrar_path(:set => params[:set], :id => s.id) %>')"><span class="clickable-g glyphicon glyphicon-eye-open"></span></a>
-					<% end %>
 					<a class="link-img-panel" onclick="hideLink(event,'#index-panel','<%= panel_editar_path(:set => params[:set], :id => s.id) %>')"><span class="clickable-g glyphicon glyphicon-pencil"></span></a>
 					<% if params[:set] != "Contenido de sitios" %>
 					<a class="link-img-panel" onclick="hideLink(event,'#index-panel','<%= panel_eliminar_path(:set => params[:set], :id => s.id) %>','DELETE')"><span class="clickable-g glyphicon glyphicon-trash"></span></a>

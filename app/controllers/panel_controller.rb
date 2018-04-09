@@ -66,7 +66,6 @@ class PanelController < ApplicationController
   end
 
   def actualizar_videos
-=begin
     @playlists = Yt::Channel.new(id: 'UCjCwCfPSnQ7rZB_u5HYd2OA').playlists
     Playlist.all.pluck(:nombre).each do |lista|
       @playlists.find {|pl| pl.title == lista}.playlist_items.each do |v|
@@ -90,7 +89,6 @@ class PanelController < ApplicationController
         end
       end
     end
-=end
     respond_to do |format|
       format.html {redirect_to(panel_path(notice: "Sincronización completada."))}
     end

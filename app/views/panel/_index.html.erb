@@ -26,7 +26,7 @@
     <% @set.each do |s| %>
       <tr class="row-ind">
 				<% @fields.keys.each do |f| %>
-        <td class="ind-cell"><%= raw(s[f.to_s]) %></td>
+        <td class="ind-cell"><%= f != "thumbnail" ? raw(s[f.to_s]) : raw(image_tag(s[f.to_s])) %></td>
 				<% end %>
 				<% @imgs.keys.each do |f| %>
 					<% if f.to_s == "foto" %>
