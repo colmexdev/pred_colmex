@@ -84,7 +84,8 @@ class PanelController < ApplicationController
           @vid.vistas = vid.view_count
           @vid.tags = vid.tags
           @vid.save
-        rescue
+        rescue Exception => e
+          next
         end
       end
     end
