@@ -60,7 +60,7 @@
 
 <script type="text/javascript">
 	$.ajax({
-		url: "<%= panel_princ_path %>",
+		url: "<%= panel_princ_path(notice: params[:notice] if !params[:notice].nil?) %>",
 		success: function(result){
 			return true;
 		}
