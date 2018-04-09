@@ -18,7 +18,7 @@
 
 <% if params[:set] == "Videos" %>
 <br>
-<button type="button" class="boton-forma" data-method="put" onclick="hideLink(event,'#ops-lat','/panel/video_manage?set=Videos')">Refrescar videos desde YouTube</a>
+<button type="button" class="boton-forma" onclick="hideLink(event,'#ops-lat','/panel/video_manage?set=Videos','PUT')">Refrescar videos desde YouTube</a>
 <br>
 <% end %>
 
