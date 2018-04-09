@@ -23,8 +23,8 @@ function despacharPeticiones(event,liga){
 function divCursosBreves(event,datos){
 	try{
 		var html = "";          
-		for(var i = 0; i < datos["cursos"].length; i++){
-			html = html + "<div class=\"opcion-curso-breve\" onmouseenter=\"cambiarGif(event,'" + datos["cursos"][i]["img"] + "');\" onclick=\"reproducirCurso(event,'" + datos["cursos"][i]["curso"] + "')\">" + datos["cursos"][i]["curso"] + "</div>"
+		for(var i = 0; i < datos.length; i++){
+			html = html + "<div class=\"opcion-curso-breve\" onmouseenter=\"cambiarGif(event,'" + datos[i]["img"] + "');\" onclick=\"reproducirCurso(event,'" + datos[i]["curso"] + "')\">" + datos[i]["curso"] + "</div>"
 		}
 		$("#selector-cursos").html(html);
 	}
