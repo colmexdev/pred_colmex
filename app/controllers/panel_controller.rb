@@ -194,55 +194,55 @@ class PanelController < ApplicationController
           format.js { render :mostrar, params: {set: params[:set], id: params[:id]}, notice: 'Objeto generado exitosamente.' }
         end
       elsif @obj.update(obj_params)
-        if @sets[params[:set].to_sym][:model] == Sitio
-          @num_pars = Parrafo.where("sitio_id = ?", params[:id].to_i)
-          @num_fotos = Foto.where("sitio_id = ?", params[:id].to_i)
-          @num_listing = Listing.where("sitio_id = ?", params[:id].to_i)
-          if @num_pars.count < obj_params[:num_parrafos].to_i
-            k = 0
-            while k < obj_params[:num_parrafos].to_i
-              if Parrafo.where("sitio_id = ? and p_ind = ? ", params[:id].to_i, k).count == 0
-                @pf = Parrafo.new({sitio_id: params[:id].to_i, p_ind: k})
-                @pf.save
-              end
-              k = k + 1
-            end
-          else
-            while @num_pars.count > obj_params[:num_parrafos].to_i
-              @num_pars[-1].destroy
-            end
-          end
-
-          if @num_fotos.count < obj_params[:num_fotos].to_i
-            k = 0
-            while k < obj_params[:num_fotos].to_i
-              if Foto.where("sitio_id = ? and f_ind = ? ",params[:id].to_i, k).count == 0
-                @pf = Foto.new({sitio_id: params[:id].to_i, f_ind: k})
-                @pf.save
-              end
-              k = k + 1
-            end
-          else
-            while @num_fotos.count > obj_params[:num_fotos].to_i
-              @num_fotos[-1].destroy
-            end
-          end
-
-          if @num_listing.count < obj_params[:num_listing].to_i
-            k = 0
-            while k < obj_params[:num_listing].to_i
-              if Listing.where("sitio_id = ? and ord_index = ?",params[:id].to_i, k).count == 0
-                @pf = Listing.new({sitio_id: params[:id].to_i, ord_index: k})
-                @pf.save
-              end
-              k = k + 1
-            end
-          else
-            while @num_listing.count > obj_params[:num_listing].to_i
-              @num_listing[-1].destroy
-            end
-          end
-
+#        if @sets[params[:set].to_sym][:model] == Sitio
+#          @num_pars = Parrafo.where("sitio_id = ?", params[:id].to_i)
+#          @num_fotos = Foto.where("sitio_id = ?", params[:id].to_i)
+#          @num_listing = Listing.where("sitio_id = ?", params[:id].to_i)
+#          if @num_pars.count < obj_params[:num_parrafos].to_i
+#            k = 0
+#            while k < obj_params[:num_parrafos].to_i
+#              if Parrafo.where("sitio_id = ? and p_ind = ? ", params[:id].to_i, k).count == 0
+#                @pf = Parrafo.new({sitio_id: params[:id].to_i, p_ind: k})
+#                @pf.save
+#              end
+#              k = k + 1
+#            end
+#          else
+#            while @num_pars.count > obj_params[:num_parrafos].to_i
+#              @num_pars[-1].destroy
+#            end
+#          end
+#
+#          if @num_fotos.count < obj_params[:num_fotos].to_i
+#            k = 0
+#            while k < obj_params[:num_fotos].to_i
+#              if Foto.where("sitio_id = ? and f_ind = ? ",params[:id].to_i, k).count == 0
+#                @pf = Foto.new({sitio_id: params[:id].to_i, f_ind: k})
+#                @pf.save
+#              end
+#              k = k + 1
+#            end
+#          else
+#            while @num_fotos.count > obj_params[:num_fotos].to_i
+#              @num_fotos[-1].destroy
+#            end
+#          end
+#
+#          if @num_listing.count < obj_params[:num_listing].to_i
+#            k = 0
+#            while k < obj_params[:num_listing].to_i
+#              if Listing.where("sitio_id = ? and ord_index = ?",params[:id].to_i, k).count == 0
+#                @pf = Listing.new({sitio_id: params[:id].to_i, ord_index: k})
+#                @pf.save
+#              end
+#              k = k + 1
+#            end
+#          else
+#            while @num_listing.count > obj_params[:num_listing].to_i
+#              @num_listing[-1].destroy
+#            end
+#          end
+#
         end
         format.js { render :mostrar, params: {set: params[:set], id: @obj.id}, notice: 'Objeto generado exitosamente.' }
       else
