@@ -70,7 +70,7 @@ class PanelController < ApplicationController
     Playlist.all.pluck(:nombre).each do |lista|
       puts lista
       @playlists.find {|pl| pl.title == lista}.playlist_items.each do |v|
-        @vid = InfoVideo.find_or_initialize_by(video_id: v.v_id)
+        @vid = InfoVideo.find_or_initialize_by(v_id: v.video_id)
         @vid.fecha = v.published_at
         @vid.titulo = v.title
         @vid.descripcion = v.description
