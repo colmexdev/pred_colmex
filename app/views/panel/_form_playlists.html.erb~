@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :grupo, "Pertenece a" %><br>
-    <%= f.select(:nombre, options_for_select([["Cursos breves", "Cursos breves"]]), {include_blank: true}) %>
+    <%= f.select(:grupo, [["Cursos breves", "Cursos breves"]], :selected => (@obj.grupo || ""), {include_blank: true}) %>
   </div>
   <div class="actions">
     <%= f.submit "Guardar lista" %>
