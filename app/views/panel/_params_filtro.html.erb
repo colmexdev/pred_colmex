@@ -16,6 +16,12 @@
 <% end %>
 <% end %>
 
+<% if params[:set] == "Videos" %>
+<br>
+<a class="boton-forma" onclick="hideLink(event,'#ops-lat','/panel/video_manage?set=Videos')"></a>
+<br>
+<% end %>
+
 <script type="text/javascript">
 	var pars = filteredParams("<%= params[:set] %>");
 	for(var i in pars){

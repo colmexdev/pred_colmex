@@ -1,5 +1,6 @@
 <input type="text" name="keyword" id="keyword" value="<%= params[:keyword].present? ? params[:keyword] : '' %>" placeholder="Palabra clave" onchange="hideLink(null,'#index-panel','<%= panel_index_path(set: params[:set], offset: 0) %>',null,document.querySelector('#keyword').value,buildQuery(filteredParams('<%= params[:set] %>')))"><br>
 
+<% if false %>
 <% if params[:set] == "Descubre" %>
 	<%= select_tag "contenido", options_for_select(Descubre.select(:contenido).distinct.pluck(:contenido).map{|c| [c,c]}, params[:contenido] || ""), include_blank: "Todos" %>
 <% elsif params[:set] == "Programas docentes" %>
@@ -12,6 +13,7 @@
 	<%= select_tag "tipo", options_for_select(Catedra.select(:tipo).distinct.pluck(:tipo).map{|t| [t,t]}, params[:tipo] || ""), include_blank: "Todos" %>
 <% elsif params[:set] == "Directorio académico" %>
 	<%= select_tag "adscripcion", options_for_select(Academico.select(:adscripcion).distinct.pluck(:adscripcion).map{|a| [a,a]},params[:adscripcion] || ""), include_blank: "Todos" %>
+<% end %>
 <% end %>
 
 <script type="text/javascript">
