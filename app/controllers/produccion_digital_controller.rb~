@@ -3,7 +3,6 @@ class ProduccionDigitalController < ApplicationController
 
   def cursos_breves
     @curs = []
-    logger.debug @cursos
     @cursos.each_with_index do |v,i|
       @curs << {curso: v, img: ActionController::Base.helpers.image_url("gif"+i.to_s+".gif").html_safe}
     end

@@ -35,7 +35,7 @@ function divCursosBreves(event,datos){
 
 /* Función callback de AJAX cuando se entra al player de cursos breves */
 function divPlayerCursosBreves(event,datos){
-  console.log(datos["referente_vids"]);
+  console.log(datos);
 	if($("#curso-breve-1").css("top") != "0")
 		$("#curso-breve-1").animate({left: "0"},(/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproducir/.test(window.location.href) ? 20 : 250));
 	try{
