@@ -68,6 +68,7 @@ class PanelController < ApplicationController
   def actualizar_videos
     @playlists = Yt::Channel.new(id: 'UCjCwCfPSnQ7rZB_u5HYd2OA').playlists
     Playlist.all.pluck(:nombre).each do |lista|
+      logger.debug lista
       @playlists.find {|pl| pl.title == lista}.playlist_items.each do |v|
         @vid = InfoVideo.find_or_initialize_by(video_id: v.v_id)
         @vid.fecha = v.published_at
