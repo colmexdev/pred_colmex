@@ -68,8 +68,10 @@ function traerPagina(render, toggle){
 	}
 }
 
-function slide_pagina(event,render,liga,home){
+function slide_pagina(event,render,liga,home,menu){
 	event.preventDefault();
+	menu = menu || false;
+  if(menu) desplegarMenu();
 	var izqs = $(".izq");
 	var ders = $(".der");
 	for(var i = 0; i < izqs.length; i++){
