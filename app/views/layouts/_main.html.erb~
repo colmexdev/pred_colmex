@@ -5,7 +5,7 @@
 	<div id="wrapper-inicio" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;background-color:rgba(255,255,255,0.0);">
 	</div>
 
-	<div id="brand" onclick="slide_pagina(event,'','http://pred1.colmex.mx',true)">
+	<div id="brand" onclick="slide_pagina(event,'','http://pred1.colmex.mx',true,$('#cont_menu').width() != 0)">
 	</div>
 	<div id="menu_canvas" style="background-color:rgba(255,255,255,0);height:50px;width:70px;position:fixed;top:17%;right:6%;transition: all ease 0.1s;-webkit-transition: all ease 0.1s;-moz-transition: all ease 0.1s;-o-transition: all ease 0.1s;z-index:5;">
 		<div id="rect_sup" class="rect" style="margin-top:30px">
@@ -25,10 +25,10 @@
 	<div class="opciones" id="op2" style="top:30%" onmouseenter="toggleBorde(event,'#borde-2',0);" onmouseleave="toggleBorde(event,'#borde-2',1);" onclick="slide_pagina(event,'tecnologia-educativa','<%= tech_ed_path %>', false, true)">Tecnología Educativa
 		<div id="borde-2" class="borde-op"></div>
 	</div>
-	<div class="opciones" id="op3" style="top:35%" onmouseenter="toggleBorde(event,'#borde-3',0);" onmouseleave="toggleBorde(event,'#borde-3',1);"  onclick="slide_pagina(event,'digital-design','<%= digital_design_path %>', false, true)">Diseño Digital
+	<div class="opciones" id="op3" style="top:35%" onmouseenter="toggleBorde(event,'#borde-3',0);" onmouseleave="toggleBorde(event,'#borde-3',1);" onclick="slide_pagina(event,'digital-design','<%= digital_design_path %>', false, true)">Diseño Digital
 		<div id="borde-3" class="borde-op"></div>
 	</div>
-	<div class="opciones" id="op4" style="top:40%" onmouseenter="toggleBorde(event,'#borde-4',0);" onmouseleave="toggleBorde(event,'#borde-4',1);">Opcion 4
+	<div class="opciones" id="op4" style="top:40%" onmouseenter="toggleBorde(event,'#borde-4',0);" onmouseleave="toggleBorde(event,'#borde-4',1);" onclick="slide_pagina(event,'coordinacion','<%= coordinacion_path %>', false, true)">Coordinación
 		<div id="borde-4" class="borde-op"></div>
 	</div>
 

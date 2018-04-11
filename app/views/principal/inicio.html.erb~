@@ -1,7 +1,7 @@
 	<%= render 'layouts/main' %>
 
 	<div class="der" id="produccion-digital" style="position:fixed;top:0;right:100%;height:100%;background-color:#06C;width:100%;z-index:4;overflow-x:hidden;overflow-y:auto;">
-		<%= render 'produccion_digital/principal_prod_digital_temp', titulo: "Producción Digital y Postproducción", op1: "Coordinación", op2: "Diseño Digital", op3: "Tecnología Digital", texto: "Texto extendido para probar", img: 'Paisaje.png' %>
+		<%= render 'produccion_digital/principal_prod_digital_temp', titulo: "Producción Digital y Postproducción", op1: "Coordinación", op2: "Tecnología Educativa", op3: "Diseño Digital", texto: "Texto extendido para probar", img: 'Paisaje.png', div1: "coordinacion", div2: "tecnologia-educativa", div3: "digital-design" %>
 	</div>
 
 	<div class="der" id="tecnologia-educativa" style="position:fixed;top:0;right:100%;height:100%;background-color:#C60;width:100%;z-index:4;overflow-x:hidden;overflow-y:auto;">
