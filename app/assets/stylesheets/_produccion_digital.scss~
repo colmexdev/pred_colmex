@@ -20,9 +20,9 @@
 	opacity: 1;
 }
 
-/* Identificadores */
+
 /* Envolvente del cuerpo de página */
-#wrapper-pd{
+.wrapper-pd{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -33,13 +33,13 @@
 }
 
 /* Envolvente de la sección de encabezado */
-#wrapper-header-pd{
+.wrapper-header-pd{
 	position: relative;
 	background-color: #444;
 }
 
 /* Contenedor de encabezado (título, imagen y descripción) */
-#wrapper-main-pd{
+.wrapper-main-pd{
 	width: -webkit-calc(100% - 210px);
 	width: -moz-calc(100% - 210px);
 	width: calc(100% - 210px);
@@ -56,21 +56,21 @@
 }
 
 /* Encabezado (Nombre de la sección) */
-#header-pd{
+.header-pd{
 	font-size: 35px;
 	color: #FFF;
 	text-align: right;
 }
 
 /* Contenedor de imagen y descripcion */
-#img-desc-pd{
+.img-desc-pd{
 	height: 100%;
 	width: 100%;
 	position: relative;
 }
 
 /* Envolvente de la imagen del encabezado */
-#img-section-pd{
+.img-section-pd{
 	float: left;
 	width: 50%;
 	position: relative;
@@ -79,7 +79,7 @@
 }
 
 /* Imagen del encabezado */
-#img-pd{
+.img-pd{
 	/*background: url(image-path('Paisaje.png')) no-repeat center center / 100% 100%;*/
 	width: 80%;
 	position: absolute;
@@ -94,26 +94,26 @@
 }
 
 /* Envolvente del texto descriptor */
-#text-section-pd{
+.text-section-pd{
 	float: left;
 	height: 100%;
 	width: 50%;
 }
 
 @media only screen and (max-width:880px){
-	#img-section-pd{
+	.img-section-pd{
 		float: none;
 		margin: 0 auto;
 		width: 100%;
 	}
 
-	#text-section-pd{
+	.text-section-pd{
 		float: none;
 		margin: 0 auto;
 		width: 100%;
 	}
 
-	#img-pd{
+	.img-pd{
 		width: 55%;
 	}
 }
