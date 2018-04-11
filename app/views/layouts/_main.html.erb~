@@ -25,7 +25,7 @@
 	<div class="opciones" id="op2" style="top:30%" onmouseenter="toggleBorde(event,'#borde-2',0);" onmouseleave="toggleBorde(event,'#borde-2',1);" onclick="slide_pagina(event,'tecnologia-educativa','<%= tech_ed_path %>', false, true)">Tecnología Educativa
 		<div id="borde-2" class="borde-op"></div>
 	</div>
-	<div class="opciones" id="op3" style="top:35%" onmouseenter="toggleBorde(event,'#borde-3',0);" onmouseleave="toggleBorde(event,'#borde-3',1);">Diseño Digital
+	<div class="opciones" id="op3" style="top:35%" onmouseenter="toggleBorde(event,'#borde-3',0);" onmouseleave="toggleBorde(event,'#borde-3',1);"  onclick="slide_pagina(event,'digital-design','<%= digital_design_path %>', false, true)">Diseño Digital
 		<div id="borde-3" class="borde-op"></div>
 	</div>
 	<div class="opciones" id="op4" style="top:40%" onmouseenter="toggleBorde(event,'#borde-4',0);" onmouseleave="toggleBorde(event,'#borde-4',1);">Opcion 4

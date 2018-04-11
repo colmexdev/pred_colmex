@@ -27,6 +27,8 @@ Rails.application.routes.draw do
 
   get 'digital_design/principal' => 'digital_design#principal', :as => :digital_design
 
+  get 'coordinacion/principal' => 'coordinacion#principal', :as => :coordinacion
+
   get 'produccion_digital/principal' => 'produccion_digital#principal', :as => :principal_pd
 
   get '/produccion_digital/curso_breve/reproducir' => 'produccion_digital#reproducir', :as => :curso1

@@ -17,7 +17,7 @@
 	</div>
 
 	<div class="bot" id="digital-design" style="position:fixed;top:100%;left:0;width:100%;height:auto;min-height:100%;z-index:4;background-color:#AAA;">
-		<%= render 'digital_design/dig_des_temp', titulo: "Diseño Digital", op1: "Tecnología educativa", op2: "Coordinación", op3: "Producción Digital y Postproducción", texto: "Texto extendido para probar de diseño digital", img: 'Paisaje.png' %>		
+		<%= render 'produccion_digital/principal_prod_digital_temp', titulo: "Diseño Digital", op1: "Tecnología educativa", op2: "Coordinación", op3: "Producción Digital y Postproducción", texto: "Texto extendido para probar de diseño digital", img: 'Paisaje.png' %>		
 	</div>
 
 
