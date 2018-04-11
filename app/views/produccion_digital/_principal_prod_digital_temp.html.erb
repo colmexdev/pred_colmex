@@ -1,8 +1,8 @@
 <div class="wrapper-pd">
 	<div class="wrapper-header-pd">
-		<div class="slides-op izq" style="-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-ms-transform:rotate(90deg);-o-transform:rotate(90deg);transform:rotate(90deg); top:50%;left:0;"><%= op1 %></div>
-		<div class="slides-op der" style="white-space:nowrap;-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-ms-transform:rotate(90deg);-o-transform:rotate(90deg);transform:rotate(90deg);top:50%;left:100%;"><%= op2 %></div>
-		<div class="slides-op bot" style="bottom:10px;left:50%;-webkit-transform:translate(-50%,0);-moz-transform:translate(-50%,0);-ms-transform:translate(-50%,0);-o-transform:translate(-50%,0);transform:translate(-50%,0);"><%= op3 %></div>
+		<div class="slides-op izq" style="top:50%;left:0;" onclick="slide_pagina(event,'<%= div1 %>','<%= link1 %>',false,false);"><%= op1 %></div>
+		<div class="slides-op der" style="white-space:nowrap;top:50%;left:100%;" onclick="slide_pagina(event,'<%= div2 %>','<%= link2 %>',false,false);"><%= op2 %></div>
+		<div class="slides-op bot" style="bottom:10px;left:50%;-webkit-transform:translate(-50%,0);-moz-transform:translate(-50%,0);-ms-transform:translate(-50%,0);-o-transform:translate(-50%,0);transform:translate(-50%,0);" onclick="slide_pagina(event,'<%= div3 %>','<%= link3 %>',false,false);"><%= op3 %></div>
 
 		<div class="wrapper-main-pd">
 			<div class="header-pd"><%= titulo %></div>
