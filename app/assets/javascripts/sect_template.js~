@@ -13,7 +13,7 @@ function trasladarDivs(){
 	});
 
 	divs_der.each(function(){
-		var style = "translate(-" + (Math.abs((this.offsetWidth*0.5) + cont_margin)) + "px,0) rotate(90deg)";
+		var style = "translate(-" + (cont_margin + (cont_margin-(this.offsetWidth*0.5))) + "px,0) rotate(90deg)";
 		this.style.webkitTransform = style;
 		this.style.MozTransform = style;
 		this.style.msTransform = style;
