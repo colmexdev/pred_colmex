@@ -15,6 +15,8 @@
 	<script>
 		$(function(){
 			$("html").niceScroll({cursorcolor: "#CCCCCC", cursorwidth: "8px"});
+			$("#produccion-digital").niceScroll({cursorcolor: "#CCCCCC", cursorwidth: "8px"});
+			$("#tecnologia-educativa").niceScroll({cursorcolor: "#CCCCCC", cursorwidth: "8px"});
 		});
 	</script>
 </body>
