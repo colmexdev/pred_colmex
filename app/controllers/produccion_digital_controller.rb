@@ -13,7 +13,7 @@ class ProduccionDigitalController < ApplicationController
   end
 
   def reproducir
-    @vids = InfoVideo.where(lista: params[:titulo])
+    @vids = InfoVideo.where(lista: params[:titulo]).order(fecha: :asc)
     respond_to do |format|
       format.html { render '/produccion_digital/curso_breve/reproducir' }
       format.json {render json: @vids}
