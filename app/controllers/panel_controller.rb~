@@ -66,10 +66,10 @@ class PanelController < ApplicationController
   end
 
   def actualizar_videos
-    logger.debug params
     @playlists = Yt::Channel.new(id: 'UCjCwCfPSnQ7rZB_u5HYd2OA').playlists
-    if params[:refresh].present? && params[:refresh] == "full"
-      @listas = (params[:refresh] == "full" ? Playlist.all.pluck(:nombre) : params[:refresh])
+    if params[:refresh].present?
+      @listas = (params[:refresh] == "full" ? Playlist.all.pluck(:nombre) : params[:listas])
+      logger.debug @listas
       @listas.each do |lista|
         @playlists.find {|pl| pl.title == lista}.playlist_items.each do |v|
           begin
