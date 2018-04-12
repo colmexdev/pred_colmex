@@ -21,9 +21,9 @@
 <button type="button" class="boton-forma" onclick="hideLink(event,'#ops-lat','/panel/video_manage?set=Videos&refresh=full','PUT')">Refrescar videos desde YouTube</button>
 <br>
 
-<%= form_tag('/panel/video_manage?set=Videos&refresh=part', method: :put) do |f| %>
-	<%= f.select_tag("lista","nombre",Playlist.all.collect {|p| [p.nombre, p.nombre]}) %>
-	<%= f.submit_tag 'Refrescar listas seleccionadas desde YouTube' %>
+<%= form_tag('/panel/video_manage?set=Videos&refresh=part', method: :put) do %>
+	<%= select_tag("lista","nombre",Playlist.all.collect {|p| [p.nombre, p.nombre]}) %>
+	<%= submit_tag 'Refrescar listas seleccionadas desde YouTube' %>
 <% end %>
 <br>
 <br>
