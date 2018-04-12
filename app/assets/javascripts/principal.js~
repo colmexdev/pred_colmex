@@ -72,18 +72,21 @@ function slide_pagina(event,render,liga,home,menu){
 	event.preventDefault();
 	menu = menu || false;
   if(menu) desplegarMenu();
-	var izqs = $(".izq");
-	var ders = $(".der");
-	var bots = $(".bot");
-	for(var i = 0; i < izqs.length; i++){
-		traerPagina(izqs[i]["id"], render == izqs[i]["id"]);
-	}
-	for(var i = 0; i < ders.length; i++){
-		traerPagina(ders[i]["id"], render == ders[i]["id"]);
-	}
-	for(var i = 0; i < bots.length; i++){
-		traerPagina(bots[i]["id"], render == bots[i]["id"]);
-	}
+	traerPagina(render,true);
+	setTimeout(function(){
+		var izqs = $(".izq");
+		var ders = $(".der");
+		var bots = $(".bot");
+		for(var i = 0; i < izqs.length; i++){
+			traerPagina(izqs[i]["id"], render == izqs[i]["id"]);
+		}
+		for(var i = 0; i < ders.length; i++){
+			traerPagina(ders[i]["id"], render == ders[i]["id"]);
+		}
+		for(var i = 0; i < bots.length; i++){
+			traerPagina(bots[i]["id"], render == bots[i]["id"]);
+		}
+	}, 250);
 	$("#player-curso-landscape").html('');
 
 	despacharPeticiones(event,liga);

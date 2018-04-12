@@ -86,24 +86,23 @@ function slide_pagina(event,render,liga,home,menu){
 		for(var i = 0; i < bots.length; i++){
 			traerPagina(bots[i]["id"], render == bots[i]["id"]);
 		}
+		$("#mosaico").animate({top: (home ? "100%" : "0%")}, 250, function(){
+			if(!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)))
+				$("#mosaico").css("display","none");
+			else
+				$("#mosaico").css("display","block");
+		});
 	}, 250);
 	$("#player-curso-landscape").html('');
 
 	despacharPeticiones(event,liga);
-
-	$("#mosaico").animate({top: (home ? "100%" : "0%")}, 250, function(){
-		if(!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)))
-			$("#mosaico").css("display","none");
-		else
-			$("#mosaico").css("display","block");
-	});
 
 	window.history.pushState({},"Nueva página",liga);
 
 	setTimeout(function(){
 		$("#brand").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "1%" : "17%")}, 90);
 		$("#menu_canvas,#menu_mask").animate({top: (!(/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href)) ? "1px" : "17%")}, 90);
-		$("#brand").animate({width: (/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href) ? "130px" : "65px"), height: (/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href) ? "100px" : "50px")}, 50);
+		$("#brand").animate({width: (/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href) ? "130px" : "65px"), height: (/http:\/\/pred1\.colmex\.mx\/?$/.test(window.location.href) ? "100px" : "50px")}, 100);
 	}, 35);
 }
 
