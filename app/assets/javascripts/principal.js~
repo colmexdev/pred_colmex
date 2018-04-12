@@ -128,6 +128,9 @@ $(document).on("ready page:change",function(event){
 	catch(err){
 		console.log(err);
 	}
+
+	trasladarDivs();
+
 	despacharPeticiones(event,window.location.href);
 
 	$("#curso-breve-1").animate({left: (/http:\/\/pred1\.colmex\.mx\/produccion_digital\/curso_breve\/reproducir/.test(window.location.href) ? "0" : "100%")}, 250);
