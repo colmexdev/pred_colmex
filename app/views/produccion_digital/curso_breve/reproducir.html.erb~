@@ -1,4 +1,3 @@
-
 	<%= render 'layouts/main' %>
 
 	<div class="izq" id="cursos-breves" style="position:fixed;top:0;left:100%;width:100%;height:auto;min-height:100%;z-index:4;background-color:#AAA;">
@@ -15,4 +14,8 @@
 
 	<div class="der" id="tecnologia-educativa" style="position:fixed;top:0;right:100%;height:100%;background-color:#C60;width:100%;z-index:4;overflow-x:hidden;overflow-y:auto;">
 		<%= render 'produccion_digital/principal_prod_digital_temp', titulo: "Tecnología Educativa", op1: "Diseño Digital", op2: "Coordinación", op3: "Producción Digital y Postproducción", texto: "Texto extendido para probar de tecnología educativa", img: 'Paisaje.png' %>
+	</div>
+
+	<div class="izq" id="coordinacion" style="position:fixed;top:0;left:100%;height:100%;background-color:#C60;width:100%;z-index:4;overflow-x:hidden;overflow-y:auto;">
+		<%= render 'produccion_digital/principal_prod_digital_temp', titulo: "Coordinación", op1: "Diseño Digital", op2: "Tecnología Educativa", op3: "Producción Digital y Postproducción", texto: "Texto extendido para probar de coordinación", img: 'Paisaje.png' %>
 	</div>
