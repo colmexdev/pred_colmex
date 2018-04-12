@@ -18,7 +18,14 @@
 
 <% if params[:set] == "Videos" %>
 <br>
-<button type="button" class="boton-forma" onclick="hideLink(event,'#ops-lat','/panel/video_manage?set=Videos','PUT')">Refrescar videos desde YouTube</button>
+<button type="button" class="boton-forma" onclick="hideLink(event,'#ops-lat','/panel/video_manage?set=Videos&refresh=full','PUT')">Refrescar videos desde YouTube</button><br>
+<button type="button" class="boton-forma" onclick="hideLink(event,'#ops-lat','/panel/video_manage?set=Videos&refresh=partial','PUT')">Refrescar listas seleccionadas desde YouTube</button>
+<select multiple name="listas">
+<% Playlist.all.each do |p| %>
+<option value="<%= p %>"><%= p %></option>
+<% end %>
+</select>
+<br>
 <br>
 <% end %>
 
