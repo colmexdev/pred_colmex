@@ -18,13 +18,13 @@
 
 <% if params[:set] == "Videos" %>
 <br>
-<button type="button" class="boton-forma" onclick="hideLink(event,'#ops-lat','/panel/video_manage?set=Videos&refresh=full','PUT')">Refrescar videos desde YouTube</button><br>
-<button type="button" class="boton-forma" onclick="hideLink(event,'#ops-lat','/panel/video_manage?set=Videos&refresh=partial','PUT')">Refrescar listas seleccionadas desde YouTube</button>
-<select multiple name="listas">
-<% Playlist.all.pluck(:nombre).each do |p| %>
-<option value="<%= p %>"><%= p %></option>
+<button type="button" class="boton-forma" onclick="hideLink(event,'#ops-lat','/panel/video_manage?set=Videos&refresh=full','PUT')">Refrescar videos desde YouTube</button>
+<br>
+
+<%= form_tag('/panel/video_manage?set=Videos&refresh=part', method: :put) do |f| %>
+	<%= f.select("lista","nombre",Playlist.all.collect {|p| [p.nombre, p.nombre]}) %>
+	<%= f.submit 'Refrescar listas seleccionadas desde YouTube' %>
 <% end %>
-</select>
 <br>
 <br>
 <% end %>
