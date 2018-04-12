@@ -284,9 +284,6 @@ class PanelController < ApplicationController
     @fields.keys.each do |f|
       h = ""
       keys.each_with_index do |k,i|
-        if f.to_s == "fecha"
-          next
-        end
         h =  h + f.to_s + k + (i == keys.size - 1 ? '' : ' AND ')
       end
 
