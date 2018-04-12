@@ -283,10 +283,10 @@ class PanelController < ApplicationController
     keys = params[:keyword].split(/ +/).map {|k| " like '%" + k.downcase + "%'"}
     @fields.keys.each do |f|
       h = ""
+      if f.to_s == "fecha"
+        next
+      end
       keys.each_with_index do |k,i|
-        if f.to_s == "fecha"
-          next
-        end
         h =  h + f.to_s + k + (i == keys.size - 1 ? '' : ' AND ')
       end
 
