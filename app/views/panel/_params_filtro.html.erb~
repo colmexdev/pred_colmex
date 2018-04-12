@@ -22,7 +22,9 @@
 <br>
 
 <%= form_tag('/panel/video_manage?set=Videos&refresh=part', method: :put) do %>
-	<%= select("lista","nombre",Playlist.all.collect {|p| [p.nombre, p.nombre]}) %>
+	<% Playlist.all.each do |p| %>
+		<%= check_box_tag "listas[]", p.nombre %>
+	<% end %>
 	<%= submit_tag 'Refrescar listas seleccionadas desde YouTube' %>
 <% end %>
 <br>
