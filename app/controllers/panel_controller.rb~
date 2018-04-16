@@ -94,7 +94,7 @@ class PanelController < ApplicationController
       end
     end
     respond_to do |format|
-      format.html {redirect_to(panel_path(notice: "Sincronización completada."))}
+      format.html {redirect_to panel_path, notice: "Sincronización completada."}
     end
   end
 
