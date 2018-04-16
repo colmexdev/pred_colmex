@@ -60,7 +60,7 @@
 	$.ajax({
 		url: "<%= panel_princ_path %>",
 		success: function(result){
-			$("#notice").html("<%= notice || '' %>");
+			$("#notice").html("<%= flash[:notice] || '' %>");
 			return true;
 		}
 	});

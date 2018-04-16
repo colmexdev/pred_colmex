@@ -48,7 +48,6 @@
 			</ul>
 		</div>
 		<div id="graphs-gest">
-				<p id="notice"><%= notice %></p>
 		</div>
 
 	</div>
@@ -61,6 +60,7 @@
 	$.ajax({
 		url: "<%= panel_princ_path %>",
 		success: function(result){
+			$("#notice").html("<%= notice || '' %>");
 			return true;
 		}
 	});
