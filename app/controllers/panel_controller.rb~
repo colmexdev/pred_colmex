@@ -4,7 +4,7 @@ class PanelController < ApplicationController
   before_action :get_object_fields, only: [:index, :crear, :actualizar, :eliminar, :mostrar]
 
   def principal
-    logger.debug flash
+    logger.debug flash[:notice]
 		grupos = @sets.map {|k,v| v[:model]}
     @groups = []
     grupos.each_with_index do |g,i|
@@ -37,7 +37,7 @@ class PanelController < ApplicationController
   end
 
   def panel
-    logger.debug flash
+    logger.debug flash[:notice]
   end
 
   def index
