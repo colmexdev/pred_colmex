@@ -48,7 +48,7 @@
 			</ul>
 		</div>
 		<div id="graphs-gest">
-		
+				<p id="notice"><%= notice %></p>
 		</div>
 
 	</div>
