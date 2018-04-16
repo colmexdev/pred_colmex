@@ -4,7 +4,6 @@ class PanelController < ApplicationController
   before_action :get_object_fields, only: [:index, :crear, :actualizar, :eliminar, :mostrar]
 
   def principal
-    notice = notice || ""
 		grupos = @sets.map {|k,v| v[:model]}
     @groups = []
     grupos.each_with_index do |g,i|
