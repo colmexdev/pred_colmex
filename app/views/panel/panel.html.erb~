@@ -47,8 +47,8 @@
 				</li>
 			</ul>
 		</div>
+			<p id="notice"><%= flash[:notice] %></p>
 		<div id="graphs-gest">
-		<p id="notice"><%= flash[:notice] %></p>
 		</div>
 	</div>
 </div>
