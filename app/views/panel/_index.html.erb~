@@ -26,7 +26,7 @@
     <% @set.each do |s| %>
       <tr class="row-ind">
 				<% @fields.keys.each do |f| %>
-        <td class="ind-cell"><%= f != "thumbnail" ? raw(s[f.to_s]) : raw(image_tag(s[f.to_s])) %></td>
+        <td class="ind-cell"><%= f.to_s != "thumbnail" ? raw(s[f.to_s]) : raw(image_tag(s[f.to_s])) %></td>
 				<% end %>
 				<% @imgs.keys.each do |f| %>
 					<% if f.to_s == "foto" %>
@@ -69,7 +69,7 @@
 <% end %>
 
 	<% if @pags > 1 %>
-		<span class="numeros" style="margin:0 4px;cursor:<%= params[:offset].to_i != @pags - 1 ? "pointer" : "default" %>;" <%= params[:offset].to_i != @pags - 1 ? ("onclick=hideLink(event,'#index-panel','" + panel_index_path(set: params[:set], offset: params[:offset].to_i + 1) + "',null,document.getElementById('keyword').value,buildQuery(filteredParams('" + params[:set] + "')))") : "" %>>></span>
+		<span class="numeros" style="margin:0 4px;cursor:<%= params[:offset].to_i != @pags - 1 ? "pointer" : "default" %>;" <%= params[:offset].to_i != @pags - 1 ? ("onclick=hideLink(event,'#index-panel','" + panel_index_path(set: params[:set], offset: params[:offset].to_i + 1) + "',null,document.getElementById('keyword').value,buildQuery(filteredParams('" + params[:set].gsub(/'/,"\\'") + "')))") : "" %>>></span>
 	<% end %>
 </div>
 <% if false %>
