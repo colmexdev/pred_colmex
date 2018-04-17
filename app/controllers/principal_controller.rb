@@ -9,7 +9,7 @@ class PrincipalController < ApplicationController
     @total = @videos.size
 
     respond_to do |format|
-      format.json {render json: {vids: @videos.limit(@vpp).offset(@offset*@vpp), pags: @total.fdiv(@vpp), offset: @offset}}
+      format.json {render json: {vids: @videos.limit(@vpp).offset(@offset*@vpp), pags: (@total.fdiv(@vpp)).ceil, offset: @offset}}
     end
   end
 
