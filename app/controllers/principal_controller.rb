@@ -6,8 +6,10 @@ class PrincipalController < ApplicationController
     @vpp = 10 #Videos por página
     @offset = params[:offset] || 0 #Página
     @videos = InfoVideo.where(build_query(params))
+    @total = @videos.size
+
     respond_to do |format|
-      format.json {render json: @videos}
+      format.json {render json: {vids: @videos.limit(@vpp).offset(@offset*@vpp), pags: @total.fdiv(@vpp), offset: @offset}
     end
   end
 
@@ -16,8 +18,8 @@ class PrincipalController < ApplicationController
   def build_query(pars)
     string = ""
     concat = false
-    if pars.key?(:title)
-      string = string + "lower(titulo) like '%" + pars[:title].downcase + "%'"
+    if pars.key?(:titulo)
+      string = string + "lower(titulo) like '%" + pars[:titulo].downcase + "%'"
       concat = true
     end
     if pars.key?(:lista)
