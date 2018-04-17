@@ -19,16 +19,16 @@ class PrincipalController < ApplicationController
     string = ""
     concat = false
     if pars.key?(:titulo)
-      string = string + "lower(titulo) like '%" + pars[:titulo].downcase + "%'"
+      string = string + "lower(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(tags,'á','a'),'é','e'),'í','i'),'ó','o'),'ú','u'),'Á','A'),'É','E'),'Í','I'),'Ó','O'),'Ú','U')) like '%" + pars[:titulo].mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s + "%'"
       concat = true
     end
     if pars.key?(:lista)
-      string = string + (concat ? " AND " : "") + "lower(lista) = '" + pars[:lista].downcase + "'"
+      string = string + (concat ? " AND " : "") + "lower(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(tags,'á','a'),'é','e'),'í','i'),'ó','o'),'ú','u'),'Á','A'),'É','E'),'Í','I'),'Ó','O'),'Ú','U')) = '" + pars[:lista].mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s + "'"
       concat = true
     end
     if pars.key?(:tags)
-      pars[:tags].split(/ *, */).map {|t| t.downcase }.each do |t|
-        string = string + (concat ? " AND " : "") + "lower(tags) like '%" + t + "%'"
+      pars[:tags].split(/ *, */).map {|t| t.mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s }.each do |t|
+        string = string + (concat ? " AND " : "") + "lower(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(tags,'á','a'),'é','e'),'í','i'),'ó','o'),'ú','u'),'Á','A'),'É','E'),'Í','I'),'Ó','O'),'Ú','U')) like '%" + t + "%'"
         concat = true
       end
     end
@@ -39,3 +39,4 @@ class PrincipalController < ApplicationController
     return string
   end
 end
+

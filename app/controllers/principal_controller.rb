@@ -4,7 +4,7 @@ class PrincipalController < ApplicationController
 
   def get_videos
     @vpp = 10 #Videos por página
-    @offset = params[:offset] || 0 #Página
+    @offset = params[:offset].to_i || 0 #Página
     @videos = InfoVideo.where(build_query(params))
     @total = @videos.size
 
