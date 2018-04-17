@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   put 'panel/video_manage' => 'panel#actualizar_videos'
   patch 'panel/video_manage' => 'panel#actualizar_videos'  
 
+  get '/catalogo_videos' => 'principal#get_videos', :as => :catalogo
+
   get 'tecnologia_educativa/principal' => 'tecnologia_educativa#principal', :as => :tech_ed
 
   get 'produccion_digital/cursos_breves' => 'produccion_digital#cursos_breves', :as => :cursos_breves
