@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
 
   Yt.configure do |config|
     config.api_key = 'AIzaSyDdb0WKx3fYJjfOiEGq8rF4xHTIFR82kBA'
+    config.log_level = :debug
   end
 
   protected

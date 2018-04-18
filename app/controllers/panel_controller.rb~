@@ -66,29 +66,53 @@ class PanelController < ApplicationController
   end
 
   def actualizar_videos
-    @playlists = Yt::Channel.new(id: 'UCjCwCfPSnQ7rZB_u5HYd2OA').playlists
-    if params[:refresh].present?
-      @listas = (params[:refresh] == "full" ? Playlist.all.pluck(:nombre) : params[:listas])
-      logger.debug @listas
-      @listas.each do |lista|
-        @playlists.find {|pl| pl.title == lista}.playlist_items.each do |v|
+    @acc = Yt::Account.new refresh_token: ENV["YT_TOKEN"]
+    @playlists = @acc.playlists
+    if params.key?(:refresh)?
+      if params[:refresh] == "full"
+        @acc.videos.each do |v|
+          if v.private?
+            next
+          end
           begin
-            @vid = InfoVideo.find_or_initialize_by(v_id: v.video_id)
+            @vid = InfoVideo.find_or_initialize_by(v_id: v.id)
             @vid.fecha = v.published_at
             @vid.titulo = v.title
             @vid.descripcion = v.description
             @vid.thumbnail = v.thumbnail_url
-            @vid.lista = lista
-            vid = Yt::Video.new id: v.video_id
-            @vid.likes = vid.like_count
-            @vid.dislikes = vid.dislike_count
-            @vid.favs = vid.favorite_count
-            @vid.comentarios = vid.comment_count
-            @vid.vistas = vid.view_count
-            @vid.tags = vid.tags
+            @vid.lista = (v.unlisted? ? "" : @acc.playlists.find {|pl| pl.playlist_items.find {|pli| pli.title == v.title}}.title)
+            @vid.likes = v.like_count
+            @vid.dislikes = v.dislike_count
+            @vid.favs = v.favorite_count
+            @vid.comentarios = v.comment_count
+            @vid.vistas = v.view_count
+            @vid.tags = v.tags
             @vid.save
           rescue Exception => e
             next
+          end
+        end
+      else
+        params[:listas].each do |lista|
+          @playlists.find {|pl| pl.title == lista}.playlist_items.each do |v|
+            begin
+              @vid = InfoVideo.find_or_initialize_by(v_id: v.video_id)
+              @vid.fecha = v.published_at
+              @vid.titulo = v.title
+              @vid.descripcion = v.description
+              @vid.thumbnail = v.thumbnail_url
+              @vid.lista = lista
+              vid = Yt::Video.new id: v.video_id
+              @vid.likes = vid.like_count
+              @vid.dislikes = vid.dislike_count
+              @vid.favs = vid.favorite_count
+              @vid.comentarios = vid.comment_count
+              @vid.vistas = vid.view_count
+              @vid.tags = vid.tags
+              @vid.save
+            rescue Exception => e
+              next
+            end
           end
         end
       end

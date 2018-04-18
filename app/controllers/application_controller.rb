@@ -5,8 +5,10 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   Yt.configure do |config|
-    config.api_key = 'AIzaSyDdb0WKx3fYJjfOiEGq8rF4xHTIFR82kBA'
+    config.api_key = ENV["YT_API_KEY"]
     config.log_level = :debug
+    config.client_id = ENV["YT_CLIENT"]
+    config.client_secret = ENV["YT_SECRET"]
   end
 
   protected
