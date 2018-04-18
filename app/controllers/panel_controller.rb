@@ -88,6 +88,7 @@ class PanelController < ApplicationController
             @vid.tags = vid.tags
             @vid.save
           rescue Exception => e
+            open('/home/webuser/videos_missing.txt','a') {|f| f.puts "id: " + v.video_id + " título: " + v.title}
             next
           end
         end
