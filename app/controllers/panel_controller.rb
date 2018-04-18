@@ -78,7 +78,7 @@ class PanelController < ApplicationController
     if params.key?(:refresh)
       if params[:refresh] == "full"
         @acc.videos.each do |v|
-          if v.private?
+          if v.private? or !v.unlisted?
             next
           end
           begin
