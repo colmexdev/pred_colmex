@@ -22,7 +22,7 @@
 <br>
 
 <%= form_tag('/panel/video_manage?set=Videos&refresh=part', method: :put) do %>
-	<% Yt::Channel.new(id: 'UCjCwCfPSnQ7rZB_u5HYd2OA').playlists.each do |p| %>
+	<% Playlist.all.each do |p| %>
 		<%= check_box_tag "listas[]", p.title %>
 		<%= label_tag "lista", p.title %><br>
 	<% end %>
