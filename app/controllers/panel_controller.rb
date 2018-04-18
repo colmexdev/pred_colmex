@@ -72,6 +72,7 @@ class PanelController < ApplicationController
       config.client_id = ENV["YT_CLIENT"]
       config.client_secret = ENV["YT_SECRET"]
     end
+    logger.debug ENV["YT_TOKEN"]
     @acc = Yt::Account.new refresh_token: ENV["YT_TOKEN"]
     @playlists = @acc.playlists
     if params.key?(:refresh)
