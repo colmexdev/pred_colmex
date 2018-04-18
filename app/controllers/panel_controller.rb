@@ -67,7 +67,6 @@ class PanelController < ApplicationController
 
   def actualizar_videos
     Yt.configure do |config|
-      config.api_key = Rails.application.secrets.yt_api_key
       config.log_level = :debug
       config.client_id = Rails.application.secrets.yt_client
       config.client_secret = Rails.application.secrets.yt_secret
@@ -77,26 +76,27 @@ class PanelController < ApplicationController
     @playlists = @acc.playlists
     if params.key?(:refresh)
       if params[:refresh] == "full"
-        @acc.videos.each do |v|
+        @acc.videos.to_enum.find_all{|v| v.published_at >= InfoVideo.maximum(:fecha)}. do |v|
           if v.private? or !v.unlisted?
             next
-          end
-          begin
-            @vid = InfoVideo.find_or_initialize_by(v_id: v.id)
-            @vid.fecha = v.published_at
-            @vid.titulo = v.title
-            @vid.descripcion = v.description
-            @vid.thumbnail = v.thumbnail_url
-            @vid.lista = (v.unlisted? ? "" : @acc.playlists.find {|pl| pl.playlist_items.find {|pli| pli.title == v.title}}.title)
-            @vid.likes = v.like_count
-            @vid.dislikes = v.dislike_count
-            @vid.favs = v.favorite_count
-            @vid.comentarios = v.comment_count
-            @vid.vistas = v.view_count
-            @vid.tags = v.tags
-            @vid.save
-          rescue Exception => e
-            next
+          else
+            begin
+              @vid = InfoVideo.find_or_initialize_by(v_id: v.id)
+              @vid.fecha = v.published_at
+              @vid.titulo = v.title
+              @vid.descripcion = v.description
+              @vid.thumbnail = v.thumbnail_url
+              @vid.lista = (v.unlisted? ? "" : @acc.playlists.find {|pl| pl.playlist_items.find {|pli| pli.title == v.title}}.title)
+              @vid.likes = v.like_count
+              @vid.dislikes = v.dislike_count
+              @vid.favs = v.favorite_count
+              @vid.comentarios = v.comment_count
+              @vid.vistas = v.view_count
+              @vid.tags = v.tags
+              @vid.save
+            rescue Exception => e
+              next
+            end
           end
         end
       else

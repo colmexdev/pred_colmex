@@ -6,7 +6,7 @@ class CreateInfoVideo < ActiveRecord::Migration
       t.text :titulo, null: false
       t.text :descripcion
       t.text :thumbnail
-      t.text :lista, null: false
+      t.text :lista, null: false, default: ""
       t.bigint :likes, null:false, default: 0
       t.bigint :dislikes, null: false, default: 0
       t.bigint :favs, null: false, default: 0
