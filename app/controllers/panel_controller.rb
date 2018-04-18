@@ -66,6 +66,12 @@ class PanelController < ApplicationController
   end
 
   def actualizar_videos
+    Yt.configure do |config|
+      config.api_key = ENV["YT_API_KEY"]
+      config.log_level = :debug
+      config.client_id = ENV["YT_CLIENT"]
+      config.client_secret = ENV["YT_SECRET"]
+    end
     @acc = Yt::Account.new refresh_token: ENV["YT_TOKEN"]
     @playlists = @acc.playlists
     if params.key?(:refresh)

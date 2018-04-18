@@ -68,7 +68,7 @@ class PanelController < ApplicationController
   def actualizar_videos
     @acc = Yt::Account.new refresh_token: ENV["YT_TOKEN"]
     @playlists = @acc.playlists
-    if params.key?(:refresh)?
+    if params.key?(:refresh)
       if params[:refresh] == "full"
         @acc.videos.each do |v|
           if v.private?
