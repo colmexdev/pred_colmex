@@ -76,7 +76,7 @@ class PanelController < ApplicationController
     @playlists = @acc.playlists
     if params.key?(:refresh)
       if params[:refresh] == "full"
-        @acc.videos.to_enum.find_all{|v| v.published_at >= InfoVideo.maximum(:fecha)}. do |v|
+        @acc.videos.to_enum.find_all{|v| v.published_at >= InfoVideo.maximum(:fecha)}.each do |v|
           if v.private? or !v.unlisted?
             next
           else

@@ -74,11 +74,9 @@ class PanelController < ApplicationController
     logger.debug Rails.application.secrets.yt_token
     @acc = Yt::Account.new refresh_token: Rails.application.secrets.yt_token
     @playlists = @acc.playlists
-    @ult_fecha = Video.maximum(:fecha).split(" ")
-    @ult_fecha = @ult_fecha[0] + "T" + @ult_fecha[1] + "Z"
     if params.key?(:refresh)
       if params[:refresh] == "full"
-        @acc.videos.where({published_after: @ult_fecha}).each do |v|
+        @acc.videos.to_enum.find_all{|v| v.published_at >= InfoVideo.maximum(:fecha)}. do |v|
           if v.private? or !v.unlisted?
             next
           else
