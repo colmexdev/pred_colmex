@@ -78,7 +78,9 @@ class PanelController < ApplicationController
       if params[:refresh] == "full" || params[:refresh] == "to_date"
         lista_vids = (params[:refresh] == "full" ? @acc.videos : @acc.videos.where(published_after: InfoVideo.maximum(:fecha).iso8601(0), channel_id: "UCjCwCfPSnQ7rZB_u5HYd2OA") )
         if lista_vids.size == 0
-          break
+          respond_to do |format|
+            format.html {redirect_to panel_path, notice: "No hubo videos que sincronizar."}
+          end
         end 
         lista_vids.each do |v|
           if v.private?
