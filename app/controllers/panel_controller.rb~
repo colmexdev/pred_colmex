@@ -77,7 +77,10 @@ class PanelController < ApplicationController
     if params.key?(:refresh)
       if params[:refresh] == "full" || params[:refresh] == "to_date"
         lista_vids = (params[:refresh] == "full" ? @acc.videos : @acc.videos.where(published_after: InfoVideo.maximum(:fecha).iso8601(0)) )
-         lista_vids.each do |v|
+        if lista_vids.size == 0
+          break
+        end 
+        lista_vids.each do |v|
           if v.private?
             next
           else
