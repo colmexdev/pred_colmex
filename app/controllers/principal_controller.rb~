@@ -9,7 +9,7 @@ class PrincipalController < ApplicationController
     @total = @videos.size
 
     respond_to do |format|
-      format.json {render json: {vids: @videos.limit(@vpp).offset((@offset-1)*@vpp), pags: (@total.fdiv(@vpp)).ceil, curr_page: @offset, prev_page: (@offset -1 < 1 ? nil : @offset - 1), next_page: (@offset + 1 == @total.fdiv(@vpp).ceil ? nil : @offset + 1), total: @total, first_page: (@offset == 1), last_page: (@offset == @total.fdiv(@vpp).ceil ) }}
+      format.json {render json: {vids: @videos.limit(@vpp).offset((@offset-1)*@vpp), pags: (@total.fdiv(@vpp)).ceil, curr_page: @offset, prev_page: (@offset -1 < 1 ? nil : @offset - 1), next_page: (@offset + 1 >= @total.fdiv(@vpp).ceil ? nil : @offset + 1), total: @total, first_page: (@offset == 1), last_page: (@offset == @total.fdiv(@vpp).ceil ) }}
     end
   end
 
