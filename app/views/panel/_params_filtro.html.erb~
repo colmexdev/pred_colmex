@@ -22,7 +22,17 @@
 <br>
 <button type="button" class="boton-forma" onclick="hideLink(event,'#ops-lat','/panel/video_manage?set=Videos&refresh=to_date','PUT')">Añadir videos desde el último registrado</button>
 <br>
-
+<%= form_tag('/panel/video_manage?set=Videos&refresh=ids', method: :put) do %>
+<div style="width: 100%;height:300px;">
+	<div style="float:left;width:50%;height:100%;">
+    <%= text_field_tag 'vids', nil, placeholder: "Ids de videos (separados por coma)" %>
+	</div>
+	<div style="float:left;width:50%;height:100%;">
+    <%= submit_tag 'Refrescar videos enlistados' %>
+	</div>
+</div>
+<% end %>
+<br>
 <%= form_tag('/panel/video_manage?set=Videos&refresh=part', method: :put) do %>
 	<% Playlist.all.each do |p| %>
 		<%= check_box_tag "listas[]", p.nombre %>
