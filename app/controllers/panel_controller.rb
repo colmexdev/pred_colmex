@@ -106,7 +106,7 @@ class PanelController < ApplicationController
           end
         end
       elsif params[:refresh] == "ids"
-        params[:vids].split(',').each do |id|
+        params[:vids].split(/ *, */).each do |id|
           @yt_vid = Yt::Video.new id: id
           if @yt_vid.private?
             next
