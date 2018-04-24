@@ -70,9 +70,10 @@ class PanelController < ApplicationController
       config.log_level = :debug
       config.client_id = Rails.application.secrets.yt_client
       config.client_secret = Rails.application.secrets.yt_secret
+      config.api_key = Rails.applicaton.secrets.api_key
     end
     @acc = Yt::Account.new refresh_token: Rails.application.secrets.yt_token
-    @playlists = @acc.playlists.where(channel_id: "UCjCwCfPSnQ7rZB_u5HYd2OA")
+    @playlists = @acc.playlists
     if params.key?(:refresh)
       if params[:refresh] == "full" || params[:refresh] == "to_date"
         lista_vids = (params[:refresh] == "full" ? @acc.videos.where(channel_id: "UCjCwCfPSnQ7rZB_u5HYd2OA") : @acc.videos.where(published_after: InfoVideo.maximum(:fecha).iso8601(0), channel_id: "UCjCwCfPSnQ7rZB_u5HYd2OA") )
