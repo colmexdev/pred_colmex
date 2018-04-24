@@ -87,7 +87,8 @@ class PanelController < ApplicationController
             next
           else
             begin
-              fill_video(v,(v.unlisted? ? "" : @playlists.find {|pl| pl.playlist_items.find {|pli| pli.title == v.title}}.title))
+              pst = @playlists.find {|pl| pl.playlist_items.find {|pli| pli.title == v.title}}
+              fill_video(v,(v.unlisted? || pst.nil? ? "" : pst.title))
             rescue Exception => e
               next
             end

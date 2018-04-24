@@ -105,6 +105,20 @@ class PanelController < ApplicationController
             end
           end
         end
+      elsif params[:refresh] == "ids"
+        params[:vids].split(',').each do |id|
+          @yt_vid = Yt::Video.new id: id
+          if @yt_vid.private?
+            next
+          else
+            begin
+              pst = @playlists.find {|pl| pl.playlist_items.find {|pli| pli.title == @yt_vid.title}}
+              fill_video(@yt_vid,(@yt_vid.unlisted? || pst.nil? ? "" : pst.title))
+            rescue Exception => e
+              next
+            end
+          end
+        end
       end
     end
     respond_to do |format|

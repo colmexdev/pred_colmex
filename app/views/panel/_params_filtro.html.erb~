@@ -20,6 +20,8 @@
 <br>
 <button type="button" class="boton-forma" onclick="hideLink(event,'#ops-lat','/panel/video_manage?set=Videos&refresh=full','PUT')">Refrescar videos desde YouTube</button>
 <br>
+<button type="button" class="boton-forma" onclick="hideLink(event,'#ops-lat','/panel/video_manage?set=Videos&refresh=to_date','PUT')">Añadir videos desde el último registrado</button>
+<br>
 
 <%= form_tag('/panel/video_manage?set=Videos&refresh=part', method: :put) do %>
 	<% Playlist.all.each do |p| %>

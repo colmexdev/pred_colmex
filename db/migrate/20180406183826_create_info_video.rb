@@ -12,7 +12,7 @@ class CreateInfoVideo < ActiveRecord::Migration
       t.bigint :favs, null: false, default: 0
       t.bigint :comentarios, null: false, default: 0
       t.bigint :vistas, null: false, default: 0
-      t.text :tags
+      t.text :tags, array: true, default: []
       t.timestamps null: false
     end
 
