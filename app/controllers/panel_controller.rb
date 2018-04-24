@@ -67,12 +67,11 @@ class PanelController < ApplicationController
 
   def actualizar_videos
     Yt.configure do |config|
-      config.api_key = Rails.application.secrets.yt_api_key
       config.log_level = :debug
       config.client_id = Rails.application.secrets.yt_client
       config.client_secret = Rails.application.secrets.yt_secret
+      config.api_key = Rails.application.secrets.yt_api_key
     end
-    logger.debug Rails.application.secrets.yt_token
     @acc = Yt::Account.new refresh_token: Rails.application.secrets.yt_token
     @playlists = @acc.playlists
     if params.key?(:refresh)
@@ -108,7 +107,7 @@ class PanelController < ApplicationController
         end
       elsif params[:refresh] == "ids"
         params[:vids].split(/ *, */).each do |id|
-          @yt_vid = Yt::Video.new id: id
+          @yt_vid = Yt::Video.new id: id, auth: @acc
           if @yt_vid.private?
             next
           else
