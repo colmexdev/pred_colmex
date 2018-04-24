@@ -39,6 +39,13 @@ class PanelController < ApplicationController
   end
 
   def index
+    Yt.configure do |config|
+      config.log_level = :debug
+      config.client_id = Rails.application.secrets.yt_client
+      config.client_secret = Rails.application.secrets.yt_secret
+      config.api_key = Rails.application.secrets.api_key
+    end
+    @acc = Yt::Account.new refresh_token: Rails.application.secrets.yt_token
     if params[:keyword].present?
       query
       @query = @query + (params[:complement].present? ? (" and " + params[:complement]) : "")

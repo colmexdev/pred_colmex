@@ -70,7 +70,7 @@ class PanelController < ApplicationController
       config.log_level = :debug
       config.client_id = Rails.application.secrets.yt_client
       config.client_secret = Rails.application.secrets.yt_secret
-      config.api_key = Rails.applicaton.secrets.api_key
+      config.api_key = Rails.application.secrets.api_key
     end
     @acc = Yt::Account.new refresh_token: Rails.application.secrets.yt_token
     @playlists = @acc.playlists
