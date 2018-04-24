@@ -67,6 +67,7 @@ class PanelController < ApplicationController
 
   def actualizar_videos
     Yt.configure do |config|
+      config.api_key = Rails.application.secrets.yt_api_key
       config.log_level = :debug
       config.client_id = Rails.application.secrets.yt_client
       config.client_secret = Rails.application.secrets.yt_secret
