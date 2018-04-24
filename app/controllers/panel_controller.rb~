@@ -76,7 +76,7 @@ class PanelController < ApplicationController
     @playlists = @acc.playlists
     if params.key?(:refresh)
       if params[:refresh] == "full" || params[:refresh] == "to_date"
-        lista_vids = (params[:refresh] == "full" ? @acc.videos : @acc.videos.where(published_after: InfoVideo.maximum(:fecha).iso8601(0), channel_id: "UCjCwCfPSnQ7rZB_u5HYd2OA") )
+        lista_vids = (params[:refresh] == "full" ? @acc.videos.where(channel_id: "UCjCwCfPSnQ7rZB_u5HYd2OA") : @acc.videos.where(published_after: InfoVideo.maximum(:fecha).iso8601(0), channel_id: "UCjCwCfPSnQ7rZB_u5HYd2OA") )
         if lista_vids.size == 0
           respond_to do |format|
             format.html {redirect_to panel_path, notice: "No hubo videos que sincronizar."}
@@ -107,7 +107,7 @@ class PanelController < ApplicationController
         end
       elsif params[:refresh] == "ids"
         params[:vids].split(/ *, */).each do |id|
-          @yt_vid = Yt::Video.new id: id
+          @yt_vid = Yt::Video.new id: id, auth: @acc
           if @yt_vid.private?
             next
           else
