@@ -39,13 +39,6 @@ class PanelController < ApplicationController
   end
 
   def index
-    Yt.configure do |config|
-      config.log_level = :debug
-    end
-    Yt.configuration.client_id = Rails.application.secrets.yt_client
-    Yt.configuration.client_secret = Rails.application.secrets.yt_secret
-    Yt.configuration.api_key = Rails.application.secrets.yt_api_key
-    @acc = Yt::Account.new refresh_token: Rails.application.secrets.yt_token
     if params[:keyword].present?
       query
       @query = @query + (params[:complement].present? ? (" and " + params[:complement]) : "")
@@ -75,15 +68,15 @@ class PanelController < ApplicationController
   def actualizar_videos
     Yt.configure do |config|
       config.log_level = :debug
+      config.client_id = Rails.application.secrets.yt_client
+      config.client_secret = Rails.application.secrets.yt_secret
+      config.api_key = Rails.application.secrets.yt_api_key
     end
-    Yt.configuration.client_id = Rails.application.secrets.yt_client
-    Yt.configuration.client_secret = Rails.application.secrets.yt_secret
-    Yt.configuration.api_key = Rails.application.secrets.yt_api_key
     @acc = Yt::Account.new refresh_token: Rails.application.secrets.yt_token
     @playlists = @acc.playlists
     if params.key?(:refresh)
       if params[:refresh] == "full" || params[:refresh] == "to_date"
-        lista_vids = (params[:refresh] == "full" ? @acc.videos : @acc.videos.where(published_after: InfoVideo.maximum(:fecha).iso8601(0), channel_id: "UCjCwCfPSnQ7rZB_u5HYd2OA") )
+        lista_vids = (params[:refresh] == "full" ? @acc.videos : @acc.videos.map {|v| v.published_at.to_date >= InfoVideo.maximum(:fecha) ? v : nil}.compact )
         if lista_vids.size == 0
           respond_to do |format|
             format.html {redirect_to panel_path, notice: "No hubo videos que sincronizar."}
@@ -105,7 +98,7 @@ class PanelController < ApplicationController
         params[:listas].each do |lista|
           @playlists.find {|pl| pl.title == lista}.playlist_items.each do |v|
             begin
-              vid = Yt::Video.new id: v.video_id, auth: @acc
+              vid = @acc.videos.find {|vi| vi.id == v.video_id}
               fill_video(vid,lista)
             rescue Exception => e
               next
