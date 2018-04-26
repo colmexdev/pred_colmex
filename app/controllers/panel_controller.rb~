@@ -70,7 +70,6 @@ class PanelController < ApplicationController
   end
 
   def actualizar_videos
-    @acc = Yt::Account.new refresh_token: Rails.application.secrets.yt_token
     @playlists = @acc.playlists
     if params.key?(:refresh)
       if params[:refresh] == "full" || params[:refresh] == "to_date"
