@@ -303,7 +303,7 @@ class PanelController < ApplicationController
 
   private
 
-  def get_yt
+  def set_yt
     Yt.configure do |config|
       config.log_level = :debug
       config.client_id = Rails.application.secrets.yt_client
