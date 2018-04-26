@@ -1,5 +1,6 @@
 class PanelController < ApplicationController
   before_action :authenticate_admin!
+  before_action :set_yt, only: [:actualizar_videos]
   before_action :select_set, only: [:principal, :index, :mostrar, :generar, :crear, :eliminar, :actualizar, :editar]
   before_action :get_object_fields, only: [:index, :crear, :actualizar, :eliminar, :mostrar]
 
@@ -39,6 +40,9 @@ class PanelController < ApplicationController
   end
 
   def index
+    if params[:set]=="Videos"
+      set_yt
+    end
     if params[:keyword].present?
       query
       @query = @query + (params[:complement].present? ? (" and " + params[:complement]) : "")
@@ -66,13 +70,6 @@ class PanelController < ApplicationController
   end
 
   def actualizar_videos
-    Yt.configure do |config|
-      config.log_level = :debug
-      config.client_id = Rails.application.secrets.yt_client
-      config.client_secret = Rails.application.secrets.yt_secret
-      config.api_key = Rails.application.secrets.yt_api_key
-    end
-    @acc = Yt::Account.new refresh_token: Rails.application.secrets.yt_token
     @playlists = @acc.playlists
     if params.key?(:refresh)
       if params[:refresh] == "full" || params[:refresh] == "to_date"
@@ -305,6 +302,16 @@ class PanelController < ApplicationController
   end
 
   private
+
+  def get_yt
+    Yt.configure do |config|
+      config.log_level = :debug
+      config.client_id = Rails.application.secrets.yt_client
+      config.client_secret = Rails.application.secrets.yt_secret
+      config.api_key = Rails.application.secrets.yt_api_key
+    end
+    @acc = Yt::Account.new refresh_token: Rails.application.secrets.yt_token
+  end
 
   def fill_video(v,list)
     @vid = InfoVideo.find_or_initialize_by(v_id: v.id)
