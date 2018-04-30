@@ -5,9 +5,10 @@ class PanelController < ApplicationController
   before_action :get_object_fields, only: [:index, :crear, :actualizar, :eliminar, :mostrar]
 
   def oauth
-    @client = OAuth2::Client.new(ENV["YT_CLIENT"], ENV["YT_SECRET"], {authorize_url: "https://accounts.google.com/o/oauth2/v2/auth", token_url: "https://www.googleapis.com/oauth2/v4/token"})
-    @url = @client.auth_code.authorize_url(scope: "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.upload", redirect_uri: "https://www.colmex.mx/vids/oauth2callback", access_type: "offline") + "&set=" + params[:set] + "&refresh=" + params[:refresh] + (params.key?(:vids) ? "&vids=" + params[:vids] : "")
-    redirect_to @url
+    client = OAuth2::Client.new(ENV["YT_CLIENT"], ENV["YT_SECRET"], {authorize_url: "https://accounts.google.com/o/oauth2/v2/auth", token_url: "https://www.googleapis.com/oauth2/v4/token"})
+    $pars = "&set=" + params[:set] + "&refresh=" + params[:refresh] + (params.key?(:vids) ? "&vids=" + params[:vids] : "")
+    url = @client.auth_code.authorize_url(scope: "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.upload", redirect_uri: "https://www.colmex.mx/vids/oauth2callback", access_type: "offline")
+    redirect_to url
   end
 
   def principal
@@ -76,7 +77,7 @@ class PanelController < ApplicationController
   end
 
   def actualizar_videos
-    logger.debug params
+    logger.debug $pars
     respond_to do |format|
       format.html {redirect_to(panel_path, notice: "No hubo videos que sincronizar.") and return}
     end
