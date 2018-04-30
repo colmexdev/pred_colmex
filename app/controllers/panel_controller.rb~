@@ -6,8 +6,7 @@ class PanelController < ApplicationController
 
   def oauth
     @client = OAuth2::Client.new(ENV["YT_CLIENT"], ENV["YT_SECRET"], {authorize_url: "https://accounts.google.com/o/oauth2/v2/auth", token_url: "https://www.googleapis.com/oauth2/v4/token"})
-    @url = @client.auth_code.authorize_url(scope: "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.upload", redirect_uri: "https://www.colmex.mx/vids/oauth2callback", access_type: "offline")
-    redirect_to actualiza_vids_path(params: {set: params[:set], refresh: params[:refresh], vids: (params[:vids] if params.key?(:vids))}.reject{ |k,v| v.nil? })
+    @url = @client.auth_code.authorize_url(scope: "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.upload", redirect_uri: "https://www.colmex.mx/vids/oauth2callback", access_type: "offline") + "&set=" + params[:set] + "&refresh=" + params[:refresh] + (params.key?(:vids) ? "&vids=" + params[:vids] : "")
   end
 
   def principal
