@@ -13,13 +13,14 @@ Rails.application.routes.draw do
   get 'panel/generar' => 'panel#generar', :as => :panel_nuevo
   get 'panel/editar' => 'panel#editar', :as => :panel_editar
   post 'panel' => 'panel#crear'
-  get 'panel/:id' => 'panel#mostrar', :as => :panel_mostrar
-  delete 'panel/:id' => 'panel#eliminar', :as => :panel_eliminar
   put 'panel/editar' => 'panel#actualizar'
   patch 'panel/editar' => 'panel#actualizar'
   post 'panel/video_manage' => 'panel#actualizar_videos'
   put 'panel/video_manage' => 'panel#actualizar_videos'
-  patch 'panel/video_manage' => 'panel#actualizar_videos'  
+  patch 'panel/video_manage' => 'panel#actualizar_videos' 
+  get 'panel/oauth' => "panel#oauth", :as => :oauth 
+  get 'panel/:id' => 'panel#mostrar', :as => :panel_mostrar
+  delete 'panel/:id' => 'panel#eliminar', :as => :panel_eliminar
 
   get '/catalogo_videos' => 'principal#get_videos', :as => :catalogo
 
@@ -36,8 +37,6 @@ Rails.application.routes.draw do
   get '/produccion_digital/curso_breve/reproducir' => 'produccion_digital#reproducir', :as => :curso1
 
   get 'principal/inicio'
-
-  get 'panel/oauth' => "panel#oauth", :as => :oauth
 
 
   #devise_for :admins, :controllers => { :registrations => "registrations", :sessions => "sessions"}
