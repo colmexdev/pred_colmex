@@ -76,7 +76,7 @@ class PanelController < ApplicationController
         lista_vids = (params[:refresh] == "full" ? @acc.videos : @acc.videos.map {|v| v.published_at.to_date >= InfoVideo.maximum(:fecha) ? v : nil}.compact )
         if lista_vids.size == 0
           respond_to do |format|
-            format.html {redirect_to panel_path, notice: "No hubo videos que sincronizar."}
+            format.html {redirect_to(panel_path, notice: "No hubo videos que sincronizar.") and return}
           end
         end 
         lista_vids.each do |v|

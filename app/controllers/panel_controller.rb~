@@ -104,7 +104,7 @@ class PanelController < ApplicationController
         end
       elsif params[:refresh] == "ids"
         params[:vids].split(/ *, */).each do |id|
-          @yt_vid = Yt::Video.new id: id, auth: @acc
+          @yt_vid = @acc.videos.find {|video| video.id == id}
           if @yt_vid.private?
             next
           else
