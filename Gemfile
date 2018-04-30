@@ -32,6 +32,8 @@ gem 'remotipart'
 gem 'font-awesome-sass', '~> 4.7.0'
 gem 'paperclip'
 
+gem 'oauth2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

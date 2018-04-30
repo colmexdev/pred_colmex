@@ -37,6 +37,8 @@ Rails.application.routes.draw do
 
   get 'principal/inicio'
 
+  get 'panel/oauth' => "panel#oauth", :as => :oauth
+
 
   #devise_for :admins, :controllers => { :registrations => "registrations", :sessions => "sessions"}
   get 'videos/id' => 'videos#id', :as => :video_id
