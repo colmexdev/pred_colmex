@@ -1,24 +1,8 @@
 class PanelController < ApplicationController
   before_action :authenticate_admin!
-  #before_action :set_yt, only: [:actualizar_videos]
+  before_action :set_yt, only: [:actualizar_videos]
   before_action :select_set, only: [:principal, :index, :mostrar, :generar, :crear, :eliminar, :actualizar, :editar]
   before_action :get_object_fields, only: [:index, :crear, :actualizar, :eliminar, :mostrar]
-
-  def oauth
-    begin
-      client = OAuth2::Client.new(ENV["YT_CLIENT"], ENV["YT_SECRET"], {authorize_url: "https://accounts.google.com/o/oauth2/v2/auth", token_url: "https://www.googleapis.com/oauth2/v4/token"})
-      url = client.auth_code.get_token(ENV["YT_AUTH"], redirect_uri: "https://www.colmex.mx/vids/oauth2callback", headers: {'Content-Type' => 'application/x-www-form-urlencoded'})
-      redirect_to url
-    rescue Exception => e
-      @token = ""
-      File.open(ENV["PATH"]+"yt.txt","r") do |file|
-        file.each do |line|
-          @token = line
-        end
-      end
-      redirect_to panel_path(params: {tok: @token })
-    end
-  end
 
   def principal
 		grupos = @sets.map {|k,v| v[:model]}
@@ -329,9 +313,12 @@ class PanelController < ApplicationController
       config.log_level = :debug
       config.client_id = Rails.application.secrets.yt_client
       config.client_secret = Rails.application.secrets.yt_secret
-      config.api_key = Rails.application.secrets.yt_api_key
     end
-    @acc = Yt::Account.new refresh_token: Rails.application.secrets.yt_token
+    qtoken = ""
+    File.foreach(ENV["USR_PATH"] + "yt.txt") do line
+      @token = line
+    end
+    @acc = Yt::Account.new refresh_token: @token
   end
 
   def fill_video(v,list)

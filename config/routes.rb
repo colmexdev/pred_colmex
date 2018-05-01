@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   post 'panel/video_manage' => 'panel#actualizar_videos'
   put 'panel/video_manage' => 'panel#actualizar_videos'
   patch 'panel/video_manage' => 'panel#actualizar_videos' 
-  get 'panel/oauth' => "panel#oauth", :as => :oauth 
   get 'panel/:id' => 'panel#mostrar', :as => :panel_mostrar
   delete 'panel/:id' => 'panel#eliminar', :as => :panel_eliminar
 
