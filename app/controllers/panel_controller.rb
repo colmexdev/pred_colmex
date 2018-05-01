@@ -313,9 +313,9 @@ class PanelController < ApplicationController
       config.log_level = :debug
       config.client_id = Rails.application.secrets.yt_client
       config.client_secret = Rails.application.secrets.yt_secret
+      config.api_key = Rails.application.secrets.yt_api_key
     end
-    @token = File.readlines(ENV["USR_PATH"] + "yt.txt")[0]
-    @acc = Yt::Account.new refresh_token: @token
+    @acc = Yt::Account.new refresh_token: Rails.application.secrets.yt_token
   end
 
   def fill_video(v,list)

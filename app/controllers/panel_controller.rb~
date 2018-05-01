@@ -315,7 +315,6 @@ class PanelController < ApplicationController
       config.client_secret = Rails.application.secrets.yt_secret
     end
     @token = File.readlines(ENV["USR_PATH"] + "yt.txt")[0]
-    end
     @acc = Yt::Account.new refresh_token: @token
   end
 
