@@ -6,8 +6,7 @@ class PanelController < ApplicationController
 
   def oauth
     client = OAuth2::Client.new(ENV["YT_CLIENT"], ENV["YT_SECRET"], {authorize_url: "https://accounts.google.com/o/oauth2/v2/auth", token_url: "https://www.googleapis.com/oauth2/v4/token"})
-    #$pars = "&set=" + params[:set] + "&refresh=" + params[:refresh] + (params.key?(:vids) ? "&vids=" + params[:vids] : "")
-    url = client.auth_code.authorize_url(scope: "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.upload", redirect_uri: "https://www.colmex.mx/vids/oauth2callback", access_type: "offline")
+    url = client.auth_code.get_token(ENV["YT_AUTH"], redirect_uri: "https://www.colmex.mx/vids/oauth2callback", headers: {'Content-Type' => 'application/x-www-form-urlencoded'})
     redirect_to url
   end
 
