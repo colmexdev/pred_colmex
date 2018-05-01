@@ -44,6 +44,7 @@ class PanelController < ApplicationController
   end
 
   def panel
+    logger.debug params
   end
 
   def index
