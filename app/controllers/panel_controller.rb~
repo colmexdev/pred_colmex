@@ -10,7 +10,13 @@ class PanelController < ApplicationController
       url = client.auth_code.get_token(ENV["YT_AUTH"], redirect_uri: "https://www.colmex.mx/vids/oauth2callback", headers: {'Content-Type' => 'application/x-www-form-urlencoded'})
       redirect_to url
     rescue Exception => e
-      redirect_to panel_path
+      @token = ""
+      File.open(ENV["PATH"]+"yt.txt","r") do |file|
+        file.each do |line|
+          @token = line
+        end
+      end
+      redirect_to panel_path(params: {tok: @token })
     end
   end
 

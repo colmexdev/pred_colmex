@@ -11,7 +11,7 @@ class PanelController < ApplicationController
       redirect_to url
     rescue Exception => e
       @token = ""
-      File.open(ENV["PATH"]+"yt.txt","r") do |file|
+      File.open(ENV["USR_PATH"]+"yt.txt","r") do |file|
         file.each do |line|
           @token = line
         end
