@@ -4,13 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  Yt.configure do |config|
-    config.api_key = ENV["YT_API_KEY"]
-    config.log_level = :debug
-    config.client_id = ENV["YT_CLIENT"]
-    config.client_secret = ENV["YT_SECRET"]
-  end
-
   protected
   def after_sign_in_path_for(resource)
     panel_path
