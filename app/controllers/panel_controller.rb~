@@ -5,9 +5,13 @@ class PanelController < ApplicationController
   before_action :get_object_fields, only: [:index, :crear, :actualizar, :eliminar, :mostrar]
 
   def oauth
-    client = OAuth2::Client.new(ENV["YT_CLIENT"], ENV["YT_SECRET"], {authorize_url: "https://accounts.google.com/o/oauth2/v2/auth", token_url: "https://www.googleapis.com/oauth2/v4/token"})
-    url = client.auth_code.get_token(ENV["YT_AUTH"], redirect_uri: "https://www.colmex.mx/vids/oauth2callback", headers: {'Content-Type' => 'application/x-www-form-urlencoded'})
-    redirect_to url
+    begin
+      client = OAuth2::Client.new(ENV["YT_CLIENT"], ENV["YT_SECRET"], {authorize_url: "https://accounts.google.com/o/oauth2/v2/auth", token_url: "https://www.googleapis.com/oauth2/v4/token"})
+      url = client.auth_code.get_token(ENV["YT_AUTH"], redirect_uri: "https://www.colmex.mx/vids/oauth2callback", headers: {'Content-Type' => 'application/x-www-form-urlencoded'})
+      redirect_to url
+    rescue Exception => e
+      redirect_to panel_path
+    end
   end
 
   def principal
