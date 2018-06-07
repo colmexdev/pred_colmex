@@ -5,7 +5,7 @@ class PrincipalController < ApplicationController
   def get_videos
     @vpp = (params.key?(:vpp) ? (params[:vpp].to_i < 1 ? 1 : params[:vpp].to_i) : 10) #Videos por página
     @offset = (params.key?(:offset) ? (params[:offset].to_i < 1 ? 1 : params[:offset].to_i) : 1) #Página
-    @videos = InfoVideo.where(build_query(params))
+    @videos = InfoVideo.where(build_query(params)).order(params.key?(:crono) ? {fecha: (params[:crono] == "desc" ? :desc : :asc)} : "")
     @total = @videos.size
 
     respond_to do |format|
