@@ -9,7 +9,7 @@ class PrincipalController < ApplicationController
     @total = @videos.size
 
     respond_to do |format|
-      format.json {render json: {vids: @videos.limit(@vpp).offset((@offset-1)*@vpp), pags: (@total.fdiv(@vpp)).ceil, curr_page: @offset, prev_page: (@offset -1 < 1 || @offset - 1 >= @total.fdiv(@vpp).ceil ? nil : @offset - 1), next_page: (@offset + 1 >= @total.fdiv(@vpp).ceil ? nil : @offset + 1), total: @total, first_page: (@offset == 1), last_page: (@offset == @total.fdiv(@vpp).ceil ||(@offset == 1 && @total == 0)) }}
+      format.json {render json: {vids: (params.key?(:all) && params[:all] == "true" ? @videos.all : @videos.limit(@vpp).offset((@offset-1)*@vpp), pags: (@total.fdiv(@vpp)).ceil), curr_page: @offset, prev_page: (@offset -1 < 1 || @offset - 1 >= @total.fdiv((params.key?(:all) && params[:all] == "true" ? @total : @vpp)).ceil ? nil : @offset - 1), next_page: (@offset + 1 >= @total.fdiv((params.key?(:all) && params[:all] == "true" ? @total : @vpp)).ceil ? nil : @offset + 1), total: @total, first_page: (@offset == 1), last_page: (@offset == @total.fdiv((params.key?(:all) && params[:all] == "true" ? @total : @vpp)).ceil ||(@offset == 1 && @total == 0)) }}
     end
   end
 
