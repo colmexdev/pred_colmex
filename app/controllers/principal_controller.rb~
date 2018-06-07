@@ -36,6 +36,7 @@ class PrincipalController < ApplicationController
       op = (pars[:fecha_bool] == "le" ? "<=" : (pars[:fecha_bool] == "ge" ? ">" : "="))
       string = string + (concat ? " AND " : "") + "fecha " + op + "timestamp '" + pars[:fecha] + "'"
     end
+    logger.debug string
     return string
   end
 end
