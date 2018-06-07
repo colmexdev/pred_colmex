@@ -71,10 +71,6 @@ class PanelController < ApplicationController
   end
 
   def actualizar_videos
-    logger.debug $pars
-    respond_to do |format|
-      format.html {redirect_to(panel_path, notice: "No hubo videos que sincronizar.") and return}
-    end
     @playlists = @acc.playlists
     if params.key?(:refresh)
       if params[:refresh] == "full" || params[:refresh] == "to_date"
