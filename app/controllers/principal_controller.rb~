@@ -23,7 +23,7 @@ class PrincipalController < ApplicationController
       concat = true
     end
     if pars.key?(:id)
-      string = string + (concat ? " AND " : "") + "v_id = " + pars[:id]
+      string = string + (concat ? " AND " : "") + "v_id = '" + pars[:id] + "'"
       concat = true
     end
     if pars.key?(:descripcion)

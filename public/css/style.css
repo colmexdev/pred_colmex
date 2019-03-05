@@ -1,0 +1,201 @@
+/*!
+ * Start Bootstrap - Modern Business (https://startbootstrap.com/template-overviews/modern-business)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
+
+/* Reset */
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset, img {
+  border: 0;
+}
+
+address, caption, dfn, th, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+li {
+  list-style: none;
+}
+
+caption, th {
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: table;
+  background-color: #f2f2f2;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #504D4E;
+  position: relative;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 5.5em;
+  color: #4C3B6C;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 35px;
+}
+
+h2 {
+  font-size: 62px;
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+
+h4 {
+  font-size: 26px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.mt-40 {
+  margin-top: 60px
+}
+
+.logo {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+a {
+  color: #9593B7;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #325C80;
+  text-decoration: none;
+}
+
+h1 span {
+  color: #9e0000;
+}
+
+.colmex {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+}
+
+p {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.boletin {
+  padding: 15px 20px;
+  font-size: 24px;
+  background-color: #9593B7;
+  line-height: 120px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.boletin:hover {
+  padding: 15px 20px;
+  font-size: 24px;
+  background-color: #f2f2f2;
+  line-height: 120px;
+  text-decoration: none;
+  color: #325C80;
+  border: #4C3B6C 2px solid
+}
+
+footer {
+  background-color: #325C80;
+}
+
+footer p {
+  color: #fff;
+  font-weight: 400;
+  font-size: 17px;
+  margin-bottom: 30px;
+  background-color: #325C80;
+}
+
+footer a {
+  text-decoration: none;
+  color: #D1D3D4;
+}
+
+footer a:hover {
+  text-decoration: none;
+  color: #9593B7;
+}
+
+@media only screen and (max-width: 1024px) {
+  .header {
+    width: 90%;
+    padding: 60px 5% 0;
+    float: left;
+    background: #E5E5E5;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 35px;
+  }
+  h2 {
+    font-size: 44px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  .pie {
+    font-size: 14px;
+  }
+  .content-wrap {
+    width: 100%;
+    float: left;
+    padding: 30px 0;
+  }
+  .comingsoon {
+    width: 100%;
+    float: left;
+    border-right: none;
+    border-bottom: 1px solid #D1D3D4;
+    box-sizing: border-box;
+    padding: 30px 0;
+  }
+  .content {
+    width: 100%;
+    padding: 30px 0;
+    float: left;
+  }
+}
+
+.img-responsive {
+  max-width: 710px;
+  width: 100%;
+  height: auto;
+}
