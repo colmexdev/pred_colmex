@@ -2,6 +2,9 @@ class PrincipalController < ApplicationController
   def inicio
   end
 
+  def soon
+  end
+
   def get_videos
     @vpp = (params.key?(:vpp) ? (params[:vpp].to_i < 1 ? 1 : params[:vpp].to_i) : 10) #Videos por página
     @offset = (params.key?(:offset) ? (params[:offset].to_i < 1 ? 1 : params[:offset].to_i) : 1) #Página
