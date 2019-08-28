@@ -38,7 +38,7 @@ class PrincipalController < ApplicationController
       concat = true
     end
     if pars.key?(:clave)
-      string = string + (concat ? " AND " : "") + "unaccent(lower(titulo)) like '%" + pars[:clave].mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s + "%' OR unaccent(lower(descripcion)) like '%" + pars[:clave].mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s + "%' OR unaccent(lower(tags)) like '%" + pars[:clave].mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s + "%')"
+      string = string + (concat ? " AND " : "") + "(unaccent(lower(titulo)) like '%" + pars[:clave].mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s + "%' OR unaccent(lower(descripcion)) like '%" + pars[:clave].mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s + "%' OR unaccent(lower(tags)) like '%" + pars[:clave].mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s + "%')"
       concat = true
     end
     if pars.key?(:anio)

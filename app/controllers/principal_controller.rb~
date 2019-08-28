@@ -22,11 +22,11 @@ class PrincipalController < ApplicationController
     string = ""
     concat = false
     if pars.key?(:titulo)
-      string = string + "lower(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(titulo,'á','a'),'é','e'),'í','i'),'ó','o'),'ú','u'),'Á','A'),'É','E'),'Í','I'),'Ó','O'),'Ú','U')) like '%" + pars[:titulo].mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s + "%'"
+      string = string + "unaccent(lower(titulo)) like '%" + pars[:titulo].mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s + "%'"
       concat = true
     end
     if pars[:title]
-      string = string + (concat ? " AND " : "") + "lower(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(titulo,'á','a'),'é','e'),'í','i'),'ó','o'),'ú','u'),'Á','A'),'É','E'),'Í','I'),'Ó','O'),'Ú','U')) = '" + pars[:title].mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s + "'"
+      string = string + (concat ? " AND " : "") + "unaccent(lower(titulo)) = '" + pars[:title].mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s + "'"
       concat = true
     end
     if pars.key?(:id)
@@ -34,11 +34,11 @@ class PrincipalController < ApplicationController
       concat = true
     end
     if pars.key?(:descripcion)
-      string = string + (concat ? " AND " : "") + "lower(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(descripcion,'á','a'),'é','e'),'í','i'),'ó','o'),'ú','u'),'Á','A'),'É','E'),'Í','I'),'Ó','O'),'Ú','U')) like '%" + pars[:descripcion].mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s + "%'"
+      string = string + (concat ? " AND " : "") + "unaccent(lower(descripcion)) like '%" + pars[:descripcion].mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s + "%'"
       concat = true
     end
     if pars.key?(:clave)
-      string = string + (concat ? " AND " : "") + "(lower(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(titulo,'á','a'),'é','e'),'í','i'),'ó','o'),'ú','u'),'Á','A'),'É','E'),'Í','I'),'Ó','O'),'Ú','U')) like '%" + pars[:clave].mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s + "%' OR lower(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(titulo,'á','a'),'é','e'),'í','i'),'ó','o'),'ú','u'),'Á','A'),'É','E'),'Í','I'),'Ó','O'),'Ú','U')) like '%" + pars[:clave].mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s + "%' OR lower(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(tags,'á','a'),'é','e'),'í','i'),'ó','o'),'ú','u'),'Á','A'),'É','E'),'Í','I'),'Ó','O'),'Ú','U')) like '%" + pars[:clave].mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s + "%')"
+      string = string + (concat ? " AND " : "") + "unaccent(lower(titulo)) like '%" + pars[:clave].mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s + "%' OR unaccent(lower(descripcion)) like '%" + pars[:clave].mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s + "%' OR unaccent(lower(tags)) like '%" + pars[:clave].mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s + "%')"
       concat = true
     end
     if pars.key?(:anio)
@@ -46,12 +46,12 @@ class PrincipalController < ApplicationController
       concat = true
     end
     if pars.key?(:lista)
-      string = string + (concat ? " AND " : "") + "lower(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(lista,'á','a'),'é','e'),'í','i'),'ó','o'),'ú','u'),'Á','A'),'É','E'),'Í','I'),'Ó','O'),'Ú','U')) = '" + pars[:lista].mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s + "'"
+      string = string + (concat ? " AND " : "") + "unaccent(lower(lista)) = '" + pars[:lista].mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s + "'"
       concat = true
     end
     if pars.key?(:tags)
       pars[:tags].split(/ *, */).map {|t| t.mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s }.each do |t|
-        string = string + (concat ? " AND " : "") + "lower(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(tags,'á','a'),'é','e'),'í','i'),'ó','o'),'ú','u'),'Á','A'),'É','E'),'Í','I'),'Ó','O'),'Ú','U')) like '%" + t + "%'"
+        string = string + (concat ? " AND " : "") + "unaccent(lower(tags)) like '%" + t + "%'"
         concat = true
       end
     end
